@@ -3,7 +3,7 @@
 A TV quiz-show board game for 2–8 players. The TV shows the 64-space board; every phone is a private controller.
 Win one token in each of 6 categories, then get 6 questions right in 60 seconds in the Final Round.
 
-Built from NOGGIN (rooms, join by QR, reconnect, pause, sounds) and Pub Quiz Powerhouse (the question banks, A–D option builder and typed-answer marking).
+Built from NOGGIN (rooms, join by QR, reconnect, pause, sounds, the 16 mini-games and 4 Showdowns in `server/games/`) and Pub Quiz Powerhouse (the question banks, A–D option builder and typed-answer marking).
 
 ## Play
 
@@ -48,4 +48,6 @@ Done: board, turns, Play Safe / Go Smart, Bonus Steal, tokens, Brains, all 8 spe
 
 v0.2.0: Alec on the TV (4 poses, drawn stand-in until the art arrives), 123 questions with hand-written wrong options, smarter automatic options, 52 new Music questions.
 
-Next: NOGGIN mini-games on Mini-game spaces (a Lightning Round question stands in), NOGGIN Showdowns (a head-to-head question stands in), ChatGPT art, more Music questions.
+v0.3.0: all 16 NOGGIN mini-games on Mini-game spaces and all 4 NOGGIN Showdowns on the Showdown space, played on the TV and phones exactly as in NOGGIN but paying Brains (every mini-game winner +3; Showdown winner takes up to 4 from the loser; correct backers +1). Music now 350 questions (5 new batches awaiting review).
+
+Next: ChatGPT art, your review of the new Music packs, more hand-fixed A–D options.

@@ -8,6 +8,10 @@
 const crypto = require('node:crypto');
 const L = require('./board-layout');
 const Q = require('./questions');
+const phase3 = require('./games/phase3');
+const phase4 = require('./games/phase4');
+const phase5 = require('./games/phase5');
+const {SHOWDOWN_KINDS} = require('./layout');
 
 /* ---------- timings (ms) ---------- */
 const T = Object.freeze({
@@ -19,7 +23,7 @@ const T = Object.freeze({
 const BRAINS = Object.freeze({
   PASS_GO: 1, SAFE_OWNED: 1, SMART_NEW_BONUS: 2, SMART_OWNED: 3, STEAL_FIRST: 2, STEAL_SECOND: 1,
   LIGHTNING: [3, 2, 1], FREE_FOR_ALL: 3, SHOWDOWN: 4, SHOWDOWN_FLOOR: 2, JACKPOT: 2,
-  TOKEN_PRICE: 10, BET_MAX: 10, PREDICT_EXACT: 2, NO_STEAL_TARGET: 2,
+  TOKEN_PRICE: 10, BET_MAX: 10, PREDICT_EXACT: 2, NO_STEAL_TARGET: 2, MINIGAME_WIN: 3, SPOTLIGHT_PICK: 1,
 });
 
 /* ---------- small helpers ---------- */
@@ -48,7 +52,7 @@ function randomCategory(rng) { return L.CATEGORY_IDS[rng(L.CATEGORY_IDS.length)]
 /* ---------- start ---------- */
 function start(room, now = Date.now(), rng = crypto.randomInt) {
   if (room.players.length < 2) fail('PLAYERS', 'You need at least two players.');
-  for (const p of room.players) { p.position = 0; p.brains = 0; p.tokens = []; }
+  for (const p of room.players) { p.position = 0; p.brains = 0; p.sparks = 0; p.tokens = []; }
   const order = seats(room);
   room.phase = 'board';
   room.board = {
@@ -152,7 +156,7 @@ function resolveLanding(room, now, rng) {
   const g = b(room), p = player(room, g.activeId);
   const space = L.SPACES[p.position];
   if (space.kind === 'category') return askRisk(room, space.type, now);
-  if (space.kind === 'minigame') return startGroup(room, 'lightning', randomCategory(rng), room.players.map(x => x.id), now, rng);
+  if (space.kind === 'minigame') return startMinigame(room, now, rng);
   return startSpecial(room, space.type, now, rng);
 }
 
@@ -402,10 +406,110 @@ function chooseSpecial(room, index, now, rng) {
       return endTurn(room, now, `${p.name} swaps places with ${other.name}!`);
     }
     case 'showdown':
-      return startGroup(room, 'showdown', randomCategory(rng), [p.id, opt.targetId], now, rng);
+      return startShowdown(room, opt.targetId, now, rng);
     default:
       return endTurn(room, now);
   }
+}
+
+/* ---------- NOGGIN mini-games and Showdowns ----------
+ * The NOGGIN engines run unchanged. They keep their state in room.board.minigame
+ * or room.board.showdown and call finishTurn() when they end. NOGGIN pays out
+ * "Sparks"; Smart Alec ignores those and pays Brains by its own rules instead. */
+const MINI_CATEGORIES = ['speed', 'brain', 'create', 'together'];
+const NOGGIN_KINDS = Object.keys(SHOWDOWN_KINDS).map(Number);   // corner indexes 6, 10, 18, 22
+function gameTitle(room, game) { return game.title || (phase3.SPECS[game.id] ? phase3.titleFor(room, game.id) : phase4.SPECS[game.id]?.name) || 'Mini-game'; }
+function syncSparks(room) { for (const p of room.players) p.sparks = p.brains || 0; }
+function startMinigame(room, now, rng) {
+  const g = b(room);
+  syncSparks(room);
+  const category = MINI_CATEGORIES[rng(MINI_CATEGORIES.length)];
+  g.seenGames = g.seenGames || [];
+  (category === 'speed' || category === 'brain' ? phase3 : phase4).start(room, category, now, rng);
+  g.seenGames.push(g.minigame.id); g.lastGame = g.minigame.id;
+  g.question = null;
+  g.version += 1;
+  banner(room, `Mini-game: ${gameTitle(room, g.minigame)}!`, 'big');
+}
+function startShowdown(room, opponentId, now, rng) {
+  const g = b(room);
+  syncSparks(room);
+  g.landing = NOGGIN_KINDS[rng(NOGGIN_KINDS.length)];
+  phase5.start(room, 'corner', now, opponentId, rng);
+  g.version += 1;
+  banner(room, `Showdown: ${g.showdown.title}! ${nameOf(room, g.activeId)} v ${nameOf(room, opponentId)}.`, 'big');
+}
+/** Called by a NOGGIN engine when its game ends. `game` is the game state captured just before. */
+function finishNoggin(room, now, winners, game, kind) {
+  const g = b(room);
+  g.minigame = null; g.showdown = null;
+  game = {...game, title: gameTitle(room, game)};
+  const won = [...new Set(winners || [])].filter(id => room.players.some(p => p.id === id));
+  const awards = {};
+  const give = (id, n) => { if (n) { addBrains(room, id, n); awards[id] = (awards[id] || 0) + n; } };
+  let text;
+  if (kind === 'showdown') {
+    const [winner] = won.length === 1 ? won : [];
+    if (winner) {
+      const loser = game.participants.find(id => id !== winner);
+      const take = Math.min(BRAINS.SHOWDOWN, player(room, loser)?.brains || 0);
+      addBrains(room, loser, -take);
+      give(winner, take || BRAINS.SHOWDOWN_FLOOR);
+      if (take) awards[loser] = -take;
+      for (const [pid, pick] of Object.entries(game.cheers || {})) if (pick === winner) give(pid, BRAINS.SPOTLIGHT_PICK);
+      text = `${nameOf(room, winner)} wins ${game.title}${take ? ` and takes ${take} Brains from ${nameOf(room, loser)}` : ` and gets ${BRAINS.SHOWDOWN_FLOOR} Brains`}!`;
+    } else text = `${game.title} ends in a draw. Nobody loses Brains.`;
+  } else {
+    for (const id of won) give(id, BRAINS.MINIGAME_WIN);
+    text = won.length ? `${game.title}: ${won.map(id => nameOf(room, id)).join(' & ')} win${won.length === 1 ? 's' : ''} ${BRAINS.MINIGAME_WIN} Brains!` : `${game.title}: no winner this time.`;
+  }
+  g.miniResult = {kind, title: game.title, text, awards};
+  banner(room, text, won.length ? 'good' : 'bad');
+  setStep(room, 'miniResult', now, T.GROUP_REVEAL);
+}
+const finishMinigameFor = game => (room, now, text, winners) => finishNoggin(room, now, winners, game, 'minigame');
+const finishShowdownFor = game => (room, now, text, winners) => finishNoggin(room, now, winners, game, 'showdown');
+function nogginTick(room, now, rng) {
+  const g = b(room);
+  if (g.step === 'showdown' && g.showdown) return phase5.tick(room, now, finishShowdownFor(g.showdown)) || false;
+  if (g.step === 'minigame' && g.minigame) {
+    const m = g.minigame;
+    return (phase4.SPECS[m.id] ? phase4.tick(room, now, finishMinigameFor(m), rng) : phase3.tick(room, now, finishMinigameFor(m), rng)) || false;
+  }
+  return false;
+}
+function minigameInput(room, id, value, roundKey, now = Date.now()) {
+  const g = b(room);
+  if (g.step === 'showdown' && g.showdown) return phase5.submit(room, id, value, roundKey, now, finishShowdownFor(g.showdown));
+  if (g.step !== 'minigame' || !g.minigame) fail('STEP', 'No mini-game is running.');
+  const m = g.minigame;
+  return phase4.SPECS[m.id] ? phase4.submit(room, id, value, roundKey, now, finishMinigameFor(m)) : phase3.submit(room, id, value, roundKey, now);
+}
+function minigameDraw(room, id, points, roundKey, now = Date.now()) {
+  if (b(room).step !== 'minigame') fail('STEP', 'No drawing game is running.');
+  return phase4.draw(room, id, points, roundKey, now);
+}
+/** Testing only: start a named NOGGIN game for the active player straight away. */
+function debugStart(room, what, now = Date.now(), rng = crypto.randomInt) {
+  const g = b(room);
+  g.question = null; g.special = null; g.final = null;
+  syncSparks(room);
+  const kinds = {buzzer: 6, tug: 10, bid: 18, nerve: 22};
+  if (kinds[what]) {
+    g.landing = kinds[what];
+    const other = room.players.find(p => p.id !== g.activeId);
+    phase5.start(room, 'corner', now, other.id, rng);
+    return;
+  }
+  const spec = phase3.SPECS[what] || phase4.SPECS[what];
+  if (!spec) fail('GAME', 'Unknown game.');
+  (phase4.SPECS[what] ? phase4 : phase3).start(room, spec.category, now, rng, what);
+}
+function cheer(room, id, targetId) { return phase5.cheer(room, id, targetId); }
+function decideBid(room, accept, now = Date.now()) {
+  const g = b(room);
+  if (!g.showdown) fail('STEP', 'Nothing to judge.');
+  return phase5.decideBid(room, accept, now, finishShowdownFor(g.showdown));
 }
 
 function defaultSpecial(room) {
@@ -524,6 +628,7 @@ function onDeadline(room, now, rng) {
     case 'reveal': return afterReveal(room, now, rng);
     case 'steal': case 'group': return settleGroup(room, now);
     case 'groupReveal': return endTurn(room, now, g.question?.resultText);
+    case 'miniResult': return endTurn(room, now, g.miniResult?.text);
     case 'special': return chooseSpecial(room, Math.max(0, defaultSpecial(room)), now, rng);
     case 'predict': return startFinal(room, now);
     case 'final': return finishFinal(room, now, g.final.categories[g.final.index]);
@@ -546,11 +651,12 @@ function tick(room, now = Date.now(), rng = crypto.randomInt) {
   if (room.phase !== 'board' || !room.board) return false;
   const g = b(room);
   if (Number.isFinite(g.pausedAt)) return false;
+  if (g.step === 'minigame' || g.step === 'showdown') return nogginTick(room, now, rng);
   let changed = false;
   for (let guard = 0; guard < 4 && g.deadline && now >= g.deadline; guard++) {
     onDeadline(room, now, rng);
     changed = true;
-    if (room.phase !== 'board') break;
+    if (room.phase !== 'board' || g.step === 'minigame' || g.step === 'showdown') break;
   }
   return changed;
 }
@@ -565,8 +671,15 @@ function hostPause(room, now) {
 function hostResume(room, now) {
   const g = b(room);
   if (!g || !Number.isFinite(g.pausedAt)) return;
+  const delta = Math.max(0, now - g.pausedAt);
   if (g.remaining != null) g.deadline = now + g.remaining;
-  if (g.timeLimitAt) g.timeLimitAt += now - g.pausedAt;
+  if (g.timeLimitAt) g.timeLimitAt += delta;
+  // NOGGIN games keep their own clocks: move every one of them on by the pause.
+  const move = (obj, key) => { if (obj && Number.isFinite(obj[key])) obj[key] += delta; };
+  for (const key of ['deadline', 'hardStop', 'openAt', 'startedAt', 'buzzWindowUntil']) move(g.showdown, key);
+  for (const key of ['deadline', 'openAt', 'introUntil', 'stageStarted']) move(g.minigame, key);
+  for (const key of ['readyAt', 'flashEndsAt', 'revealAt']) move(g.minigame?.display, key);
+  if (g.minigame || g.showdown) g.deadline = (g.showdown || g.minigame).deadline;
   g.pausedAt = null; g.pauseKind = null; g.pauseReason = null; g.remaining = null;
   g.version += 1;
 }
@@ -574,6 +687,10 @@ function hostResume(room, now) {
 function skipDisconnected(room, now, rng = crypto.randomInt) {
   const g = b(room);
   if (Number.isFinite(g.pausedAt)) hostResume(room, now);
+  if (g.step === 'minigame' || g.step === 'showdown') {
+    const game = g.minigame || g.showdown;
+    return finishNoggin(room, now, [], game, g.step === 'showdown' ? 'showdown' : 'minigame');
+  }
   if (g.deadline) { g.deadline = now; tick(room, now, rng); }
 }
 
@@ -622,6 +739,9 @@ function publicBoard(room, forTv = false, viewerId = null) {
     question: publicQuestion(room, viewerId),
     special: g.special ? {type: g.special.type, options: g.special.options || null, chosen: g.special.chosen ?? null, bet: g.special.bet || 0} : null,
     final: publicFinal(room, viewerId),
+    minigame: g.minigame ? (phase4.SPECS[g.minigame.id] ? phase4.publicState(room, forTv, viewerId) : phase3.publicState(room, forTv)) : null,
+    showdown: g.showdown ? phase5.publicState(room, forTv, viewerId) : null,
+    miniResult: g.step === 'miniResult' ? g.miniResult : null,
     banner: g.banner, log: g.log,
     winnerId: g.winnerId, standings: g.standings, endReason: g.endReason || null,
   };
@@ -629,4 +749,5 @@ function publicBoard(room, forTv = false, viewerId = null) {
 
 module.exports = {
   T, BRAINS, start, roll, choose, answer, tick, hostPause, hostResume, skipDisconnected, publicBoard, standings, required,
+  minigameInput, minigameDraw, cheer, decideBid, debugStart,
 };

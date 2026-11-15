@@ -1,0 +1,747 @@
+{
+ "source": "Smart Alec — Music batch 3 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Music batch 3",
+   "rounds": [
+    {
+     "id": "SAM3",
+     "name": "MUSIC",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SAM3-01",
+       "q": "Sgt. Pepper's Lonely Hearts Club Band (1967) is an album by which band?",
+       "a": "The Beatles",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Rolling Stones",
+        "The Beach Boys",
+        "The Kinks"
+       ]
+      },
+      {
+       "id": "SAM3-02",
+       "q": "Pet Sounds (1966) is an album by which band?",
+       "a": "The Beach Boys",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Byrds",
+        "The Monkees",
+        "The Mamas & the Papas"
+       ]
+      },
+      {
+       "id": "SAM3-03",
+       "q": "Which Liverpool band had a hit with Ferry Cross the Mersey?",
+       "a": "Gerry and the Pacemakers",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Searchers",
+        "The Merseybeats",
+        "The Swinging Blue Jeans"
+       ]
+      },
+      {
+       "id": "SAM3-04",
+       "q": "Which singer used the stage persona The Thin White Duke?",
+       "a": "David Bowie",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bryan Ferry",
+        "Marc Bolan",
+        "Lou Reed"
+       ]
+      },
+      {
+       "id": "SAM3-05",
+       "q": "Marc Bolan was the frontman of which band?",
+       "a": "T. Rex",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Slade",
+        "Sweet",
+        "Mud"
+       ]
+      },
+      {
+       "id": "SAM3-06",
+       "q": "Who is the lead singer of Slade?",
+       "a": "Noddy Holder",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Brian Connolly",
+        "Les Gray",
+        "Alvin Stardust"
+       ]
+      },
+      {
+       "id": "SAM3-07",
+       "q": "Which band released Stairway to Heaven in 1971?",
+       "a": "Led Zeppelin",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Black Sabbath",
+        "Deep Purple",
+        "Uriah Heep"
+       ]
+      },
+      {
+       "id": "SAM3-08",
+       "q": "Ozzy Osbourne was the singer in which band?",
+       "a": "Black Sabbath",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Led Zeppelin",
+        "Judas Priest",
+        "Iron Maiden"
+       ]
+      },
+      {
+       "id": "SAM3-09",
+       "q": "Which heavy metal band has a mascot called Eddie?",
+       "a": "Iron Maiden",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Motörhead",
+        "Megadeth",
+        "Judas Priest"
+       ]
+      },
+      {
+       "id": "SAM3-10",
+       "q": "Lemmy was the frontman of which band?",
+       "a": "Motörhead",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Iron Maiden",
+        "Saxon",
+        "Thin Lizzy"
+       ]
+      },
+      {
+       "id": "SAM3-11",
+       "q": "Phil Lynott fronted which Irish band?",
+       "a": "Thin Lizzy",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "U2",
+        "The Boomtown Rats",
+        "Horslips"
+       ]
+      },
+      {
+       "id": "SAM3-12",
+       "q": "Bob Geldof was the singer in which band?",
+       "a": "The Boomtown Rats",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Thin Lizzy",
+        "The Clash",
+        "The Jam"
+       ]
+      },
+      {
+       "id": "SAM3-13",
+       "q": "Paul Weller fronted which band before The Style Council?",
+       "a": "The Jam",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Clash",
+        "The Specials",
+        "Madness"
+       ]
+      },
+      {
+       "id": "SAM3-14",
+       "q": "Joe Strummer was the frontman of which band?",
+       "a": "The Clash",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Jam",
+        "The Damned",
+        "Buzzcocks"
+       ]
+      },
+      {
+       "id": "SAM3-15",
+       "q": "Johnny Rotten was the singer in which band?",
+       "a": "Sex Pistols",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Clash",
+        "The Damned",
+        "Stiff Little Fingers"
+       ]
+      },
+      {
+       "id": "SAM3-16",
+       "q": "Suggs is the lead singer of which band?",
+       "a": "Madness",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Specials",
+        "Bad Manners",
+        "The Beat"
+       ]
+      },
+      {
+       "id": "SAM3-17",
+       "q": "Morrissey was the singer in which band?",
+       "a": "The Smiths",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Cure",
+        "Joy Division",
+        "Echo & the Bunnymen"
+       ]
+      },
+      {
+       "id": "SAM3-18",
+       "q": "Robert Smith is the frontman of which band?",
+       "a": "The Cure",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Smiths",
+        "Siouxsie and the Banshees",
+        "Depeche Mode"
+       ]
+      },
+      {
+       "id": "SAM3-19",
+       "q": "Ian Curtis was the singer in which band?",
+       "a": "Joy Division",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "New Order",
+        "The Smiths",
+        "Echo & the Bunnymen"
+       ]
+      },
+      {
+       "id": "SAM3-20",
+       "q": "Which duo had a 1981 hit with Tainted Love?",
+       "a": "Soft Cell",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Yazoo",
+        "The Human League",
+        "Visage"
+       ]
+      },
+      {
+       "id": "SAM3-21",
+       "q": "Which band had the 1981 Christmas number one Don't You Want Me?",
+       "a": "The Human League",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Soft Cell",
+        "Duran Duran",
+        "Spandau Ballet"
+       ]
+      },
+      {
+       "id": "SAM3-22",
+       "q": "Simon Le Bon is the lead singer of which band?",
+       "a": "Duran Duran",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Spandau Ballet",
+        "ABC",
+        "Culture Club"
+       ]
+      },
+      {
+       "id": "SAM3-23",
+       "q": "Boy George was the singer in which band?",
+       "a": "Culture Club",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Wham!",
+        "Frankie Goes to Hollywood",
+        "Bronski Beat"
+       ]
+      },
+      {
+       "id": "SAM3-24",
+       "q": "Which band had a 1984 number one with Relax?",
+       "a": "Frankie Goes to Hollywood",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Culture Club",
+        "Bronski Beat",
+        "Dead or Alive"
+       ]
+      },
+      {
+       "id": "SAM3-25",
+       "q": "George Michael and Andrew Ridgeley formed which duo?",
+       "a": "Wham!",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Tears for Fears",
+        "Erasure",
+        "Pet Shop Boys"
+       ]
+      },
+      {
+       "id": "SAM3-26",
+       "q": "Which band recorded You Spin Me Round (Like a Record)?",
+       "a": "Dead or Alive",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bronski Beat",
+        "Erasure",
+        "Soft Cell"
+       ]
+      },
+      {
+       "id": "SAM3-27",
+       "q": "Which band had a 1982 number one with Come On Eileen?",
+       "a": "Dexys Midnight Runners",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Madness",
+        "The Specials",
+        "UB40"
+       ]
+      },
+      {
+       "id": "SAM3-28",
+       "q": "Which band had a 1983 UK number one with Red Red Wine?",
+       "a": "UB40",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Madness",
+        "The Specials",
+        "Bob Marley and the Wailers"
+       ]
+      },
+      {
+       "id": "SAM3-29",
+       "q": "Who released Billie Jean?",
+       "a": "Michael Jackson",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Prince",
+        "Lionel Richie",
+        "Stevie Wonder"
+       ]
+      },
+      {
+       "id": "SAM3-30",
+       "q": "Who had a 1984 number one with Hello, which asks \"Is it me you're looking for?\"",
+       "a": "Lionel Richie",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Stevie Wonder",
+        "Luther Vandross",
+        "Billy Ocean"
+       ]
+      },
+      {
+       "id": "SAM3-31",
+       "q": "Which Whitney Houston song comes from the 1992 film The Bodyguard?",
+       "a": "I Will Always Love You",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Greatest Love of All",
+        "I Wanna Dance with Somebody",
+        "One Moment in Time"
+       ]
+      },
+      {
+       "id": "SAM3-32",
+       "q": "Who wrote and first recorded I Will Always Love You?",
+       "a": "Dolly Parton",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Tammy Wynette",
+        "Patsy Cline",
+        "Loretta Lynn"
+       ]
+      },
+      {
+       "id": "SAM3-33",
+       "q": "Which Celine Dion song is the theme from Titanic?",
+       "a": "My Heart Will Go On",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Because You Loved Me",
+        "The Power of Love",
+        "It's All Coming Back to Me Now"
+       ]
+      },
+      {
+       "id": "SAM3-34",
+       "q": "What nationality is Celine Dion?",
+       "a": "Canadian",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "French",
+        "Belgian",
+        "Swiss"
+       ]
+      },
+      {
+       "id": "SAM3-35",
+       "q": "Which country singer recorded Stand By Your Man?",
+       "a": "Tammy Wynette",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Dolly Parton",
+        "Patsy Cline",
+        "Loretta Lynn"
+       ]
+      },
+      {
+       "id": "SAM3-36",
+       "q": "What was Johnny Cash's nickname?",
+       "a": "The Man in Black",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Outlaw",
+        "The Silver Fox",
+        "The Gentleman"
+       ]
+      },
+      {
+       "id": "SAM3-37",
+       "q": "The E Street Band is the backing band of which singer?",
+       "a": "Bruce Springsteen",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Tom Petty",
+        "Bob Seger",
+        "John Mellencamp"
+       ]
+      },
+      {
+       "id": "SAM3-38",
+       "q": "What was the name of Tom Petty's band?",
+       "a": "The Heartbreakers",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Silver Bullet Band",
+        "The E Street Band",
+        "The Attractions"
+       ]
+      },
+      {
+       "id": "SAM3-39",
+       "q": "What was the name of Elvis Costello's backing band?",
+       "a": "The Attractions",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Heartbreakers",
+        "The Rumour",
+        "The Blockheads"
+       ]
+      },
+      {
+       "id": "SAM3-40",
+       "q": "What was the name of Ian Dury's band?",
+       "a": "The Blockheads",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Attractions",
+        "The Rumour",
+        "The Pogues"
+       ]
+      },
+      {
+       "id": "SAM3-41",
+       "q": "Shane MacGowan was the frontman of which band?",
+       "a": "The Pogues",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Dubliners",
+        "The Waterboys",
+        "The Undertones"
+       ]
+      },
+      {
+       "id": "SAM3-42",
+       "q": "Which Northern Irish band recorded Teenage Kicks?",
+       "a": "The Undertones",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Stiff Little Fingers",
+        "The Pogues",
+        "Therapy?"
+       ]
+      },
+      {
+       "id": "SAM3-43",
+       "q": "Which Scottish band had a hit with Don't You (Forget About Me)?",
+       "a": "Simple Minds",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Big Country",
+        "Deacon Blue",
+        "Texas"
+       ]
+      },
+      {
+       "id": "SAM3-44",
+       "q": "Sharleen Spiteri is the singer in which band?",
+       "a": "Texas",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Garbage",
+        "Travis",
+        "Deacon Blue"
+       ]
+      },
+      {
+       "id": "SAM3-45",
+       "q": "Shirley Manson is the singer in which band?",
+       "a": "Garbage",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Texas",
+        "Hole",
+        "No Doubt"
+       ]
+      },
+      {
+       "id": "SAM3-46",
+       "q": "Gwen Stefani found fame as the singer of which band?",
+       "a": "No Doubt",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Garbage",
+        "Hole",
+        "The Cardigans"
+       ]
+      },
+      {
+       "id": "SAM3-47",
+       "q": "Courtney Love was the frontwoman of which band?",
+       "a": "Hole",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Garbage",
+        "L7",
+        "Veruca Salt"
+       ]
+      },
+      {
+       "id": "SAM3-48",
+       "q": "Nirvana's drummer Dave Grohl went on to found which band?",
+       "a": "Foo Fighters",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Queens of the Stone Age",
+        "Pearl Jam",
+        "Soundgarden"
+       ]
+      },
+      {
+       "id": "SAM3-49",
+       "q": "Eddie Vedder is the singer in which band?",
+       "a": "Pearl Jam",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Soundgarden",
+        "Alice in Chains",
+        "Stone Temple Pilots"
+       ]
+      },
+      {
+       "id": "SAM3-50",
+       "q": "Chris Cornell was the singer in which band?",
+       "a": "Soundgarden",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Pearl Jam",
+        "Alice in Chains",
+        "Nirvana"
+       ]
+      },
+      {
+       "id": "SAM3-51",
+       "q": "Thom Yorke is the singer in which band?",
+       "a": "Radiohead",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Muse",
+        "Elbow",
+        "Doves"
+       ]
+      },
+      {
+       "id": "SAM3-52",
+       "q": "Guy Garvey is the singer in which band?",
+       "a": "Elbow",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Doves",
+        "Starsailor",
+        "I Am Kloot"
+       ]
+      },
+      {
+       "id": "SAM3-53",
+       "q": "Which band had a 1997 hit with Bitter Sweet Symphony?",
+       "a": "The Verve",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Oasis",
+        "Suede",
+        "Embrace"
+       ]
+      },
+      {
+       "id": "SAM3-54",
+       "q": "Which Australian band recorded Never Tear Us Apart?",
+       "a": "INXS",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Midnight Oil",
+        "Crowded House",
+        "Men at Work"
+       ]
+      },
+      {
+       "id": "SAM3-55",
+       "q": "Which band had a 1983 UK number one with Down Under?",
+       "a": "Men at Work",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "INXS",
+        "Crowded House",
+        "Midnight Oil"
+       ]
+      },
+      {
+       "id": "SAM3-56",
+       "q": "Neil Finn fronted which band?",
+       "a": "Crowded House",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "INXS",
+        "Men at Work",
+        "Midnight Oil"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

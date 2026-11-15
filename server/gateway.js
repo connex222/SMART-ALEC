@@ -170,6 +170,25 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
       const safe={action:typeof action==='string'?action.slice(0,16):undefined,option:typeof option==='string'?option.slice(0,16):(Number.isInteger(option)?option:undefined)};
       const state=rooms.chooseGame(code,socket.id,safe);broadcast(code);return {state};
     }));
+    socket.on('game:cheer', wrap(async ({targetId}) => {const code=getBound(socket,'player');const state=rooms.cheerGame(code,socket.id,typeof targetId==='string'?targetId:'');broadcast(code);return {state};}));
+    socket.on('game:bid-review', wrap(async ({accept}) => {const code=getBound(socket);const state=rooms.adjudicateBid(code,socket.id,accept);broadcast(code);return {state};}));
+    socket.on('game:input', wrap(async ({value,roundKey}) => {
+      const code=getBound(socket,'player');const state=rooms.inputGame(code,socket.id,value,roundKey);broadcast(code);
+      // Settle a Buzzer collection window on time instead of waiting for the next sweep.
+      const until=rooms.rooms.get(code)?.board?.showdown?.buzzWindowUntil;
+      if(until){const wait=Math.max(0,until-Date.now())+5;setTimeout(()=>{if(!rooms.rooms.has(code))return;const changed=rooms.sweep();if(changed.includes(code))broadcast(code);},wait).unref?.();}
+      return {state};
+    }));
+    socket.on('game:draw', wrap(async ({points,roundKey}) => {
+      const code=getBound(socket,'player');
+      const state=rooms.drawGame(code,socket.id,points,roundKey);
+      const mini=state.board?.minigame,strokeCount=mini?.display?.strokes?.length;
+      // Only the TV needs live drawing updates; reconnecting screens get every stroke in their snapshot.
+      if(mini?.id==='sketch-sabotage'&&mini.phase==='play'&&strokeCount){
+        for(const socketId of roomSockets.get(code)||[]) if(bindings.get(socketId)?.role==='host') io.to(socketId).emit('game:stroke',{code,roundKey,index:strokeCount-1,points});
+      }
+      return {state};
+    },4096));
     socket.on('game:answer', wrap(async ({choice,text}) => {
       const code=getBound(socket,'player');
       const safe={choice:Number.isInteger(choice)?choice:undefined,text:typeof text==='string'?text.slice(0,80):undefined};
@@ -182,6 +201,12 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
         const room = rooms.find(code);
         const cats = ['potluck', 'screen', 'music', 'sport', 'timeplace', 'brainbox'];
         for (const p of room.players) { p.tokens = cats.slice(0, Math.max(0, Math.min(6, Number(count) || 6))); p.brains = 12; }
+        broadcast(code); return {};
+      }));
+      socket.on('debug:game', wrap(async ({id}) => {
+        const code = getBound(socket, 'host');
+        const room = rooms.find(code);
+        require('./engine').debugStart(room, String(id || ''), Date.now());
         broadcast(code); return {};
       }));
       socket.on('debug:timeup', wrap(async () => {

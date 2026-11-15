@@ -1,0 +1,695 @@
+{
+ "source": "Smart Alec — Music batch 4 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Music batch 4",
+   "rounds": [
+    {
+     "id": "SAM4",
+     "name": "MUSIC",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SAM4-01",
+       "q": "Which singer had a 2008 UK number one with Mercy?",
+       "a": "Duffy",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Adele",
+        "Amy Winehouse",
+        "Lily Allen"
+       ]
+      },
+      {
+       "id": "SAM4-02",
+       "q": "Lily Allen's first UK number one, in 2006, was which song?",
+       "a": "Smile",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "LDN",
+        "The Fear",
+        "Alfie"
+       ]
+      },
+      {
+       "id": "SAM4-03",
+       "q": "Who released the 2007 hit Umbrella?",
+       "a": "Rihanna",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Beyoncé",
+        "Ciara",
+        "Kelly Rowland"
+       ]
+      },
+      {
+       "id": "SAM4-04",
+       "q": "Which girl group had a 1998 number one with Never Ever?",
+       "a": "All Saints",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Spice Girls",
+        "Eternal",
+        "B*Witched"
+       ]
+      },
+      {
+       "id": "SAM4-05",
+       "q": "Which Irish girl group had a 1998 number one with C'est La Vie?",
+       "a": "B*Witched",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Atomic Kitten",
+        "The Corrs",
+        "Hepburn"
+       ]
+      },
+      {
+       "id": "SAM4-06",
+       "q": "Whole Again was a 2001 number one for which group?",
+       "a": "Atomic Kitten",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Liberty X",
+        "Hear'Say",
+        "S Club 7"
+       ]
+      },
+      {
+       "id": "SAM4-07",
+       "q": "Hear'Say were formed on which TV show?",
+       "a": "Popstars",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Pop Idol",
+        "The X Factor",
+        "Fame Academy"
+       ]
+      },
+      {
+       "id": "SAM4-08",
+       "q": "What was the first TV series S Club 7 starred in?",
+       "a": "Miami 7",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "LA 7",
+        "Hollywood 7",
+        "Viva S Club"
+       ]
+      },
+      {
+       "id": "SAM4-09",
+       "q": "Which Take That member wrote most of the band's hits?",
+       "a": "Gary Barlow",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Robbie Williams",
+        "Howard Donald",
+        "Mark Owen"
+       ]
+      },
+      {
+       "id": "SAM4-10",
+       "q": "Which Boyzone singer had a solo hit with When You Say Nothing at All?",
+       "a": "Ronan Keating",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Stephen Gately",
+        "Keith Duffy",
+        "Shane Lynch"
+       ]
+      },
+      {
+       "id": "SAM4-11",
+       "q": "What was Westlife's first UK number one?",
+       "a": "Swear It Again",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Flying Without Wings",
+        "Uptown Girl",
+        "You Raise Me Up"
+       ]
+      },
+      {
+       "id": "SAM4-12",
+       "q": "Which band of brothers had a 1997 hit with MMMBop?",
+       "a": "Hanson",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Five",
+        "Backstreet Boys",
+        "*NSYNC"
+       ]
+      },
+      {
+       "id": "SAM4-13",
+       "q": "Justin Timberlake was a member of which boy band?",
+       "a": "*NSYNC",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Backstreet Boys",
+        "New Kids on the Block",
+        "98 Degrees"
+       ]
+      },
+      {
+       "id": "SAM4-14",
+       "q": "Which boy band recorded I Want It That Way?",
+       "a": "Backstreet Boys",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "*NSYNC",
+        "Westlife",
+        "Boyzone"
+       ]
+      },
+      {
+       "id": "SAM4-15",
+       "q": "What was Britney Spears' 1998 debut single?",
+       "a": "...Baby One More Time",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Oops!... I Did It Again",
+        "Toxic",
+        "Sometimes"
+       ]
+      },
+      {
+       "id": "SAM4-16",
+       "q": "What was Christina Aguilera's 1999 debut hit?",
+       "a": "Genie in a Bottle",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Dirrty",
+        "Beautiful",
+        "What a Girl Wants"
+       ]
+      },
+      {
+       "id": "SAM4-17",
+       "q": "Which 2001 Kylie Minogue hit has the hook \"la la la\"?",
+       "a": "Can't Get You Out of My Head",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Spinning Around",
+        "Love at First Sight",
+        "In Your Eyes"
+       ]
+      },
+      {
+       "id": "SAM4-18",
+       "q": "Which singer's 1987 debut single was Never Gonna Give You Up?",
+       "a": "Rick Astley",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Jason Donovan",
+        "Paul Young",
+        "Nick Kamen"
+       ]
+      },
+      {
+       "id": "SAM4-19",
+       "q": "Mick Hucknall is the singer in which band?",
+       "a": "Simply Red",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Wet Wet Wet",
+        "Deacon Blue",
+        "Level 42"
+       ]
+      },
+      {
+       "id": "SAM4-20",
+       "q": "Which Wet Wet Wet song spent 15 weeks at number one in 1994?",
+       "a": "Love Is All Around",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Goodnight Girl",
+        "Sweet Little Mystery",
+        "With a Little Help from My Friends"
+       ]
+      },
+      {
+       "id": "SAM4-21",
+       "q": "Which Bryan Adams song spent 16 weeks at number one in 1991?",
+       "a": "(Everything I Do) I Do It for You",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Heaven",
+        "Summer of '69",
+        "Run to You"
+       ]
+      },
+      {
+       "id": "SAM4-22",
+       "q": "Who recorded Total Eclipse of the Heart?",
+       "a": "Bonnie Tyler",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Kim Wilde",
+        "Belinda Carlisle",
+        "Pat Benatar"
+       ]
+      },
+      {
+       "id": "SAM4-23",
+       "q": "Belinda Carlisle was the lead singer of which band?",
+       "a": "The Go-Go's",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Bangles",
+        "Bananarama",
+        "The Pretenders"
+       ]
+      },
+      {
+       "id": "SAM4-24",
+       "q": "Susanna Hoffs sang in which band?",
+       "a": "The Bangles",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Go-Go's",
+        "Heart",
+        "The Runaways"
+       ]
+      },
+      {
+       "id": "SAM4-25",
+       "q": "Chrissie Hynde is the singer in which band?",
+       "a": "The Pretenders",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Blondie",
+        "The Bangles",
+        "Garbage"
+       ]
+      },
+      {
+       "id": "SAM4-26",
+       "q": "What was Kate Bush's 1978 debut number one?",
+       "a": "Wuthering Heights",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Running Up That Hill",
+        "Babooshka",
+        "The Man with the Child in His Eyes"
+       ]
+      },
+      {
+       "id": "SAM4-27",
+       "q": "Who is Queen's drummer?",
+       "a": "Roger Taylor",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "John Deacon",
+        "Brian May",
+        "Phil Collins"
+       ]
+      },
+      {
+       "id": "SAM4-28",
+       "q": "Phil Collins was the drummer and later the singer of which band?",
+       "a": "Genesis",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Yes",
+        "Pink Floyd",
+        "Marillion"
+       ]
+      },
+      {
+       "id": "SAM4-29",
+       "q": "Peter Gabriel was the original singer of which band?",
+       "a": "Genesis",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Yes",
+        "Roxy Music",
+        "King Crimson"
+       ]
+      },
+      {
+       "id": "SAM4-30",
+       "q": "Bryan Ferry was the singer in which band?",
+       "a": "Roxy Music",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Japan",
+        "Ultravox",
+        "Talking Heads"
+       ]
+      },
+      {
+       "id": "SAM4-31",
+       "q": "Midge Ure fronted which band on the 1981 hit Vienna?",
+       "a": "Ultravox",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Visage",
+        "Spandau Ballet",
+        "Japan"
+       ]
+      },
+      {
+       "id": "SAM4-32",
+       "q": "Who co-wrote Do They Know It's Christmas? with Midge Ure?",
+       "a": "Bob Geldof",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bono",
+        "Sting",
+        "Paul Young"
+       ]
+      },
+      {
+       "id": "SAM4-33",
+       "q": "Which band had a 1983 number one with True?",
+       "a": "Spandau Ballet",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Duran Duran",
+        "ABC",
+        "Japan"
+       ]
+      },
+      {
+       "id": "SAM4-34",
+       "q": "Which 1985 concert raised money for famine relief in Ethiopia?",
+       "a": "Live Aid",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Band Aid",
+        "Farm Aid",
+        "Sport Aid"
+       ]
+      },
+      {
+       "id": "SAM4-35",
+       "q": "Where was the UK Live Aid concert held?",
+       "a": "Wembley Stadium",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Hyde Park",
+        "Twickenham",
+        "Old Trafford"
+       ]
+      },
+      {
+       "id": "SAM4-36",
+       "q": "Which music festival takes place at Worthy Farm in Somerset?",
+       "a": "Glastonbury",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Reading",
+        "Isle of Wight",
+        "Download"
+       ]
+      },
+      {
+       "id": "SAM4-37",
+       "q": "Who founded the Glastonbury Festival?",
+       "a": "Michael Eavis",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Harvey Goldsmith",
+        "Melvin Benn",
+        "Vince Power"
+       ]
+      },
+      {
+       "id": "SAM4-38",
+       "q": "Which festival is held at Donington Park?",
+       "a": "Download",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Reading",
+        "Leeds",
+        "Creamfields"
+       ]
+      },
+      {
+       "id": "SAM4-39",
+       "q": "Ode to Joy is part of which piece of music?",
+       "a": "Beethoven's Ninth Symphony",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Mozart's Requiem",
+        "Handel's Messiah",
+        "Bach's Mass in B minor"
+       ]
+      },
+      {
+       "id": "SAM4-40",
+       "q": "The Hallelujah chorus comes from which work?",
+       "a": "Handel's Messiah",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bach's St Matthew Passion",
+        "Haydn's The Creation",
+        "Mozart's Requiem"
+       ]
+      },
+      {
+       "id": "SAM4-41",
+       "q": "Who composed The Planets suite?",
+       "a": "Gustav Holst",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Edward Elgar",
+        "Ralph Vaughan Williams",
+        "Benjamin Britten"
+       ]
+      },
+      {
+       "id": "SAM4-42",
+       "q": "Which Elgar march contains the tune of Land of Hope and Glory?",
+       "a": "Pomp and Circumstance March No. 1",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Nimrod",
+        "Crown Imperial",
+        "Radetzky March"
+       ]
+      },
+      {
+       "id": "SAM4-43",
+       "q": "Who composed The Blue Danube waltz?",
+       "a": "Johann Strauss II",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Franz Schubert",
+        "Joseph Haydn",
+        "Franz Liszt"
+       ]
+      },
+      {
+       "id": "SAM4-44",
+       "q": "Who composed Boléro?",
+       "a": "Ravel",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Debussy",
+        "Satie",
+        "Bizet"
+       ]
+      },
+      {
+       "id": "SAM4-45",
+       "q": "Who composed the opera Carmen?",
+       "a": "Bizet",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Verdi",
+        "Puccini",
+        "Rossini"
+       ]
+      },
+      {
+       "id": "SAM4-46",
+       "q": "Who composed the opera Madama Butterfly?",
+       "a": "Puccini",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Verdi",
+        "Bizet",
+        "Donizetti"
+       ]
+      },
+      {
+       "id": "SAM4-47",
+       "q": "Which tenor's Nessun Dorma became the theme of the BBC's Italia 90 coverage?",
+       "a": "Luciano Pavarotti",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Plácido Domingo",
+        "José Carreras",
+        "Andrea Bocelli"
+       ]
+      },
+      {
+       "id": "SAM4-48",
+       "q": "How many symphonies did Beethoven complete?",
+       "a": "9",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "7",
+        "10",
+        "12"
+       ]
+      },
+      {
+       "id": "SAM4-49",
+       "q": "Which instrument family does the oboe belong to?",
+       "a": "Woodwind",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Brass",
+        "Strings",
+        "Percussion"
+       ]
+      },
+      {
+       "id": "SAM4-50",
+       "q": "Which brass instrument uses a slide to change notes?",
+       "a": "Trombone",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Trumpet",
+        "Tuba",
+        "French horn"
+       ]
+      },
+      {
+       "id": "SAM4-51",
+       "q": "What is the largest and lowest-pitched member of the violin family?",
+       "a": "Double bass",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Cello",
+        "Viola",
+        "Bass guitar"
+       ]
+      },
+      {
+       "id": "SAM4-52",
+       "q": "How many semitones are there in an octave?",
+       "a": "12",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "8",
+        "10",
+        "7"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

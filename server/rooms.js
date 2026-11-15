@@ -249,6 +249,22 @@ class GameRooms {
   rollGame(code, socketId) { const {room, player} = this.requirePlayer(code, socketId); this.assertGame(room); engine.roll(room, player.id, this.now(), this.randomInt); room.updatedAt = this.now(); return this.callerState(code, socketId); }
   chooseGame(code, socketId, payload) { const {room, player} = this.requirePlayer(code, socketId); this.assertGame(room); engine.choose(room, player.id, payload, this.now(), this.randomInt); room.updatedAt = this.now(); return this.callerState(code, socketId); }
   answerGame(code, socketId, payload) { const {room, player} = this.requirePlayer(code, socketId); this.assertGame(room); engine.answer(room, player.id, payload, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
+  inputGame(code, socketId, value, roundKey) { const {room, player} = this.requirePlayer(code, socketId); this.assertGame(room); engine.minigameInput(room, player.id, value, roundKey, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
+  drawGame(code, socketId, points, roundKey) { const {room, player} = this.requirePlayer(code, socketId); this.assertGame(room); engine.minigameDraw(room, player.id, points, roundKey, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
+  cheerGame(code, socketId, targetId) { const {room, player} = this.requirePlayer(code, socketId); this.assertGame(room); engine.cheer(room, player.id, targetId); room.updatedAt = this.now(); return this.callerState(code, socketId); }
+  // Bid to Win answers are judged by the TV or by any player who is not in the duel.
+  adjudicateBid(code, socketId, accept) {
+    const room = this.find(code); this.assertGame(room);
+    assert(typeof accept === 'boolean', 'VALUE', 'Accept or reject the answer.');
+    if (socketId !== room.hostSocketId) {
+      const judge = room.players.find(p => p.socketId === socketId);
+      assert(judge, 'AUTH', 'You are not seated in this room.');
+      assert(!room.board.showdown?.participants.includes(judge.id), 'AUTH', 'Duellists cannot judge their own answers.');
+    }
+    engine.decideBid(room, accept, this.now());
+    room.updatedAt = this.now();
+    return this.callerState(code, socketId);
+  }
   pauseGame(code, socketId) { const room = this.requireHost(code, socketId); engine.hostPause(room, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
   resumeGame(code, socketId) { const room = this.requireHost(code, socketId); assert(room.hostSocketId, 'TV', 'Reconnect the TV first.'); engine.hostResume(room, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
   skipDisconnectedGame(code, socketId) { const room = this.requireHost(code, socketId); this.assertGameRunning(room); engine.skipDisconnected(room, this.now(), this.randomInt); room.updatedAt = this.now(); return this.callerState(code, socketId); }

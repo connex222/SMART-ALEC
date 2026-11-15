@@ -193,3 +193,59 @@ body.tv { overflow: hidden; background: #0B0F22; }
 .pose-shock .o-eye { transform: scale(1.5); transform-box: fill-box; transform-origin: center; }
 .pose-shock .o-mouth { opacity: 1; transform: scale(1.1, 1.6); transform-box: fill-box; transform-origin: center; }
 .pose-shock .o-brow { transform: translate(0, -12px); }
+
+/* ---------- NOGGIN mini-games and Showdowns on the TV ---------- */
+.card.noggin .card-head { --cat: var(--c-minigame); }
+.card[data-cat="speed"] .card-head { background: #FF4D6D; }
+.card[data-cat="brain"] .card-head { background: #2F7BFF; }
+.card[data-cat="create"] .card-head { background: #E0A800; }
+.card[data-cat="together"] .card-head { background: #1E9E3E; }
+.card[data-cat="showdown"] .card-head { background: var(--gold); color: var(--ink); }
+.card[data-cat="showdown"] .card-head .cat-name { text-shadow: none; }
+.noggin-head .noggin-type { margin-left: auto; font-family: var(--display); font-size: 28px; opacity: .95; }
+.noggin-body { min-height: 380px; }
+.noggin-prompt { font-size: 46px; }
+.noggin-prompt.stroop-tv { font-size: 150px; text-align: center; -webkit-text-stroke: 4px var(--ink); paint-order: stroke fill; margin: 10px 0; }
+.noggin-options { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; }
+.p4-big { font-family: var(--display); font-size: 48px; width: 100%; text-align: center; }
+.p4-ballot { background: #fff; border: var(--outline); border-radius: 18px; padding: 12px 22px; font-size: 32px; }
+.meld-done { background: #C9F5CF; }
+.mini-help { width: 100%; text-align: center; font-size: 28px; opacity: .85; }
+.mini-signal { font-family: var(--display); font-size: 110px; color: var(--ink); }
+.mini-signal.go { color: #D7263D; animation: pop .3s ease-out; }
+.howto-card { width: 100%; display: flex; flex-direction: column; gap: 20px; align-items: center; }
+.howto-steps { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; justify-content: center; }
+.howto-steps li { background: #fff; border: var(--outline); border-radius: 22px; padding: 18px 20px; width: 380px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; animation: pop .4s ease-out both; animation-delay: calc(var(--i) * .25s); }
+.howto-n { font-family: var(--display); font-size: 26px; width: 44px; height: 44px; border-radius: 50%; background: var(--gold); border: var(--outline); display: grid; place-items: center; }
+.howto-icon { font-size: 60px; line-height: 1; }
+.howto-text { font-size: 30px; line-height: 1.2; }
+.howto-host { display: flex; align-items: center; gap: 14px; font-family: var(--display); font-size: 30px; }
+.howto-vs { font-size: 40px; color: #D7263D; }
+.mini-tv-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; width: 100%; }
+.odd-tv-cell { aspect-ratio: 1; background: #fff; border: 3px solid var(--ink); border-radius: 12px; display: grid; place-items: center; font-size: 50px; }
+.odd-tv-cell b { font-weight: 400; display: inline-block; }
+.shape-clash-tv { width: 340px; height: 340px; }
+.shape-clash-tv .shape-outline { fill: #fff; stroke: var(--ink); stroke-width: 4; }
+.shape-clash-tv .shape-word { font-family: var(--display); font-size: 15px; fill: var(--ink); }
+.flash-scene { display: grid; grid-template-columns: repeat(6, 90px); grid-auto-rows: 70px; gap: 6px; font-size: 54px; justify-content: center; }
+.flash-scene span { display: grid; place-items: center; }
+.tv-memory-pads { display: grid; grid-template-columns: repeat(3, 180px); gap: 20px; justify-content: center; }
+.tv-pad { height: 140px; border-radius: 24px; border: 5px solid var(--ink); display: grid; place-items: center; font-size: 70px; color: var(--cream); opacity: .45; transition: opacity .1s, transform .1s; }
+.tv-pad.lit { opacity: 1; transform: scale(1.06); box-shadow: 0 0 40px rgba(255, 255, 255, .7); }
+.pad-0 { background: #E2434B; } .pad-1 { background: #2F7BFF; } .pad-2 { background: #1E9E3E; }
+.pad-3 { background: #E0A800; } .pad-4 { background: #7B4DFF; } .pad-5 { background: #00B8A9; }
+.close-call-guesses { width: 100%; margin: 0; padding-left: 40px; font-size: 30px; columns: 2; }
+.caption-avatars { display: flex; gap: 20px; justify-content: center; width: 100%; }
+.caption-scene { max-height: 320px; border: var(--outline); border-radius: 16px; }
+.tv-sketch { width: 900px; max-width: 100%; height: auto; border: var(--outline); border-radius: 16px; background: #fff; }
+.p4-wires { display: flex; gap: 18px; justify-content: center; width: 100%; }
+.p4-wire { padding: 18px 26px; border-radius: 14px; border: var(--outline); font-family: var(--display); font-size: 30px; color: #fff; }
+.p4-wire.red { background: #E2434B; } .p4-wire.blue { background: #2F7BFF; } .p4-wire.green { background: #1E9E3E; }
+.p4-wire.yellow { background: #E0A800; } .p4-wire.white { background: #fff; color: var(--ink); } .p4-wire.black { background: var(--ink); }
+.p4-wire.cut { opacity: .4; text-decoration: line-through; }
+.duel-rope { position: relative; width: 90%; height: 18px; background: #C98F00; border: 4px solid var(--ink); border-radius: 9px; margin: 30px 0; }
+.duel-knot { position: absolute; top: 50%; width: 46px; height: 46px; border-radius: 50%; background: #D7263D; border: 4px solid var(--ink); transform: translate(-50%, -50%); transition: left .3s; }
+.nerve-counter { font-family: var(--display); font-size: 180px; line-height: 1; width: 100%; text-align: center; }
+.judge-row { display: flex; gap: 20px; justify-content: center; margin-top: 24px; }
+
+.card[data-game="unscramble"] .noggin-prompt { font-size: 100px; letter-spacing: 18px; text-align: center; }

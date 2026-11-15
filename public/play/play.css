@@ -77,3 +77,32 @@ input { font: inherit; font-size: 24px; padding: 14px 16px; border-radius: 14px;
 .over-box p { font-size: 22px; margin: 0; }
 
 .offline { position: fixed; left: 0; right: 0; top: 0; background: var(--bad); color: #fff; text-align: center; padding: 10px; font-family: var(--display); font-size: 20px; }
+
+/* ---------- NOGGIN mini-games and Showdowns on the phone ---------- */
+.noggin-phone { display: flex; flex-direction: column; gap: 10px; }
+.noggin-controls { display: flex; flex-direction: column; gap: 10px; }
+.noggin-controls button { font-family: var(--display); font-size: 22px; min-height: 64px; border: var(--outline); border-radius: 16px; padding: 10px 14px; box-shadow: 0 5px 0 var(--ink); }
+.noggin-controls button:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--ink); }
+.noggin-controls button:disabled { opacity: .45; }
+.button-primary { background: var(--gold); color: var(--ink); }
+.button-blue { background: var(--navy-3); color: var(--cream); }
+.button-blue.small { font-size: 18px !important; min-height: 54px !important; text-align: left; }
+.quick-draw-button { min-height: 200px !important; font-size: 34px !important; background: var(--navy-3) !important; color: var(--cream) !important; }
+.quick-draw-button.drawn { background: #E2434B !important; color: #fff !important; }
+.mini-help { background: var(--navy-2); border: 3px solid var(--navy-3); border-radius: 14px; padding: 10px 12px; font-size: 18px; text-align: center; }
+.guess-feedback.close { border-color: var(--gold); }
+.mini-answer { display: flex; flex-direction: column; gap: 10px; }
+.mini-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+.mini-grid-button { min-height: 0 !important; aspect-ratio: 1; padding: 0 !important; font-size: 26px !important; background: var(--cream); color: var(--ink); box-shadow: none !important; border-width: 2px !important; border-radius: 10px !important; }
+.mini-grid-button span { display: inline-block; }
+.memory-pads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.memory-pad { min-height: 96px !important; font-size: 40px !important; color: #fff; }
+.stroop-word { font-family: var(--display); font-size: 64px; text-align: center; -webkit-text-stroke: 3px var(--ink); paint-order: stroke fill; }
+.shape-clash { width: 180px; height: 180px; margin: 0 auto; }
+.shape-clash .shape-outline { fill: var(--cream); stroke: var(--ink); stroke-width: 4; }
+.shape-clash .shape-word { font-family: var(--display); font-size: 15px; fill: var(--ink); }
+.sketch-canvas { width: 100%; height: auto; background: #fff; border: var(--outline); border-radius: 14px; touch-action: none; }
+.phone-howto { margin: 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 19px; }
+.phone-howto li { background: var(--navy-2); border-radius: 12px; padding: 10px 12px; }
+.pad-0 { background: #E2434B; } .pad-1 { background: #2F7BFF; } .pad-2 { background: #1E9E3E; }
+.pad-3 { background: #E0A800; } .pad-4 { background: #7B4DFF; } .pad-5 { background: #00B8A9; }

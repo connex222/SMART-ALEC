@@ -150,3 +150,49 @@ test('bots finish full games without getting stuck', () => {
     assert.ok(result.turns > 0);
   }
 });
+
+test('a Mini-game space starts a NOGGIN mini-game and pays winners in Brains', () => {
+  const r = room(3);
+  let now = toTurn(r);
+  r.players[0].position = 6;
+  engine.roll(r, 'p0', now, seq(0)); // a 1
+  engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 7)}, now);
+  now += 5000; engine.tick(r, now, seq()); now += 5000; engine.tick(r, now, seq());
+  assert.equal(r.board.step, 'minigame');
+  assert.ok(r.board.minigame.id);
+  const pub = engine.publicBoard(r, true);
+  assert.ok(pub.minigame && pub.minigame.title);
+  for (let i = 0; i < 400 && r.board.step === 'minigame'; i++) { now += 1000; engine.tick(r, now, seq()); }
+  assert.equal(r.board.step, 'miniResult');
+  now += 10000; engine.tick(r, now, seq());
+  assert.equal(r.board.step, 'turnEnd');
+});
+
+test('the Showdown space runs a NOGGIN Showdown between two players', () => {
+  const r = room(3);
+  let now = toTurn(r);
+  r.players[0].position = 55;
+  engine.roll(r, 'p0', now, seq(0));
+  engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 56)}, now);
+  now += 5000; engine.tick(r, now, seq()); now += 5000; engine.tick(r, now, seq());
+  assert.equal(r.board.step, 'special');
+  engine.choose(r, 'p0', {option: 0}, now, seq(0));
+  assert.equal(r.board.step, 'showdown');
+  assert.deepEqual(r.board.showdown.participants, ['p0', r.board.special.options[0].targetId]);
+  engine.cheer(r, 'p2', 'p0');
+  for (let i = 0; i < 400 && r.board.step === 'showdown'; i++) { now += 1000; engine.tick(r, now, seq()); }
+  assert.equal(r.board.step, 'miniResult');
+});
+
+test('pausing during a mini-game moves its clocks on', () => {
+  const r = room(3);
+  let now = toTurn(r);
+  r.players[0].position = 6;
+  engine.roll(r, 'p0', now, seq(0));
+  engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 7)}, now);
+  now += 5000; engine.tick(r, now, seq()); now += 5000; engine.tick(r, now, seq());
+  const before = r.board.minigame.deadline;
+  engine.hostPause(r, now);
+  engine.hostResume(r, now + 60000);
+  assert.equal(r.board.minigame.deadline, before + 60000);
+});

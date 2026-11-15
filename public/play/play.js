@@ -235,6 +235,7 @@
         return [el('h2', null, `Question ${f.index + 1} of ${f.total}`), el('p', 'qtext', f.current.text), ...answerButtons(f.current.options, i => act('game:answer', {choice: i}))];
       }
       case 'finalResult': return watch(b.banner?.text || '');
+      case 'miniResult': { const n = b.miniResult?.awards?.[p.id]; return watch(b.miniResult?.text || '', n ? `You ${n > 0 ? 'win' : 'lose'} ${Math.abs(n)} Brains` : ''); }
       case 'turnEnd': return watch(b.banner?.text || 'Next turn…');
       default: return watch('Watch the TV.');
     }
@@ -246,9 +247,31 @@
     return [b.step, b.version, b.activeId, q?.id, q?.answers?.[p.id] ? 'A' : '', b.final?.index, b.final?.predictions?.[p.id], b.canFinal, p.tokens.length].join('|');
   }
 
+  let nogginPhone = null;
+  function renderNoggin() {
+    if (!nogginPhone) nogginPhone = NogginPhone({
+      socket,
+      onState: next => onState(next),
+      rerender: () => state && onState(state),
+      onError: msg => { const n = $('game-banner'); n.textContent = msg; n.className = 'game-banner result-bad'; },
+    });
+    if (panelKey !== 'noggin') {
+      panelKey = 'noggin';
+      nogginPhone.reset();
+      const box = el('div', 'noggin-phone');
+      const h = el('h2'); h.id = 'gameHeadline';
+      const d = el('p', 'sub'); d.id = 'gameDescription';
+      const buttons = el('div', 'noggin-controls'); buttons.id = 'gameButtons';
+      box.append(h, d, buttons);
+      $('panel').replaceChildren(box);
+    }
+    nogginPhone.update(state, me());
+  }
+
   function renderGame() {
     show('game');
     meBar();
+    if (['minigame', 'showdown'].includes(state.board.step)) { renderNoggin(); return; }
     const sig = panelSignature();
     // Keep the typing box intact while the same question is open.
     const typing = document.activeElement?.id === 'typed-answer' && state.board.step === 'question';
@@ -263,10 +286,14 @@
     $('game-banner').textContent = b.paused ? 'Paused on the TV.' : '';
   }
 
+  let clockFor = null, clockStart = 0;
   function tickTimer() {
     const b = state?.board, t = $('phone-timer');
-    if (!b || state.phase !== 'board' || !b.deadline || b.paused || ['moving', 'landed', 'turnEnd', 'reveal', 'groupReveal', 'finalResult', 'intro'].includes(b.step)) { t.hidden = true; return; }
-    const total = b.deadline - b.stepStartedAt, left = Math.max(0, b.deadline - SA.now());
+    const m = b?.minigame, duel = b?.showdown;
+    const deadline = m ? (m.phase === 'intro' ? m.introUntil : m.deadline) : duel ? duel.deadline : b?.deadline;
+    if (!b || state.phase !== 'board' || !deadline || b.paused || ['moving', 'landed', 'turnEnd', 'reveal', 'groupReveal', 'finalResult', 'intro', 'miniResult'].includes(b.step)) { t.hidden = true; return; }
+    if (clockFor !== deadline) { clockFor = deadline; clockStart = Math.min(SA.now(), deadline); }
+    const total = (m || duel) ? deadline - clockStart : deadline - b.stepStartedAt, left = Math.max(0, deadline - SA.now());
     t.hidden = false;
     $('phone-timer-fill').style.transform = `scaleX(${total > 0 ? left / total : 0})`;
     t.classList.toggle('low', left < 5000);

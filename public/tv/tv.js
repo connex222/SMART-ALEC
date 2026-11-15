@@ -315,6 +315,39 @@
 
   function renderCard() {
     const b = state.board, card = $('card'), q = b.question;
+    if (b.step === 'minigame' || b.step === 'showdown') {
+      $('overlay').hidden = false;
+      card.classList.add('noggin');
+      NogginTV.render(card, state, avatars);
+      const duel = b.showdown;
+      if (duel?.kind === 'bid' && duel.phase === 'review') {
+        const row = el('div', 'judge-row');
+        const yes = el('button', 'btn btn-gold', 'Accept answer'), no = el('button', 'btn btn-ghost', 'Reject answer');
+        yes.addEventListener('click', () => send('game:bid-review', {accept: true}));
+        no.addEventListener('click', () => send('game:bid-review', {accept: false}));
+        row.append(yes, no);
+        card.querySelector('.card-body')?.appendChild(row);
+      }
+      return;
+    }
+    card.classList.remove('noggin');
+    if (b.step === 'miniResult' && b.miniResult) {
+      $('overlay').hidden = false;
+      card.replaceChildren();
+      const head = el('div', 'card-head noggin-head');
+      head.append(el('span', 'cat-name', b.miniResult.title), el('span', 'noggin-type', b.miniResult.kind === 'showdown' ? 'Showdown result' : 'Mini-game result'));
+      const body = el('div', 'card-body');
+      body.appendChild(el('p', 'special-text', b.miniResult.text));
+      const list = el('div', 'predictions');
+      for (const [pid, n] of Object.entries(b.miniResult.awards || {})) {
+        const chip = el('span', 'prediction');
+        chip.append(SA.avatarEl(av(playerById(pid)?.avatarId), n > 0 ? 'win' : 'lose', 52), document.createTextNode(`${playerById(pid)?.name}  ${n > 0 ? '+' : ''}${n} Brains`));
+        list.appendChild(chip);
+      }
+      if (list.childElementCount) body.appendChild(list);
+      card.append(head, body);
+      return;
+    }
     const steps = ['risk', 'question', 'reveal', 'steal', 'group', 'groupReveal', 'special', 'predict', 'final', 'finalResult'];
     const showIt = steps.includes(b.step) && !(b.step === 'special' && !b.special);
     $('overlay').hidden = !showIt;
@@ -385,13 +418,17 @@
   }
 
   /* ---------- timer bar ---------- */
-  const TIMED = new Set(['turn', 'direction', 'risk', 'question', 'steal', 'group', 'special', 'predict', 'final']);
+  const TIMED = new Set(['turn', 'direction', 'risk', 'question', 'steal', 'group', 'special', 'predict', 'final', 'minigame', 'showdown']);
+  let clockFor = null, clockStart = 0;
   function tickTimer() {
     const b = state?.board;
     const t = $('timer');
-    if (!b || state.phase !== 'board' || !TIMED.has(b.step) || !b.deadline || b.paused) { t.hidden = true; return; }
-    const total = b.deadline - b.stepStartedAt;
-    const left = Math.max(0, b.deadline - SA.now());
+    const m = b?.minigame, duel = b?.showdown;
+    const deadline = m ? (m.phase === 'intro' ? m.introUntil : m.deadline) : duel ? duel.deadline : b?.deadline;
+    if (!b || state.phase !== 'board' || !TIMED.has(b.step) || !deadline || b.paused) { t.hidden = true; return; }
+    if (clockFor !== deadline) { clockFor = deadline; clockStart = Math.min(SA.now(), deadline); }
+    const total = (m || duel) ? deadline - clockStart : deadline - b.stepStartedAt;
+    const left = Math.max(0, deadline - SA.now());
     t.hidden = false;
     $('timer-fill').style.transform = `scaleX(${total > 0 ? left / total : 0})`;
     const secs = Math.ceil(left / 1000);
@@ -404,7 +441,14 @@
 
   /* ---------- sounds from state changes ---------- */
   function sounds(b, old) {
+    const phase = b.minigame?.phase || b.showdown?.phase, oldPhase = old?.minigame?.phase || old?.showdown?.phase;
+    if (old && phase && phase !== oldPhase) {
+      if (b.showdown && phase === 'intro') SA.sfx('sfx-showdown');
+      else if (b.minigame && phase === 'intro') SA.sfx('sfx-reel');
+      else if (phase === 'reveal') SA.sfx('sfx-reel-stop');
+    }
     if (!old || old.step === b.step) return;
+    if (b.step === 'miniResult') SA.sfx(Object.values(b.miniResult?.awards || {}).some(n => n > 0) ? 'sfx-crowd-cheer' : 'sfx-crowd-aww', 0.6);
     const s = b.step;
     if (s === 'direction') SA.sfx('sfx-dice-roll');
     if (s === 'reveal') SA.sfx(b.question?.result === 'right' ? 'sfx-correct' : 'sfx-wrong');
@@ -422,7 +466,8 @@
     if (b.step === 'reveal') return q?.result === 'right' ? 'laugh' : 'shock';
     if (b.step === 'groupReveal') return Object.keys(q?.awards || {}).length ? 'laugh' : 'shock';
     if (b.step === 'finalResult') return b.final?.outcome === 'win' ? 'laugh' : 'shock';
-    if (['risk', 'question', 'steal', 'group', 'predict', 'final'].includes(b.step)) return 'think';
+    if (b.step === 'miniResult') return Object.values(b.miniResult?.awards || {}).some(n => n > 0) ? 'laugh' : 'shock';
+    if (['risk', 'question', 'steal', 'group', 'predict', 'final', 'minigame', 'showdown'].includes(b.step)) return 'think';
     return 'present';
   }
   function renderHost() {
@@ -445,7 +490,7 @@
   function renderGame() {
     show('game');
     const b = state.board;
-    SA.playMusic(['predict', 'final', 'finalResult'].includes(b.step) ? 'mus-tension' : 'mus-board');
+    SA.playMusic(['predict', 'final', 'finalResult', 'minigame', 'showdown'].includes(b.step) ? 'mus-tension' : 'mus-board');
     if (!boardBuilt) buildBoard();
     if (b.step === 'moving' && b.move && (!prev?.board || prev.board.version !== b.version)) animateMove(b.move);
     placePieces();
@@ -508,6 +553,8 @@
 
   /* ---------- connection ---------- */
   socket.on('room:state', onState);
+  socket.on('game:stroke', e => NogginTV.appendStroke(e, state));
+  NogginTV.setOnHop(() => SA.sfx('sfx-hop', 0.5));
   socket.on('room:closed', () => { SA.store.remove('sa-tv'); state = null; show('title'); toast('The room was closed.'); });
   socket.on('room:session-replaced', () => toast('This game was opened on another screen.'));
   socket.on('connect', async () => {
