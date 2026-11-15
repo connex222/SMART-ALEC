@@ -1,0 +1,498 @@
+'use strict';
+(() => {
+  const $ = id => document.getElementById(id);
+  const {el} = SA;
+  const NS = 'http://www.w3.org/2000/svg';
+  const svgEl = (tag, attrs = {}) => { const n = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v); return n; };
+  const LETTERS = ['A', 'B', 'C', 'D'];
+  const HOP_MS = 220;
+  const SPECIAL_TEXT = {
+    go: 'Pass GO for a Brain. Land on it exactly to buy a missing token for 10 Brains.',
+    smartalec: 'Steal a token from any player who has one you are missing.',
+    double: 'Bet up to 10 Brains, then type the answer. Right doubles it, wrong loses it.',
+    freeforall: 'One question for everyone. Fastest correct answer wins 3 Brains.',
+    shortcut: 'Jump to any other special space and do what it says.',
+    swap: 'Swap places on the board with any player.',
+    jackpot: 'A random category. Right answer wins that token and 2 Brains.',
+    showdown: 'Pick an opponent. Fastest correct answer takes 4 Brains from the other.',
+  };
+
+  /* ---------- fit the 1920x1080 stage to the window ---------- */
+  function fit() {
+    const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    $('stage').style.transform = `translate(-50%, -50%) scale(${s})`;
+  }
+  window.addEventListener('resize', fit); fit();
+
+  /* ---------- state ---------- */
+  const socket = io({transports: ['websocket', 'polling']});
+  if (new URLSearchParams(location.search).has('debug')) window.__saSocket = socket;
+  let state = null, prev = null, layout = null, avatars = [];
+  let boardBuilt = false;
+  const positions = [];          // centre point of each space
+  const shown = new Map();       // playerId -> space index currently drawn
+  let animating = null;          // {playerId, timer}
+  const session = () => SA.store.get('sa-tv');
+
+  function toast(text) {
+    const t = $('toast'); t.textContent = text; t.hidden = false;
+    clearTimeout(toast.timer); toast.timer = setTimeout(() => { t.hidden = true; }, 4200);
+  }
+  async function send(event, data) {
+    try { return await SA.request(socket, event, data); } catch (e) { toast(e.message); return null; }
+  }
+  function show(screen) {
+    for (const s of ['title', 'lobby', 'game', 'over']) $('screen-' + s).hidden = s !== screen;
+  }
+  const av = id => avatars.find(a => a.id === id);
+  const playerById = id => state?.players.find(p => p.id === id);
+  const catMeta = id => layout.categories.find(c => c.id === id) || (id === 'minigame' ? layout.minigame : null);
+
+  /* ---------- title and lobby ---------- */
+  $('title-logo').addEventListener('load', () => { $('title-wordmark').hidden = true; });
+  $('title-logo').addEventListener('error', () => { $('title-logo').hidden = true; });
+  $('btn-new').addEventListener('click', async () => {
+    SA.playMusic('mus-lobby');
+    const r = await send('room:create');
+    if (!r) return;
+    SA.store.set('sa-tv', {code: r.code, token: r.token});
+    setJoin(r);
+    onState(r.state);
+  });
+  function setJoin(r) {
+    if (r.qrDataUrl) $('lobby-qr').src = r.qrDataUrl;
+    if (r.joinUrl) $('lobby-url').textContent = r.joinUrl.replace(/^https?:\/\//, '');
+    $('lobby-code').textContent = r.code;
+  }
+  const setting = patch => send('room:settings', {patch});
+  $('set-quick').addEventListener('click', () => setting({quickGame: !state.settings.quickGame}));
+  $('set-relaxed').addEventListener('click', () => setting({timerSpeed: state.settings.timerSpeed === 'relaxed' ? 'normal' : 'relaxed'}));
+  $('set-preview').addEventListener('click', () => setting({previewQuestions: !state.settings.previewQuestions}));
+  $('set-time').addEventListener('click', () => {
+    const order = [0, 30, 45, 60];
+    setting({timeLimit: order[(order.indexOf(state.settings.timeLimit) + 1) % order.length]});
+  });
+  $('btn-start').addEventListener('click', () => { SA.sfx('sfx-go'); send('game:start'); });
+
+  function renderLobby() {
+    show('lobby');
+    SA.playMusic('mus-lobby');
+    const s = state.settings;
+    $('set-quick').setAttribute('aria-pressed', String(s.quickGame));
+    $('set-relaxed').setAttribute('aria-pressed', String(s.timerSpeed === 'relaxed'));
+    $('set-preview').setAttribute('aria-pressed', String(s.previewQuestions));
+    $('set-time').classList.toggle('on', s.timeLimit > 0);
+    $('set-time-label').textContent = s.timeLimit ? `${s.timeLimit} minutes` : 'None';
+    $('lobby-code').textContent = state.code;
+    $('lobby-count').textContent = `${state.players.length} of 8`;
+    const list = $('lobby-players');
+    list.replaceChildren();
+    for (const p of [...state.players].sort((a, b) => a.seat - b.seat)) {
+      const card = el('div', 'lobby-player' + (p.ready ? ' ready' : '') + (p.online ? '' : ' offline'));
+      card.append(SA.avatarEl(av(p.avatarId), p.ready ? 'win' : 'think', 130), el('div', 'name', p.name), el('div', 'status', p.online ? (p.ready ? 'Ready' : 'Getting ready…') : 'Phone offline'));
+      list.appendChild(card);
+    }
+    for (let i = state.players.length; i < 8; i++) list.appendChild(el('div', 'lobby-empty', 'Seat ' + (i + 1)));
+    $('btn-start').disabled = !state.canStart;
+    const notReady = state.players.filter(p => !p.ready).length;
+    $('lobby-hint').textContent = state.players.length < 2 ? 'Waiting for at least 2 players.'
+      : notReady ? `Waiting for ${notReady} player${notReady > 1 ? 's' : ''} to press READY.` : 'Everyone is ready. Start the show!';
+  }
+
+  /* ---------- board ---------- */
+  const CORNERS = [[140, 950], [480, 108], [1440, 108], [1780, 950]];
+  function buildBoard() {
+    const svg = $('board');
+    svg.replaceChildren();
+    positions.length = 0;
+    for (let side = 0; side < 4; side++) {
+      const [ax, ay] = CORNERS[side], [bx, by] = CORNERS[(side + 1) % 4];
+      for (let i = 0; i < 16; i++) positions.push([ax + (bx - ax) * i / 16, ay + (by - ay) * i / 16]);
+    }
+    const pts = CORNERS.map(p => p.join(',')).join(' ');
+    svg.appendChild(svgEl('polygon', {points: pts, class: 'track'}));
+    // marquee bulbs just outside the track
+    const bulbs = svgEl('g', {class: 'bulbs chase'});
+    const cx = 960, cy = 560;
+    for (let side = 0; side < 4; side++) {
+      const [ax, ay] = CORNERS[side], [bx, by] = CORNERS[(side + 1) % 4];
+      const n = side % 2 ? 26 : 14;
+      for (let i = 0; i < n; i++) {
+        const x = ax + (bx - ax) * (i + 0.5) / n, y = ay + (by - ay) * (i + 0.5) / n;
+        const dx = x - cx, dy = y - cy, d = Math.hypot(dx, dy);
+        bulbs.appendChild(svgEl('circle', {cx: x + dx / d * 62, cy: y + dy / d * 62, r: 7, class: 'bulb'}));
+      }
+    }
+    svg.appendChild(bulbs);
+    const spaces = svgEl('g', {id: 'spaces'});
+    for (const sp of layout.spaces) {
+      const [x, y] = positions[sp.index];
+      const special = sp.kind === 'special';
+      const r = special ? 36 : 25;
+      const g = svgEl('g', {class: `space ${special ? 'special' : 'cat-' + sp.type}`, id: 'space-' + sp.index});
+      g.appendChild(svgEl('circle', {cx: x, cy: y, r: r + 10, class: 'ring'}));
+      const base = svgEl('circle', {cx: x, cy: y, r, class: 'base'});
+      if (!special) base.setAttribute('fill', catMeta(sp.type).colour);
+      g.appendChild(base);
+      const label = svgEl('text', {x, y, 'font-size': special ? 14 : 22});
+      label.textContent = special ? (layout.specials.find(s => s.index === sp.index)?.short || '') : glyph(sp.type);
+      g.appendChild(label);
+      const art = svgEl('image', {x: x - r, y: y - r, width: r * 2, height: r * 2, href: special ? `/art/special-${sp.type}.webp` : `/art/icon-${artName(sp.type)}.webp`});
+      art.addEventListener('error', () => art.remove());
+      g.appendChild(art);
+      const opt = svgEl('text', {x, y: y - r - 26, class: 'opt-label'});
+      g.appendChild(opt);
+      spaces.appendChild(g);
+    }
+    svg.appendChild(spaces);
+    svg.appendChild(svgEl('g', {id: 'pieces'}));
+    boardBuilt = true;
+  }
+  function glyph(type) { return {potluck: '?', screen: '▶', music: '♪', sport: '★', timeplace: '◷', brainbox: '✦', minigame: '◆'}[type] || ''; }
+  function artName(type) { return type; }
+
+  function pieceFor(p) {
+    let g = document.getElementById('piece-' + p.id);
+    if (g) return g;
+    const a = av(p.avatarId);
+    g = svgEl('g', {class: 'piece', id: 'piece-' + p.id});
+    const clipId = 'clip-' + p.id;
+    const defs = svgEl('defs');
+    const clip = svgEl('clipPath', {id: clipId});
+    clip.appendChild(svgEl('circle', {cx: 0, cy: 0, r: 24}));
+    defs.appendChild(clip);
+    g.appendChild(defs);
+    g.appendChild(svgEl('circle', {cx: 0, cy: 0, r: 24, fill: a?.colour || '#888'}));
+    const t = svgEl('text', {x: 0, y: 1, 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': 26, fill: '#FFF6E3', 'font-family': 'Cabin, sans-serif'});
+    t.textContent = (a?.name || p.name).replace(/^The /, '').charAt(0);
+    g.appendChild(t);
+    if (a) {
+      const img = svgEl('image', {x: -24, y: -24, width: 48, height: 48, href: a.images.think, 'clip-path': `url(#${clipId})`, preserveAspectRatio: 'xMidYMid slice'});
+      img.addEventListener('error', () => img.remove());
+      g.appendChild(img);
+    }
+    g.appendChild(svgEl('circle', {cx: 0, cy: 0, r: 24, class: 'edge'}));
+    $('pieces').appendChild(g);
+    return g;
+  }
+
+  function placePieces() {
+    const groups = new Map();
+    for (const p of state.players) {
+      const at = shown.has(p.id) ? shown.get(p.id) : p.position;
+      if (!groups.has(at)) groups.set(at, []);
+      groups.get(at).push(p);
+    }
+    for (const [index, list] of groups) {
+      const [x, y] = positions[index];
+      list.forEach((p, i) => {
+        const n = list.length;
+        const ang = (i / n) * Math.PI * 2 - Math.PI / 2;
+        const rad = n > 1 ? 30 : 0;
+        const g = pieceFor(p);
+        g.setAttribute('transform', `translate(${x + Math.cos(ang) * rad}, ${y + Math.sin(ang) * rad})`);
+        g.classList.toggle('active', p.id === state.board.activeId);
+      });
+    }
+    // active piece on top
+    const act = document.getElementById('piece-' + state.board.activeId);
+    if (act) act.parentNode.appendChild(act);
+  }
+
+  function animateMove(move) {
+    if (!move || !move.path?.length) return;
+    clearTimeout(animating?.timer);
+    const id = move.playerId;
+    let i = 0;
+    shown.set(id, move.from);
+    const stepOn = () => {
+      shown.set(id, move.path[i]);
+      placePieces();
+      SA.sfx('sfx-hop', 0.5);
+      i += 1;
+      if (i < move.path.length) animating = {playerId: id, timer: setTimeout(stepOn, HOP_MS)};
+      else animating = {playerId: id, timer: setTimeout(() => { shown.delete(id); animating = null; placePieces(); }, 300)};
+    };
+    animating = {playerId: id, timer: setTimeout(stepOn, 250)};
+  }
+
+  function markTargets() {
+    document.querySelectorAll('.space.target').forEach(n => n.classList.remove('target'));
+    const b = state.board;
+    if (b.step !== 'direction' || !b.moveOptions) return;
+    for (const o of b.moveOptions) {
+      const g = document.getElementById('space-' + o.target);
+      if (!g) continue;
+      g.classList.add('target');
+      g.querySelector('.opt-label').textContent = (o.dir > 0 ? '↻ ' : '↺ ') + o.steps;
+    }
+  }
+
+  /* ---------- scoreboard in the middle of the board ---------- */
+  function renderScores() {
+    const box = $('scores');
+    box.replaceChildren();
+    box.classList.toggle('many', state.players.length > 6);
+    for (const p of [...state.players].sort((a, b) => a.seat - b.seat)) {
+      const row = el('div', 'score' + (p.id === state.board.activeId ? ' active' : '') + (p.online ? '' : ' offline'));
+      const info = el('div', 'score-info');
+      info.appendChild(el('div', 'score-name', p.name));
+      info.appendChild(pips(p.tokens));
+      const brains = el('div', 'score-brains', String(p.brains));
+      brains.appendChild(el('small', null, 'Brains'));
+      row.append(SA.avatarEl(av(p.avatarId), 'think', state.players.length > 6 ? 56 : 70), info, brains);
+      box.appendChild(row);
+    }
+  }
+  function pips(tokens) {
+    const wrap = el('div', 'pips');
+    for (const c of layout.categories) {
+      const pip = el('span', `pip cat-${c.id}` + (tokens.includes(c.id) ? ' on' : ''));
+      pip.title = c.name;
+      wrap.appendChild(pip);
+    }
+    return wrap;
+  }
+
+  function renderBanner() {
+    const b = state.board, n = $('banner');
+    const text = b.banner?.text || '';
+    if (n.textContent !== text) {
+      n.textContent = text;
+      n.classList.remove('pop'); void n.offsetWidth; n.classList.add('pop');
+    }
+    n.className = 'banner pop ' + (b.banner?.tone || '');
+  }
+  function renderDice() {
+    const b = state.board, d = $('dice');
+    const showDice = ['direction', 'moving'].includes(b.step) && b.dice;
+    d.hidden = !showDice;
+    if (!showDice) { d.dataset.v = ''; return; }
+    const key = b.version + ':' + b.dice.join(',');
+    if (b.step === 'direction' && d.dataset.v !== key) {
+      d.dataset.v = key;
+      d.replaceChildren(...b.dice.map(v => el('div', 'die', String(v))));
+    }
+  }
+
+  /* ---------- the card overlay ---------- */
+  function cardHead(category, whoId, title, special = false) {
+    const meta = category ? catMeta(category) : null;
+    const head = el('div', 'card-head' + (special ? ' special' : ''));
+    if (meta) head.classList.add('cat-' + category);
+    head.appendChild(el('span', 'cat-name', title || meta?.name || ''));
+    if (whoId) {
+      const p = playerById(whoId);
+      const who = el('span', 'who');
+      who.append(SA.avatarEl(av(p?.avatarId), 'think', 56), document.createTextNode(p?.name || ''));
+      head.appendChild(who);
+    }
+    return head;
+  }
+  function optionsEl(q, {answersByChoice = {}} = {}) {
+    const grid = el('div', 'opts');
+    (q.options || []).forEach((o, i) => {
+      const cls = q.revealed ? (i === q.correct ? ' right' : (answersByChoice[i]?.length ? ' wrong' : ' dim')) : '';
+      const row = el('div', 'opt' + cls);
+      row.append(el('span', 'letter', LETTERS[i]), el('span', 'opt-text', o));
+      if (answersByChoice[i]?.length) {
+        const who = el('span', 'who-picked');
+        for (const pid of answersByChoice[i]) who.appendChild(SA.avatarEl(av(playerById(pid)?.avatarId), 'think', 44));
+        row.appendChild(who);
+      }
+      grid.appendChild(row);
+    });
+    return grid;
+  }
+  function answeredRow(q, ids) {
+    const row = el('div', 'answered');
+    const done = ids.filter(id => q.answers[id]);
+    if (!done.length) { row.textContent = 'Waiting for answers…'; return row; }
+    row.appendChild(document.createTextNode('Locked in: '));
+    for (const id of done) row.appendChild(SA.avatarEl(av(playerById(id)?.avatarId), 'think', 52));
+    return row;
+  }
+
+  function renderCard() {
+    const b = state.board, card = $('card'), q = b.question;
+    const steps = ['risk', 'question', 'reveal', 'steal', 'group', 'groupReveal', 'special', 'predict', 'final', 'finalResult'];
+    const showIt = steps.includes(b.step) && !(b.step === 'special' && !b.special);
+    $('overlay').hidden = !showIt;
+    if (!showIt) { card.dataset.key = ''; return; }
+    card.replaceChildren();
+    const body = el('div', 'card-body');
+
+    if (b.step === 'risk') {
+      card.appendChild(cardHead(q.category, q.forId));
+      body.append(el('p', 'special-text', b.banner?.text || ''), el('p', 'special-sub', 'Choosing on their phone…'));
+    } else if (['question', 'reveal', 'steal', 'group', 'groupReveal'].includes(b.step) && q) {
+      const titles = {steal: 'Up for grabs!', lightning: 'Lightning Round', freeforall: 'Free-for-All', showdown: 'Showdown', jackpot: 'Pot Luck Jackpot', double: 'Double or Nothing'};
+      card.appendChild(cardHead(q.category, q.forId, titles[q.kind] ? `${titles[q.kind]} · ${catMeta(q.category).name}` : null));
+      body.appendChild(el('p', 'q-text', q.text || ''));
+      const byChoice = {};
+      if (q.revealed) for (const [pid, a] of Object.entries(q.answers || {})) if (a.choice != null) (byChoice[a.choice] = byChoice[a.choice] || []).push(pid);
+      if (q.mode === 'typed' && !q.revealed) {
+        body.appendChild(el('p', 'q-mode', 'Going Smart: no options, the answer is typed on the phone.'));
+      }
+      if (q.options) body.appendChild(optionsEl(q, {answersByChoice: byChoice}));
+      if (q.mode === 'typed' && q.revealed && q.forId) {
+        const a = q.answers[q.forId];
+        body.appendChild(el('p', 'typed ' + (a?.correct ? 'right' : 'wrong'), a?.text ? `“${a.text}”` : 'No answer'));
+      }
+      if (q.revealed && q.answer && !q.options) body.appendChild(el('p', 'reveal-answer', 'Answer: ' + q.answer));
+      if (q.participants && !q.revealed) body.appendChild(answeredRow(q, q.participants));
+      if (q.revealed && q.resultText && (b.step === 'groupReveal' || b.step === 'reveal')) body.appendChild(el('p', 'reveal-answer', q.resultText));
+    } else if (b.step === 'special' && b.special) {
+      card.appendChild(cardHead(null, b.activeId, layout.specials.find(s => s.id === b.special.type)?.name, true));
+      const img = el('img', 'special-emblem');
+      img.src = `/art/special-${b.special.type}.webp`; img.alt = '';
+      img.addEventListener('error', () => img.remove());
+      body.append(img, el('p', 'special-text', SPECIAL_TEXT[b.special.type] || ''), el('p', 'special-sub', 'Choosing on their phone…'));
+      if (b.special.options) {
+        const list = el('div', 'option-list');
+        b.special.options.forEach((o, i) => list.appendChild(el('span', 'option-chip' + (b.special.chosen === i ? ' chosen' : ''), o.label)));
+        body.appendChild(list);
+      }
+    } else if (['predict', 'final', 'finalResult'].includes(b.step) && b.final) {
+      const f = b.final;
+      card.appendChild(cardHead(null, f.playerId, 'The Final Round', true));
+      const slots = el('div', 'final-slots');
+      f.categories.forEach((c, i) => {
+        const done = i < f.results.length;
+        const miss = done && f.results[i] === false;
+        const s = el('div', `final-slot cat-${c}` + (done ? (miss ? ' miss' : ' done') : '') + (b.step === 'final' && i === f.index ? ' current' : ''), done ? (miss ? '✕' : '✓') : '');
+        slots.appendChild(s);
+      });
+      body.appendChild(slots);
+      if (b.step === 'predict') {
+        body.append(el('p', 'special-text', `${f.total} questions. One clock. Everyone else: how many will ${playerById(f.playerId)?.name} get right?`));
+      } else if (b.step === 'final' && f.current) {
+        body.appendChild(el('p', 'q-text', f.current.text));
+        body.appendChild(optionsEl({options: f.current.options, revealed: false}));
+      } else if (b.step === 'finalResult') {
+        body.appendChild(el('p', 'special-text', b.banner?.text || ''));
+        if (f.lastAnswer && f.outcome === 'lose') body.appendChild(el('p', 'special-sub', `“${f.lastAnswer.text}” Answer: ${f.lastAnswer.answer}`));
+      }
+      const preds = el('div', 'predictions');
+      for (const [pid, n] of Object.entries(f.predictions || {})) {
+        const chip = el('span', 'prediction');
+        chip.append(SA.avatarEl(av(playerById(pid)?.avatarId), 'think', 44), document.createTextNode(n === true ? 'Locked in' : `Says ${n}`));
+        preds.appendChild(chip);
+      }
+      if (preds.childElementCount) body.appendChild(preds);
+    }
+    card.appendChild(body);
+  }
+
+  /* ---------- timer bar ---------- */
+  const TIMED = new Set(['turn', 'direction', 'risk', 'question', 'steal', 'group', 'special', 'predict', 'final']);
+  function tickTimer() {
+    const b = state?.board;
+    const t = $('timer');
+    if (!b || state.phase !== 'board' || !TIMED.has(b.step) || !b.deadline || b.paused) { t.hidden = true; return; }
+    const total = b.deadline - b.stepStartedAt;
+    const left = Math.max(0, b.deadline - SA.now());
+    t.hidden = false;
+    $('timer-fill').style.transform = `scaleX(${total > 0 ? left / total : 0})`;
+    const secs = Math.ceil(left / 1000);
+    $('timer-num').textContent = secs + 's';
+    t.classList.toggle('low', secs <= 5);
+    if (secs <= 5 && secs > 0 && tickTimer.last !== secs && ['question', 'steal', 'group', 'final'].includes(b.step)) SA.sfx('sfx-tick', 0.4);
+    tickTimer.last = secs;
+  }
+  setInterval(tickTimer, 200);
+
+  /* ---------- sounds from state changes ---------- */
+  function sounds(b, old) {
+    if (!old || old.step === b.step) return;
+    const s = b.step;
+    if (s === 'direction') SA.sfx('sfx-dice-roll');
+    if (s === 'reveal') SA.sfx(b.question?.result === 'right' ? 'sfx-correct' : 'sfx-wrong');
+    if (s === 'steal' || s === 'group') SA.sfx('sfx-buzz', 0.6);
+    if (s === 'groupReveal') SA.sfx(Object.keys(b.question?.awards || {}).length ? 'sfx-spark-gain' : 'sfx-wrong');
+    if (s === 'special') SA.sfx('sfx-swap', 0.6);
+    if (s === 'predict') SA.sfx('sfx-showdown');
+    if (s === 'finalResult') SA.sfx(b.final?.outcome === 'win' ? 'sfx-crowd-cheer' : 'sfx-crowd-aww');
+  }
+
+  function renderGame() {
+    show('game');
+    const b = state.board;
+    SA.playMusic(['predict', 'final', 'finalResult'].includes(b.step) ? 'mus-tension' : 'mus-board');
+    if (!boardBuilt) buildBoard();
+    if (b.step === 'moving' && b.move && (!prev?.board || prev.board.version !== b.version)) animateMove(b.move);
+    placePieces();
+    markTargets();
+    renderScores();
+    renderBanner();
+    renderDice();
+    renderCard();
+    $('paused').hidden = !b.paused;
+    $('paused-text').textContent = state.hostOnline ? 'Press resume when everyone is ready.' : 'Waiting for the TV to reconnect.';
+    $('btn-pause').textContent = b.paused ? 'Resume' : 'Pause';
+    sounds(b, prev?.board);
+  }
+
+  function renderOver() {
+    show('over');
+    SA.playMusic(null);
+    if (prev?.phase !== 'over') SA.sfx('mus-victory', 0.7);
+    const b = state.board, winner = playerById(b.winnerId);
+    const box = $('over-winner');
+    box.replaceChildren(SA.avatarEl(av(winner?.avatarId), 'win', 280), el('h2', null, winner ? `${winner.name} is Smart Alec!` : 'Game over'),
+      el('p', null, b.endReason === 'time' ? 'Time ran out: most tokens wins.' : 'All six right in the Final Round.'));
+    const list = $('over-standings');
+    list.replaceChildren();
+    for (const s of b.standings || []) {
+      const p = playerById(s.id);
+      const li = el('li');
+      li.append(el('span', 'place', String(s.place)), SA.avatarEl(av(p?.avatarId), s.place === 1 ? 'win' : 'lose', 56), document.createTextNode(`${p?.name}  ·  ${s.tokens} tokens, ${s.brains} Brains`));
+      list.appendChild(li);
+    }
+  }
+  $('btn-again').addEventListener('click', () => send('game:start'));
+  $('btn-lobby').addEventListener('click', () => send('game:lobby'));
+
+  function onState(next) {
+    if (!next) return;
+    prev = state; state = next;
+    SA.syncClock(next.serverNow);
+    if (!layout) return;
+    if (state.phase === 'lobby') { boardBuilt = false; renderLobby(); }
+    else if (state.phase === 'board') renderGame();
+    else if (state.phase === 'over') renderOver();
+    tickTimer();
+  }
+
+  /* ---------- host controls ---------- */
+  let hideBar;
+  document.addEventListener('mousemove', () => { $('hostbar').classList.add('show'); clearTimeout(hideBar); hideBar = setTimeout(() => $('hostbar').classList.remove('show'), 3000); });
+  $('btn-pause').addEventListener('click', () => send(state?.board?.paused ? 'game:resume' : 'game:pause'));
+  $('btn-skip').addEventListener('click', () => send('game:skip-offline'));
+  $('btn-mute').addEventListener('click', () => { SA.setMuted(!SA.isMuted()); $('btn-mute').textContent = SA.isMuted() ? 'Sound off' : 'Sound on'; if (!SA.isMuted() && state) onState(state); });
+  $('btn-mute').textContent = SA.isMuted() ? 'Sound off' : 'Sound on';
+  $('btn-close').addEventListener('click', async () => {
+    if (!confirm('End this game and close the room?')) return;
+    await send('room:close');
+    SA.store.remove('sa-tv'); state = null; show('title');
+  });
+  document.addEventListener('keydown', e => { if (e.key === ' ' && state?.phase === 'board') { e.preventDefault(); $('btn-pause').click(); } });
+
+  /* ---------- connection ---------- */
+  socket.on('room:state', onState);
+  socket.on('room:closed', () => { SA.store.remove('sa-tv'); state = null; show('title'); toast('The room was closed.'); });
+  socket.on('room:session-replaced', () => toast('This game was opened on another screen.'));
+  socket.on('connect', async () => {
+    const s = session();
+    if (!s) { show('title'); return; }
+    try {
+      const r = await SA.request(socket, 'room:resume', {code: s.code, token: s.token, role: 'host'});
+      setJoin(r); onState(r.state);
+    } catch (e) {
+      if (['AUTH', 'ROOM', 'CODE'].includes(e.code)) { SA.store.remove('sa-tv'); show('title'); }
+      else toast(e.message);
+    }
+  });
+
+  Promise.all([SA.layout(), SA.avatars()]).then(([l, a]) => { layout = l; avatars = a; if (state) onState(state); }).catch(() => toast('Could not load the board. Refresh the page.'));
+})();

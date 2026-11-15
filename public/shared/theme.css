@@ -1,0 +1,56 @@
+@font-face { font-family: 'Cabin'; src: url('/shared/fonts/cabin-bold.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Lato'; src: url('/shared/fonts/lato-regular.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+
+:root {
+  --navy: #141A33;
+  --navy-2: #1E2648;
+  --navy-3: #2A3463;
+  --cream: #FFF6E3;
+  --gold: #F5B700;
+  --gold-deep: #C98F00;
+  --ink: #1B1B22;
+  --good: #2FBF4A;
+  --bad: #FF4D5E;
+  --c-potluck: #7B4DFF;
+  --c-screen: #FF4F9A;
+  --c-music: #FF7A3D;
+  --c-sport: #2FBF4A;
+  --c-timeplace: #FFB800;
+  --c-brainbox: #00B8A9;
+  --c-minigame: #2F7BFF;
+  --c-special: #F5B700;
+  --display: 'Cabin', 'Trebuchet MS', 'Segoe UI', sans-serif;
+  --body: 'Lato', 'Segoe UI', Roboto, Arial, sans-serif;
+  --outline: 4px solid var(--ink);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--navy); color: var(--cream); font-family: var(--body); -webkit-font-smoothing: antialiased; }
+button { font: inherit; color: inherit; cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 4px solid var(--gold); outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+.avatar { position: relative; border-radius: 50%; border: var(--outline); overflow: hidden; flex: none; display: grid; place-items: center; background: var(--navy-3); }
+.avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.avatar-initial { font-family: var(--display); color: var(--cream); text-shadow: 0 2px 0 var(--ink); }
+.avatar.has-art .avatar-initial { visibility: hidden; }
+.avatar.has-art { background: var(--cream); }
+
+/* category colour classes, used by both screens */
+.cat-potluck { --cat: var(--c-potluck); }
+.cat-screen { --cat: var(--c-screen); }
+.cat-music { --cat: var(--c-music); }
+.cat-sport { --cat: var(--c-sport); }
+.cat-timeplace { --cat: var(--c-timeplace); }
+.cat-brainbox { --cat: var(--c-brainbox); }
+.cat-minigame { --cat: var(--c-minigame); }
+.cat-special { --cat: var(--c-special); }
+
+.pips { display: flex; gap: 6px; }
+.pip { width: 22px; height: 22px; border-radius: 50%; border: 3px solid var(--ink); background: var(--navy-3); }
+.pip.on { background: var(--cat); box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .25); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+}

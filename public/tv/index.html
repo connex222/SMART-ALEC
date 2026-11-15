@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Alec</title>
+<link rel="stylesheet" href="/shared/theme.css">
+<link rel="stylesheet" href="/tv/tv.css">
+</head>
+<body class="tv">
+<div id="stage" class="stage">
+
+  <!-- Title -->
+  <section id="screen-title" class="screen screen-title">
+    <img class="title-logo" src="/art/logo.webp" alt="" id="title-logo">
+    <h1 class="wordmark" id="title-wordmark">Smart Alec</h1>
+    <p class="tagline">The quiz-show board game where only one of you gets to be the clever clogs.</p>
+    <div class="title-actions">
+      <button class="btn btn-gold btn-xl" id="btn-new">Start a new game</button>
+    </div>
+    <p class="title-note" id="title-note">Press start, then everyone joins on their phone.</p>
+  </section>
+
+  <!-- Lobby -->
+  <section id="screen-lobby" class="screen screen-lobby" hidden>
+    <div class="lobby-join">
+      <p class="lobby-step">Join on your phone</p>
+      <img id="lobby-qr" class="lobby-qr" alt="QR code to join">
+      <p class="lobby-url" id="lobby-url"></p>
+      <p class="lobby-code-label">Room code</p>
+      <p class="lobby-code" id="lobby-code">----</p>
+    </div>
+    <div class="lobby-main">
+      <h2 class="lobby-title">Contestants <span id="lobby-count">0 of 8</span></h2>
+      <div id="lobby-players" class="lobby-players"></div>
+      <div class="lobby-settings">
+        <button class="toggle" id="set-quick" aria-pressed="false"><b>Quick game</b><span>4 tokens, about 30 minutes</span></button>
+        <button class="toggle" id="set-time" data-value="0"><b>Time limit</b><span id="set-time-label">None</span></button>
+        <button class="toggle" id="set-relaxed" aria-pressed="false"><b>Relaxed timers</b><span>50% more answer time</span></button>
+        <button class="toggle" id="set-preview" aria-pressed="true"><b>2020–2026 questions</b><span>Editorial preview pack</span></button>
+      </div>
+      <div class="lobby-start">
+        <button class="btn btn-gold btn-xl" id="btn-start" disabled>Start the show</button>
+        <p class="lobby-hint" id="lobby-hint">Waiting for at least 2 players to press READY.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Game -->
+  <section id="screen-game" class="screen screen-game" hidden>
+    <svg id="board" class="board" viewBox="0 0 1920 1080" aria-label="Game board"></svg>
+    <div id="centre" class="centre">
+      <div id="banner" class="banner"></div>
+      <div id="dice" class="dice" hidden></div>
+      <div id="scores" class="scores"></div>
+    </div>
+    <div id="timer" class="timer" hidden><div class="timer-fill" id="timer-fill"></div><span id="timer-num"></span></div>
+
+    <!-- question / special / final overlays -->
+    <div id="overlay" class="overlay" hidden>
+      <div id="card" class="card"></div>
+    </div>
+
+    <div id="paused" class="paused" hidden>
+      <div class="paused-box"><h2>Paused</h2><p id="paused-text">Press resume when everyone's ready.</p></div>
+    </div>
+  </section>
+
+  <!-- Winner -->
+  <section id="screen-over" class="screen screen-over" hidden>
+    <div class="over-winner" id="over-winner"></div>
+    <ol class="over-standings" id="over-standings"></ol>
+    <div class="over-actions">
+      <button class="btn btn-gold btn-xl" id="btn-again">Play again</button>
+      <button class="btn btn-ghost btn-xl" id="btn-lobby">Change players</button>
+    </div>
+  </section>
+</div>
+
+<!-- host controls, shown when the mouse moves -->
+<div id="hostbar" class="hostbar">
+  <button id="btn-pause">Pause</button>
+  <button id="btn-skip" title="Skip a player whose phone has dropped out">Skip waiting</button>
+  <button id="btn-mute">Sound on</button>
+  <button id="btn-close">End game</button>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/shared/client.js"></script>
+<script src="/tv/tv.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+[
+ {
+  "id": 1,
+  "slug": "swot",
+  "name": "The Swot",
+  "colour": "#2F7BFF",
+  "images": {
+   "think": "/avatars/av-01-swot-think.webp",
+   "win": "/avatars/av-01-swot-win.webp",
+   "lose": "/avatars/av-01-swot-lose.webp"
+  }
+ },
+ {
+  "id": 2,
+  "slug": "quizqueen",
+  "name": "Quiz Queen",
+  "colour": "#FF4F9A",
+  "images": {
+   "think": "/avatars/av-02-quizqueen-think.webp",
+   "win": "/avatars/av-02-quizqueen-win.webp",
+   "lose": "/avatars/av-02-quizqueen-lose.webp"
+  }
+ },
+ {
+  "id": 3,
+  "slug": "landlord",
+  "name": "The Landlord",
+  "colour": "#FF7A3D",
+  "images": {
+   "think": "/avatars/av-03-landlord-think.webp",
+   "win": "/avatars/av-03-landlord-win.webp",
+   "lose": "/avatars/av-03-landlord-lose.webp"
+  }
+ },
+ {
+  "id": 4,
+  "slug": "professor",
+  "name": "Professor Know-All",
+  "colour": "#7B4DFF",
+  "images": {
+   "think": "/avatars/av-04-professor-think.webp",
+   "win": "/avatars/av-04-professor-win.webp",
+   "lose": "/avatars/av-04-professor-lose.webp"
+  }
+ },
+ {
+  "id": 5,
+  "slug": "cabbie",
+  "name": "The Cabbie",
+  "colour": "#FFB800",
+  "images": {
+   "think": "/avatars/av-05-cabbie-think.webp",
+   "win": "/avatars/av-05-cabbie-win.webp",
+   "lose": "/avatars/av-05-cabbie-lose.webp"
+  }
+ },
+ {
+  "id": 6,
+  "slug": "librarian",
+  "name": "The Librarian",
+  "colour": "#00B8A9",
+  "images": {
+   "think": "/avatars/av-06-librarian-think.webp",
+   "win": "/avatars/av-06-librarian-win.webp",
+   "lose": "/avatars/av-06-librarian-lose.webp"
+  }
+ },
+ {
+  "id": 7,
+  "slug": "telly",
+  "name": "Telly Addict",
+  "colour": "#E2434B",
+  "images": {
+   "think": "/avatars/av-07-telly-think.webp",
+   "win": "/avatars/av-07-telly-win.webp",
+   "lose": "/avatars/av-07-telly-lose.webp"
+  }
+ },
+ {
+  "id": 8,
+  "slug": "pundit",
+  "name": "The Pundit",
+  "colour": "#2FBF4A",
+  "images": {
+   "think": "/avatars/av-08-pundit-think.webp",
+   "win": "/avatars/av-08-pundit-win.webp",
+   "lose": "/avatars/av-08-pundit-lose.webp"
+  }
+ },
+ {
+  "id": 9,
+  "slug": "diva",
+  "name": "Disco Diva",
+  "colour": "#C04DFF",
+  "images": {
+   "think": "/avatars/av-09-diva-think.webp",
+   "win": "/avatars/av-09-diva-win.webp",
+   "lose": "/avatars/av-09-diva-lose.webp"
+  }
+ },
+ {
+  "id": 10,
+  "slug": "jar",
+  "name": "Brain in a Jar",
+  "colour": "#FF8FB8",
+  "images": {
+   "think": "/avatars/av-10-jar-think.webp",
+   "win": "/avatars/av-10-jar-win.webp",
+   "lose": "/avatars/av-10-jar-lose.webp"
+  }
+ },
+ {
+  "id": 11,
+  "slug": "cat",
+  "name": "Quiz Cat",
+  "colour": "#F28C28",
+  "images": {
+   "think": "/avatars/av-11-cat-think.webp",
+   "win": "/avatars/av-11-cat-win.webp",
+   "lose": "/avatars/av-11-cat-lose.webp"
+  }
+ },
+ {
+  "id": 12,
+  "slug": "explorer",
+  "name": "The Explorer",
+  "colour": "#8C6A3F",
+  "images": {
+   "think": "/avatars/av-12-explorer-think.webp",
+   "win": "/avatars/av-12-explorer-win.webp",
+   "lose": "/avatars/av-12-explorer-lose.webp"
+  }
+ }
+]
