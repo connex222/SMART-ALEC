@@ -1,1 +1,638 @@
-{}
+{
+ "_exclude": [
+  "PHNEW-0550",
+  "QD228-Q40"
+ ],
+ "QD235-Q14": [
+  "Greased Lightnin' / Physical",
+  "Grease / Xanadu",
+  "Beauty School Dropout / Magic"
+ ],
+ "PHNEW-0184": [
+  "The host city's arena failed its safety checks",
+  "A broadcasters' strike shut it down",
+  "The voting system was being rebuilt"
+ ],
+ "PHNEW-0244": [
+  "Syukuro Manabe, Klaus Hasselmann and Giorgio Parisi",
+  "Pierre Agostini, Ferenc Krausz and Anne L’Huillier",
+  "Roger Penrose, Reinhard Genzel and Andrea Ghez"
+ ],
+ "PHNEW-0246": [
+  "Maria Ressa and Dmitry Muratov",
+  "World Food Programme",
+  "Narges Mohammadi"
+ ],
+ "PHNEW-0241": [
+  "Roger Penrose, Reinhard Genzel and Andrea Ghez",
+  "Alain Aspect, John F. Clauser and Anton Zeilinger",
+  "Pierre Agostini, Ferenc Krausz and Anne L’Huillier"
+ ],
+ "PHNEW-0247": [
+  "Alain Aspect, John F. Clauser and Anton Zeilinger",
+  "Syukuro Manabe, Klaus Hasselmann and Giorgio Parisi",
+  "John J. Hopfield and Geoffrey Hinton"
+ ],
+ "QD235-Q11": [
+  "Brie / Camembert",
+  "Gruyère / Emmental",
+  "Cheddar / Stilton"
+ ],
+ "QD235-Q13": [
+  "Bartholomew / Thomas",
+  "Andrew / Simon",
+  "James / Peter"
+ ],
+ "QD280-Q01": [
+  "Serbia",
+  "Croatia",
+  "North Macedonia"
+ ],
+ "QD280-Q12": [
+  "The Royle Family",
+  "Gavin & Stacey",
+  "The Inbetweeners"
+ ],
+ "QD338-Q47": [
+  "Horse / Eagle",
+  "Lion / Goat",
+  "Bull / Eagle"
+ ],
+ "QD346-Q12": [
+  "George / Jane",
+  "Bam-Bam / Pebbles",
+  "Herbert / Edna"
+ ],
+ "PHNEW-0282": [
+  "Folklore",
+  "Golden Hour",
+  "Thank U, Next"
+ ],
+ "QD235-Q38": [
+  "Hackers",
+  "Speed",
+  "Sneakers"
+ ],
+ "QD337-Q37": [
+  "The Rat Pack",
+  "The High Flyers",
+  "The Upper Crust"
+ ],
+ "WQ746-R2-Q03": [
+  "The Oath of Allegiance",
+  "The Nightingale Pledge",
+  "The Scout Promise"
+ ],
+ "WQ748-R6-Q10": [
+  "Dwight D. Eisenhower",
+  "Franklin D. Roosevelt",
+  "John F. Kennedy"
+ ],
+ "PHNEW-0133": [
+  "Lionel Messi",
+  "Olivier Giroud",
+  "Harry Kane"
+ ],
+ "PHNEW-0479": [
+  "Greta Gerwig",
+  "Rob Marshall",
+  "Damien Chazelle"
+ ],
+ "QD281-Q24": [
+  "Merry Xmas Everybody / 1974",
+  "Cum On Feel The Noize / 1973",
+  "Mama Weer All Crazee Now / 1972"
+ ],
+ "WQ753-R6-Q06": [
+  "The Great Plague",
+  "The Gunpowder Plot",
+  "The Peasants' Revolt"
+ ],
+ "QD241-Q11": [
+  "100m Hurdles",
+  "400m",
+  "Heptathlon"
+ ],
+ "QD235-Q12": [
+  "Bognor / Weymouth",
+  "Lyme / Seaton",
+  "Weston / Bexhill"
+ ],
+ "QD235-Q15": [
+  "Portugal / Morocco",
+  "Spain / Algeria",
+  "France / Tunisia"
+ ],
+ "QD241-Q12": [
+  "The Italian Job",
+  "The Great Escape",
+  "Some Like It Hot"
+ ],
+ "QD241-Q20": [
+  "Jack / Jill",
+  "Peter / Wendy",
+  "Georgie / Polly"
+ ],
+ "QD241-Q23": [
+  "K",
+  "E",
+  "G"
+ ],
+ "QD241-Q41": [
+  "Red / Yellow",
+  "Blue / White",
+  "Black / White"
+ ],
+ "QD344-Q13": [
+  "Rule of Law",
+  "Code of Conduct",
+  "Act of Union"
+ ],
+ "QD344-Q48": [
+  "Five",
+  "911",
+  "Boyzone"
+ ],
+ "QD345-Q50": [
+  "M",
+  "C",
+  "R"
+ ],
+ "WQ745-R6-Q06": [
+  "The Forth Bridge",
+  "The Clifton Suspension Bridge",
+  "Tower Bridge"
+ ],
+ "WQ745-R7-Q02": [
+  "She's All That",
+  "Clueless",
+  "Never Been Kissed"
+ ],
+ "WQ746-R6-Q09": [
+  "The 2012 Olympic Games",
+  "Euro 2012",
+  "The Queen's Diamond Jubilee"
+ ],
+ "WQ748-R2-Q07": [
+  "The Sonoran Desert",
+  "The Great Basin Desert",
+  "The Chihuahuan Desert"
+ ],
+ "WQ748-R6-Q01": [
+  "The Molotov Pact",
+  "The Moscow Pact",
+  "The Prague Pact"
+ ],
+ "WQ749-R7-Q03": [
+  "Eric Trump"
+ ],
+ "WQ750-R6-Q05": [
+  "The Departed",
+  "Goodfellas",
+  "The Wolf of Wall Street"
+ ],
+ "WQ752-R3-Q05": [
+  "The River Exe",
+  "The River Tamar",
+  "The River Teign"
+ ],
+ "WQ752-R4-Q07": [
+  "Harry S. Truman",
+  "Herbert Hoover",
+  "Dwight D. Eisenhower"
+ ],
+ "PHNEW-0139": [
+  "Olivia Colman",
+  "Frances McDormand",
+  "Scarlett Johansson"
+ ],
+ "PHNEW-0141": [
+  "Bong Joon-ho",
+  "Jane Campion",
+  "Emerald Fennell"
+ ],
+ "PHNEW-0450": [
+  "Oscar Isaac",
+  "Austin Butler",
+  "Jason Momoa"
+ ],
+ "PHNEW-0395": [
+  "Netflix",
+  "AMC",
+  "Showtime"
+ ],
+ "PHNEW-0516": [
+  "Threads",
+  "Bluesky",
+  "Meta"
+ ],
+ "PHNEW-0490": [
+  "Denzel Washington",
+  "Daniel Kaluuya",
+  "John Boyega"
+ ],
+ "QD101-Q28": [
+  "The Lion King",
+  "Beauty and the Beast",
+  "The Little Mermaid"
+ ],
+ "QD235-Q44": [
+  "Oriana",
+  "Canberra",
+  "QM2"
+ ],
+ "QD241-Q02": [
+  "Swine",
+  "Hogg",
+  "Trotter"
+ ],
+ "QD281-Q15": [
+  "Right"
+ ],
+ "QD281-Q48": [
+  "Carrie Underwood",
+  "Fantasia Barrino",
+  "Jennifer Hudson"
+ ],
+ "QD337-Q23": [
+  "Egypt / Jordan",
+  "Israel / Lebanon",
+  "Syria / Jordan"
+ ],
+ "QD343-Q13": [
+  "Pen"
+ ],
+ "QD343-Q15": [
+  "Star Wars, 1977"
+ ],
+ "QD343-Q24": [
+  "Wool",
+  "Coal",
+  "Sugar"
+ ],
+ "QD345-Q29": [
+  "River Severn",
+  "River Trent",
+  "River Great Ouse"
+ ],
+ "WQ745-R8-Q03": [
+  "Richard I",
+  "King John",
+  "Henry VIII"
+ ],
+ "WQ747-R3-Q09": [
+  "Nom",
+  "Dit",
+  "Fil"
+ ],
+ "WQ747-R4-Q02": [
+  "His right"
+ ],
+ "WQ747-R6-Q01": [
+  "Too Much",
+  "Goodbye",
+  "Viva Forever"
+ ],
+ "WQ748-R7-Q04": [
+  "The Fairly OddParents",
+  "Rugrats",
+  "Hey Arnold!"
+ ],
+ "WQ749-R4-Q05": [
+  "Fourth",
+  "Sixth"
+ ],
+ "WQ749-R5-Q05": [
+  "Rita",
+  "Lucy",
+  "Sandy"
+ ],
+ "WQ749-R5-Q09": [
+  "Kenny",
+  "Danny",
+  "Michael"
+ ],
+ "WQ750-R3-Q03": [
+  "T",
+  "I",
+  "H"
+ ],
+ "WQ751-R5-Q06": [
+  "Sansa",
+  "Cersei",
+  "Brienne"
+ ],
+ "WQ752-R7-Q03": [
+  "Splash",
+  "Ghostbusters",
+  "Back to the Future"
+ ],
+ "WQ753-R6-Q01": [
+  "The execution of Louis XVI",
+  "The Tennis Court Oath",
+  "The fall of Napoleon"
+ ],
+ "WQ754-R3-Q03": [
+  "WALL-E",
+  "Ratatouille",
+  "Cars"
+ ],
+ "WQ754-R8-Q03": [
+  "The Royal Society for the Protection of Animals",
+  "The Royal Society for Public Assistance",
+  "The Royal Safety and Protection Association"
+ ],
+ "PHNEW-0345": [
+  "HBO",
+  "Netflix",
+  "Hulu"
+ ],
+ "PHNEW-0352": [
+  "Florence Pugh",
+  "Saoirse Ronan",
+  "Thomasin McKenzie"
+ ],
+ "PHNEW-0298": [
+  "Prophet Song",
+  "The Promise",
+  "Shuggie Bain"
+ ],
+ "PHNEW-0377": [
+  "HBO",
+  "Netflix",
+  "Apple TV+"
+ ],
+ "PHNEW-0313": [
+  "April",
+  "June",
+  "September"
+ ],
+ "PHNEW-0416": [
+  "Rockstar Games",
+  "Ubisoft",
+  "Blizzard"
+ ],
+ "PHNEW-0417": [
+  "HBO",
+  "Netflix",
+  "Apple TV+"
+ ],
+ "PHNEW-0545": [
+  "Conservative",
+  "Liberal Democrats",
+  "Reform UK"
+ ],
+ "PHNEW-0182": [
+  "Nemo",
+  "Loreen",
+  "Måneskin"
+ ],
+ "QD101-Q27": [
+  "In The Navy",
+  "Macho Man",
+  "Go West"
+ ],
+ "QD228-Q08": [
+  "Ashes To Ashes",
+  "Let's Dance",
+  "Space Oddity"
+ ],
+ "QD235-Q25": [
+  "Victoria Beckham",
+  "Emma Bunton",
+  "Geri Halliwell"
+ ],
+ "QD235-Q31": [
+  "Weaver",
+  "Shrike",
+  "Sunbird"
+ ],
+ "QD241-Q13": [
+  "Modern Girl",
+  "For Your Eyes Only",
+  "Sugar Walls"
+ ],
+ "QD241-Q46": [
+  "The Merchant of Venice",
+  "Romeo and Juliet",
+  "Twelfth Night"
+ ],
+ "QD281-Q17": [
+  "Last Christmas",
+  "Do They Know It's Christmas?",
+  "Merry Xmas Everybody"
+ ],
+ "QD337-Q19": [
+  "Barclays",
+  "Coca-Cola",
+  "Vauxhall"
+ ],
+ "QD337-Q27": [
+  "Sonny and Cher Peters and Lee",
+  "Robson and Jerome Ant and Dec",
+  "Chas and Dave Mel and Kim"
+ ],
+ "QD338-Q03": [
+  "Spelbound",
+  "George Sampson",
+  "Jai McDowall"
+ ],
+ "QD338-Q04": [
+  "Scrooge",
+  "Les Misérables",
+  "Annie"
+ ],
+ "QD338-Q41": [
+  "India and Pakistan",
+  "Vietnam and Laos",
+  "China and Taiwan"
+ ],
+ "QD344-Q02": [
+  "Hanoi",
+  "Da Nang",
+  "Hue"
+ ],
+ "QD344-Q07": [
+  "Unilever",
+  "Reckitt",
+  "Johnson & Johnson"
+ ],
+ "QD344-Q35": [
+  "Daphne",
+  "Persephone",
+  "Calypso"
+ ],
+ "QD345-Q13": [
+  "Never Mind the Buzzcocks",
+  "They Think It's All Over",
+  "Have I Got News for You"
+ ],
+ "WQ746-R8-Q10": [
+  "Blue and white",
+  "Red and yellow",
+  "Black and white"
+ ],
+ "WQ747-R3-Q07": [
+  "Daft Punk",
+  "Justice",
+  "Cassius"
+ ],
+ "WQ748-R5-Q04": [
+  "Play Your Cards Right",
+  "Bullseye",
+  "Family Fortunes"
+ ],
+ "WQ750-R2-Q05": [
+  "Leo",
+  "Max",
+  "Alexander"
+ ],
+ "WQ751-R3-Q07": [
+  "Pearl Jam",
+  "Foo Fighters",
+  "Linkin Park"
+ ],
+ "WQ751-R6-Q03": [
+  "Johnny Logan",
+  "Linda Martin",
+  "Niamh Kavanagh"
+ ],
+ "WQ751-R8-Q03": [
+  "Red and blue",
+  "Blue and yellow",
+  "Orange and green"
+ ],
+ "WQ752-R3-Q09": [
+  "Evita",
+  "Cats",
+  "Les Misérables"
+ ],
+ "WQ752-R6-Q09": [
+  "Poultry",
+  "Eggs",
+  "Red meat"
+ ],
+ "WQ753-R8-Q06": [
+  "Cabaret",
+  "Oklahoma!",
+  "Annie"
+ ],
+ "PHNEW-0238": [
+  "Benjamin List and David MacMillan",
+  "Carolyn Bertozzi, Morten Meldal and Barry Sharpless",
+  "John Goodenough, Stanley Whittingham and Akira Yoshino"
+ ],
+ "PHNEW-0243": [
+  "World Food Programme",
+  "Ales Bialiatski, Memorial and Center for Civil Liberties",
+  "Narges Mohammadi"
+ ],
+ "PHNEW-0365": [
+  "BBC One",
+  "ITV",
+  "Netflix"
+ ],
+ "PHNEW-0373": [
+  "Netflix",
+  "HBO Max",
+  "Apple TV+"
+ ],
+ "PHNEW-0510": [
+  "Fall Guys",
+  "Fortnite",
+  "Minecraft"
+ ],
+ "PHNEW-0459": [
+  "Greta Gerwig",
+  "Jordan Peele",
+  "Martin McDonagh"
+ ],
+ "PHNEW-0151": [
+  "Jane Campion",
+  "Christopher Nolan",
+  "Steven Spielberg"
+ ],
+ "PHNEW-0179": [
+  "Loreen",
+  "Måneskin",
+  "JJ"
+ ],
+ "PHNEW-0250": [
+  "Pierre Agostini, Ferenc Krausz and Anne L’Huillier",
+  "Alain Aspect, John F. Clauser and Anton Zeilinger",
+  "Syukuro Manabe, Klaus Hasselmann and Giorgio Parisi"
+ ],
+ "PHNEW-0302": [
+  "Prophet Song",
+  "The Seven Moons of Maali Almeida",
+  "Flesh"
+ ],
+ "PHNEW-0410": [
+  "Michaela Coel",
+  "Phoebe Waller-Bridge",
+  "Ncuti Gatwa"
+ ],
+ "PHNEW-0488": [
+  "Austin Butler",
+  "Barry Keoghan",
+  "Paul Mescal"
+ ],
+ "PHNEW-0124": [
+  "Nemo",
+  "Loreen",
+  "Måneskin"
+ ],
+ "PHNEW-0292": [
+  "Midnights",
+  "Folklore",
+  "Harry’s House"
+ ],
+ "PHNEW-0293": [
+  "Taylor Swift",
+  "Billie Eilish",
+  "Sabrina Carpenter"
+ ],
+ "PHNEW-0305": [
+  "Samantha Harvey",
+  "Paul Lynch",
+  "Shehan Karunatilaka"
+ ],
+ "PHNEW-0431": [
+  "Netflix",
+  "Apple TV+",
+  "Amazon Prime Video"
+ ],
+ "QD241-Q17": [
+  "14th and 15th",
+  "16th and 17th",
+  "13th and 14th"
+ ],
+ "QD337-Q02": [
+  "Hephaestus",
+  "Atlas",
+  "Midas"
+ ],
+ "QD344-Q09": [
+  "Chic",
+  "Heatwave",
+  "Shalamar"
+ ],
+ "QD346-Q39": [
+  "Showaddywaddy",
+  "The Rubettes",
+  "Sweet"
+ ],
+ "WQ748-R5-Q06": [
+  "Davina McCall",
+  "Tess Daly",
+  "Holly Willoughby"
+ ],
+ "WQ750-R7-Q05": [
+  "Donald Trump"
+ ],
+ "WQ753-R3-Q06": [
+  "Brawne",
+  "Price",
+  "Dashwood"
+ ]
+}

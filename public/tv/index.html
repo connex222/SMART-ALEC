@@ -37,7 +37,7 @@
         <button class="toggle" id="set-quick" aria-pressed="false"><b>Quick game</b><span>4 tokens, about 30 minutes</span></button>
         <button class="toggle" id="set-time" data-value="0"><b>Time limit</b><span id="set-time-label">None</span></button>
         <button class="toggle" id="set-relaxed" aria-pressed="false"><b>Relaxed timers</b><span>50% more answer time</span></button>
-        <button class="toggle" id="set-preview" aria-pressed="true"><b>2020–2026 questions</b><span>Editorial preview pack</span></button>
+        <button class="toggle" id="set-preview" aria-pressed="true"><b>Unreviewed questions</b><span>2020–26 preview and new Music</span></button>
       </div>
       <div class="lobby-start">
         <button class="btn btn-gold btn-xl" id="btn-start" disabled>Start the show</button>
@@ -61,6 +61,23 @@
       <div id="card" class="card"></div>
     </div>
 
+    <div id="host" class="host pose-present" aria-hidden="true">
+      <svg class="host-standin" viewBox="0 0 200 260">
+        <ellipse cx="100" cy="170" rx="70" ry="80" class="o-body"/>
+        <ellipse cx="100" cy="185" rx="42" ry="52" class="o-belly"/>
+        <circle cx="100" cy="105" r="62" class="o-head"/>
+        <path d="M52 92 Q100 40 148 92 Q148 150 100 160 Q52 150 52 92Z" class="o-face"/>
+        <circle cx="78" cy="102" r="17" class="o-glass"/><circle cx="122" cy="102" r="17" class="o-glass"/>
+        <circle cx="78" cy="102" r="7" class="o-eye"/><circle cx="122" cy="102" r="7" class="o-eye o-eye-r"/>
+        <path d="M60 80 L94 84" class="o-brow o-brow-l"/><path d="M106 80 L140 72" class="o-brow o-brow-r"/>
+        <path d="M92 120 L100 136 L108 120 Z" class="o-beak"/>
+        <ellipse cx="100" cy="138" rx="9" ry="7" class="o-mouth"/>
+        <path d="M78 160 L100 170 L122 160 L122 178 L100 170 L78 178 Z" class="o-tie"/>
+        <path d="M40 50 L100 26 L160 50 L100 72 Z" class="o-cap"/><rect x="74" y="52" width="52" height="16" class="o-cap"/>
+        <path d="M150 48 L156 86" class="o-tassel"/><circle cx="156" cy="88" r="5" class="o-tassel-end"/>
+      </svg>
+      <img class="host-art" id="host-art" alt="">
+    </div>
     <div id="paused" class="paused" hidden>
       <div class="paused-box"><h2>Paused</h2><p id="paused-text">Press resume when everyone's ready.</p></div>
     </div>

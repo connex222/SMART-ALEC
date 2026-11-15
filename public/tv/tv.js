@@ -415,6 +415,33 @@
     if (s === 'finalResult') SA.sfx(b.final?.outcome === 'win' ? 'sfx-crowd-cheer' : 'sfx-crowd-aww');
   }
 
+  /* ---------- Alec ---------- */
+  const hostArt = {};
+  function hostPose(b) {
+    const q = b.question;
+    if (b.step === 'reveal') return q?.result === 'right' ? 'laugh' : 'shock';
+    if (b.step === 'groupReveal') return Object.keys(q?.awards || {}).length ? 'laugh' : 'shock';
+    if (b.step === 'finalResult') return b.final?.outcome === 'win' ? 'laugh' : 'shock';
+    if (['risk', 'question', 'steal', 'group', 'predict', 'final'].includes(b.step)) return 'think';
+    return 'present';
+  }
+  function renderHost() {
+    const pose = hostPose(state.board);
+    const host = $('host');
+    host.classList.toggle('on-card', !$('overlay').hidden);
+    if (host.dataset.pose === pose) return;
+    host.dataset.pose = pose;
+    host.classList.remove('pose-present', 'pose-think', 'pose-laugh', 'pose-shock', 'bob');
+    host.classList.add('pose-' + pose);
+    void host.offsetWidth; host.classList.add('bob');
+    const img = $('host-art');
+    if (hostArt[pose] === false) { host.classList.remove('has-art'); return; }
+    host.classList.remove('has-art');
+    img.onload = () => { hostArt[pose] = true; host.classList.add('has-art'); };
+    img.onerror = () => { hostArt[pose] = false; host.classList.remove('has-art'); };
+    img.src = `/art/alec-${pose}.webp`;
+  }
+
   function renderGame() {
     show('game');
     const b = state.board;
@@ -427,6 +454,7 @@
     renderBanner();
     renderDice();
     renderCard();
+    renderHost();
     $('paused').hidden = !b.paused;
     $('paused-text').textContent = state.hostOnline ? 'Press resume when everyone is ready.' : 'Waiting for the TV to reconnect.';
     $('btn-pause').textContent = b.paused ? 'Resume' : 'Pause';

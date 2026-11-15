@@ -32,7 +32,9 @@ The free plan sleeps after 15 minutes idle; the first visit takes about a minute
 ## Questions
 
 - `data/questions.json` is built from the three banks in `source-banks/`. Rebuild with `npm run questions`.
-- Questions from the 2020–2026 editorial preview are tagged `preview`. The lobby button **2020–2026 questions** switches them off.
+- Questions from the 2020–2026 editorial preview and any new `source-banks/smart-alec-*.json` pack are tagged `preview` until you sign them off. The lobby button **Unreviewed questions** switches them off.
+- `npm run questions` also writes `data/weak-options.csv`: questions whose wrong options look nothing like the right answer, worst first. `node tools/score-options.js` refreshes it.
+- To remove a question entirely, add its id to the `_exclude` list in `data/option-overrides.json`.
 - `data/options-review.csv` lists every question with its A–D options. To fix weak wrong options, add the question's id to `data/option-overrides.json`, e.g. `{"QD228-Q01": ["Corfu", "Crete", "Kos"]}`, then rebuild.
 
 ## Checks
@@ -44,4 +46,6 @@ The free plan sleeps after 15 minutes idle; the first visit takes about a minute
 
 Done: board, turns, Play Safe / Go Smart, Bonus Steal, tokens, Brains, all 8 special spaces, Final Round with predictions, Quick Game, time limit, catch-up dice, pause, reconnect, sound.
 
-Next: NOGGIN mini-games on Mini-game spaces (a Lightning Round question stands in), NOGGIN Showdowns (a head-to-head question stands in), ChatGPT art, Alec host poses, more Music questions.
+v0.2.0: Alec on the TV (4 poses, drawn stand-in until the art arrives), 123 questions with hand-written wrong options, smarter automatic options, 52 new Music questions.
+
+Next: NOGGIN mini-games on Mini-game spaces (a Lightning Round question stands in), NOGGIN Showdowns (a head-to-head question stands in), ChatGPT art, more Music questions.

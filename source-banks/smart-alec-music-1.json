@@ -1,0 +1,693 @@
+{
+ "source": "Smart Alec — Music batch 1 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Music batch 1",
+   "rounds": [
+    {
+     "id": "SAM1",
+     "name": "MUSIC",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SAM1-01",
+       "q": "Which band released the 1995 album (What's the Story) Morning Glory?",
+       "a": "Oasis",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Blur",
+        "Pulp",
+        "Suede"
+       ]
+      },
+      {
+       "id": "SAM1-02",
+       "q": "Freddie Mercury was the lead singer of which band?",
+       "a": "Queen",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Genesis",
+        "Yes",
+        "Supertramp"
+       ]
+      },
+      {
+       "id": "SAM1-03",
+       "q": "Which Beatles album shows the band walking across a zebra crossing on its cover?",
+       "a": "Abbey Road",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Let It Be",
+        "Revolver",
+        "Help!"
+       ]
+      },
+      {
+       "id": "SAM1-04",
+       "q": "Rumours, released in 1977, is a best-selling album by which band?",
+       "a": "Fleetwood Mac",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Eagles",
+        "Wings",
+        "Electric Light Orchestra"
+       ]
+      },
+      {
+       "id": "SAM1-05",
+       "q": "Which American singer is nicknamed The Boss?",
+       "a": "Bruce Springsteen",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bob Seger",
+        "Tom Petty",
+        "Billy Joel"
+       ]
+      },
+      {
+       "id": "SAM1-06",
+       "q": "Adele named her debut album after her age when she wrote it. What is it called?",
+       "a": "19",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "21",
+        "25",
+        "30"
+       ]
+      },
+      {
+       "id": "SAM1-07",
+       "q": "Which country did ABBA come from?",
+       "a": "Sweden",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Norway",
+        "Denmark",
+        "Finland"
+       ]
+      },
+      {
+       "id": "SAM1-08",
+       "q": "ABBA won the 1974 Eurovision Song Contest with which song?",
+       "a": "Waterloo",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Mamma Mia",
+        "Dancing Queen",
+        "Ring Ring"
+       ]
+      },
+      {
+       "id": "SAM1-09",
+       "q": "Which Michael Jackson album, released in 1982, is the best-selling album of all time?",
+       "a": "Thriller",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bad",
+        "Off the Wall",
+        "Dangerous"
+       ]
+      },
+      {
+       "id": "SAM1-10",
+       "q": "Who released the 1989 hit Like a Prayer?",
+       "a": "Madonna",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Cyndi Lauper",
+        "Whitney Houston",
+        "Kylie Minogue"
+       ]
+      },
+      {
+       "id": "SAM1-11",
+       "q": "Who has been Elton John's long-time songwriting partner, writing the lyrics to his songs?",
+       "a": "Bernie Taupin",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Tim Rice",
+        "Gary Barlow",
+        "Paul Simon"
+       ]
+      },
+      {
+       "id": "SAM1-12",
+       "q": "Which group released Wannabe as their debut single in 1996?",
+       "a": "Spice Girls",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "All Saints",
+        "Eternal",
+        "Bananarama"
+       ]
+      },
+      {
+       "id": "SAM1-13",
+       "q": "What was the name of Bob Marley's band?",
+       "a": "The Wailers",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Specials",
+        "The Maytals",
+        "UB40"
+       ]
+      },
+      {
+       "id": "SAM1-14",
+       "q": "In which year did Queen's Bohemian Rhapsody first reach number one in the UK?",
+       "a": "1975",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1973",
+        "1977",
+        "1979"
+       ]
+      },
+      {
+       "id": "SAM1-15",
+       "q": "Which Australian singer had a 1988 UK number one with I Should Be So Lucky?",
+       "a": "Kylie Minogue",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Dannii Minogue",
+        "Natalie Imbruglia",
+        "Tina Arena"
+       ]
+      },
+      {
+       "id": "SAM1-16",
+       "q": "Bono is the lead singer of which band?",
+       "a": "U2",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Simple Minds",
+        "INXS",
+        "The Cranberries"
+       ]
+      },
+      {
+       "id": "SAM1-17",
+       "q": "Which composer wrote The Four Seasons?",
+       "a": "Vivaldi",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bach",
+        "Handel",
+        "Mozart"
+       ]
+      },
+      {
+       "id": "SAM1-18",
+       "q": "Which composer wrote the Moonlight Sonata?",
+       "a": "Beethoven",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Mozart",
+        "Chopin",
+        "Schubert"
+       ]
+      },
+      {
+       "id": "SAM1-19",
+       "q": "Which instrument usually has 88 keys?",
+       "a": "Piano",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Organ",
+        "Harpsichord",
+        "Accordion"
+       ]
+      },
+      {
+       "id": "SAM1-20",
+       "q": "In which city were The Beatles formed?",
+       "a": "Liverpool",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Manchester",
+        "London",
+        "Birmingham"
+       ]
+      },
+      {
+       "id": "SAM1-21",
+       "q": "Which singer released the album Purple Rain in 1984?",
+       "a": "Prince",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Stevie Wonder",
+        "Lionel Richie",
+        "Rick James"
+       ]
+      },
+      {
+       "id": "SAM1-22",
+       "q": "Ed Sheeran's 2017 album is named after which maths symbol?",
+       "a": "Divide",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Multiply",
+        "Plus",
+        "Equals"
+       ]
+      },
+      {
+       "id": "SAM1-23",
+       "q": "Which Welsh singer is famous for It's Not Unusual?",
+       "a": "Tom Jones",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Engelbert Humperdinck",
+        "Shakin' Stevens",
+        "Cliff Richard"
+       ]
+      },
+      {
+       "id": "SAM1-24",
+       "q": "Which band had hits with Parklife and Song 2?",
+       "a": "Blur",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Oasis",
+        "Supergrass",
+        "Pulp"
+       ]
+      },
+      {
+       "id": "SAM1-25",
+       "q": "Which singer's real name is Stefani Germanotta?",
+       "a": "Lady Gaga",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Katy Perry",
+        "Pink",
+        "Gwen Stefani"
+       ]
+      },
+      {
+       "id": "SAM1-26",
+       "q": "Which rapper's real name is Marshall Mathers?",
+       "a": "Eminem",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Dr. Dre",
+        "50 Cent",
+        "Snoop Dogg"
+       ]
+      },
+      {
+       "id": "SAM1-27",
+       "q": "Smells Like Teen Spirit was a 1991 hit for which band?",
+       "a": "Nirvana",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Pearl Jam",
+        "Soundgarden",
+        "Green Day"
+       ]
+      },
+      {
+       "id": "SAM1-28",
+       "q": "Which Irish band had hits with Linger and Zombie?",
+       "a": "The Cranberries",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Corrs",
+        "U2",
+        "Westlife"
+       ]
+      },
+      {
+       "id": "SAM1-29",
+       "q": "The song Memory comes from which musical?",
+       "a": "Cats",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Evita",
+        "The Phantom of the Opera",
+        "Starlight Express"
+       ]
+      },
+      {
+       "id": "SAM1-30",
+       "q": "Who composed the music for the musical The Phantom of the Opera?",
+       "a": "Andrew Lloyd Webber",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Tim Rice",
+        "Claude-Michel Schönberg",
+        "Stephen Sondheim"
+       ]
+      },
+      {
+       "id": "SAM1-31",
+       "q": "Which former Take That member had a solo hit with Angels?",
+       "a": "Robbie Williams",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Gary Barlow",
+        "Mark Owen",
+        "Jason Orange"
+       ]
+      },
+      {
+       "id": "SAM1-32",
+       "q": "How many strings does a standard violin have?",
+       "a": "4",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "5",
+        "6",
+        "3"
+       ]
+      },
+      {
+       "id": "SAM1-33",
+       "q": "Which band released The Dark Side of the Moon in 1973?",
+       "a": "Pink Floyd",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Led Zeppelin",
+        "Deep Purple",
+        "The Who"
+       ]
+      },
+      {
+       "id": "SAM1-34",
+       "q": "Which singer was known as The King of Rock and Roll?",
+       "a": "Elvis Presley",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Chuck Berry",
+        "Little Richard",
+        "Buddy Holly"
+       ]
+      },
+      {
+       "id": "SAM1-35",
+       "q": "Which band recorded Hotel California?",
+       "a": "Eagles",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Fleetwood Mac",
+        "The Doobie Brothers",
+        "Steely Dan"
+       ]
+      },
+      {
+       "id": "SAM1-36",
+       "q": "Which Spice Girl was known as Posh Spice?",
+       "a": "Victoria Beckham",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Emma Bunton",
+        "Geri Halliwell",
+        "Melanie Chisholm"
+       ]
+      },
+      {
+       "id": "SAM1-37",
+       "q": "Which singer had a 2015 UK number one with Hello?",
+       "a": "Adele",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Emeli Sandé",
+        "Jess Glynne",
+        "Ellie Goulding"
+       ]
+      },
+      {
+       "id": "SAM1-38",
+       "q": "Which group recorded Dancing Queen?",
+       "a": "ABBA",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Boney M.",
+        "Bucks Fizz",
+        "The Nolans"
+       ]
+      },
+      {
+       "id": "SAM1-39",
+       "q": "Which British band released the album OK Computer in 1997?",
+       "a": "Radiohead",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Muse",
+        "Coldplay",
+        "Travis"
+       ]
+      },
+      {
+       "id": "SAM1-40",
+       "q": "Who was the lead singer of The Police?",
+       "a": "Sting",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Phil Collins",
+        "Mark Knopfler",
+        "Paul Weller"
+       ]
+      },
+      {
+       "id": "SAM1-41",
+       "q": "Which band released the 2000 hit Yellow?",
+       "a": "Coldplay",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Keane",
+        "Snow Patrol",
+        "Travis"
+       ]
+      },
+      {
+       "id": "SAM1-42",
+       "q": "What nationality is the singer Björk?",
+       "a": "Icelandic",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Norwegian",
+        "Swedish",
+        "Finnish"
+       ]
+      },
+      {
+       "id": "SAM1-43",
+       "q": "Which former Beatle released the solo song Imagine?",
+       "a": "John Lennon",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Paul McCartney",
+        "George Harrison",
+        "Ringo Starr"
+       ]
+      },
+      {
+       "id": "SAM1-44",
+       "q": "Which instrument is Yo-Yo Ma famous for playing?",
+       "a": "Cello",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Violin",
+        "Viola",
+        "Double bass"
+       ]
+      },
+      {
+       "id": "SAM1-45",
+       "q": "Mr. Brightside is a hit for which band?",
+       "a": "The Killers",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Kings of Leon",
+        "The Strokes",
+        "Franz Ferdinand"
+       ]
+      },
+      {
+       "id": "SAM1-46",
+       "q": "Who recorded the 1984 Christmas number one Do They Know It's Christmas?",
+       "a": "Band Aid",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Wham!",
+        "USA for Africa",
+        "Ferry Aid"
+       ]
+      },
+      {
+       "id": "SAM1-47",
+       "q": "Which singer is known as The Queen of Soul?",
+       "a": "Aretha Franklin",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Diana Ross",
+        "Tina Turner",
+        "Gladys Knight"
+       ]
+      },
+      {
+       "id": "SAM1-48",
+       "q": "Which country does the singer Shakira come from?",
+       "a": "Colombia",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Mexico",
+        "Spain",
+        "Argentina"
+       ]
+      },
+      {
+       "id": "SAM1-49",
+       "q": "Which singer released the album Back to Black in 2006?",
+       "a": "Amy Winehouse",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Duffy",
+        "Lily Allen",
+        "Adele"
+       ]
+      },
+      {
+       "id": "SAM1-50",
+       "q": "What does a timpanist play?",
+       "a": "Kettle drums",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Harp",
+        "Tuba",
+        "Xylophone"
+       ]
+      },
+      {
+       "id": "SAM1-51",
+       "q": "Which Gallagher brother was the lead singer of Oasis?",
+       "a": "Liam",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Noel"
+       ]
+      },
+      {
+       "id": "SAM1-52",
+       "q": "Taylor Swift's 2014 album is named after which year?",
+       "a": "1989",
+       "pts": 1,
+       "cat": "MUSIC",
+       "note": "Smart Alec Music batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1984",
+        "1999",
+        "1991"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

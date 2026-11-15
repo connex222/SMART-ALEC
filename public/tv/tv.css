@@ -162,3 +162,34 @@ body.tv { overflow: hidden; background: #0B0F22; }
 .hostbar.show { opacity: 1; }
 .hostbar button { background: var(--navy-2); border: 3px solid var(--cream); border-radius: 12px; padding: 10px 16px; font-size: 18px; }
 .toast { position: fixed; left: 50%; bottom: 40px; transform: translateX(-50%); background: var(--bad); color: #fff; border: var(--outline); border-radius: 16px; padding: 14px 24px; font-size: 22px; max-width: 80vw; }
+
+/* ---------- Alec, the host ---------- */
+.host { position: absolute; left: 318px; top: 590px; width: 190px; height: 260px; pointer-events: none; z-index: 5; transition: left .3s, top .3s, width .3s, height .3s; }
+.host.on-card { left: 24px; top: 700px; width: 260px; height: 350px; }
+.host.bob { animation: bob .45s ease-out; }
+@keyframes bob { 0% { transform: translateY(14px) scale(.96); } 60% { transform: translateY(-6px); } 100% { transform: none; } }
+.host-art { visibility: hidden; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: bottom; }
+.host.has-art .host-standin { display: none; }
+.host.has-art .host-art { visibility: visible; }
+.host-standin { position: absolute; inset: 20px 0 0; width: 100%; height: 100%; }
+.host-standin * { stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; stroke-linecap: round; }
+.o-body, .o-head { fill: #8A5A2B; }
+.o-belly, .o-face { fill: #F3E2C2; }
+.o-glass { fill: rgba(255, 255, 255, .35); stroke: var(--gold) !important; stroke-width: 5; }
+.o-eye { fill: var(--ink); stroke: none !important; }
+.o-brow { fill: none; stroke-width: 6; }
+.o-beak { fill: var(--gold); }
+.o-mouth { fill: #7A1F2B; opacity: 0; }
+.o-tie { fill: #D7263D; }
+.o-cap { fill: #1B1B22; }
+.o-tassel { fill: none; stroke: var(--gold) !important; stroke-width: 4; }
+.o-tassel-end { fill: var(--gold); stroke: none !important; }
+/* stand-in expressions */
+.pose-think .o-brow-l { transform: translate(0, 6px); }
+.pose-think .o-eye { transform: translate(4px, -3px); }
+.pose-laugh .o-eye { transform: scaleY(.25); transform-box: fill-box; transform-origin: center; }
+.pose-laugh .o-mouth { opacity: 1; }
+.pose-laugh .o-brow { transform: translate(0, -6px); }
+.pose-shock .o-eye { transform: scale(1.5); transform-box: fill-box; transform-origin: center; }
+.pose-shock .o-mouth { opacity: 1; transform: scale(1.1, 1.6); transform-box: fill-box; transform-origin: center; }
+.pose-shock .o-brow { transform: translate(0, -12px); }

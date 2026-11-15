@@ -32,7 +32,7 @@ function categoryFor(roundCat) {
 }
 
 /* ---------- questions that cannot stand alone ---------- */
-const DEPENDS_ON_ROUND = /\b(this round|previous (answer|question)|the answer to question|last answer|each answer|answers in this)\b/i;
+const DEPENDS_ON_ROUND = /\b(this round|previous (\w+ )?(answers?|questions?)|the answer to question|last answer|each answer|answers in this|name (any|all) \w+)\b/i;
 function usable(q) {
   const a = String(q.a || '').trim();
   const text = String(q.q || '').trim();
@@ -63,6 +63,34 @@ function answerType(q) {
   if (/\b(author|novel|book|poet|play|painter|artist)\b/i.test(t)) return 'arts';
   if (/\b(river|sea|ocean|lake|mountain|island)\b/i.test(t)) return 'place';
   return 'other';
+}
+
+/* ---------- the noun the question asks for: "which ALBUM", "what FILM" ---------- */
+const HEADS = 'film|movie|album|novel|book|club|team|country|countries|city|capital|singer|band|group|song|single|hit|show|series|programme|sitcom|soap|sport|animal|bird|fish|dog|breed|river|actor|actress|planet|element|colour|color|car|company|brand|newspaper|cheese|drink|cocktail|game|character|instrument|language|island|mountain|ocean|sea|desert|king|queen|president|poet|author|writer|artist|painter|composer|musical|opera|ballet|play|state|county|month|day|network|broadcaster|service|party|act|song|duo|rapper|comedian|footballer|player|driver|horse|racecourse|stadium|ground|festival|award|prize|dish|fruit|vegetable|spice|herb|flower|tree|bone|organ|gas|metal|currency|airline|ship|vessel|bridge|building|tower|church|cathedral|university|school|magazine|comic|cartoon|superhero|villain|wizard|detective|spy|word|letter|number';
+const HEAD_RE = new RegExp('\\b(?:which|what|name the)\\s+(?:[a-z0-9’\'-]+\\s+){0,3}?(' + HEADS + ')s?\\b', 'i');
+function headNoun(q) {
+  const m = String(q.q || '').match(HEAD_RE);
+  if (!m) return null;
+  const h = m[1].toLowerCase();
+  return {movie: 'film', countries: 'country', color: 'colour', single: 'song', hit: 'song', sitcom: 'show', programme: 'show', series: 'show', group: 'band', duo: 'band', actress: 'actor', writer: 'author', painter: 'artist', novel: 'book', broadcaster: 'network', service: 'network'}[h] || h;
+}
+const personLike = s => /^[A-Z][a-zà-ÿ'’-]+(\s(van|de|von|da|of|the|[A-Z][a-zà-ÿ'’.-]+)){1,3}$/.test(String(s).trim());
+
+/* ---------- "Is it X or Y?" questions keep just those two options ---------- */
+function eitherOr(q) {
+  const t = String(q.q || '').trim();
+  const m = t.match(/(?:^|[,:\s])(?:is (?:it|an?|the)?\s*|was (?:it|an?|the)?\s*|does (?:it|she|he)?\s*|did (?:it|she|he)?\s*)?([^,:?]{1,40}?)\s+or\s+([^,:?]{1,40}?)\?\s*$/i);
+  if (!m) return null;
+  const strip = x => x.trim().replace(/^(an?|the|his|her|their)\s+/i, '').replace(/^(it|she|he)\s+/i, '').trim();
+  // Use the shortest sensible phrase either side of "or": the words just before it, matched in length.
+  const right = strip(m[2]);
+  const leftWords = strip(m[1]).split(/\s+/);
+  const left = leftWords.slice(-Math.max(1, right.split(/\s+/).length)).join(' ');
+  const ans = normAns(cleanAns(q.a));
+  const opts = [ucfirst(left), ucfirst(right)];
+  const correct = opts.findIndex(o => normAns(o) === ans || ans.endsWith(normAns(o)) || normAns(o).endsWith(ans));
+  if (correct < 0 || normAns(opts[0]) === normAns(opts[1])) return null;
+  return {text: t, opts, correct, answer: opts[correct]};
 }
 
 /* ---------- Pub Quiz Powerhouse helpers (ported) ---------- */
@@ -148,7 +176,10 @@ function makeWrong(q, n, exclude, roundAnswers, allAnswers, typedPool) {
   const shape = x => { x = cleanAns(x); return x.length < 40 && Math.abs(x.split(/\s+/).length - words) <= 1 && isPerson(x) === person && /\d/.test(x) === hasNum
     && caps(x) === caps(ans) && x.length >= ans.length * 0.4 && x.length <= ans.length * 2.5 + 3; };
   if (typedPool) {
-    pick(typedPool.sameCat.filter(shape));
+    if (typedPool.sameHead) pick(typedPool.sameHead.filter(shape));
+    if (out.length < n && typedPool.sameHead && typedPool.sameHead.length >= 6) pick(typedPool.sameHead);
+    if (out.length < n && typedPool.type === 'person') pick(typedPool.sameType.filter(x => personLike(cleanAns(x))));
+    if (out.length < n) pick(typedPool.sameCat.filter(shape));
     if (out.length < n) pick(typedPool.sameType.filter(shape));
     if (out.length < n && typedPool.type !== 'other') pick(typedPool.sameType);
   }
@@ -177,10 +208,12 @@ function lettered(q) {
 function choicesFor(q, roundAnswers, allAnswers, typedPool, override) {
   const lt = lettered(q);
   if (lt) return lt;
+  if (!override) { const eo = eitherOr(q); if (eo) return eo; }
   const io = inlineOpts(q);
   if (io) return {text: io.stem, opts: io.opts, correct: io.correct, answer: io.opts[io.correct]};
   let wrong = (override || q.wrong || []).map(x => String(x).trim()).filter(Boolean).slice(0, 3);
-  if (wrong.length < 3) wrong = wrong.concat(makeWrong(q, 3 - wrong.length, wrong, roundAnswers, allAnswers, typedPool));
+  // A hand-written override is used exactly as given (1 to 3 wrong options).
+  if (!override && !(q.wrong || []).length && wrong.length < 3) wrong = wrong.concat(makeWrong(q, 3 - wrong.length, wrong, roundAnswers, allAnswers, typedPool));
   const rnd = seeded(q.id + '|' + q.a);
   const right = String(q.a || '').replace(/\s*\([^)]*\)/g, '').trim() || q.a;
   const order = [right].concat(wrong).map((o, i) => ({o, i, k: rnd()})).sort((x, y) => x.k - y.k);
@@ -198,6 +231,8 @@ function readRounds() {
   add('quizdemon-batch1.json', false);
   add('weekly-745-754-batch2.json', false);
   if (includePreview) add('2020-2026-editorial-preview.json', true);
+  // New Smart Alec packs stay tagged as preview until the owner signs them off.
+  for (const f of fs.readdirSync(SRC).filter(f => /^smart-alec-.*\.json$/.test(f)).sort()) if (includePreview) add(f, true);
   return rounds;
 }
 
@@ -205,25 +240,29 @@ function build() {
   const rounds = readRounds();
   const allAnswers = rounds.flatMap(r => r.questions.map(q => q.a)).filter(Boolean);
   // Pools of answers grouped by answer type, and by type + category.
-  const byType = new Map(), byTypeCat = new Map();
+  const byType = new Map(), byTypeCat = new Map(), byHead = new Map();
   for (const r of rounds) for (const q of r.questions) {
     if (!q.a || String(q.a).includes(';')) continue;
     const t = answerType(q), k = t + '|' + categoryFor(q.cat);
     if (!byType.has(t)) byType.set(t, []);
     if (!byTypeCat.has(k)) byTypeCat.set(k, []);
     byType.get(t).push(q.a); byTypeCat.get(k).push(q.a);
+    const h = headNoun(q);
+    if (h) { if (!byHead.has(h)) byHead.set(h, []); byHead.get(h).push(q.a); }
   }
   const overridesFile = path.join(ROOT, 'data', 'option-overrides.json');
   const overrides = fs.existsSync(overridesFile) ? JSON.parse(fs.readFileSync(overridesFile, 'utf8')) : {};
+  const excluded = new Set(Array.isArray(overrides._exclude) ? overrides._exclude : []);
   const seen = new Set();
   const out = [];
   let skipped = 0;
   for (const r of rounds) {
     const roundAnswers = r.type !== 'letters' ? r.questions.map(x => x.a).filter(Boolean) : [];
     for (const q of r.questions) {
-      if (!usable(q) || seen.has(q.id)) { skipped++; continue; }
+      if (!usable(q) || seen.has(q.id) || excluded.has(q.id)) { skipped++; continue; }
       const type = answerType(q);
-      const typedPool = {type, sameCat: byTypeCat.get(type + '|' + categoryFor(q.cat)) || [], sameType: byType.get(type) || []};
+      const head = headNoun(q);
+      const typedPool = {type, sameHead: head ? byHead.get(head) : null, sameCat: byTypeCat.get(type + '|' + categoryFor(q.cat)) || [], sameType: byType.get(type) || []};
       const c = choicesFor(q, roundAnswers, allAnswers, typedPool, Array.isArray(overrides[q.id]) ? overrides[q.id] : null);
       if (c.opts.length < 2 || c.opts.length > 4 || new Set(c.opts.map(normAns)).size !== c.opts.length) { skipped++; continue; }
       seen.add(q.id);
@@ -247,4 +286,4 @@ function build() {
 }
 
 if (require.main === module) build();
-module.exports = {categoryFor, choicesFor, normAns, usable, answerType};
+module.exports = {categoryFor, choicesFor, normAns, usable, answerType, headNoun};
