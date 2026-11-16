@@ -1,0 +1,812 @@
+{
+ "source": "Smart Alec — Brainbox batch 1 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Brainbox batch 1",
+   "rounds": [
+    {
+     "id": "SABB1",
+     "name": "SCIENCE AND ARTS",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SABB1-01",
+       "q": "What is the chemical symbol for gold?",
+       "a": "Au",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Ag",
+        "Gd",
+        "Go"
+       ]
+      },
+      {
+       "id": "SABB1-02",
+       "q": "What is the chemical symbol for iron?",
+       "a": "Fe",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Ir",
+        "In",
+        "I"
+       ]
+      },
+      {
+       "id": "SABB1-03",
+       "q": "What is the chemical formula for water?",
+       "a": "H2O",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "CO2",
+        "O2",
+        "H2O2"
+       ]
+      },
+      {
+       "id": "SABB1-04",
+       "q": "Which gas makes up most of the Earth's atmosphere?",
+       "a": "Nitrogen",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Oxygen",
+        "Carbon dioxide",
+        "Argon"
+       ]
+      },
+      {
+       "id": "SABB1-05",
+       "q": "Which planet is known as the Red Planet?",
+       "a": "Mars",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Jupiter",
+        "Venus",
+        "Mercury"
+       ]
+      },
+      {
+       "id": "SABB1-06",
+       "q": "Which is the largest planet in the Solar System?",
+       "a": "Jupiter",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Saturn",
+        "Neptune",
+        "Uranus"
+       ]
+      },
+      {
+       "id": "SABB1-07",
+       "q": "Which planet is closest to the Sun?",
+       "a": "Mercury",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Venus",
+        "Mars",
+        "Earth"
+       ]
+      },
+      {
+       "id": "SABB1-08",
+       "q": "How many bones are in the adult human body?",
+       "a": "206",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "186",
+        "212",
+        "256"
+       ]
+      },
+      {
+       "id": "SABB1-09",
+       "q": "What is the largest organ of the human body?",
+       "a": "Skin",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Liver",
+        "Brain",
+        "Lungs"
+       ]
+      },
+      {
+       "id": "SABB1-10",
+       "q": "Who developed the theory of relativity?",
+       "a": "Albert Einstein",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Isaac Newton",
+        "Niels Bohr",
+        "Stephen Hawking"
+       ]
+      },
+      {
+       "id": "SABB1-11",
+       "q": "Who discovered penicillin?",
+       "a": "Alexander Fleming",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Louis Pasteur",
+        "Joseph Lister",
+        "Edward Jenner"
+       ]
+      },
+      {
+       "id": "SABB1-12",
+       "q": "Who wrote On the Origin of Species?",
+       "a": "Charles Darwin",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Gregor Mendel",
+        "Jean-Baptiste Lamarck",
+        "Thomas Huxley"
+       ]
+      },
+      {
+       "id": "SABB1-13",
+       "q": "At what temperature in Celsius does water boil at sea level?",
+       "a": "100",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "90",
+        "110",
+        "212"
+       ]
+      },
+      {
+       "id": "SABB1-14",
+       "q": "What is the hardest natural substance?",
+       "a": "Diamond",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Quartz",
+        "Granite",
+        "Topaz"
+       ]
+      },
+      {
+       "id": "SABB1-15",
+       "q": "Which gas do plants take in from the air to make food?",
+       "a": "Carbon dioxide",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Oxygen",
+        "Nitrogen",
+        "Hydrogen"
+       ]
+      },
+      {
+       "id": "SABB1-16",
+       "q": "What is the fastest land animal?",
+       "a": "Cheetah",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Lion",
+        "Pronghorn",
+        "Greyhound"
+       ]
+      },
+      {
+       "id": "SABB1-17",
+       "q": "What is the largest animal that has ever lived?",
+       "a": "Blue whale",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "African elephant",
+        "Sperm whale",
+        "Whale shark"
+       ]
+      },
+      {
+       "id": "SABB1-18",
+       "q": "What is a baby kangaroo called?",
+       "a": "Joey",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Kit",
+        "Cub",
+        "Pup"
+       ]
+      },
+      {
+       "id": "SABB1-19",
+       "q": "What is the collective noun for a group of crows?",
+       "a": "A murder",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A parliament",
+        "A gaggle",
+        "A pride"
+       ]
+      },
+      {
+       "id": "SABB1-20",
+       "q": "How many legs does a spider have?",
+       "a": "8",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "6",
+        "10",
+        "12"
+       ]
+      },
+      {
+       "id": "SABB1-21",
+       "q": "Who painted the Mona Lisa?",
+       "a": "Leonardo da Vinci",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Michelangelo",
+        "Raphael",
+        "Botticelli"
+       ]
+      },
+      {
+       "id": "SABB1-22",
+       "q": "Who painted The Starry Night?",
+       "a": "Vincent van Gogh",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Claude Monet",
+        "Paul Gauguin",
+        "Paul Cézanne"
+       ]
+      },
+      {
+       "id": "SABB1-23",
+       "q": "Who painted the ceiling of the Sistine Chapel?",
+       "a": "Michelangelo",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Raphael",
+        "Leonardo da Vinci",
+        "Caravaggio"
+       ]
+      },
+      {
+       "id": "SABB1-24",
+       "q": "Who created the Angel of the North sculpture?",
+       "a": "Antony Gormley",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Henry Moore",
+        "Anish Kapoor",
+        "Barbara Hepworth"
+       ]
+      },
+      {
+       "id": "SABB1-25",
+       "q": "Who painted The Hay Wain?",
+       "a": "John Constable",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "J. M. W. Turner",
+        "Thomas Gainsborough",
+        "George Stubbs"
+       ]
+      },
+      {
+       "id": "SABB1-26",
+       "q": "What nationality was the artist Pablo Picasso?",
+       "a": "Spanish",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "French",
+        "Italian",
+        "Portuguese"
+       ]
+      },
+      {
+       "id": "SABB1-27",
+       "q": "Who wrote Pride and Prejudice?",
+       "a": "Jane Austen",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Charlotte Brontë",
+        "George Eliot",
+        "Mary Shelley"
+       ]
+      },
+      {
+       "id": "SABB1-28",
+       "q": "Who wrote Oliver Twist?",
+       "a": "Charles Dickens",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Thomas Hardy",
+        "William Thackeray",
+        "Anthony Trollope"
+       ]
+      },
+      {
+       "id": "SABB1-29",
+       "q": "Who wrote the novel 1984?",
+       "a": "George Orwell",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Aldous Huxley",
+        "H. G. Wells",
+        "Ray Bradbury"
+       ]
+      },
+      {
+       "id": "SABB1-30",
+       "q": "Who wrote Frankenstein?",
+       "a": "Mary Shelley",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bram Stoker",
+        "Emily Brontë",
+        "Robert Louis Stevenson"
+       ]
+      },
+      {
+       "id": "SABB1-31",
+       "q": "Who wrote Dracula?",
+       "a": "Bram Stoker",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Mary Shelley",
+        "Edgar Allan Poe",
+        "Oscar Wilde"
+       ]
+      },
+      {
+       "id": "SABB1-32",
+       "q": "Who created Sherlock Holmes?",
+       "a": "Arthur Conan Doyle",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Agatha Christie",
+        "G. K. Chesterton",
+        "Wilkie Collins"
+       ]
+      },
+      {
+       "id": "SABB1-33",
+       "q": "In which city is Shakespeare's Romeo and Juliet set?",
+       "a": "Verona",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Venice",
+        "Padua",
+        "Florence"
+       ]
+      },
+      {
+       "id": "SABB1-34",
+       "q": "Shakespeare's Hamlet is the prince of which country?",
+       "a": "Denmark",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Norway",
+        "Sweden",
+        "Scotland"
+       ]
+      },
+      {
+       "id": "SABB1-35",
+       "q": "Who wrote The Hobbit?",
+       "a": "J. R. R. Tolkien",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "C. S. Lewis",
+        "Terry Pratchett",
+        "Philip Pullman"
+       ]
+      },
+      {
+       "id": "SABB1-36",
+       "q": "In The Lion, the Witch and the Wardrobe, how do the children first reach Narnia?",
+       "a": "Through a wardrobe",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Through a mirror",
+        "Down a rabbit hole",
+        "Through a painting"
+       ]
+      },
+      {
+       "id": "SABB1-37",
+       "q": "Which Hogwarts house is Harry Potter in?",
+       "a": "Gryffindor",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Hufflepuff",
+        "Ravenclaw",
+        "Slytherin"
+       ]
+      },
+      {
+       "id": "SABB1-38",
+       "q": "Who wrote Alice's Adventures in Wonderland?",
+       "a": "Lewis Carroll",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Edward Lear",
+        "J. M. Barrie",
+        "Kenneth Grahame"
+       ]
+      },
+      {
+       "id": "SABB1-39",
+       "q": "Who wrote Peter Pan?",
+       "a": "J. M. Barrie",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Lewis Carroll",
+        "A. A. Milne",
+        "Roald Dahl"
+       ]
+      },
+      {
+       "id": "SABB1-40",
+       "q": "What is the name of Mr Toad's home in The Wind in the Willows?",
+       "a": "Toad Hall",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Toad Manor",
+        "Toad Castle",
+        "Toad Lodge"
+       ]
+      },
+      {
+       "id": "SABB1-41",
+       "q": "Who wrote Charlie and the Chocolate Factory?",
+       "a": "Roald Dahl",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "David Walliams",
+        "Enid Blyton",
+        "Michael Morpurgo"
+       ]
+      },
+      {
+       "id": "SABB1-42",
+       "q": "Who wrote the Famous Five books?",
+       "a": "Enid Blyton",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Roald Dahl",
+        "Arthur Ransome",
+        "Richard Adams"
+       ]
+      },
+      {
+       "id": "SABB1-43",
+       "q": "What kind of animals are the heroes of Watership Down?",
+       "a": "Rabbits",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Hares",
+        "Badgers",
+        "Moles"
+       ]
+      },
+      {
+       "id": "SABB1-44",
+       "q": "Paella comes from which country?",
+       "a": "Spain",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Italy",
+        "Portugal",
+        "Mexico"
+       ]
+      },
+      {
+       "id": "SABB1-45",
+       "q": "What is the main ingredient of guacamole?",
+       "a": "Avocado",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Tomato",
+        "Chickpeas",
+        "Cucumber"
+       ]
+      },
+      {
+       "id": "SABB1-46",
+       "q": "What is the main ingredient of hummus?",
+       "a": "Chickpeas",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Lentils",
+        "Kidney beans",
+        "Butter beans"
+       ]
+      },
+      {
+       "id": "SABB1-47",
+       "q": "Sushi comes from which country?",
+       "a": "Japan",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "China",
+        "Korea",
+        "Thailand"
+       ]
+      },
+      {
+       "id": "SABB1-48",
+       "q": "What is Stilton?",
+       "a": "A cheese",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A sausage",
+        "A pie",
+        "A biscuit"
+       ]
+      },
+      {
+       "id": "SABB1-49",
+       "q": "Wensleydale cheese comes from which county?",
+       "a": "Yorkshire",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Lancashire",
+        "Derbyshire",
+        "Cumbria"
+       ]
+      },
+      {
+       "id": "SABB1-50",
+       "q": "Saffron comes from which flower?",
+       "a": "Crocus",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Poppy",
+        "Marigold",
+        "Daffodil"
+       ]
+      },
+      {
+       "id": "SABB1-51",
+       "q": "Which fruit is used in a classic tarte Tatin?",
+       "a": "Apple",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Plum",
+        "Cherry",
+        "Peach"
+       ]
+      },
+      {
+       "id": "SABB1-52",
+       "q": "Which nut is used to make marzipan?",
+       "a": "Almond",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Hazelnut",
+        "Walnut",
+        "Cashew"
+       ]
+      },
+      {
+       "id": "SABB1-53",
+       "q": "Prosecco comes from which country?",
+       "a": "Italy",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Spain",
+        "France",
+        "Portugal"
+       ]
+      },
+      {
+       "id": "SABB1-54",
+       "q": "Cava comes from which country?",
+       "a": "Spain",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Italy",
+        "Portugal",
+        "France"
+       ]
+      },
+      {
+       "id": "SABB1-55",
+       "q": "Which vitamin does your skin make from sunlight?",
+       "a": "Vitamin D",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Vitamin C",
+        "Vitamin A",
+        "Vitamin B12"
+       ]
+      },
+      {
+       "id": "SABB1-56",
+       "q": "Scurvy is caused by a lack of which vitamin?",
+       "a": "Vitamin C",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Vitamin D",
+        "Vitamin A",
+        "Vitamin K"
+       ]
+      },
+      {
+       "id": "SABB1-57",
+       "q": "What does DNA stand for?",
+       "a": "Deoxyribonucleic acid",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Dinitrogen acid",
+        "Deoxyribose nitrate",
+        "Diribonucleic acid"
+       ]
+      },
+      {
+       "id": "SABB1-58",
+       "q": "Which scientist is said to have been inspired by a falling apple?",
+       "a": "Isaac Newton",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Galileo Galilei",
+        "Johannes Kepler",
+        "Albert Einstein"
+       ]
+      },
+      {
+       "id": "SABB1-59",
+       "q": "Who is credited with inventing the telephone?",
+       "a": "Alexander Graham Bell",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Thomas Edison",
+        "Nikola Tesla",
+        "Guglielmo Marconi"
+       ]
+      },
+      {
+       "id": "SABB1-60",
+       "q": "Who invented the World Wide Web?",
+       "a": "Tim Berners-Lee",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bill Gates",
+        "Steve Jobs",
+        "Alan Turing"
+       ]
+      },
+      {
+       "id": "SABB1-61",
+       "q": "Which mathematician famously helped break the Enigma code at Bletchley Park?",
+       "a": "Alan Turing",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Tim Berners-Lee",
+        "Charles Babbage",
+        "Ada Lovelace"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

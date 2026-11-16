@@ -1,0 +1,708 @@
+{
+ "source": "Smart Alec — Brainbox batch 2 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Brainbox batch 2",
+   "rounds": [
+    {
+     "id": "SABB2",
+     "name": "SCIENCE AND ARTS",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SABB2-01",
+       "q": "What is the chemical symbol for sodium?",
+       "a": "Na",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "So",
+        "Sd",
+        "S"
+       ]
+      },
+      {
+       "id": "SABB2-02",
+       "q": "What is the chemical symbol for potassium?",
+       "a": "K",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "P",
+        "Po",
+        "Pt"
+       ]
+      },
+      {
+       "id": "SABB2-03",
+       "q": "Which element has the atomic number 1?",
+       "a": "Hydrogen",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Helium",
+        "Oxygen",
+        "Carbon"
+       ]
+      },
+      {
+       "id": "SABB2-04",
+       "q": "At what temperature in Fahrenheit does water freeze?",
+       "a": "32",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "0",
+        "100",
+        "212"
+       ]
+      },
+      {
+       "id": "SABB2-05",
+       "q": "Which part of a cell contains most of its DNA?",
+       "a": "The nucleus",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The mitochondria",
+        "The ribosome",
+        "The cell membrane"
+       ]
+      },
+      {
+       "id": "SABB2-06",
+       "q": "Which part of a cell is known as its powerhouse?",
+       "a": "The mitochondria",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The nucleus",
+        "The ribosome",
+        "The Golgi body"
+       ]
+      },
+      {
+       "id": "SABB2-07",
+       "q": "Which blood cells fight infection?",
+       "a": "White blood cells",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Red blood cells",
+        "Platelets",
+        "Plasma"
+       ]
+      },
+      {
+       "id": "SABB2-08",
+       "q": "How many chambers does the human heart have?",
+       "a": "4",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "2",
+        "3",
+        "6"
+       ]
+      },
+      {
+       "id": "SABB2-09",
+       "q": "Which organ produces insulin?",
+       "a": "The pancreas",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The liver",
+        "The kidneys",
+        "The spleen"
+       ]
+      },
+      {
+       "id": "SABB2-10",
+       "q": "In which part of the body is the femur?",
+       "a": "The thigh",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The arm",
+        "The foot",
+        "The skull"
+       ]
+      },
+      {
+       "id": "SABB2-11",
+       "q": "Which planet has the most spectacular rings?",
+       "a": "Saturn",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Jupiter",
+        "Uranus",
+        "Neptune"
+       ]
+      },
+      {
+       "id": "SABB2-12",
+       "q": "Which planet was reclassified as a dwarf planet in 2006?",
+       "a": "Pluto",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Eris",
+        "Mercury",
+        "Neptune"
+       ]
+      },
+      {
+       "id": "SABB2-13",
+       "q": "How long does the Earth take to orbit the Sun?",
+       "a": "About 365 days",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "About 30 days",
+        "About 24 hours",
+        "About 1,000 days"
+       ]
+      },
+      {
+       "id": "SABB2-14",
+       "q": "What is the name of our galaxy?",
+       "a": "The Milky Way",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Andromeda",
+        "Triangulum",
+        "Sombrero"
+       ]
+      },
+      {
+       "id": "SABB2-15",
+       "q": "Which force keeps the planets in orbit around the Sun?",
+       "a": "Gravity",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Magnetism",
+        "Friction",
+        "Inertia"
+       ]
+      },
+      {
+       "id": "SABB2-16",
+       "q": "What is the unit of electrical resistance?",
+       "a": "Ohm",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Volt",
+        "Amp",
+        "Watt"
+       ]
+      },
+      {
+       "id": "SABB2-17",
+       "q": "Who discovered radium with her husband Pierre?",
+       "a": "Marie Curie",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Rosalind Franklin",
+        "Ada Lovelace",
+        "Lise Meitner"
+       ]
+      },
+      {
+       "id": "SABB2-18",
+       "q": "Dolly the sheep was the first what to be cloned from an adult cell?",
+       "a": "Mammal",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bird",
+        "Fish",
+        "Reptile"
+       ]
+      },
+      {
+       "id": "SABB2-19",
+       "q": "What does a seismometer measure?",
+       "a": "Earthquakes",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Wind speed",
+        "Rainfall",
+        "Air pressure"
+       ]
+      },
+      {
+       "id": "SABB2-20",
+       "q": "What does a barometer measure?",
+       "a": "Air pressure",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Temperature",
+        "Humidity",
+        "Wind speed"
+       ]
+      },
+      {
+       "id": "SABB2-21",
+       "q": "What is the largest living bird?",
+       "a": "Ostrich",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Emu",
+        "Albatross",
+        "Condor"
+       ]
+      },
+      {
+       "id": "SABB2-22",
+       "q": "Which is the only mammal capable of true flight?",
+       "a": "Bat",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Flying squirrel",
+        "Sugar glider",
+        "Colugo"
+       ]
+      },
+      {
+       "id": "SABB2-23",
+       "q": "Which animal is called the ship of the desert?",
+       "a": "Camel",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Horse",
+        "Donkey",
+        "Llama"
+       ]
+      },
+      {
+       "id": "SABB2-24",
+       "q": "How many hearts does an octopus have?",
+       "a": "3",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1",
+        "2",
+        "8"
+       ]
+      },
+      {
+       "id": "SABB2-25",
+       "q": "What is a female deer called?",
+       "a": "A doe",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A vixen",
+        "A sow",
+        "A jenny"
+       ]
+      },
+      {
+       "id": "SABB2-26",
+       "q": "What is a group of lions called?",
+       "a": "A pride",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A pack",
+        "A herd",
+        "A troop"
+       ]
+      },
+      {
+       "id": "SABB2-27",
+       "q": "Who painted The Scream?",
+       "a": "Edvard Munch",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Gustav Klimt",
+        "Egon Schiele",
+        "Wassily Kandinsky"
+       ]
+      },
+      {
+       "id": "SABB2-28",
+       "q": "Who painted Girl with a Pearl Earring?",
+       "a": "Johannes Vermeer",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Rembrandt",
+        "Frans Hals",
+        "Jan van Eyck"
+       ]
+      },
+      {
+       "id": "SABB2-29",
+       "q": "Who painted the Water Lilies series?",
+       "a": "Claude Monet",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Édouard Manet",
+        "Pierre-Auguste Renoir",
+        "Edgar Degas"
+       ]
+      },
+      {
+       "id": "SABB2-30",
+       "q": "Andy Warhol famously painted cans of which brand of soup?",
+       "a": "Campbell's",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Heinz",
+        "Knorr",
+        "Baxters"
+       ]
+      },
+      {
+       "id": "SABB2-31",
+       "q": "Banksy is best known for which kind of art?",
+       "a": "Street art",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Sculpture",
+        "Photography",
+        "Ceramics"
+       ]
+      },
+      {
+       "id": "SABB2-32",
+       "q": "Who painted The Fighting Temeraire?",
+       "a": "J. M. W. Turner",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "John Constable",
+        "Thomas Gainsborough",
+        "William Blake"
+       ]
+      },
+      {
+       "id": "SABB2-33",
+       "q": "L. S. Lowry is best known for paintings of which places?",
+       "a": "The industrial towns of North West England",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Cornish coast",
+        "The Scottish Highlands",
+        "The London docks"
+       ]
+      },
+      {
+       "id": "SABB2-34",
+       "q": "Who wrote Wuthering Heights?",
+       "a": "Emily Brontë",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Charlotte Brontë",
+        "Anne Brontë",
+        "Jane Austen"
+       ]
+      },
+      {
+       "id": "SABB2-35",
+       "q": "Who wrote Jane Eyre?",
+       "a": "Charlotte Brontë",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Emily Brontë",
+        "Anne Brontë",
+        "George Eliot"
+       ]
+      },
+      {
+       "id": "SABB2-36",
+       "q": "Who wrote The Great Gatsby?",
+       "a": "F. Scott Fitzgerald",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Ernest Hemingway",
+        "John Steinbeck",
+        "William Faulkner"
+       ]
+      },
+      {
+       "id": "SABB2-37",
+       "q": "Who wrote To Kill a Mockingbird?",
+       "a": "Harper Lee",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Truman Capote",
+        "John Steinbeck",
+        "Mark Twain"
+       ]
+      },
+      {
+       "id": "SABB2-38",
+       "q": "Who wrote Of Mice and Men?",
+       "a": "John Steinbeck",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Ernest Hemingway",
+        "F. Scott Fitzgerald",
+        "Arthur Miller"
+       ]
+      },
+      {
+       "id": "SABB2-39",
+       "q": "Who wrote Lord of the Flies?",
+       "a": "William Golding",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Anthony Burgess"
+       ]
+      },
+      {
+       "id": "SABB2-40",
+       "q": "Who wrote Brave New World?",
+       "a": "Aldous Huxley",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "George Orwell",
+        "H. G. Wells",
+        "Ray Bradbury"
+       ]
+      },
+      {
+       "id": "SABB2-41",
+       "q": "Who wrote The Tale of Peter Rabbit?",
+       "a": "Beatrix Potter",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A. A. Milne",
+        "Kenneth Grahame",
+        "Enid Blyton"
+       ]
+      },
+      {
+       "id": "SABB2-42",
+       "q": "Who wrote Winnie-the-Pooh?",
+       "a": "A. A. Milne",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Beatrix Potter",
+        "Kenneth Grahame",
+        "Lewis Carroll"
+       ]
+      },
+      {
+       "id": "SABB2-43",
+       "q": "Who wrote the His Dark Materials trilogy?",
+       "a": "Philip Pullman",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Terry Pratchett",
+        "Neil Gaiman",
+        "J. K. Rowling"
+       ]
+      },
+      {
+       "id": "SABB2-44",
+       "q": "Who wrote the Discworld novels?",
+       "a": "Terry Pratchett",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Douglas Adams",
+        "Neil Gaiman",
+        "Terry Jones"
+       ]
+      },
+      {
+       "id": "SABB2-45",
+       "q": "Who wrote The Hitchhiker's Guide to the Galaxy?",
+       "a": "Douglas Adams",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Terry Pratchett",
+        "Arthur C. Clarke",
+        "Isaac Asimov"
+       ]
+      },
+      {
+       "id": "SABB2-46",
+       "q": "In The Hitchhiker's Guide to the Galaxy, what is the answer to life, the universe and everything?",
+       "a": "42",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "7",
+        "99",
+        "101"
+       ]
+      },
+      {
+       "id": "SABB2-47",
+       "q": "Goulash is a national dish of which country?",
+       "a": "Hungary",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Austria",
+        "Poland",
+        "Czech Republic"
+       ]
+      },
+      {
+       "id": "SABB2-48",
+       "q": "What is the main ingredient of a risotto?",
+       "a": "Rice",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Pasta",
+        "Potato",
+        "Couscous"
+       ]
+      },
+      {
+       "id": "SABB2-49",
+       "q": "Which spice gives most curries their yellow colour?",
+       "a": "Turmeric",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Cumin",
+        "Paprika",
+        "Cinnamon"
+       ]
+      },
+      {
+       "id": "SABB2-50",
+       "q": "Which country produces the most coffee?",
+       "a": "Brazil",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Colombia",
+        "Vietnam",
+        "Ethiopia"
+       ]
+      },
+      {
+       "id": "SABB2-51",
+       "q": "Haggis is the national dish of which country?",
+       "a": "Scotland",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Ireland",
+        "Wales",
+        "Iceland"
+       ]
+      },
+      {
+       "id": "SABB2-52",
+       "q": "The Bakewell tart is named after a town in which county?",
+       "a": "Derbyshire",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Yorkshire",
+        "Lancashire",
+        "Cheshire"
+       ]
+      },
+      {
+       "id": "SABB2-53",
+       "q": "What kind of fruit is a Granny Smith?",
+       "a": "Apple",
+       "pts": 1,
+       "cat": "SCIENCE AND ARTS",
+       "note": "Smart Alec Brainbox batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Pear",
+        "Plum",
+        "Grape"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

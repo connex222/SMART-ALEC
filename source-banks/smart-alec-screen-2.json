@@ -1,0 +1,630 @@
+{
+ "source": "Smart Alec — Screen Time batch 2 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Screen Time batch 2",
+   "rounds": [
+    {
+     "id": "SAS2",
+     "name": "TV AND FILM",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SAS2-01",
+       "q": "Who directed Pulp Fiction?",
+       "a": "Quentin Tarantino",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Martin Scorsese",
+        "Guy Ritchie",
+        "Robert Rodriguez"
+       ]
+      },
+      {
+       "id": "SAS2-02",
+       "q": "Who directed Schindler's List?",
+       "a": "Steven Spielberg",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Roman Polanski",
+        "Ridley Scott",
+        "Oliver Stone"
+       ]
+      },
+      {
+       "id": "SAS2-03",
+       "q": "Who directed the 1960 film Psycho?",
+       "a": "Alfred Hitchcock",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Stanley Kubrick",
+        "Orson Welles",
+        "Billy Wilder"
+       ]
+      },
+      {
+       "id": "SAS2-04",
+       "q": "Who directed the 1980 film The Shining?",
+       "a": "Stanley Kubrick",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Alfred Hitchcock",
+        "John Carpenter",
+        "Wes Craven"
+       ]
+      },
+      {
+       "id": "SAS2-05",
+       "q": "Which actor played Indiana Jones?",
+       "a": "Harrison Ford",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Tom Selleck",
+        "Kevin Costner",
+        "Mel Gibson"
+       ]
+      },
+      {
+       "id": "SAS2-06",
+       "q": "Who played Luke Skywalker in the original Star Wars films?",
+       "a": "Mark Hamill",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Harrison Ford",
+        "Ewan McGregor",
+        "Hayden Christensen"
+       ]
+      },
+      {
+       "id": "SAS2-07",
+       "q": "Who provided the voice of Darth Vader?",
+       "a": "James Earl Jones",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "David Prowse",
+        "Morgan Freeman",
+        "Christopher Lee"
+       ]
+      },
+      {
+       "id": "SAS2-08",
+       "q": "Which film features the line \"There's no place like home\"?",
+       "a": "The Wizard of Oz",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Home Alone",
+        "E.T. the Extra-Terrestrial",
+        "Mary Poppins"
+       ]
+      },
+      {
+       "id": "SAS2-09",
+       "q": "What is the name of Dorothy's dog in The Wizard of Oz?",
+       "a": "Toto",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Lassie",
+        "Benji",
+        "Snowy"
+       ]
+      },
+      {
+       "id": "SAS2-10",
+       "q": "Which film features the line \"You can't handle the truth!\"?",
+       "a": "A Few Good Men",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Firm",
+        "Top Gun",
+        "JFK"
+       ]
+      },
+      {
+       "id": "SAS2-11",
+       "q": "Which film features the line \"I see dead people\"?",
+       "a": "The Sixth Sense",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Others",
+        "Ghost",
+        "Poltergeist"
+       ]
+      },
+      {
+       "id": "SAS2-12",
+       "q": "Who played Mrs Doubtfire?",
+       "a": "Robin Williams",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Dustin Hoffman",
+        "Steve Martin",
+        "Billy Crystal"
+       ]
+      },
+      {
+       "id": "SAS2-13",
+       "q": "In which film did Dustin Hoffman dress as a woman to land an acting job?",
+       "a": "Tootsie",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Mrs. Doubtfire",
+        "Some Like It Hot",
+        "Victor/Victoria"
+       ]
+      },
+      {
+       "id": "SAS2-14",
+       "q": "What is the name of the snowman in Frozen?",
+       "a": "Olaf",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Sven",
+        "Kristoff",
+        "Hans"
+       ]
+      },
+      {
+       "id": "SAS2-15",
+       "q": "What is the name of Woody's horse in Toy Story?",
+       "a": "Bullseye",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Trigger",
+        "Silver",
+        "Champion"
+       ]
+      },
+      {
+       "id": "SAS2-16",
+       "q": "Which Pixar film takes place inside a girl's mind?",
+       "a": "Inside Out",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Soul",
+        "Coco",
+        "Luca"
+       ]
+      },
+      {
+       "id": "SAS2-17",
+       "q": "Which Disney princess loses a glass slipper?",
+       "a": "Cinderella",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Snow White",
+        "Aurora",
+        "Belle"
+       ]
+      },
+      {
+       "id": "SAS2-18",
+       "q": "Who is the villain in The Lion King?",
+       "a": "Scar",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Jafar",
+        "Ursula",
+        "Mufasa"
+       ]
+      },
+      {
+       "id": "SAS2-19",
+       "q": "Who played Wolverine in the X-Men films?",
+       "a": "Hugh Jackman",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Russell Crowe",
+        "Christian Bale",
+        "Chris Hemsworth"
+       ]
+      },
+      {
+       "id": "SAS2-20",
+       "q": "Who played Iron Man in the Marvel films?",
+       "a": "Robert Downey Jr.",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Chris Evans",
+        "Mark Ruffalo",
+        "Jeremy Renner"
+       ]
+      },
+      {
+       "id": "SAS2-21",
+       "q": "Who played Thor in the Marvel films?",
+       "a": "Chris Hemsworth",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Chris Pratt",
+        "Chris Evans",
+        "Liam Hemsworth"
+       ]
+      },
+      {
+       "id": "SAS2-22",
+       "q": "What is the name of Black Panther's kingdom?",
+       "a": "Wakanda",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Genovia",
+        "Zamunda",
+        "Latveria"
+       ]
+      },
+      {
+       "id": "SAS2-23",
+       "q": "What is the name of Batman's butler?",
+       "a": "Alfred",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Jarvis",
+        "Lucius",
+        "Jeeves"
+       ]
+      },
+      {
+       "id": "SAS2-24",
+       "q": "Superman comes from which planet?",
+       "a": "Krypton",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Vulcan",
+        "Gallifrey",
+        "Tatooine"
+       ]
+      },
+      {
+       "id": "SAS2-25",
+       "q": "Who played the Joker in The Dark Knight (2008)?",
+       "a": "Heath Ledger",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Jared Leto",
+        "Joaquin Phoenix",
+        "Jack Nicholson"
+       ]
+      },
+      {
+       "id": "SAS2-26",
+       "q": "On which channel did Love Island launch in 2015?",
+       "a": "ITV2",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Channel 4",
+        "E4",
+        "BBC Three"
+       ]
+      },
+      {
+       "id": "SAS2-27",
+       "q": "Which reality show features the Diary Room?",
+       "a": "Big Brother",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Love Island",
+        "I'm a Celebrity...",
+        "The Traitors"
+       ]
+      },
+      {
+       "id": "SAS2-28",
+       "q": "I'm a Celebrity... Get Me Out of Here! is usually filmed in which country?",
+       "a": "Australia",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "South Africa",
+        "New Zealand",
+        "Costa Rica"
+       ]
+      },
+      {
+       "id": "SAS2-29",
+       "q": "Who hosts The Apprentice in the UK?",
+       "a": "Lord Sugar",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Richard Branson",
+        "Peter Jones",
+        "Duncan Bannatyne"
+       ]
+      },
+      {
+       "id": "SAS2-30",
+       "q": "Which panel show is hosted by Greg Davies with Alex Horne?",
+       "a": "Taskmaster",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "QI",
+        "Would I Lie to You?",
+        "8 Out of 10 Cats"
+       ]
+      },
+      {
+       "id": "SAS2-31",
+       "q": "Who was the original host of QI?",
+       "a": "Stephen Fry",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Sandi Toksvig",
+        "Alan Davies",
+        "Jimmy Carr"
+       ]
+      },
+      {
+       "id": "SAS2-32",
+       "q": "Ian Hislop's fellow team captain on Have I Got News for You is who?",
+       "a": "Paul Merton",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Angus Deayton",
+        "Frankie Boyle",
+        "Jack Dee"
+       ]
+      },
+      {
+       "id": "SAS2-33",
+       "q": "Jeremy Clarkson and Richard Hammond presented Top Gear with which other presenter?",
+       "a": "James May",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Chris Evans",
+        "Matt LeBlanc",
+        "Paddy McGuinness"
+       ]
+      },
+      {
+       "id": "SAS2-34",
+       "q": "Which Doctor Who villains shout \"Exterminate!\"?",
+       "a": "The Daleks",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Cybermen",
+        "The Sontarans",
+        "The Weeping Angels"
+       ]
+      },
+      {
+       "id": "SAS2-35",
+       "q": "Sheldon Cooper is a character in which sitcom?",
+       "a": "The Big Bang Theory",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "How I Met Your Mother",
+        "Two and a Half Men",
+        "Silicon Valley"
+       ]
+      },
+      {
+       "id": "SAS2-36",
+       "q": "Where does Homer Simpson work?",
+       "a": "A nuclear power plant",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A brewery",
+        "A bowling alley",
+        "A doughnut factory"
+       ]
+      },
+      {
+       "id": "SAS2-37",
+       "q": "What is the name of the bar in The Simpsons?",
+       "a": "Moe's Tavern",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Cheers",
+        "The Drunken Clam",
+        "Paddy's Pub"
+       ]
+      },
+      {
+       "id": "SAS2-38",
+       "q": "Which sitcom is set in a bar \"where everybody knows your name\"?",
+       "a": "Cheers",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Frasier",
+        "Taxi",
+        "Seinfeld"
+       ]
+      },
+      {
+       "id": "SAS2-39",
+       "q": "In Only Fools and Horses, in which tower block do the Trotters live?",
+       "a": "Nelson Mandela House",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Churchill House",
+        "Nelson Towers",
+        "Peckham Heights"
+       ]
+      },
+      {
+       "id": "SAS2-40",
+       "q": "Which sitcom follows the Boswell family of Liverpool?",
+       "a": "Bread",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Royle Family",
+        "Shameless",
+        "Butterflies"
+       ]
+      },
+      {
+       "id": "SAS2-41",
+       "q": "Which comedian co-created Phoenix Nights?",
+       "a": "Peter Kay",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Paddy McGuinness",
+        "Johnny Vegas",
+        "John Bishop"
+       ]
+      },
+      {
+       "id": "SAS2-42",
+       "q": "The Royle Family is set in which city?",
+       "a": "Manchester",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Liverpool",
+        "Leeds",
+        "Bolton"
+       ]
+      },
+      {
+       "id": "SAS2-43",
+       "q": "Which Doctor Who spin-off is based in Cardiff?",
+       "a": "Torchwood",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Sarah Jane Adventures",
+        "Class",
+        "Primeval"
+       ]
+      },
+      {
+       "id": "SAS2-44",
+       "q": "Which Netflix series features a dark parallel world called the Upside Down?",
+       "a": "Stranger Things",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Dark",
+        "The OA",
+        "Locke & Key"
+       ]
+      },
+      {
+       "id": "SAS2-45",
+       "q": "What is Eleven's favourite food in Stranger Things?",
+       "a": "Eggo waffles",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Pancakes",
+        "Pizza",
+        "Doughnuts"
+       ]
+      },
+      {
+       "id": "SAS2-46",
+       "q": "Which detective solves the murders in Midsomer Murders?",
+       "a": "DCI Barnaby",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "DCI Banks",
+        "DI Lewis",
+        "Inspector Lynley"
+       ]
+      },
+      {
+       "id": "SAS2-47",
+       "q": "Who plays DCI John Luther in Luther?",
+       "a": "Idris Elba",
+       "pts": 1,
+       "cat": "TV AND FILM",
+       "note": "Smart Alec Screen Time batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Chiwetel Ejiofor",
+        "David Oyelowo",
+        "Daniel Kaluuya"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

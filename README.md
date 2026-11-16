@@ -50,4 +50,6 @@ v0.2.0: Alec on the TV (4 poses, drawn stand-in until the art arrives), 123 ques
 
 v0.3.0: all 16 NOGGIN mini-games on Mini-game spaces and all 4 NOGGIN Showdowns on the Showdown space, played on the TV and phones exactly as in NOGGIN but paying Brains (every mini-game winner +3; Showdown winner takes up to 4 from the loser; correct backers +1). Music now 350 questions (5 new batches awaiting review).
 
-Next: ChatGPT art, your review of the new Music packs, more hand-fixed A–D options.
+v0.4.0: 2,474 questions. 598 questions now have hand-written wrong options (every Screen Time and Sport question, most of Time & Place and Brainbox). Eight new packs add 441 questions across Screen Time, Sport, Time & Place and Brainbox (awaiting review).
+
+Next: ChatGPT art, your review of the new packs, hand-fixing the Pot Luck options.

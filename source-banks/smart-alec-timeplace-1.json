@@ -1,0 +1,786 @@
+{
+ "source": "Smart Alec — Time & Place batch 1 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Time & Place batch 1",
+   "rounds": [
+    {
+     "id": "SATP1",
+     "name": "HISTORY AND GEOGRAPHY",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SATP1-01",
+       "q": "In which year was the Battle of Hastings?",
+       "a": "1066",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1086",
+        "1016",
+        "1215"
+       ]
+      },
+      {
+       "id": "SATP1-02",
+       "q": "In which year was Magna Carta sealed?",
+       "a": "1215",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1066",
+        "1314",
+        "1415"
+       ]
+      },
+      {
+       "id": "SATP1-03",
+       "q": "Who was Britain's first female Prime Minister?",
+       "a": "Margaret Thatcher",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Theresa May",
+        "Barbara Castle",
+        "Shirley Williams"
+       ]
+      },
+      {
+       "id": "SATP1-04",
+       "q": "How many wives did Henry VIII have?",
+       "a": "6",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "5",
+        "7",
+        "8"
+       ]
+      },
+      {
+       "id": "SATP1-05",
+       "q": "Who was Henry VIII's second wife?",
+       "a": "Anne Boleyn",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Catherine of Aragon",
+        "Jane Seymour",
+        "Anne of Cleves"
+       ]
+      },
+      {
+       "id": "SATP1-06",
+       "q": "In which year was the Great Fire of London?",
+       "a": "1666",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1665",
+        "1605",
+        "1688"
+       ]
+      },
+      {
+       "id": "SATP1-07",
+       "q": "In which year was the Gunpowder Plot?",
+       "a": "1605",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1666",
+        "1588",
+        "1642"
+       ]
+      },
+      {
+       "id": "SATP1-08",
+       "q": "In which year did the Spanish Armada sail against England?",
+       "a": "1588",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1605",
+        "1066",
+        "1688"
+       ]
+      },
+      {
+       "id": "SATP1-09",
+       "q": "In which year was the Battle of Waterloo?",
+       "a": "1815",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1805",
+        "1812",
+        "1830"
+       ]
+      },
+      {
+       "id": "SATP1-10",
+       "q": "Which admiral was killed at the Battle of Trafalgar?",
+       "a": "Horatio Nelson",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Francis Drake",
+        "Walter Raleigh",
+        "Thomas Cochrane"
+       ]
+      },
+      {
+       "id": "SATP1-11",
+       "q": "In which year did the First World War begin?",
+       "a": "1914",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1912",
+        "1916",
+        "1918"
+       ]
+      },
+      {
+       "id": "SATP1-12",
+       "q": "In which year did the Second World War end in Europe?",
+       "a": "1945",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1944",
+        "1946",
+        "1943"
+       ]
+      },
+      {
+       "id": "SATP1-13",
+       "q": "Who was the first person to walk on the Moon?",
+       "a": "Neil Armstrong",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Buzz Aldrin",
+        "Yuri Gagarin",
+        "Michael Collins"
+       ]
+      },
+      {
+       "id": "SATP1-14",
+       "q": "In which year did humans first land on the Moon?",
+       "a": "1969",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1967",
+        "1971",
+        "1965"
+       ]
+      },
+      {
+       "id": "SATP1-15",
+       "q": "Who was the first human in space?",
+       "a": "Yuri Gagarin",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Neil Armstrong",
+        "Alan Shepard",
+        "John Glenn"
+       ]
+      },
+      {
+       "id": "SATP1-16",
+       "q": "In which year did the Berlin Wall fall?",
+       "a": "1989",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1991",
+        "1987",
+        "1985"
+       ]
+      },
+      {
+       "id": "SATP1-17",
+       "q": "In which year did the Titanic sink?",
+       "a": "1912",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1910",
+        "1914",
+        "1905"
+       ]
+      },
+      {
+       "id": "SATP1-18",
+       "q": "Who is the longest-reigning monarch in British history?",
+       "a": "Elizabeth II",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Victoria",
+        "Elizabeth I",
+        "George III"
+       ]
+      },
+      {
+       "id": "SATP1-19",
+       "q": "Who was Queen Victoria's husband?",
+       "a": "Prince Albert",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Prince Philip",
+        "Prince Edward",
+        "Prince Leopold"
+       ]
+      },
+      {
+       "id": "SATP1-20",
+       "q": "Which monarch was the daughter of Henry VIII and Anne Boleyn?",
+       "a": "Elizabeth I",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Mary I",
+        "Lady Jane Grey",
+        "Edward VI"
+       ]
+      },
+      {
+       "id": "SATP1-21",
+       "q": "What is the capital of Australia?",
+       "a": "Canberra",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Sydney",
+        "Melbourne",
+        "Perth"
+       ]
+      },
+      {
+       "id": "SATP1-22",
+       "q": "What is the capital of Canada?",
+       "a": "Ottawa",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Toronto",
+        "Montreal",
+        "Vancouver"
+       ]
+      },
+      {
+       "id": "SATP1-23",
+       "q": "What is the capital of New Zealand?",
+       "a": "Wellington",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Auckland",
+        "Christchurch",
+        "Dunedin"
+       ]
+      },
+      {
+       "id": "SATP1-24",
+       "q": "What is the capital of Spain?",
+       "a": "Madrid",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Barcelona",
+        "Seville",
+        "Valencia"
+       ]
+      },
+      {
+       "id": "SATP1-25",
+       "q": "What is the capital of Turkey?",
+       "a": "Ankara",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Istanbul",
+        "Izmir",
+        "Antalya"
+       ]
+      },
+      {
+       "id": "SATP1-26",
+       "q": "What is the capital of Brazil?",
+       "a": "Brasília",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Rio de Janeiro",
+        "São Paulo",
+        "Salvador"
+       ]
+      },
+      {
+       "id": "SATP1-27",
+       "q": "What is the highest mountain in the world?",
+       "a": "Mount Everest",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "K2",
+        "Kangchenjunga",
+        "Mont Blanc"
+       ]
+      },
+      {
+       "id": "SATP1-28",
+       "q": "What is the highest mountain in the UK?",
+       "a": "Ben Nevis",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Snowdon",
+        "Scafell Pike",
+        "Ben Macdui"
+       ]
+      },
+      {
+       "id": "SATP1-29",
+       "q": "What is the highest mountain in Wales?",
+       "a": "Snowdon",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Pen y Fan",
+        "Cadair Idris",
+        "Scafell Pike"
+       ]
+      },
+      {
+       "id": "SATP1-30",
+       "q": "Which is the largest ocean?",
+       "a": "Pacific Ocean",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Arctic Ocean"
+       ]
+      },
+      {
+       "id": "SATP1-31",
+       "q": "What is the largest hot desert in the world?",
+       "a": "Sahara",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Gobi",
+        "Kalahari",
+        "Arabian Desert"
+       ]
+      },
+      {
+       "id": "SATP1-32",
+       "q": "Which country has the largest population?",
+       "a": "India",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "China",
+        "United States",
+        "Indonesia"
+       ]
+      },
+      {
+       "id": "SATP1-33",
+       "q": "Which is the largest country in the world by area?",
+       "a": "Russia",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Canada",
+        "China",
+        "United States"
+       ]
+      },
+      {
+       "id": "SATP1-34",
+       "q": "What is the smallest country in the world?",
+       "a": "Vatican City",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Monaco",
+        "San Marino",
+        "Liechtenstein"
+       ]
+      },
+      {
+       "id": "SATP1-35",
+       "q": "How many states are there in the USA?",
+       "a": "50",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "48",
+        "51",
+        "52"
+       ]
+      },
+      {
+       "id": "SATP1-36",
+       "q": "Which country gave the Statue of Liberty to the USA?",
+       "a": "France",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Britain",
+        "Spain",
+        "Netherlands"
+       ]
+      },
+      {
+       "id": "SATP1-37",
+       "q": "The Leaning Tower is in which Italian city?",
+       "a": "Pisa",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Florence",
+        "Siena",
+        "Bologna"
+       ]
+      },
+      {
+       "id": "SATP1-38",
+       "q": "Machu Picchu is in which country?",
+       "a": "Peru",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bolivia",
+        "Chile",
+        "Mexico"
+       ]
+      },
+      {
+       "id": "SATP1-39",
+       "q": "Angkor Wat is in which country?",
+       "a": "Cambodia",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Thailand",
+        "Laos",
+        "Vietnam"
+       ]
+      },
+      {
+       "id": "SATP1-40",
+       "q": "The Taj Mahal is in which Indian city?",
+       "a": "Agra",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Delhi",
+        "Jaipur",
+        "Mumbai"
+       ]
+      },
+      {
+       "id": "SATP1-41",
+       "q": "Which river flows through Paris?",
+       "a": "Seine",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Loire",
+        "Rhône",
+        "Rhine"
+       ]
+      },
+      {
+       "id": "SATP1-42",
+       "q": "Which river flows through Cairo?",
+       "a": "Nile",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Euphrates",
+        "Tigris",
+        "Jordan"
+       ]
+      },
+      {
+       "id": "SATP1-43",
+       "q": "What is the narrowest stretch of sea between England and France called?",
+       "a": "The Strait of Dover",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Strait of Gibraltar",
+        "The Menai Strait",
+        "The Bering Strait"
+       ]
+      },
+      {
+       "id": "SATP1-44",
+       "q": "Which Scottish city is known as the Granite City?",
+       "a": "Aberdeen",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Dundee",
+        "Inverness",
+        "Edinburgh"
+       ]
+      },
+      {
+       "id": "SATP1-45",
+       "q": "Which English city is known as the Steel City?",
+       "a": "Sheffield",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Middlesbrough",
+        "Rotherham",
+        "Leeds"
+       ]
+      },
+      {
+       "id": "SATP1-46",
+       "q": "Which county is known as the Garden of England?",
+       "a": "Kent",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Surrey",
+        "Sussex",
+        "Hampshire"
+       ]
+      },
+      {
+       "id": "SATP1-47",
+       "q": "Stonehenge is in which county?",
+       "a": "Wiltshire",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Somerset",
+        "Dorset",
+        "Hampshire"
+       ]
+      },
+      {
+       "id": "SATP1-48",
+       "q": "Who built Hadrian's Wall?",
+       "a": "The Romans",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Vikings",
+        "The Normans",
+        "The Saxons"
+       ]
+      },
+      {
+       "id": "SATP1-49",
+       "q": "Which town was the first capital of Roman Britain?",
+       "a": "Colchester",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "York",
+        "Bath",
+        "Chester"
+       ]
+      },
+      {
+       "id": "SATP1-50",
+       "q": "Who was Prime Minister for most of the Second World War?",
+       "a": "Winston Churchill",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Neville Chamberlain",
+        "Clement Attlee",
+        "Anthony Eden"
+       ]
+      },
+      {
+       "id": "SATP1-51",
+       "q": "Which Prime Minister's government founded the NHS?",
+       "a": "Clement Attlee",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Winston Churchill",
+        "Harold Wilson",
+        "Harold Macmillan"
+       ]
+      },
+      {
+       "id": "SATP1-52",
+       "q": "In which year was the NHS founded?",
+       "a": "1948",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1945",
+        "1952",
+        "1939"
+       ]
+      },
+      {
+       "id": "SATP1-53",
+       "q": "In which year did the UK switch to decimal currency?",
+       "a": "1971",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1968",
+        "1973",
+        "1966"
+       ]
+      },
+      {
+       "id": "SATP1-54",
+       "q": "In which year did the UK join the European Economic Community?",
+       "a": "1973",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1975",
+        "1969",
+        "1979"
+       ]
+      },
+      {
+       "id": "SATP1-55",
+       "q": "In which year was the Brexit referendum held?",
+       "a": "2016",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "2015",
+        "2017",
+        "2019"
+       ]
+      },
+      {
+       "id": "SATP1-56",
+       "q": "Which US president was assassinated in Dallas in 1963?",
+       "a": "John F. Kennedy",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Abraham Lincoln",
+        "Richard Nixon",
+        "Lyndon B. Johnson"
+       ]
+      },
+      {
+       "id": "SATP1-57",
+       "q": "Who was the first President of the United States?",
+       "a": "George Washington",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Thomas Jefferson",
+        "John Adams",
+        "Abraham Lincoln"
+       ]
+      },
+      {
+       "id": "SATP1-58",
+       "q": "In which year did Nelson Mandela become President of South Africa?",
+       "a": "1994",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1990",
+        "1999",
+        "1989"
+       ]
+      },
+      {
+       "id": "SATP1-59",
+       "q": "Which civilisation built Machu Picchu?",
+       "a": "The Inca",
+       "pts": 1,
+       "cat": "HISTORY AND GEOGRAPHY",
+       "note": "Smart Alec Time & Place batch 1, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Aztecs",
+        "The Maya",
+        "The Olmecs"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

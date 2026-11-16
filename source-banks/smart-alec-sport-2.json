@@ -1,0 +1,721 @@
+{
+ "source": "Smart Alec — Sport batch 2 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Sport batch 2",
+   "rounds": [
+    {
+     "id": "SASP2",
+     "name": "SPORT",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SASP2-01",
+       "q": "Which football club is nicknamed the Gunners?",
+       "a": "Arsenal",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "West Ham United",
+        "Chelsea",
+        "Tottenham Hotspur"
+       ]
+      },
+      {
+       "id": "SASP2-02",
+       "q": "Which football club is nicknamed the Toffees?",
+       "a": "Everton",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Liverpool",
+        "Aston Villa",
+        "Sunderland"
+       ]
+      },
+      {
+       "id": "SASP2-03",
+       "q": "Which football club is nicknamed the Red Devils?",
+       "a": "Manchester United",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Liverpool",
+        "Middlesbrough",
+        "Nottingham Forest"
+       ]
+      },
+      {
+       "id": "SASP2-04",
+       "q": "Which football club is nicknamed the Hammers?",
+       "a": "West Ham United",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Arsenal",
+        "Millwall",
+        "Charlton Athletic"
+       ]
+      },
+      {
+       "id": "SASP2-05",
+       "q": "Which London football club is nicknamed Spurs?",
+       "a": "Tottenham Hotspur",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Fulham",
+        "Crystal Palace",
+        "Brentford"
+       ]
+      },
+      {
+       "id": "SASP2-06",
+       "q": "What is the nickname for matches between Celtic and Rangers?",
+       "a": "The Old Firm",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Auld Enemy",
+        "The Edinburgh Derby",
+        "The Tay Derby"
+       ]
+      },
+      {
+       "id": "SASP2-07",
+       "q": "Which club plays its home games at Anfield?",
+       "a": "Liverpool",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Everton",
+        "Manchester City",
+        "Leeds United"
+       ]
+      },
+      {
+       "id": "SASP2-08",
+       "q": "Which Premier League club plays at St James' Park?",
+       "a": "Newcastle United",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Sunderland",
+        "Middlesbrough",
+        "Leeds United"
+       ]
+      },
+      {
+       "id": "SASP2-09",
+       "q": "Which club plays at the Etihad Stadium?",
+       "a": "Manchester City",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Manchester United",
+        "Arsenal",
+        "Chelsea"
+       ]
+      },
+      {
+       "id": "SASP2-10",
+       "q": "Which club plays at Stamford Bridge?",
+       "a": "Chelsea",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Fulham",
+        "QPR",
+        "Arsenal"
+       ]
+      },
+      {
+       "id": "SASP2-11",
+       "q": "Which club plays at Villa Park?",
+       "a": "Aston Villa",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Birmingham City",
+        "West Bromwich Albion",
+        "Wolves"
+       ]
+      },
+      {
+       "id": "SASP2-12",
+       "q": "Which English club won the 1999 Champions League final with two late goals?",
+       "a": "Manchester United",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Liverpool",
+        "Arsenal",
+        "Chelsea"
+       ]
+      },
+      {
+       "id": "SASP2-13",
+       "q": "Liverpool came back from 3–0 down to win the 2005 Champions League final against which club?",
+       "a": "AC Milan",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Juventus",
+        "Inter Milan",
+        "Real Madrid"
+       ]
+      },
+      {
+       "id": "SASP2-14",
+       "q": "Who managed Manchester United from 1986 to 2013?",
+       "a": "Sir Alex Ferguson",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Sir Matt Busby",
+        "David Moyes",
+        "Ron Atkinson"
+       ]
+      },
+      {
+       "id": "SASP2-15",
+       "q": "Arsène Wenger managed which Premier League club for 22 years?",
+       "a": "Arsenal",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Chelsea",
+        "Liverpool",
+        "Tottenham Hotspur"
+       ]
+      },
+      {
+       "id": "SASP2-16",
+       "q": "In which season did Leicester City win the Premier League?",
+       "a": "2015–16",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "2014–15",
+        "2016–17",
+        "2017–18"
+       ]
+      },
+      {
+       "id": "SASP2-17",
+       "q": "Which manager led Leicester City to the Premier League title?",
+       "a": "Claudio Ranieri",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Brendan Rodgers",
+        "Nigel Pearson",
+        "Craig Shakespeare"
+       ]
+      },
+      {
+       "id": "SASP2-18",
+       "q": "Who is the Premier League's all-time top scorer?",
+       "a": "Alan Shearer",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Harry Kane",
+        "Wayne Rooney",
+        "Thierry Henry"
+       ]
+      },
+      {
+       "id": "SASP2-19",
+       "q": "Who is the England men's team's record goalscorer?",
+       "a": "Harry Kane",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Wayne Rooney",
+        "Bobby Charlton",
+        "Gary Lineker"
+       ]
+      },
+      {
+       "id": "SASP2-20",
+       "q": "Which England player won the Golden Boot at the 1986 World Cup?",
+       "a": "Gary Lineker",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Peter Beardsley",
+        "Bryan Robson",
+        "Glenn Hoddle"
+       ]
+      },
+      {
+       "id": "SASP2-21",
+       "q": "Which country won Euro 2016?",
+       "a": "Portugal",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "France",
+        "Germany",
+        "Wales"
+       ]
+      },
+      {
+       "id": "SASP2-22",
+       "q": "Which country won the 2010 FIFA World Cup?",
+       "a": "Spain",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Netherlands",
+        "Germany",
+        "Brazil"
+       ]
+      },
+      {
+       "id": "SASP2-23",
+       "q": "Which country won the 2014 FIFA World Cup?",
+       "a": "Germany",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Argentina",
+        "Brazil",
+        "Netherlands"
+       ]
+      },
+      {
+       "id": "SASP2-24",
+       "q": "Which country won the 2018 FIFA World Cup?",
+       "a": "France",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Croatia",
+        "Belgium",
+        "England"
+       ]
+      },
+      {
+       "id": "SASP2-25",
+       "q": "Which country hosted the 2018 FIFA World Cup?",
+       "a": "Russia",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Qatar",
+        "Brazil",
+        "Germany"
+       ]
+      },
+      {
+       "id": "SASP2-26",
+       "q": "Which country hosted the 2022 FIFA World Cup?",
+       "a": "Qatar",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Russia",
+        "Saudi Arabia",
+        "United Arab Emirates"
+       ]
+      },
+      {
+       "id": "SASP2-27",
+       "q": "Which golfer was nicknamed the Golden Bear?",
+       "a": "Jack Nicklaus",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Arnold Palmer",
+        "Gary Player",
+        "Tom Watson"
+       ]
+      },
+      {
+       "id": "SASP2-28",
+       "q": "What is Tiger Woods' real first name?",
+       "a": "Eldrick",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Edward",
+        "Elliott",
+        "Earl"
+       ]
+      },
+      {
+       "id": "SASP2-29",
+       "q": "Which golf tournament gives its winner a green jacket?",
+       "a": "The Masters",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Open",
+        "The US Open",
+        "The PGA Championship"
+       ]
+      },
+      {
+       "id": "SASP2-30",
+       "q": "Golf's Ryder Cup is played between Europe and which team?",
+       "a": "The United States",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Australia",
+        "Asia",
+        "The Rest of the World"
+       ]
+      },
+      {
+       "id": "SASP2-31",
+       "q": "At which Grand Slam did Rafael Nadal win a record number of titles?",
+       "a": "The French Open",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Wimbledon",
+        "The US Open",
+        "The Australian Open"
+       ]
+      },
+      {
+       "id": "SASP2-32",
+       "q": "What is the name of Serena Williams' tennis-playing sister?",
+       "a": "Venus",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Vanessa",
+        "Valerie",
+        "Vera"
+       ]
+      },
+      {
+       "id": "SASP2-33",
+       "q": "Which Grand Slam did Emma Raducanu win in 2021?",
+       "a": "The US Open",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Wimbledon",
+        "The Australian Open",
+        "The French Open"
+       ]
+      },
+      {
+       "id": "SASP2-34",
+       "q": "Which Scottish player won seven World Snooker titles between 1990 and 1999?",
+       "a": "Stephen Hendry",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "John Higgins",
+        "Steve Davis",
+        "Ray Reardon"
+       ]
+      },
+      {
+       "id": "SASP2-35",
+       "q": "Where is the World Snooker Championship held?",
+       "a": "The Crucible Theatre, Sheffield",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Alexandra Palace, London",
+        "Wembley Arena, London",
+        "The Hexagon, Reading"
+       ]
+      },
+      {
+       "id": "SASP2-36",
+       "q": "Where is the PDC World Darts Championship held?",
+       "a": "Alexandra Palace",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Crucible",
+        "Lakeside",
+        "Wembley Arena"
+       ]
+      },
+      {
+       "id": "SASP2-37",
+       "q": "What is darts player Luke Littler's nickname?",
+       "a": "The Nuke",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Bullet",
+        "Bully Boy",
+        "Snakebite"
+       ]
+      },
+      {
+       "id": "SASP2-38",
+       "q": "Which country won the 2023 Rugby World Cup?",
+       "a": "South Africa",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "New Zealand",
+        "France",
+        "Ireland"
+       ]
+      },
+      {
+       "id": "SASP2-39",
+       "q": "In which year did England win the Rugby World Cup?",
+       "a": "2003",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1999",
+        "2007",
+        "2019"
+       ]
+      },
+      {
+       "id": "SASP2-40",
+       "q": "Jonny Wilkinson won the 2003 Rugby World Cup final with what kind of kick?",
+       "a": "A drop goal",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A penalty",
+        "A conversion",
+        "A grubber kick"
+       ]
+      },
+      {
+       "id": "SASP2-41",
+       "q": "Who is England's record try scorer in men's international rugby?",
+       "a": "Rory Underwood",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Jason Robinson",
+        "Jonny Wilkinson",
+        "Martin Johnson"
+       ]
+      },
+      {
+       "id": "SASP2-42",
+       "q": "The Cheltenham Gold Cup is a race in which sport?",
+       "a": "Horse racing",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Golf",
+        "Greyhound racing",
+        "Polo"
+       ]
+      },
+      {
+       "id": "SASP2-43",
+       "q": "At which racecourse did Frankie Dettori ride all seven winners in 1996?",
+       "a": "Ascot",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Epsom",
+        "Newmarket",
+        "Goodwood"
+       ]
+      },
+      {
+       "id": "SASP2-44",
+       "q": "Which motorcycle racer is nicknamed The Doctor?",
+       "a": "Valentino Rossi",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Marc Márquez",
+        "Barry Sheene",
+        "Casey Stoner"
+       ]
+      },
+      {
+       "id": "SASP2-45",
+       "q": "The Isle of Man TT is what kind of race?",
+       "a": "A motorcycle race",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A car rally",
+        "A sailing race",
+        "A triathlon"
+       ]
+      },
+      {
+       "id": "SASP2-46",
+       "q": "What nationality was Formula One driver Ayrton Senna?",
+       "a": "Brazilian",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Argentine",
+        "Portuguese",
+        "Spanish"
+       ]
+      },
+      {
+       "id": "SASP2-47",
+       "q": "In which year did Nigel Mansell win the Formula One world title?",
+       "a": "1992",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1990",
+        "1994",
+        "1996"
+       ]
+      },
+      {
+       "id": "SASP2-48",
+       "q": "Damon Hill's father was also a Formula One world champion. What was his name?",
+       "a": "Graham Hill",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Phil Hill",
+        "James Hunt",
+        "Jackie Stewart"
+       ]
+      },
+      {
+       "id": "SASP2-49",
+       "q": "Which sport uses the terms stone, hammer and house?",
+       "a": "Curling",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bowls",
+        "Shot put",
+        "Ice hockey"
+       ]
+      },
+      {
+       "id": "SASP2-50",
+       "q": "In which sport would you perform a triple axel?",
+       "a": "Figure skating",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Gymnastics",
+        "Diving",
+        "Ski jumping"
+       ]
+      },
+      {
+       "id": "SASP2-51",
+       "q": "Judo was developed in which country?",
+       "a": "Japan",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "China",
+        "Korea",
+        "Thailand"
+       ]
+      },
+      {
+       "id": "SASP2-52",
+       "q": "How many points is a touchdown worth in American football, before the extra point?",
+       "a": "6",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "3",
+        "7",
+        "5"
+       ]
+      },
+      {
+       "id": "SASP2-53",
+       "q": "The Lakers are an NBA team from which city?",
+       "a": "Los Angeles",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Chicago",
+        "Boston",
+        "New York"
+       ]
+      },
+      {
+       "id": "SASP2-54",
+       "q": "With which team did Michael Jordan win six NBA titles?",
+       "a": "Chicago Bulls",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 2, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Los Angeles Lakers",
+        "Boston Celtics",
+        "Miami Heat"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
