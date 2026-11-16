@@ -63,6 +63,23 @@
     setJoin(r);
     onState(r.state);
   });
+  /* ---------- full screen and the story of the name ---------- */
+  const fsButtons = () => document.querySelectorAll('.fs-btn');
+  function showFullscreen() {
+    const on = Boolean(document.fullscreenElement);
+    fsButtons().forEach(b => { b.textContent = on ? 'Exit full screen' : 'Full screen'; });
+  }
+  function toggleFullscreen() {
+    if (document.fullscreenElement) document.exitFullscreen?.();
+    else document.documentElement.requestFullscreen?.().catch(() => toast('This browser would not go full screen. Try the F11 key.'));
+  }
+  if (!document.fullscreenEnabled) fsButtons().forEach(b => { b.hidden = true; });
+  fsButtons().forEach(b => b.addEventListener('click', toggleFullscreen));
+  document.addEventListener('fullscreenchange', showFullscreen);
+  $('btn-story').addEventListener('click', () => { $('story').hidden = false; $('btn-story-close').focus(); });
+  $('btn-story-close').addEventListener('click', () => { $('story').hidden = true; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') $('story').hidden = true; });
+
   function setJoin(r) {
     if (r.qrDataUrl) $('lobby-qr').src = r.qrDataUrl;
     if (r.joinUrl) $('lobby-url').textContent = r.joinUrl.replace(/^https?:\/\//, '');

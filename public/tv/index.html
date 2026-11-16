@@ -19,6 +19,24 @@
     <div class="title-actions">
       <button class="btn btn-gold btn-xl" id="btn-new">Start a new game</button>
     </div>
+    <div class="title-extras">
+      <button class="btn btn-ghost" id="btn-story">Where does “Smart Alec” come from?</button>
+      <button class="btn btn-ghost fs-btn" id="btn-fullscreen-title">Full screen</button>
+    </div>
+    <div id="story" class="story" hidden>
+      <div class="story-card">
+        <img class="story-alec" src="/art/alec-present.webp" alt="">
+      <h2>Where does “Smart Alec” come from?</h2>
+      <p class="story-lead">It’s American slang from the mid-1800s for someone who’s irritatingly clever or cocky.</p>
+      <h3>The favourite story</h3>
+      <p>In 1840s New York, a con man called Alexander “Alec” Hoag ran a trick with his wife, Melinda. She lured men back to a room, and while they were distracted, Alec crept in through a secret panel in the wall and lifted their wallets.</p>
+      <p>He was so slick he became known as “Smart Alec”. He paid the police to look the other way… until he got too clever, stopped paying them, and was arrested.</p>
+      <h3>The catch</h3>
+      <p>The phrase doesn’t appear in print until the 1860s, and nobody has proved it was named after Hoag. So, like all the best quiz answers, take it with a pinch of salt.</p>
+      <p class="story-foot">You’ll see it spelled both Smart Alec and Smart Aleck.</p>
+        <button class="btn btn-gold" id="btn-story-close">Back</button>
+      </div>
+    </div>
     <p class="title-note" id="title-note">Press start, then everyone joins on their phone.</p>
   </section>
 
@@ -98,6 +116,7 @@
 
 <!-- host controls, shown when the mouse moves -->
 <div id="hostbar" class="hostbar">
+  <button id="btn-fullscreen" class="fs-btn">Full screen</button>
   <button id="btn-pause">Pause</button>
   <button id="btn-skip" title="Skip a player whose phone has dropped out">Skip waiting</button>
   <button id="btn-mute">Sound on</button>

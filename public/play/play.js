@@ -21,6 +21,23 @@
   }
   function flash(text) { const n = $('game-banner'); if (n) { n.textContent = text; n.className = 'game-banner result-bad'; } $('join-error').textContent = text; }
 
+  /* ---------- the logo: picture if it loads, wordmark if not ---------- */
+  document.querySelectorAll('.logo-img').forEach(img => {
+    const ok = () => img.closest('.logo').classList.add('has-art');
+    if (img.complete && img.naturalWidth > 0) ok(); else img.addEventListener('load', ok);
+    img.addEventListener('error', () => img.remove());
+  });
+
+  /* ---------- full screen (Android and most browsers; iPhones don't allow it) ---------- */
+  if (document.fullscreenEnabled) {
+    const fs = $('btn-fs-phone');
+    fs.hidden = false;
+    fs.addEventListener('click', () => {
+      if (document.fullscreenElement) document.exitFullscreen?.(); else document.documentElement.requestFullscreen?.().catch(() => {});
+    });
+    document.addEventListener('fullscreenchange', () => { fs.textContent = document.fullscreenElement ? 'Exit full screen' : 'Full screen'; });
+  }
+
   /* ---------- join ---------- */
   function avatarGrid(container, taken, current, onPick) {
     container.replaceChildren();
