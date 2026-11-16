@@ -56,4 +56,6 @@ v0.5.0: 2,639 questions. Every question now has hand-written or hand-checked wro
 
 v0.5.1: the ChatGPT art is in: logo, Alec's four poses, all backgrounds, board icons, special-space badges, category tokens (shown as won tokens on the scoreboard) and 27 avatar poses. The board track now sits on the art's cream rim, and the Final Round has its own spotlight stage.
 
+v0.5.2: the twelve characters and their names on the title screen; the Smart Alec logo on the phone join and lobby screens.
+
 Next: the last nine "lose" avatar poses, your review of the new packs.
