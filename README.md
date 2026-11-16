@@ -52,4 +52,6 @@ v0.3.0: all 16 NOGGIN mini-games on Mini-game spaces and all 4 NOGGIN Showdowns 
 
 v0.4.0: 2,474 questions. 598 questions now have hand-written wrong options (every Screen Time and Sport question, most of Time & Place and Brainbox). Eight new packs add 441 questions across Screen Time, Sport, Time & Place and Brainbox (awaiting review).
 
-Next: ChatGPT art, your review of the new packs, hand-fixing the Pot Luck options.
+v0.5.0: 2,639 questions. Every question now has hand-written or hand-checked wrong options (1,521 hand-written; the rest are number questions with sensible nearby numbers). 13 broken "The Link?" and ambiguous questions removed. Three more packs: Time & Place 3, Brainbox 3, Sport 3.
+
+Next: ChatGPT art, your review of the new packs.
