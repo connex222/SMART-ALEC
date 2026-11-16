@@ -49,7 +49,11 @@
   const catMeta = id => layout.categories.find(c => c.id === id) || (id === 'minigame' ? layout.minigame : null);
 
   /* ---------- title and lobby ---------- */
-  $('title-logo').addEventListener('load', () => { $('title-wordmark').hidden = true; });
+  // The logo may finish loading before this script runs, so check as well as listen.
+  const logoReady = () => { $('title-wordmark').hidden = true; };
+  if ($('title-logo').complete && $('title-logo').naturalWidth > 0) logoReady();
+  else if ($('title-logo').complete) $('title-logo').hidden = true;
+  $('title-logo').addEventListener('load', logoReady);
   $('title-logo').addEventListener('error', () => { $('title-logo').hidden = true; });
   $('btn-new').addEventListener('click', async () => {
     SA.playMusic('mus-lobby');
@@ -100,7 +104,8 @@
   }
 
   /* ---------- board ---------- */
-  const CORNERS = [[140, 950], [480, 108], [1440, 108], [1780, 950]];
+  // Matched to the cream rim of board-bg.webp (stage coordinates, background-size: cover).
+  const CORNERS = [[42, 970], [503, 158], [1412, 158], [1871, 970]];
   function buildBoard() {
     const svg = $('board');
     svg.replaceChildren();
@@ -147,6 +152,10 @@
     svg.appendChild(spaces);
     svg.appendChild(svgEl('g', {id: 'pieces'}));
     boardBuilt = true;
+    // When the board art is there, its own rim and lights replace the drawn track.
+    const art = new Image();
+    art.onload = () => $('screen-game').classList.add('has-art');
+    art.src = '/art/board-bg.webp';
   }
   function glyph(type) { return {potluck: '?', screen: '▶', music: '♪', sport: '★', timeplace: '◷', brainbox: '✦', minigame: '◆'}[type] || ''; }
   function artName(type) { return type; }
@@ -184,7 +193,10 @@
       groups.get(at).push(p);
     }
     for (const [index, list] of groups) {
-      const [x, y] = positions[index];
+      let [x, y] = positions[index];
+      // Sit pieces just inside the track so they never fall off the screen edge or hide the space.
+      const dx = 960 - x, dy = 600 - y, d = Math.hypot(dx, dy) || 1;
+      x += dx / d * 58; y += dy / d * 58;
       list.forEach((p, i) => {
         const n = list.length;
         const ang = (i / n) * Math.PI * 2 - Math.PI / 2;
@@ -351,6 +363,7 @@
     const steps = ['risk', 'question', 'reveal', 'steal', 'group', 'groupReveal', 'special', 'predict', 'final', 'finalResult'];
     const showIt = steps.includes(b.step) && !(b.step === 'special' && !b.special);
     $('overlay').hidden = !showIt;
+    $('overlay').classList.toggle('final-backdrop', ['predict', 'final', 'finalResult'].includes(b.step));
     if (!showIt) { card.dataset.key = ''; return; }
     card.replaceChildren();
     const body = el('div', 'card-body');

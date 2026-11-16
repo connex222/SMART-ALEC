@@ -44,7 +44,8 @@ window.SA = (() => {
     img.alt = '';
     img.decoding = 'async';
     img.onload = () => { wrap.classList.add('has-art'); };
-    img.onerror = () => img.remove();
+    // A missing pose falls back to the think pose, then to the coloured initial.
+    img.onerror = () => { if (pose !== 'think' && img.src.indexOf(av.images.think) < 0) img.src = av.images.think; else img.remove(); };
     img.src = av.images[pose] || av.images.think;
     wrap.appendChild(img);
     return wrap;

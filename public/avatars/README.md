@@ -6,3 +6,5 @@
 07 telly · 08 pundit · 09 diva · 10 jar · 11 cat · 12 explorer
 
 Example: `av-03-landlord-win.webp`. Missing files show a coloured initial instead.
+
+Still to come (the game uses the think pose until they arrive): lose poses for 01 swot, 04 professor, 06 librarian, 07 telly, 08 pundit, 09 diva, 10 jar, 11 cat, 12 explorer.
