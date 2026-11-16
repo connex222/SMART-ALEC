@@ -58,4 +58,6 @@ v0.5.1: the ChatGPT art is in: logo, Alec's four poses, all backgrounds, board i
 
 v0.5.2: the twelve characters and their names on the title screen; the Smart Alec logo on the phone join and lobby screens.
 
+v0.6.0: Alec talks. 96 narration lines in public/voice/ play on the TV for turns, landings, right and wrong answers, steals, specials, mini-games, Showdowns and the Final Round. Lines never overlap, important lines cut off chatter, music dips while he speaks, and an "Alec's voice" button in the lobby (and the host bar) turns him off.
+
 Next: the last nine "lose" avatar poses, your review of the new packs.
