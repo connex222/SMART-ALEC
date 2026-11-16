@@ -54,4 +54,6 @@ v0.4.0: 2,474 questions. 598 questions now have hand-written wrong options (ever
 
 v0.5.0: 2,639 questions. Every question now has hand-written or hand-checked wrong options (1,521 hand-written; the rest are number questions with sensible nearby numbers). 13 broken "The Link?" and ambiguous questions removed. Three more packs: Time & Place 3, Brainbox 3, Sport 3.
 
-Next: ChatGPT art, your review of the new packs.
+v0.5.1: the ChatGPT art is in: logo, Alec's four poses, all backgrounds, board icons, special-space badges, category tokens (shown as won tokens on the scoreboard) and 27 avatar poses. The board track now sits on the art's cream rim, and the Final Round has its own spotlight stage.
+
+Next: the last nine "lose" avatar poses, your review of the new packs.
