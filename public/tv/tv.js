@@ -77,10 +77,20 @@
     setting({timeLimit: order[(order.indexOf(state.settings.timeLimit) + 1) % order.length]});
   });
   $('btn-start').addEventListener('click', () => { SA.sfx('sfx-go'); send('game:start'); });
+  function showVoice() {
+    $('set-voice').setAttribute('aria-pressed', String(AlecVoice.isEnabled()));
+    $('btn-voice').textContent = AlecVoice.isEnabled() ? 'Voice on' : 'Voice off';
+  }
+  const toggleVoice = () => { AlecVoice.setEnabled(!AlecVoice.isEnabled()); showVoice(); };
+  $('set-voice').addEventListener('click', toggleVoice);
+  $('btn-voice').addEventListener('click', toggleVoice);
+  showVoice();
 
   function renderLobby() {
     show('lobby');
     SA.playMusic('mus-lobby');
+    if (prev?.phase !== 'lobby') AlecVoice.say(prev?.phase === 'over' ? 'play-again' : 'welcome');
+    else if (state.players.length > prev.players.length) AlecVoice.say('join');
     const s = state.settings;
     $('set-quick').setAttribute('aria-pressed', String(s.quickGame));
     $('set-relaxed').setAttribute('aria-pressed', String(s.timerSpeed === 'relaxed'));
@@ -449,6 +459,7 @@
     t.classList.toggle('low', secs <= 5);
     if (secs <= 5 && secs > 0 && tickTimer.last !== secs && ['question', 'steal', 'group', 'final'].includes(b.step)) SA.sfx('sfx-tick', 0.4);
     tickTimer.last = secs;
+    if (b.step === 'final' && secs === 15 && hurrySaid !== b.deadline) { hurrySaid = b.deadline; AlecVoice.say('final-hurry', {interrupt: true}); }
   }
   setInterval(tickTimer, 200);
 
@@ -500,6 +511,67 @@
     img.src = `/art/alec-${pose}.webp`;
   }
 
+  /* ---------- what Alec says, worked out from what just changed ---------- */
+  const SPECIAL_LINE = {go: 'special-go', smartalec: 'special-smartalec', double: 'special-double', freeforall: 'special-freeforall', shortcut: 'special-shortcut', swap: 'special-swap', jackpot: 'special-jackpot', showdown: 'special-showdown'};
+  let hurrySaid = null;
+  function narrate(b, old, oldState) {
+    const say = AlecVoice.say;
+    if (!old) { if (oldState?.phase !== 'board') say(oldState?.phase === 'over' ? 'play-again' : 'start'); return; }
+    if (b.paused !== old.paused) { say(b.paused ? 'paused' : 'resumed', {interrupt: true}); return; }
+    const f = b.final, of = old.final;
+    if (b.step === 'final' && f && of && f.results.length > of.results.length && f.results.at(-1)) say('final-right', {interrupt: true});
+    if (b.step === old.step && b.turnNo === old.turnNo) return;
+    const q = b.question, active = state.players.find(p => p.id === b.activeId);
+    switch (b.step) {
+      case 'turn':
+        if (b.canFinal) say('final-unlock');
+        else if (active && AlecVoice.chance(0.75)) say('turn-' + String(active.avatarId).padStart(2, '0'));
+        else say('turn-any');
+        break;
+      case 'direction':
+        if (b.dice?.length > 1) say('catchup'); else if (AlecVoice.chance(0.35)) say('roll');
+        break;
+      case 'landed': {
+        const type = b.landed?.type;
+        if (b.landed?.kind === 'category') say('land-' + type);
+        else if (SPECIAL_LINE[type]) say(SPECIAL_LINE[type]);
+        if (/passing GO/.test(b.banner?.text || '')) say('pass-go');
+        break;
+      }
+      case 'risk': say('choose'); break;
+      case 'question':
+        if (old.step === 'risk') say(q?.mode === 'typed' ? 'smart' : 'safe');
+        break;
+      case 'reveal': {
+        if (q?.kind === 'double') { say(q.result === 'right' ? 'double-win' : 'double-lose'); break; }
+        if (q?.result === 'right') {
+          say('right');
+          const before = oldState.players.find(p => p.id === q.forId), after = state.players.find(p => p.id === q.forId);
+          if (after && before && after.tokens.length > before.tokens.length) say('token');
+        } else say(q?.result === 'timeout' ? 'timeout' : 'wrong');
+        break;
+      }
+      case 'steal': say('steal'); break;
+      case 'group': if (q?.kind === 'freeforall') say('special-freeforall'); break;
+      case 'groupReveal': say(Object.keys(q?.awards || {}).length ? (q.kind === 'steal' ? 'steal-won' : 'right') : 'nobody'); break;
+      case 'minigame': say('minigame'); break;
+      case 'showdown': say('showdown-start'); break;
+      case 'miniResult': {
+        const won = Object.values(b.miniResult?.awards || {}).some(n => n > 0);
+        say(!won ? 'nobody' : b.miniResult.kind === 'showdown' ? 'showdown-win' : 'mini-win');
+        break;
+      }
+      case 'turnEnd': if (old.special?.type === 'go' && /buys/.test(b.banner?.text || '')) say('buy-token'); break;
+      case 'predict': say('predict'); break;
+      case 'final': hurrySaid = null; say(b.required === 6 && AlecVoice.chance(0.5) ? 'final-start-1' : 'final-start-2', {interrupt: true}); break;
+      case 'finalResult':
+        if (f?.outcome === 'win') say('final-win', {interrupt: true});
+        else { say('final-wrong', {interrupt: true}); say('final-lose'); }
+        break;
+      default: break;
+    }
+  }
+
   function renderGame() {
     show('game');
     const b = state.board;
@@ -517,12 +589,13 @@
     $('paused-text').textContent = state.hostOnline ? 'Press resume when everyone is ready.' : 'Waiting for the TV to reconnect.';
     $('btn-pause').textContent = b.paused ? 'Resume' : 'Pause';
     sounds(b, prev?.board);
+    narrate(b, prev?.phase === 'board' ? prev.board : null, prev);
   }
 
   function renderOver() {
     show('over');
     SA.playMusic(null);
-    if (prev?.phase !== 'over') SA.sfx('mus-victory', 0.7);
+    if (prev?.phase !== 'over') { SA.sfx('mus-victory', 0.7); AlecVoice.say(state.board.endReason === 'time' ? 'over-time' : 'over-win'); }
     const b = state.board, winner = playerById(b.winnerId);
     const box = $('over-winner');
     box.replaceChildren(SA.avatarEl(av(winner?.avatarId), 'win', 280), el('h2', null, winner ? `${winner.name} is Smart Alec!` : 'Game over'),
@@ -582,5 +655,16 @@
     }
   });
 
-  Promise.all([SA.layout(), SA.avatars()]).then(([l, a]) => { layout = l; avatars = a; if (state) onState(state); }).catch(() => toast('Could not load the board. Refresh the page.'));
+  function renderCast() {
+    const box = $('title-cast');
+    box.replaceChildren();
+    avatars.forEach((a, i) => {
+      const card = el('div', 'cast-card');
+      card.style.setProperty('--i', String(i));
+      card.append(SA.avatarEl(a, 'think', 118), el('span', 'cast-name', a.name));
+      box.appendChild(card);
+    });
+  }
+
+  Promise.all([SA.layout(), SA.avatars()]).then(([l, a]) => { layout = l; avatars = a; renderCast(); if (state) onState(state); }).catch(() => toast('Could not load the board. Refresh the page.'));
 })();

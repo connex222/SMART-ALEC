@@ -45,7 +45,7 @@ body.tv { overflow: hidden; background: #0B0F22; }
 .lobby-player.ready .status { color: var(--gold); opacity: 1; }
 .lobby-player.offline { opacity: .5; }
 .lobby-empty { border: 4px dashed var(--navy-3); border-radius: 22px; display: grid; place-items: center; color: var(--navy-3); font-size: 26px; min-height: 196px; }
-.lobby-settings { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
+.lobby-settings { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 32px 0; }
 .toggle { background: var(--navy-2); border: var(--outline); border-radius: 18px; padding: 16px 18px; text-align: left; display: flex; flex-direction: column; gap: 6px; }
 .toggle b { font-family: var(--display); font-size: 26px; font-weight: 700; }
 .toggle span { font-size: 20px; opacity: .8; }
@@ -264,3 +264,13 @@ body.tv { overflow: hidden; background: #0B0F22; }
 .lobby-main { background: rgba(10, 14, 35, .55); border-radius: 28px; padding: 28px; }
 .lobby-empty { color: rgba(255, 246, 227, .45); border-color: rgba(255, 246, 227, .25); }
 .board .piece { filter: drop-shadow(0 4px 3px rgba(0, 0, 0, .5)); }
+
+/* the cast of twelve on the title screen */
+.screen-title { justify-content: flex-start; padding-top: 34px; }
+.title-logo { width: 620px; max-height: 360px; }
+.tagline { margin: 10px 0 22px; font-size: 32px; }
+.title-cast { display: grid; grid-template-columns: repeat(12, 132px); gap: 12px; margin-bottom: 26px; }
+.cast-card { display: flex; flex-direction: column; align-items: center; gap: 8px; animation: castIn .5s ease-out both; animation-delay: calc(var(--i) * 70ms); }
+.cast-card .avatar { border-width: 5px; box-shadow: 0 0 0 4px var(--gold), 0 8px 18px rgba(0, 0, 0, .5); }
+.cast-name { font-family: var(--display); font-size: 19px; line-height: 1.1; text-align: center; color: var(--cream); background: rgba(10, 14, 35, .82); border: 2px solid var(--gold); border-radius: 12px; padding: 5px 8px; min-height: 48px; display: grid; place-items: center; width: 100%; }
+@keyframes castIn { from { opacity: 0; transform: translateY(24px) scale(.9); } to { opacity: 1; transform: none; } }

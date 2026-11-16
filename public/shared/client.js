@@ -88,6 +88,8 @@ window.SA = (() => {
       music.play().catch(() => {});
     } catch { music = null; }
   }
+  /** Quieten the music while Alec is talking. */
+  function duck(on) { if (music) music.volume = on ? 0.08 : 0.28; }
   function setMuted(value) {
     muted = value; store.set('sa-muted', value);
     if (muted && music) { music.pause(); music = null; }
@@ -95,5 +97,5 @@ window.SA = (() => {
   function isMuted() { return muted; }
   function vibrate(ms = 30) { try { navigator.vibrate?.(ms); } catch { /* not supported */ } }
 
-  return {store, request, layout, avatars, avatarEl, el, syncClock, now, secondsLeft, sfx, playMusic, setMuted, isMuted, vibrate};
+  return {store, request, layout, avatars, avatarEl, el, syncClock, now, secondsLeft, sfx, playMusic, setMuted, isMuted, vibrate, duck};
 })();

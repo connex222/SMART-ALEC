@@ -15,6 +15,7 @@
     <img class="title-logo" src="/art/logo.webp" alt="" id="title-logo">
     <h1 class="wordmark" id="title-wordmark">Smart Alec</h1>
     <p class="tagline">The quiz-show board game where only one of you gets to be the clever clogs.</p>
+    <div id="title-cast" class="title-cast" aria-label="The twelve characters"></div>
     <div class="title-actions">
       <button class="btn btn-gold btn-xl" id="btn-new">Start a new game</button>
     </div>
@@ -38,6 +39,7 @@
         <button class="toggle" id="set-time" data-value="0"><b>Time limit</b><span id="set-time-label">None</span></button>
         <button class="toggle" id="set-relaxed" aria-pressed="false"><b>Relaxed timers</b><span>50% more answer time</span></button>
         <button class="toggle" id="set-preview" aria-pressed="true"><b>Unreviewed questions</b><span>2020–26 preview and new Music</span></button>
+        <button class="toggle" id="set-voice" aria-pressed="true"><b>Alec's voice</b><span>Narration on the TV</span></button>
       </div>
       <div class="lobby-start">
         <button class="btn btn-gold btn-xl" id="btn-start" disabled>Start the show</button>
@@ -99,12 +101,14 @@
   <button id="btn-pause">Pause</button>
   <button id="btn-skip" title="Skip a player whose phone has dropped out">Skip waiting</button>
   <button id="btn-mute">Sound on</button>
+  <button id="btn-voice">Voice on</button>
   <button id="btn-close">End game</button>
 </div>
 <div id="toast" class="toast" hidden></div>
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/shared/client.js"></script>
+<script src="/tv/voice.js"></script>
 <script src="/tv/noggin-view.js"></script>
 <script src="/tv/tv.js"></script>
 </body>
