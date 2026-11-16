@@ -1,0 +1,617 @@
+{
+ "source": "Smart Alec — Sport batch 3 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Sport batch 3",
+   "rounds": [
+    {
+     "id": "SASP3",
+     "name": "SPORT",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SASP3-01",
+       "q": "Which county cricket club plays at Old Trafford?",
+       "a": "Lancashire",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Yorkshire",
+        "Derbyshire",
+        "Nottinghamshire"
+       ]
+      },
+      {
+       "id": "SASP3-02",
+       "q": "Headingley is the home ground of which county cricket club?",
+       "a": "Yorkshire",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Lancashire",
+        "Durham",
+        "Derbyshire"
+       ]
+      },
+      {
+       "id": "SASP3-03",
+       "q": "Trent Bridge cricket ground is in which city?",
+       "a": "Nottingham",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Birmingham",
+        "Leicester",
+        "Derby"
+       ]
+      },
+      {
+       "id": "SASP3-04",
+       "q": "Edgbaston cricket ground is in which city?",
+       "a": "Birmingham",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Leeds",
+        "Nottingham",
+        "Bristol"
+       ]
+      },
+      {
+       "id": "SASP3-05",
+       "q": "In cricket, what does LBW stand for?",
+       "a": "Leg before wicket",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Left by wicket",
+        "Lost before wicket",
+        "Long ball wide"
+       ]
+      },
+      {
+       "id": "SASP3-06",
+       "q": "In cricket, what is a score of zero called?",
+       "a": "A duck",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A blob",
+        "A nil",
+        "An egg"
+       ]
+      },
+      {
+       "id": "SASP3-07",
+       "q": "In golf, what is a score of two under par on a hole called?",
+       "a": "An eagle",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A birdie",
+        "An albatross",
+        "A bogey"
+       ]
+      },
+      {
+       "id": "SASP3-08",
+       "q": "In golf, what is a score of one over par on a hole called?",
+       "a": "A bogey",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A birdie",
+        "A par",
+        "An eagle"
+       ]
+      },
+      {
+       "id": "SASP3-09",
+       "q": "How many tennis Grand Slam tournaments are there each year?",
+       "a": "4",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "3",
+        "5",
+        "6"
+       ]
+      },
+      {
+       "id": "SASP3-10",
+       "q": "Which tennis Grand Slam is played first each year?",
+       "a": "The Australian Open",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The French Open",
+        "Wimbledon",
+        "The US Open"
+       ]
+      },
+      {
+       "id": "SASP3-11",
+       "q": "In which city is the US Open tennis tournament played?",
+       "a": "New York",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Los Angeles",
+        "Miami",
+        "Boston"
+       ]
+      },
+      {
+       "id": "SASP3-12",
+       "q": "How many rounds does a professional world title boxing fight usually have?",
+       "a": "12",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "10",
+        "15",
+        "8"
+       ]
+      },
+      {
+       "id": "SASP3-13",
+       "q": "How many red balls are on a snooker table at the start of a frame?",
+       "a": "15",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "10",
+        "12",
+        "21"
+       ]
+      },
+      {
+       "id": "SASP3-14",
+       "q": "Which snooker ball is worth seven points?",
+       "a": "Black",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Pink",
+        "Blue",
+        "Brown"
+       ]
+      },
+      {
+       "id": "SASP3-15",
+       "q": "How many points is the bullseye worth in darts?",
+       "a": "50",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "25",
+        "60",
+        "100"
+       ]
+      },
+      {
+       "id": "SASP3-16",
+       "q": "Which number is at the top of a standard dartboard?",
+       "a": "20",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "1",
+        "5",
+        "19"
+       ]
+      },
+      {
+       "id": "SASP3-17",
+       "q": "How many points is a try worth in rugby union?",
+       "a": "5",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "3",
+        "4",
+        "7"
+       ]
+      },
+      {
+       "id": "SASP3-18",
+       "q": "Which country hosted the 1966 FIFA World Cup?",
+       "a": "England",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Mexico",
+        "Brazil",
+        "Italy"
+       ]
+      },
+      {
+       "id": "SASP3-19",
+       "q": "How long is a standard football match, not counting stoppage or extra time?",
+       "a": "90 minutes",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "80 minutes",
+        "100 minutes",
+        "60 minutes"
+       ]
+      },
+      {
+       "id": "SASP3-20",
+       "q": "How far from the goal line is the penalty spot in football?",
+       "a": "12 yards",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "10 yards",
+        "18 yards",
+        "15 yards"
+       ]
+      },
+      {
+       "id": "SASP3-21",
+       "q": "Which country won the 2023 FIFA Women's World Cup?",
+       "a": "Spain",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "England",
+        "Sweden",
+        "United States"
+       ]
+      },
+      {
+       "id": "SASP3-22",
+       "q": "What is the nickname of the England women's football team?",
+       "a": "The Lionesses",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Three Lions",
+        "The Red Roses",
+        "The Vitality Roses"
+       ]
+      },
+      {
+       "id": "SASP3-23",
+       "q": "What is the nickname of the England women's rugby union team?",
+       "a": "The Red Roses",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Lionesses",
+        "The Vitality Roses",
+        "The Black Ferns"
+       ]
+      },
+      {
+       "id": "SASP3-24",
+       "q": "Which country's women's rugby team is called the Black Ferns?",
+       "a": "New Zealand",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Australia",
+        "South Africa",
+        "Canada"
+       ]
+      },
+      {
+       "id": "SASP3-25",
+       "q": "Which British sprinter won Olympic 100 metres gold in 1992?",
+       "a": "Linford Christie",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Daley Thompson",
+        "Colin Jackson",
+        "Allan Wells"
+       ]
+      },
+      {
+       "id": "SASP3-26",
+       "q": "In which event did Daley Thompson win two Olympic golds?",
+       "a": "Decathlon",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Heptathlon",
+        "Pentathlon",
+        "400m hurdles"
+       ]
+      },
+      {
+       "id": "SASP3-27",
+       "q": "Paula Radcliffe held the world record in which event?",
+       "a": "Marathon",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "400 metres",
+        "Long jump",
+        "Heptathlon"
+       ]
+      },
+      {
+       "id": "SASP3-28",
+       "q": "At the 2004 Olympics, Kelly Holmes won gold in the 800 metres and which other race?",
+       "a": "1,500 metres",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "5,000 metres",
+        "400 metres",
+        "3,000 metres"
+       ]
+      },
+      {
+       "id": "SASP3-29",
+       "q": "Which city hosted the 2000 Summer Olympics?",
+       "a": "Sydney",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Athens",
+        "Atlanta",
+        "Beijing"
+       ]
+      },
+      {
+       "id": "SASP3-30",
+       "q": "Which city hosted the 1948 Summer Olympics?",
+       "a": "London",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Paris",
+        "Helsinki",
+        "Berlin"
+       ]
+      },
+      {
+       "id": "SASP3-31",
+       "q": "Sir Chris Hoy won his Olympic golds in which sport?",
+       "a": "Cycling",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Rowing",
+        "Swimming",
+        "Sailing"
+       ]
+      },
+      {
+       "id": "SASP3-32",
+       "q": "Sir Ben Ainslie won his Olympic golds in which sport?",
+       "a": "Sailing",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Rowing",
+        "Canoeing",
+        "Swimming"
+       ]
+      },
+      {
+       "id": "SASP3-33",
+       "q": "Max Whitlock won Olympic golds in which sport?",
+       "a": "Gymnastics",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Diving",
+        "Trampolining",
+        "Boxing"
+       ]
+      },
+      {
+       "id": "SASP3-34",
+       "q": "In which swimming stroke did Adam Peaty win Olympic gold?",
+       "a": "Breaststroke",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Butterfly",
+        "Backstroke",
+        "Freestyle"
+       ]
+      },
+      {
+       "id": "SASP3-35",
+       "q": "Which sport is played at Twickenham Stadium?",
+       "a": "Rugby union",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Football",
+        "Cricket",
+        "Rugby league"
+       ]
+      },
+      {
+       "id": "SASP3-36",
+       "q": "Murrayfield is the national stadium of which country?",
+       "a": "Scotland",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Ireland",
+        "Wales",
+        "England"
+       ]
+      },
+      {
+       "id": "SASP3-37",
+       "q": "What is the name of the national stadium in Cardiff?",
+       "a": "The Principality Stadium",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Murrayfield",
+        "The Aviva Stadium",
+        "Twickenham"
+       ]
+      },
+      {
+       "id": "SASP3-38",
+       "q": "At which circuit is the British Grand Prix held?",
+       "a": "Silverstone",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Brands Hatch",
+        "Donington Park",
+        "Goodwood"
+       ]
+      },
+      {
+       "id": "SASP3-39",
+       "q": "The Monaco Grand Prix is raced through which town?",
+       "a": "Monte Carlo",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Nice",
+        "Cannes",
+        "Marseille"
+       ]
+      },
+      {
+       "id": "SASP3-40",
+       "q": "Which Formula One team is based at Maranello in Italy?",
+       "a": "Ferrari",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Maserati",
+        "Alfa Romeo",
+        "Lamborghini"
+       ]
+      },
+      {
+       "id": "SASP3-41",
+       "q": "Which club runs the Wimbledon Championships?",
+       "a": "The All England Club",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Lawn Tennis Association",
+        "The ATP",
+        "The WTA"
+       ]
+      },
+      {
+       "id": "SASP3-42",
+       "q": "What is the trophy for winning golf's Open Championship called?",
+       "a": "The Claret Jug",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Green Jacket",
+        "The Wanamaker Trophy",
+        "The Ryder Cup"
+       ]
+      },
+      {
+       "id": "SASP3-43",
+       "q": "In which month is Royal Ascot held?",
+       "a": "June",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "May",
+        "July",
+        "August"
+       ]
+      },
+      {
+       "id": "SASP3-44",
+       "q": "On which river is the University Boat Race rowed?",
+       "a": "The Thames",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Cam",
+        "The Severn",
+        "The Avon"
+       ]
+      },
+      {
+       "id": "SASP3-45",
+       "q": "Which sport do the Leeds Rhinos play?",
+       "a": "Rugby league",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Rugby union",
+        "Ice hockey",
+        "Basketball"
+       ]
+      },
+      {
+       "id": "SASP3-46",
+       "q": "How many players are there in a cricket team?",
+       "a": "11",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "9",
+        "12",
+        "13"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
