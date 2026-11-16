@@ -76,6 +76,10 @@
   if (!document.fullscreenEnabled) fsButtons().forEach(b => { b.hidden = true; });
   fsButtons().forEach(b => b.addEventListener('click', toggleFullscreen));
   document.addEventListener('fullscreenchange', showFullscreen);
+  Tutorial.wire();
+  const openTutorial = () => { AlecVoice.setEnabled(AlecVoice.isEnabled()); Tutorial.open(avatars); };
+  $('btn-howto').addEventListener('click', openTutorial);
+  $('btn-howto-lobby').addEventListener('click', openTutorial);
   $('btn-story').addEventListener('click', () => { $('story').hidden = false; $('btn-story-close').focus(); });
   $('btn-story-close').addEventListener('click', () => { $('story').hidden = true; });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') $('story').hidden = true; });
@@ -591,6 +595,7 @@
 
   function renderGame() {
     show('game');
+    if (Tutorial.isOpen()) Tutorial.close();
     const b = state.board;
     SA.playMusic(['predict', 'final', 'finalResult', 'minigame', 'showdown'].includes(b.step) ? 'mus-tension' : 'mus-board');
     if (!boardBuilt) buildBoard();
@@ -652,7 +657,7 @@
     await send('room:close');
     SA.store.remove('sa-tv'); state = null; show('title');
   });
-  document.addEventListener('keydown', e => { if (e.key === ' ' && state?.phase === 'board') { e.preventDefault(); $('btn-pause').click(); } });
+  document.addEventListener('keydown', e => { if (e.key === ' ' && state?.phase === 'board' && !Tutorial.isOpen()) { e.preventDefault(); $('btn-pause').click(); } });
 
   /* ---------- connection ---------- */
   socket.on('room:state', onState);

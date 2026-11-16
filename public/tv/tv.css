@@ -287,3 +287,52 @@ body.tv { overflow: hidden; background: #0B0F22; }
 .story-lead { font-size: 32px !important; font-weight: 700; }
 .story-foot { font-style: italic; opacity: .8; }
 .story-card .btn { margin-top: 18px; }
+
+/* ---------- How to Play ---------- */
+.tutorial { position: absolute; inset: 0; z-index: 20; background: url('/art/question-stage.webp') center / cover, var(--navy); display: grid; grid-template-rows: auto 1fr auto auto auto; padding: 40px 80px 30px 80px; }
+.tutorial::before { content: ""; position: absolute; inset: 0; background: rgba(8, 11, 26, .55); }
+.tutorial > * { position: relative; }
+.tut-head { display: flex; align-items: baseline; gap: 28px; }
+.tut-kicker { font-family: var(--display); font-size: 28px; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; }
+.tut-title { font-family: var(--display); font-size: 70px; margin: 0; color: var(--cream); text-shadow: 0 5px 0 var(--ink); }
+.tut-step { margin-left: auto; font-family: var(--display); font-size: 30px; color: var(--cream); opacity: .85; }
+.tut-card { margin: 22px 0 18px 300px; background: var(--cream); color: var(--ink); border: 6px solid var(--ink); border-radius: 36px; box-shadow: 0 14px 0 var(--ink); display: grid; place-items: center; padding: 30px; }
+.tut-card.enter { animation: pop .4s ease-out; }
+.tut-stage { width: 100%; }
+.tut-alec { position: absolute; left: 40px; bottom: 210px; width: 300px; z-index: 2; }
+.tut-caption { margin: 0 0 18px 300px; font-size: 34px; line-height: 1.35; color: var(--cream); background: rgba(10, 14, 35, .85); border: 3px solid var(--gold); border-radius: 22px; padding: 18px 28px; min-height: 108px; }
+.tut-controls { display: flex; gap: 18px; justify-content: center; }
+.tut-controls .btn { font-size: 30px; padding: 14px 34px; }
+.tut-dots { display: flex; gap: 10px; justify-content: center; margin-top: 16px; }
+.tut-dot { width: 22px; height: 22px; border-radius: 50%; border: 3px solid var(--cream); background: transparent; padding: 0; }
+.tut-dot.done { background: rgba(245, 183, 0, .5); }
+.tut-dot.on { background: var(--gold); transform: scale(1.25); }
+.tut-row { display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.tut-item { display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 260px; text-align: center; }
+.tut-label { font-family: var(--display); font-size: 28px; line-height: 1.15; }
+.tut-logo { width: 620px; }
+.tut-token { width: 140px; }
+.tut-icon { width: 150px; }
+.tut-emblem { width: 190px; }
+.tut-crown { width: 200px; }
+.tut-arrow { font-family: var(--display); font-size: 90px; color: var(--gold-deep); }
+.tut-die { width: 140px; height: 140px; border-radius: 26px; background: #fff; border: 6px solid var(--ink); box-shadow: 0 8px 0 var(--ink); display: grid; place-items: center; font-family: var(--display); font-size: 90px; }
+.tut-badge { font-family: var(--display); font-size: 40px; background: var(--gold); border: var(--outline); border-radius: 18px; padding: 12px 26px; box-shadow: 0 6px 0 var(--ink); }
+.tut-badge.big { font-size: 52px; }
+.tut-phone { width: 300px; min-height: 380px; background: var(--navy); border: 8px solid var(--ink); border-radius: 40px; padding: 30px 18px; display: flex; flex-direction: column; justify-content: center; gap: 16px; box-shadow: 0 10px 0 var(--ink); }
+.tut-phone-btn { font-family: var(--display); font-size: 26px; text-align: center; border: var(--outline); border-radius: 16px; padding: 18px 10px; color: var(--cream); background: var(--navy-3); }
+.tut-phone-btn.gold { background: var(--gold); color: var(--ink); }
+.tut-phone-btn.field, .tut-phone-btn.code { background: var(--cream); color: #777; font-family: var(--body); }
+.tut-phone-btn.code { color: var(--ink); letter-spacing: 3px; font-family: var(--display); }
+.tut-phone-btn[class*="cat-"] { background: var(--cat); }
+.tut-faces { display: grid; grid-template-columns: repeat(6, 92px); gap: 14px; }
+.tut-q { width: 780px; }
+.tut-q-text { font-family: var(--display); font-size: 40px; margin: 0 0 18px; }
+.tut-q-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.tut-q-opt { background: #fff; border: var(--outline); border-radius: 16px; padding: 14px 20px; font-size: 32px; }
+.tut-q-opt.right { background: #C9F5CF; box-shadow: 0 0 0 4px #137A2A; }
+.tut-q-opt.wrong { background: #FFD3D8; }
+.tut-games { font-family: var(--display); font-size: 34px; max-width: 760px; text-align: center; line-height: 1.3; }
+.tut-toggle { font-family: var(--display); font-size: 32px; background: var(--navy-2); color: var(--cream); border: var(--outline); border-radius: 18px; padding: 22px 26px; }
+.title-extras { flex-wrap: wrap; justify-content: center; }
+.tut-stage { zoom: 1.25; }
