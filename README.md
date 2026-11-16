@@ -60,4 +60,6 @@ v0.5.2: the twelve characters and their names on the title screen; the Smart Ale
 
 v0.6.0: Alec talks. 96 narration lines in public/voice/ play on the TV for turns, landings, right and wrong answers, steals, specials, mini-games, Showdowns and the Final Round. Lines never overlap, important lines cut off chatter, music dips while he speaks, and an "Alec's voice" button in the lobby (and the host bar) turns him off.
 
+v0.6.1: Full screen buttons (TV title screen, TV host bar, phone join screen where the browser allows it) and "Where does Smart Alec come from?" on the TV title screen and the phone lobby.
+
 Next: the last nine "lose" avatar poses, your review of the new packs.
