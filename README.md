@@ -76,4 +76,8 @@ v0.9.0: Final Round now needs 5 of 6 (Quick Game 3 of 4) and a failed attempt co
 
 v0.10.0: Save-and-restore. Live games are saved every few seconds and on shutdown, to Render Key Value when REDIS_URL is set, otherwise to runtime/rooms.json. After a restart or redeploy, games come back paused with no time lost; phones and the TV rejoin by themselves and the host presses Resume. Every question is tagged easy, medium or hard, with a lobby setting: Mixed (all), Family (easy and medium) or Quiz buffs (medium and hard). The Final Round never uses hard questions except for quiz buffs. Change any question's level in data/difficulty-overrides.json.
 
+v0.10.1: phone mini-game and Showdown screens now show normal sentence case instead of NOGGIN's capitals, matching the rest of Smart Alec.
+
+v0.10.2: merged the outside screen changes (Alec's Academy tutorial, Web Audio effects, one-handed phone layout, tap feedback) with v0.10.1. Music is now streamed rather than decoded into memory, and phones no longer download the music at all.
+
 Next: re-record tut-15 as tut-15b, playtest, your review of the new packs.
