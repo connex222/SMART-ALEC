@@ -143,7 +143,12 @@ window.Tutorial = (() => {
     const n = SLIDES[i].file ? SLIDES[i].file.replace('tut-', '') : String(i + 1).padStart(2, '0');
     const line = SLIDES[i].line;
     if (SA.isMuted() || !AlecVoice.isEnabled()) { timer = setTimeout(afterLine, readingTime(line)); return; }
-    const a = new Audio(`/voice/tut-${n}.mp3`);
+    // Corrected page-15 recording, generated in Alec's approved Creative Claw voice.
+    // The permanent media URL is used until the MP3 is mirrored into /public/voice.
+    const src = n === '15b'
+      ? 'https://cdn.creativeclaw.co/u/f3e7a3b1/audio/fbf4c291-4104-4a45-8ca4-98e067147ec1.mp3'
+      : `/voice/tut-${n}.mp3`;
+    const a = new Audio(src);
     audio = a;
     a.addEventListener('ended', () => { if (audio === a) { audio = null; afterLine(); } });
     a.addEventListener('error', () => { if (audio === a) { audio = null; speakFallback(line); } });
