@@ -103,7 +103,9 @@ window.SA = (() => {
     return promise;
   }
   // Run downloads in small batches; browsers only permit actual playback after a gesture.
-  async function preloadAudio(names = ['mus-lobby', 'mus-board', 'mus-tension', 'sfx-tick', 'sfx-correct', 'sfx-wrong', 'sfx-dice-roll', 'sfx-go', 'sfx-crowd-cheer']) {
+  // Only short effects are decoded into memory. Music is streamed (see playMusic):
+  // decoded, the three tracks would take about 170 MB, too much for phones and TV sticks.
+  async function preloadAudio(names = ['sfx-tick', 'sfx-correct', 'sfx-wrong', 'sfx-dice-roll', 'sfx-go', 'sfx-crowd-cheer']) {
     for (let i = 0; i < names.length; i += 3) await Promise.all(names.slice(i, i + 3).map(loadSound));
   }
   function unlockAudio() {
@@ -136,21 +138,18 @@ window.SA = (() => {
     source.start();
   }
   async function playMusic(name, volume = 0.28) {
-    if (name === musicName && music && !muted) return;
+    if (name === musicName && fallbackMusic && !muted) return;
     if (music) { try { music.stop(); } catch {} music.disconnect(); music = null; }
     if (fallbackMusic) { fallbackMusic.pause(); fallbackMusic = null; }
     musicName = name; musicVolume = volume;
     if (!name || muted || !Object.hasOwn(AUDIO, name)) return;
-    const ac = context(), buffer = await loadSound(name);
-    if (musicName !== name || muted) return;
-    if (!ac || !buffer) {
-      // Unsupported codecs / browsers: stream music, never construct SFX per click.
-      try { fallbackMusic = new Audio(audioUrl(name)); fallbackMusic.loop = true; applyDuck(); await fallbackMusic.play(); } catch {}
-      return;
-    }
-    if (ac.state !== 'running') return; // The next user gesture unlocks sound.
-    const source = ac.createBufferSource(); source.buffer = buffer; source.loop = true;
-    source.connect(musicGain); music = source; applyDuck(); source.start();
+    // Stream music through an audio element: tiny memory use, and the volume still dips for Alec.
+    try {
+      const track = new Audio(audioUrl(name));
+      track.loop = true; track.preload = 'auto';
+      fallbackMusic = track; applyDuck();
+      await track.play();
+    } catch { /* blocked until the next tap or key press; warm() retries */ }
   }
   function duck(on) { voiceDucked = Boolean(on); applyDuck(); }
   function setMuted(value) {
@@ -161,7 +160,7 @@ window.SA = (() => {
   function isMuted() { return muted; }
   function vibrate(ms = 30) { try { navigator.vibrate?.(ms); } catch { /* optional */ } }
   // Initialize on idle, not in a critical render. Playback remains gesture-gated.
-  const warm = () => { unlockAudio().then(ok => { if (ok && musicName && !music) playMusic(musicName, musicVolume); }); };
+  const warm = () => { unlockAudio(); if (musicName && !muted && (!fallbackMusic || fallbackMusic.paused)) { if (fallbackMusic) fallbackMusic.play().catch(() => {}); else playMusic(musicName, musicVolume); } };
   window.addEventListener('pointerdown', warm, {passive: true});
   window.addEventListener('keydown', warm);
   if ('requestIdleCallback' in window) requestIdleCallback(() => preloadAudio());
