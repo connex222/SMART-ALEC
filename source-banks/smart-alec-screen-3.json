@@ -1,0 +1,630 @@
+{
+ "source": "Smart Alec — Screen Time batch 3 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Screen Time batch 3",
+   "rounds": [
+    {
+     "id": "SAS3",
+     "name": "TV AND FILM",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SAS3-01",
+       "q": "Who plays Agnes in Mrs Brown's Boys?",
+       "a": "Brendan O'Carroll",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Brendan Gleeson",
+        "Frank Kelly",
+        "Dermot Morgan"
+       ]
+      },
+      {
+       "id": "SAS3-02",
+       "q": "Which glove puppet magician is famous for \"Izzy wizzy, let's get busy\"?",
+       "a": "Sooty",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Sweep",
+        "Basil Brush",
+        "Orville"
+       ]
+      },
+      {
+       "id": "SAS3-03",
+       "q": "Which cartoon character lives in a pineapple under the sea?",
+       "a": "SpongeBob SquarePants",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Patrick Star",
+        "Squidward",
+        "Nemo"
+       ]
+      },
+      {
+       "id": "SAS3-04",
+       "q": "What is the name of Peppa Pig's little brother?",
+       "a": "George",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Danny",
+        "Richard",
+        "Pedro"
+       ]
+      },
+      {
+       "id": "SAS3-05",
+       "q": "Which children's TV postman has a black and white cat?",
+       "a": "Postman Pat",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Fireman Sam",
+        "Bob the Builder",
+        "Noddy"
+       ]
+      },
+      {
+       "id": "SAS3-06",
+       "q": "What is the name of Postman Pat's cat?",
+       "a": "Jess",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Tom",
+        "Felix",
+        "Sooty"
+       ]
+      },
+      {
+       "id": "SAS3-07",
+       "q": "In the cartoon Bluey, what kind of animal is Bluey?",
+       "a": "A dog",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A cat",
+        "A fox",
+        "A koala"
+       ]
+      },
+      {
+       "id": "SAS3-08",
+       "q": "Which cartoon family lives at 742 Evergreen Terrace?",
+       "a": "The Simpsons",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Griffins",
+        "The Flintstones",
+        "The Belchers"
+       ]
+      },
+      {
+       "id": "SAS3-09",
+       "q": "What is the name of the Flintstones' pet dinosaur?",
+       "a": "Dino",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Rex",
+        "Spike",
+        "Dina"
+       ]
+      },
+      {
+       "id": "SAS3-10",
+       "q": "Which cartoon cat is forever chasing Jerry?",
+       "a": "Tom",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Sylvester",
+        "Felix",
+        "Garfield"
+       ]
+      },
+      {
+       "id": "SAS3-11",
+       "q": "Which cartoon bird says \"I tawt I taw a puddy tat\"?",
+       "a": "Tweety",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Woodstock",
+        "Road Runner",
+        "Daffy Duck"
+       ]
+      },
+      {
+       "id": "SAS3-12",
+       "q": "What is the name of Shrek's wife?",
+       "a": "Fiona",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Belle",
+        "Aurora",
+        "Rapunzel"
+       ]
+      },
+      {
+       "id": "SAS3-13",
+       "q": "In Monsters, Inc., what is the name of the big blue monster?",
+       "a": "Sulley",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Mike",
+        "Randall",
+        "Boo"
+       ]
+      },
+      {
+       "id": "SAS3-14",
+       "q": "Which film features the song Hakuna Matata?",
+       "a": "The Lion King",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Jungle Book",
+        "Tarzan",
+        "Aladdin"
+       ]
+      },
+      {
+       "id": "SAS3-15",
+       "q": "Which Disney heroine sails the ocean to restore the heart of Te Fiti?",
+       "a": "Moana",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Merida",
+        "Rapunzel",
+        "Mirabel"
+       ]
+      },
+      {
+       "id": "SAS3-16",
+       "q": "Who played Mary Poppins in the 1964 film?",
+       "a": "Julie Andrews",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Audrey Hepburn",
+        "Emily Blunt",
+        "Judy Garland"
+       ]
+      },
+      {
+       "id": "SAS3-17",
+       "q": "Who played Mr Darcy in the 1995 BBC series Pride and Prejudice?",
+       "a": "Colin Firth",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Hugh Grant",
+        "Matthew Macfadyen",
+        "Ralph Fiennes"
+       ]
+      },
+      {
+       "id": "SAS3-18",
+       "q": "Who played Bridget Jones in the films?",
+       "a": "Renée Zellweger",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Emma Thompson",
+        "Keira Knightley",
+        "Kate Winslet"
+       ]
+      },
+      {
+       "id": "SAS3-19",
+       "q": "Which film features the line \"E.T. phone home\"?",
+       "a": "E.T. the Extra-Terrestrial",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Close Encounters of the Third Kind",
+        "Gremlins",
+        "The Goonies"
+       ]
+      },
+      {
+       "id": "SAS3-20",
+       "q": "Which 1985 film features a DeLorean time machine?",
+       "a": "Back to the Future",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Terminator",
+        "Ghostbusters",
+        "Bill & Ted's Excellent Adventure"
+       ]
+      },
+      {
+       "id": "SAS3-21",
+       "q": "Who played Marty McFly in Back to the Future?",
+       "a": "Michael J. Fox",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Matthew Broderick",
+        "Tom Cruise",
+        "Christian Slater"
+       ]
+      },
+      {
+       "id": "SAS3-22",
+       "q": "Which 1984 film's theme song asks \"Who you gonna call?\"",
+       "a": "Ghostbusters",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Gremlins",
+        "Beetlejuice",
+        "The Goonies"
+       ]
+      },
+      {
+       "id": "SAS3-23",
+       "q": "Which film features the line \"Houston, we have a problem\"?",
+       "a": "Apollo 13",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Armageddon",
+        "Gravity",
+        "The Martian"
+       ]
+      },
+      {
+       "id": "SAS3-24",
+       "q": "Who played Maverick in the 1986 film Top Gun?",
+       "a": "Tom Cruise",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Val Kilmer",
+        "Tom Hanks",
+        "Kevin Bacon"
+       ]
+      },
+      {
+       "id": "SAS3-25",
+       "q": "Who played Elle Woods in Legally Blonde?",
+       "a": "Reese Witherspoon",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Cameron Diaz",
+        "Jennifer Aniston",
+        "Drew Barrymore"
+       ]
+      },
+      {
+       "id": "SAS3-26",
+       "q": "Who played Willy Wonka in the 1971 film?",
+       "a": "Gene Wilder",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Johnny Depp",
+        "Timothée Chalamet",
+        "Danny Kaye"
+       ]
+      },
+      {
+       "id": "SAS3-27",
+       "q": "Which Wallace and Gromit film won the Oscar for Best Animated Feature?",
+       "a": "The Curse of the Were-Rabbit",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A Close Shave",
+        "A Grand Day Out",
+        "The Wrong Trousers"
+       ]
+      },
+      {
+       "id": "SAS3-28",
+       "q": "What does Wallace love to eat with his crackers?",
+       "a": "Cheese",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Jam",
+        "Pâté",
+        "Butter"
+       ]
+      },
+      {
+       "id": "SAS3-29",
+       "q": "Which BBC sitcom is set in the haunted Button House?",
+       "a": "Ghosts",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Rentaghost",
+        "Being Human",
+        "Still Open All Hours"
+       ]
+      },
+      {
+       "id": "SAS3-30",
+       "q": "Which TV talent show is known for its Golden Buzzer?",
+       "a": "Britain's Got Talent",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The X Factor",
+        "The Voice",
+        "Strictly Come Dancing"
+       ]
+      },
+      {
+       "id": "SAS3-31",
+       "q": "On which talent show do the judges turn their chairs around?",
+       "a": "The Voice",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The X Factor",
+        "Britain's Got Talent",
+        "Pop Idol"
+       ]
+      },
+      {
+       "id": "SAS3-32",
+       "q": "Tess Daly presents which dance show?",
+       "a": "Strictly Come Dancing",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Dancing on Ice",
+        "The Masked Dancer",
+        "Got to Dance"
+       ]
+      },
+      {
+       "id": "SAS3-33",
+       "q": "Which game show invites contestants to \"Come on down!\"?",
+       "a": "The Price Is Right",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bullseye",
+        "Family Fortunes",
+        "Deal or No Deal"
+       ]
+      },
+      {
+       "id": "SAS3-34",
+       "q": "Which game show has a cartoon bull called Bully as its mascot?",
+       "a": "Bullseye",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Catchphrase",
+        "Blockbusters",
+        "Golden Balls"
+       ]
+      },
+      {
+       "id": "SAS3-35",
+       "q": "On which game show does the host say \"Our survey said...\"?",
+       "a": "Family Fortunes",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Catchphrase",
+        "Bullseye",
+        "The Price Is Right"
+       ]
+      },
+      {
+       "id": "SAS3-36",
+       "q": "Which sitcom stars Miranda Hart as the owner of a joke shop?",
+       "a": "Miranda",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Call the Midwife",
+        "Not Going Out",
+        "Green Wing"
+       ]
+      },
+      {
+       "id": "SAS3-37",
+       "q": "Which sitcom is set in the fictional village of Dibley?",
+       "a": "The Vicar of Dibley",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Last of the Summer Wine",
+        "Heartbeat",
+        "Ballykissangel"
+       ]
+      },
+      {
+       "id": "SAS3-38",
+       "q": "Who played Geraldine Granger, the Vicar of Dibley?",
+       "a": "Dawn French",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Jennifer Saunders",
+        "Miranda Hart",
+        "Julie Walters"
+       ]
+      },
+      {
+       "id": "SAS3-39",
+       "q": "Hyacinth Bucket is the star of which sitcom?",
+       "a": "Keeping Up Appearances",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Open All Hours",
+        "One Foot in the Grave",
+        "Last of the Summer Wine"
+       ]
+      },
+      {
+       "id": "SAS3-40",
+       "q": "Victor Meldrew's catchphrase \"I don't believe it!\" comes from which sitcom?",
+       "a": "One Foot in the Grave",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Keeping Up Appearances",
+        "Last of the Summer Wine",
+        "Porridge"
+       ]
+      },
+      {
+       "id": "SAS3-41",
+       "q": "Which sitcom is set in Slade Prison?",
+       "a": "Porridge",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Birds of a Feather",
+        "Bad Girls",
+        "Waterloo Road"
+       ]
+      },
+      {
+       "id": "SAS3-42",
+       "q": "Which drama follows midwives in Poplar in the East End of London?",
+       "a": "Call the Midwife",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Heartbeat",
+        "Casualty",
+        "Holby City"
+       ]
+      },
+      {
+       "id": "SAS3-43",
+       "q": "Which long-running BBC drama is set in the emergency department of Holby City Hospital?",
+       "a": "Casualty",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Doctors",
+        "ER",
+        "Grey's Anatomy"
+       ]
+      },
+      {
+       "id": "SAS3-44",
+       "q": "Which BBC show has been valuing the public's antiques since 1979?",
+       "a": "Antiques Roadshow",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Bargain Hunt",
+        "Flog It!",
+        "Cash in the Attic"
+       ]
+      },
+      {
+       "id": "SAS3-45",
+       "q": "Which Muppets are a frog and a pig in love?",
+       "a": "Kermit and Miss Piggy",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Statler and Waldorf",
+        "Bert and Ernie",
+        "Zig and Zag"
+       ]
+      },
+      {
+       "id": "SAS3-46",
+       "q": "Who created The Muppets?",
+       "a": "Jim Henson",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Walt Disney",
+        "Gerry Anderson",
+        "Oliver Postgate"
+       ]
+      },
+      {
+       "id": "SAS3-47",
+       "q": "Gerry Anderson created which puppet series about International Rescue?",
+       "a": "Thunderbirds",
+       "pts": 1,
+       "cat": "SCREEN TIME",
+       "note": "Smart Alec Screen Time batch 3, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Stingray",
+        "Captain Scarlet",
+        "Joe 90"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

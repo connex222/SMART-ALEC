@@ -1,0 +1,643 @@
+{
+ "source": "Smart Alec — Sport batch 4 (written by Claude)",
+ "rights": "Owned by the game owner. Awaiting review.",
+ "quizzes": [
+  {
+   "title": "Sport batch 4",
+   "rounds": [
+    {
+     "id": "SASP4",
+     "name": "SPORT",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "SASP4-01",
+       "q": "Which of these sports is played at the Wimbledon Championships?",
+       "a": "Tennis",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Badminton",
+        "Golf",
+        "Squash"
+       ]
+      },
+      {
+       "id": "SASP4-02",
+       "q": "In which sport do players score a try?",
+       "a": "Rugby",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Football",
+        "Hockey",
+        "Cricket"
+       ]
+      },
+      {
+       "id": "SASP4-03",
+       "q": "What colour is the outer bull on a standard dartboard?",
+       "a": "Green",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Red",
+        "Black",
+        "White"
+       ]
+      },
+      {
+       "id": "SASP4-04",
+       "q": "How many players does a hockey team have on the pitch?",
+       "a": "11",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "9",
+        "10",
+        "12"
+       ]
+      },
+      {
+       "id": "SASP4-05",
+       "q": "How many players does a volleyball team have on court?",
+       "a": "6",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "5",
+        "7",
+        "8"
+       ]
+      },
+      {
+       "id": "SASP4-06",
+       "q": "How many periods are there in an ice hockey game?",
+       "a": "3",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "2",
+        "4",
+        "5"
+       ]
+      },
+      {
+       "id": "SASP4-07",
+       "q": "What is the highest score possible with a single dart?",
+       "a": "60",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "50",
+        "40",
+        "100"
+       ]
+      },
+      {
+       "id": "SASP4-08",
+       "q": "In tennis, what is the score called when both players have 40?",
+       "a": "Deuce",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Love",
+        "Advantage",
+        "Tie"
+       ]
+      },
+      {
+       "id": "SASP4-09",
+       "q": "What is a hole in one also called in golf?",
+       "a": "An ace",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "An albatross",
+        "An eagle",
+        "A condor"
+       ]
+      },
+      {
+       "id": "SASP4-10",
+       "q": "Which sport do the Wigan Warriors play?",
+       "a": "Rugby league",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Rugby union",
+        "Football",
+        "Ice hockey"
+       ]
+      },
+      {
+       "id": "SASP4-11",
+       "q": "Which sport is often called the beautiful game?",
+       "a": "Football",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Cricket",
+        "Tennis",
+        "Rugby"
+       ]
+      },
+      {
+       "id": "SASP4-12",
+       "q": "Which sport is played with a puck?",
+       "a": "Ice hockey",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Lacrosse",
+        "Curling",
+        "Polo"
+       ]
+      },
+      {
+       "id": "SASP4-13",
+       "q": "In which sport do players use a cue?",
+       "a": "Snooker",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Croquet",
+        "Golf",
+        "Bowls"
+       ]
+      },
+      {
+       "id": "SASP4-14",
+       "q": "How many players are there on each team in polo?",
+       "a": "4",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "6",
+        "5",
+        "3"
+       ]
+      },
+      {
+       "id": "SASP4-15",
+       "q": "In which country did the sport of curling begin?",
+       "a": "Scotland",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Canada",
+        "Norway",
+        "Switzerland"
+       ]
+      },
+      {
+       "id": "SASP4-16",
+       "q": "Rugby football is named after a school in which English town?",
+       "a": "Rugby",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Eton",
+        "Harrow",
+        "Oxford"
+       ]
+      },
+      {
+       "id": "SASP4-17",
+       "q": "How often are the Summer Olympics usually held?",
+       "a": "Every four years",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Every two years",
+        "Every three years",
+        "Every five years"
+       ]
+      },
+      {
+       "id": "SASP4-18",
+       "q": "In which city were the first modern Olympic Games held in 1896?",
+       "a": "Athens",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Paris",
+        "London",
+        "Rome"
+       ]
+      },
+      {
+       "id": "SASP4-19",
+       "q": "Which country hosted the 2008 Summer Olympics?",
+       "a": "China",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Japan",
+        "Greece",
+        "Australia"
+       ]
+      },
+      {
+       "id": "SASP4-20",
+       "q": "Which city hosted the 2024 Summer Olympics?",
+       "a": "Paris",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Los Angeles",
+        "Tokyo",
+        "Rome"
+       ]
+      },
+      {
+       "id": "SASP4-21",
+       "q": "Which city was chosen to host the 2028 Summer Olympics?",
+       "a": "Los Angeles",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Brisbane",
+        "Madrid",
+        "Toronto"
+       ]
+      },
+      {
+       "id": "SASP4-22",
+       "q": "In cricket's MCC, what does the M stand for?",
+       "a": "Marylebone",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Middlesex",
+        "Manchester",
+        "Midland"
+       ]
+      },
+      {
+       "id": "SASP4-23",
+       "q": "In cricket, what is it called when a bowler takes three wickets with three balls in a row?",
+       "a": "A hat-trick",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A treble",
+        "A century",
+        "A maiden"
+       ]
+      },
+      {
+       "id": "SASP4-24",
+       "q": "In cricket, what is an over with no runs scored called?",
+       "a": "A maiden",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "A duck",
+        "A dot",
+        "A blank"
+       ]
+      },
+      {
+       "id": "SASP4-25",
+       "q": "In cricket, how many runs are scored for hitting the ball over the boundary without it bouncing?",
+       "a": "6",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "4",
+        "5",
+        "8"
+       ]
+      },
+      {
+       "id": "SASP4-26",
+       "q": "How many points is the pink ball worth in snooker?",
+       "a": "6",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "5",
+        "7",
+        "4"
+       ]
+      },
+      {
+       "id": "SASP4-27",
+       "q": "Which snooker player is nicknamed The Rocket?",
+       "a": "Ronnie O'Sullivan",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Judd Trump",
+        "Steve Davis",
+        "Mark Selby"
+       ]
+      },
+      {
+       "id": "SASP4-28",
+       "q": "Which darts player is nicknamed Snakebite?",
+       "a": "Peter Wright",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Michael van Gerwen",
+        "Gerwyn Price",
+        "Phil Taylor"
+       ]
+      },
+      {
+       "id": "SASP4-29",
+       "q": "The darts player Michael van Gerwen comes from which country?",
+       "a": "The Netherlands",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Belgium",
+        "Germany",
+        "Scotland"
+       ]
+      },
+      {
+       "id": "SASP4-30",
+       "q": "Which British boxer was affectionately known as Our 'Enry?",
+       "a": "Henry Cooper",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Frank Bruno",
+        "Chris Eubank",
+        "Lennox Lewis"
+       ]
+      },
+      {
+       "id": "SASP4-31",
+       "q": "Which boxer was nicknamed Iron Mike?",
+       "a": "Mike Tyson",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Evander Holyfield",
+        "George Foreman",
+        "Joe Frazier"
+       ]
+      },
+      {
+       "id": "SASP4-32",
+       "q": "Which Manchester-born heavyweight boxer is nicknamed the Gypsy King?",
+       "a": "Tyson Fury",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Anthony Joshua",
+        "Derek Chisora",
+        "Dillian Whyte"
+       ]
+      },
+      {
+       "id": "SASP4-33",
+       "q": "Which club's fans are famous for singing You'll Never Walk Alone at Anfield?",
+       "a": "Liverpool",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Everton",
+        "Manchester United",
+        "Chelsea"
+       ]
+      },
+      {
+       "id": "SASP4-34",
+       "q": "Which football club is nicknamed the Blades?",
+       "a": "Sheffield United",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Sheffield Wednesday",
+        "Leeds United",
+        "Barnsley"
+       ]
+      },
+      {
+       "id": "SASP4-35",
+       "q": "Which football club is nicknamed the Canaries?",
+       "a": "Norwich City",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Ipswich Town",
+        "Brighton & Hove Albion",
+        "Watford"
+       ]
+      },
+      {
+       "id": "SASP4-36",
+       "q": "Which football club is nicknamed the Seagulls?",
+       "a": "Brighton & Hove Albion",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Southampton",
+        "Norwich City",
+        "Plymouth Argyle"
+       ]
+      },
+      {
+       "id": "SASP4-37",
+       "q": "Which football club is nicknamed the Saints?",
+       "a": "Southampton",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Portsmouth",
+        "Brighton & Hove Albion",
+        "Reading"
+       ]
+      },
+      {
+       "id": "SASP4-38",
+       "q": "Which football club is nicknamed the Foxes?",
+       "a": "Leicester City",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Hull City",
+        "Derby County",
+        "Wolverhampton Wanderers"
+       ]
+      },
+      {
+       "id": "SASP4-39",
+       "q": "How many minutes long is each half of a standard football match?",
+       "a": "45",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "40",
+        "30",
+        "50"
+       ]
+      },
+      {
+       "id": "SASP4-40",
+       "q": "What colour card means a footballer is sent off?",
+       "a": "Red",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Yellow",
+        "Blue",
+        "Green"
+       ]
+      },
+      {
+       "id": "SASP4-41",
+       "q": "Which British woman won the Wimbledon singles title in 1977?",
+       "a": "Virginia Wade",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Sue Barker",
+        "Ann Jones",
+        "Jo Durie"
+       ]
+      },
+      {
+       "id": "SASP4-42",
+       "q": "In golf, what is the area of short grass around the hole called?",
+       "a": "The green",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The fairway",
+        "The rough",
+        "The tee"
+       ]
+      },
+      {
+       "id": "SASP4-43",
+       "q": "Which Grand National fence is named after a captain who fell into it in 1839?",
+       "a": "Becher's Brook",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "The Chair",
+        "Canal Turn",
+        "Valentine's"
+       ]
+      },
+      {
+       "id": "SASP4-44",
+       "q": "In which city does the Tour de France usually finish?",
+       "a": "Paris",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Nice",
+        "Lyon",
+        "Marseille"
+       ]
+      },
+      {
+       "id": "SASP4-45",
+       "q": "How many hurdles are there in a 110 metres hurdles race?",
+       "a": "10",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "8",
+        "12",
+        "6"
+       ]
+      },
+      {
+       "id": "SASP4-46",
+       "q": "How long is an Olympic swimming pool?",
+       "a": "50 metres",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "25 metres",
+        "100 metres",
+        "33 metres"
+       ]
+      },
+      {
+       "id": "SASP4-47",
+       "q": "Torvill and Dean are famous for which sport?",
+       "a": "Ice dancing",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Ballroom dancing",
+        "Gymnastics",
+        "Synchronised swimming"
+       ]
+      },
+      {
+       "id": "SASP4-48",
+       "q": "In netball, what does GA stand for?",
+       "a": "Goal Attack",
+       "pts": 1,
+       "cat": "SPORT",
+       "note": "Smart Alec Sport batch 4, November 2026. Needs owner review before it counts as signed off.",
+       "wrong": [
+        "Goal Assist",
+        "Goal Area",
+        "Guard Attack"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
