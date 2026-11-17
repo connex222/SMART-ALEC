@@ -268,6 +268,28 @@
     return [b.step, b.version, b.activeId, q?.id, q?.answers?.[p.id] ? 'A' : '', q?.myAlong ?? '', b.final?.index, b.final?.predictions?.[p.id], b.canFinal, p.tokens.length].join('|');
   }
 
+  /* ---------- NOGGIN's phone text is written in capitals; show it in normal sentence case ---------- */
+  const KEEP_CAPS = new Set(['TV', 'OK', 'A', 'B', 'C', 'D', 'UK', 'USA', 'DJ']);
+  function sentenceCase(text) {
+    const letters = text.replace(/[^A-Za-z]/g, '');
+    if (letters.length < 3 || letters !== letters.toUpperCase()) return text;   // already mixed case, leave it
+    let out = text.toLowerCase().replace(/(^\s*|[.!?]\s+|:\s+)([a-z])/g, (m, a, b) => a + b.toUpperCase());
+    out = out.replace(/\b([a-z]+)\b/g, w => (KEEP_CAPS.has(w.toUpperCase()) && w.length > 1 ? w.toUpperCase() : w === 'i' ? 'I' : w));
+    return out;
+  }
+  function soften(root) {
+    const walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+      const next = sentenceCase(n.nodeValue);
+      if (next !== n.nodeValue) n.nodeValue = next;
+    }
+    for (const input of root.querySelectorAll('input[placeholder], textarea[placeholder]')) {
+      const next = sentenceCase(input.placeholder);
+      if (next !== input.placeholder) input.placeholder = next;
+    }
+  }
+  let softener = null;
+
   let nogginPhone = null;
   function renderNoggin() {
     if (!nogginPhone) nogginPhone = NogginPhone({
@@ -285,8 +307,12 @@
       const buttons = el('div', 'noggin-controls'); buttons.id = 'gameButtons';
       box.append(h, d, buttons);
       $('panel').replaceChildren(box);
+      softener?.disconnect();
+      softener = new MutationObserver(() => soften(box));
+      softener.observe(box, {childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['placeholder']});
     }
     nogginPhone.update(state, me());
+    soften($('panel'));
   }
 
   function renderGame() {

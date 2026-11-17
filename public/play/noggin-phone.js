@@ -108,7 +108,7 @@ window.NogginPhone = function NogginPhone(opts) {
   }
   function renderPhase4(player,m){
     const id=player.id,host=roomState.board.activeId;
-    $('gameHeadline').textContent=`${m.title.toUpperCase()}${m.totalRounds>1?` · ${m.round}/${m.totalRounds}`:''}`;
+    $('gameHeadline').textContent=`${m.title}${m.totalRounds>1?` · ${m.round}/${m.totalRounds}`:''}`;
     $('gameDescription').textContent=m.rule;
     currentDeadline=m.phase==='intro'?m.introUntil:m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
     if(m.phase==='intro'){const list=howToList(m.id);if(list){$('gameButtons').replaceChildren(list);}else $('gameButtons').textContent='GET READY! WATCH THE TV FOR THE RULES';return;}
@@ -289,7 +289,7 @@ window.NogginPhone = function NogginPhone(opts) {
   function renderMiniGame(player,m) {
     const eligible=m.participants.includes(player.id)&&!m.eliminated.includes(player.id);
     const answered=m.answered.includes(player.id);
-    $('gameHeadline').textContent=`${m.title.toUpperCase()} · ${m.round}/${m.totalRounds}`;
+    $('gameHeadline').textContent=`${m.title} · ${m.round}/${m.totalRounds}`;
     $('gameDescription').textContent=m.rule+'  '+m.question;
     currentDeadline=m.phase==='intro'?m.introUntil:m.deadline;clockServer=roomState.serverNow;clockLocal=Date.now();
     if(m.phase==='intro'){$('gameDescription').textContent=m.rule;const list=howToList(m.id);if(list)$('gameButtons').replaceChildren(list);else $('gameButtons').textContent='GET READY — WATCH THE TV DEMO';return;}
