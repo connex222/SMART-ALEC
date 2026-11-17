@@ -266,6 +266,7 @@ class GameRooms {
     room.updatedAt = this.now();
     return this.callerState(code, socketId);
   }
+  nextTurnGame(code, socketId) { const room = this.requireHost(code, socketId); this.assertGameRunning(room); engine.hostNextTurn(room, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
   pauseGame(code, socketId) { const room = this.requireHost(code, socketId); engine.hostPause(room, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
   resumeGame(code, socketId) { const room = this.requireHost(code, socketId); assert(room.hostSocketId, 'TV', 'Reconnect the TV first.'); engine.hostResume(room, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
   skipDisconnectedGame(code, socketId) { const room = this.requireHost(code, socketId); this.assertGameRunning(room); engine.skipDisconnected(room, this.now(), this.randomInt); room.updatedAt = this.now(); return this.callerState(code, socketId); }
