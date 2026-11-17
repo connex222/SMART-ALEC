@@ -343,3 +343,95 @@ body.tv { overflow: hidden; background: #0B0F22; }
 .lobby-settings { margin: 22px 0; gap: 12px; }
 .lobby-start .btn { white-space: nowrap; }
 .lobby-start { gap: 20px; }
+
+/* ==========================================================
+   Alec's Academy — live studio tutorial (TV 1920 × 1080)
+   All presentation is CSS/DOM; no static slide backdrop.
+   ========================================================== */
+.tutorial[hidden] { display: none !important; }
+.tutorial {
+  isolation: isolate;
+  grid-template-rows: 93px minmax(0, 1fr) auto 85px 10px 28px;
+  gap: 12px;
+  padding: 38px 68px 24px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 64% 20%, #354389 0%, #171e47 42%, #0c1029 78%);
+}
+.tutorial::before { display: none; }
+.tut-studio { position: absolute !important; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.tut-halo { position: absolute; width: 1340px; height: 960px; left: 335px; top: -420px; border-radius: 50%; border: 16px solid rgba(245,183,0,.12); box-shadow: 0 0 0 50px rgba(255,255,255,.025), 0 0 0 115px rgba(255,255,255,.018); animation: tut-halo-breathe 8s ease-in-out infinite alternate; }
+.tut-light { position: absolute; width: 620px; height: 1180px; top: -440px; opacity: .18; background: linear-gradient(to bottom, rgba(255,245,188,.6), transparent 80%); filter: blur(45px); transform-origin: 50% 0; }
+.tut-light-a { left: 250px; transform: rotate(-23deg); animation: tut-beam-left 10s ease-in-out infinite alternate; }
+.tut-light-b { right: 130px; transform: rotate(22deg); animation: tut-beam-right 12s ease-in-out infinite alternate; }
+.tut-floor { position: absolute; bottom: -130px; left: -10%; width: 120%; height: 360px; background: repeating-linear-gradient(90deg, transparent 0 120px, rgba(245,183,0,.045) 122px 125px), linear-gradient(0deg,#0a0e25,rgba(28,37,83,.5)); transform: perspective(550px) rotateX(54deg); }
+.tut-head { display: flex; align-items: center; gap: 25px; z-index: 3; min-width: 0; }
+.tut-kicker { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 12px; font-size: 23px; letter-spacing: 2px; white-space: nowrap; }
+.tut-live { width: 14px; height: 14px; border-radius: 50%; background: #ff4f9a; box-shadow: 0 0 0 6px rgba(255,79,154,.16),0 0 24px #ff4f9a; animation: tut-live-pulse 1.9s ease-in-out infinite; }
+.tut-title { font-size: 56px; line-height: 1.05; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 4px 0 #10122a; }
+.tut-step { font-size: 26px; font-weight: 800; white-space: nowrap; }
+.tut-card { margin: 0 0 0 300px; min-height: 0; padding: 26px 38px 18px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; position: relative; border: 4px solid rgba(245,183,0,.95); border-radius: 30px; background: radial-gradient(ellipse at 70% 30%,rgba(62,72,157,.48),transparent 64%),linear-gradient(150deg,#222e68,#141b42 64%,#0d1431); box-shadow: 0 20px 55px #050818aa, inset 0 0 0 2px rgba(255,255,255,.08), 0 0 32px rgba(245,183,0,.12); color: #fff6e3; }
+.tut-card::before { content: ''; position: absolute; inset: 0; opacity: .36; pointer-events: none; background-image: radial-gradient(circle at center, #f5b700 1.3px, transparent 1.8px); background-size: 34px 34px; mask-image: linear-gradient(90deg, transparent 30%, #000 100%); }
+.tut-card > * { position: relative; z-index: 1; }
+.tut-card.enter { animation: tut-scene-in .44s cubic-bezier(.18,.84,.2,1) both; }
+.tut-scene-top,.tut-scene-bottom { display: flex; justify-content: space-between; align-items: center; gap: 12px; font: 700 21px var(--display); letter-spacing: 2px; }
+.tut-chapter { color: var(--gold); }
+.tut-onair,.tut-scene-mark { opacity: .6; font-size: 17px; }
+.tut-scene-bottom { min-height: 34px; }
+.tut-callout { color: #fff6e3; background: rgba(255,79,154,.24); border-left: 5px solid #ff4f9a; padding: 7px 15px; border-radius: 0 10px 10px 0; font-size: 20px; }
+.tut-stage { zoom: 1; flex: 1 1 auto; min-height: 0; width: 100%; display: grid; place-items: center; }
+.tut-stage > .tut-row { width: 100%; max-height: 100%; }
+.tut-row { gap: 24px; }
+.tut-row > * { animation: tut-item-in .52s cubic-bezier(.2,.75,.2,1) both; }
+.tut-row > :nth-child(2) { animation-delay: 110ms; }
+.tut-row > :nth-child(3) { animation-delay: 190ms; }
+.tut-row > :nth-child(4) { animation-delay: 260ms; }
+.tut-row > :nth-child(5) { animation-delay: 340ms; }
+.tut-row > :nth-child(6) { animation-delay: 400ms; }
+.tut-alec { left: 31px; bottom: 182px; width: 322px; max-height: 575px; object-fit: contain; object-position: bottom; filter: drop-shadow(0 14px 15px #07091999); animation: tut-host-idle 4.8s ease-in-out infinite; }
+.tut-caption { margin: 0 0 0 300px; border-radius: 22px; border: 2px solid rgba(245,183,0,.75); background: rgba(8,12,33,.92); box-shadow: 0 8px 24px #07091980; padding: 15px 24px; min-height: 92px; max-height: 147px; overflow: hidden; font-size: 30px; line-height: 1.28; }
+.tut-controls { z-index: 4; align-items: center; }
+.tut-controls .btn { font-size: 27px; min-width: 136px; padding: 10px 22px; }
+.tut-progress { height: 10px; border-radius: 20px; margin: 0 0 0 300px; background: #36416d; overflow: hidden; border: 1px solid #7680ab; }
+.tut-progress-fill { height: 100%; width: 5%; background: linear-gradient(90deg,#ff4f9a,#f5b700); transition: width .4s ease-out; }
+.tut-dots { margin: 0 0 0 300px; gap: 13px; align-items: center; }
+.tut-dot { width: 20px; height: 20px; border: 2px solid #afb3d5; }
+.tut-dot:focus-visible,.tut-controls .btn:focus-visible { outline: 5px solid #fff6e3; outline-offset: 4px; }
+.tut-token { width: 120px; filter: drop-shadow(0 9px 0 #0004); }
+.tut-icon { width: 132px; filter: drop-shadow(0 9px 0 #0005); }
+.tut-emblem { width: 145px; filter: drop-shadow(0 9px 0 #0005); }
+.tut-logo { width: 580px; max-height: 360px; object-fit: contain; filter: drop-shadow(0 16px 25px #0008); }
+.tut-label { font-size: 23px; color: #fff6e3; text-wrap: balance; }
+.tut-item { max-width: 225px; }
+.tut-q { width: min(690px,100%); background: #fff6e3; border: 4px solid #1b1b22; border-radius: 22px; padding: 20px; color: #1b1b22; box-shadow: 0 10px 0 #0c102d; }
+.tut-q-text { font-size: 30px; }
+.tut-q-opt { font-size: 25px; padding: 11px 13px; }
+.tut-phone { width: 255px; min-height: 300px; padding: 23px 14px; border: 6px solid #080b1b; box-shadow: 0 14px 22px #0007, 0 0 0 2px #7680b5; }
+.tut-phone-btn { font-size: 22px; padding: 14px 8px; }
+.tut-faces { grid-template-columns: repeat(6, 70px); gap: 6px; }
+.tut-faces img { max-width: 70px; max-height: 90px; object-fit: contain; }
+.tut-die { width: 125px; height: 125px; font-size: 74px; color: #1b1b22; }
+.tut-badge { font-size: 33px; color: #1b1b22; }
+.tut-badge.big { font-size: 38px; }
+.tut-arrow { font-size: 65px; }
+.tut-games { font-size: 28px; max-width: 570px; }
+.tut-toggle { font-size: 25px; padding: 18px; }
+/* Purposeful motion linked to the illustrated lesson. */
+.tutorial[data-scene="2"] .tut-token,.tutorial[data-scene="13"] .tut-token { animation: tut-token-shine 2.5s ease-in-out infinite alternate; }
+.tutorial[data-scene="3"] .tut-item,.tutorial[data-scene="11"] .tut-item,.tutorial[data-scene="12"] .tut-item { animation: tut-item-in .5s ease-out both; }
+.tutorial[data-scene="4"] .tut-die,.tutorial[data-scene="15"] .tut-die { animation: tut-dice 2.6s ease-in-out infinite; }
+.tutorial[data-scene="7"] .tut-q-opt.right { animation: tut-right-glow 1.7s ease-in-out infinite alternate; }
+.tutorial[data-scene="8"] .tut-badge,.tutorial[data-scene="9"] .tut-badge,.tutorial[data-scene="10"] .tut-badge { animation: tut-token-shine 2.4s ease-in-out infinite alternate; }
+.tutorial[data-scene="14"] .tut-item:first-child { animation: tut-item-in .6s ease-out both; }
+@keyframes tut-scene-in { from { opacity: .5; transform: translateY(24px) scale(.975); filter: blur(4px); } to { opacity:1; transform:none; filter:none; } }
+@keyframes tut-item-in { from {opacity:0; transform:translateY(28px) scale(.9)} to {opacity:1; transform:none} }
+@keyframes tut-host-idle { 0%,100% {transform:translateY(0)} 50% {transform:translateY(-9px)} }
+@keyframes tut-token-shine { from {transform:scale(.96);filter:drop-shadow(0 5px 4px #0007)} to {transform:scale(1.06);filter:drop-shadow(0 4px 20px #f5b70099)} }
+@keyframes tut-dice { 0%,100% {transform:rotate(-8deg)} 50% {transform:rotate(9deg) translateY(-12px)} }
+@keyframes tut-right-glow { from {box-shadow:0 0 0 3px #137a2a} to {box-shadow:0 0 0 5px #137a2a,0 0 27px #2fbf4a} }
+@keyframes tut-halo-breathe { from {transform:scale(.96);opacity:.65} to {transform:scale(1.08);opacity:1} }
+@keyframes tut-beam-left { to {transform:rotate(-12deg)} }
+@keyframes tut-beam-right { to {transform:rotate(8deg)} }
+@keyframes tut-live-pulse { 50% { opacity:.55;box-shadow:0 0 0 11px rgba(255,79,154,.08) } }
+@media (prefers-reduced-motion: reduce) {
+  .tutorial *, .tutorial *::before, .tutorial *::after { animation:none !important; transition:none !important; }
+}
