@@ -24,7 +24,7 @@ const includePreview = !process.argv.includes('--signed-off-only');
 function categoryFor(roundCat) {
   const c = String(roundCat || '').toUpperCase();
   if (/MUSIC|SONG|SINGER|BAND|CHART|RING RING/.test(c)) return 'music';
-  if (/\bTV\b|FILM|MOVIE|ROMCOM|DVD|BIG BROTHER|SOAP|CINEMA|CHILDREN/.test(c)) return 'screen';
+  if (/\bTV\b|SCREEN|FILM|MOVIE|ROMCOM|DVD|BIG BROTHER|SOAP|CINEMA|CHILDREN/.test(c)) return 'screen';
   if (/SPORT|OLYMPIC|FOOTBALL|TENNIS|MOTORSPORT|CRICKET|RUGBY|GOLF|BOXING|FORMULA/.test(c)) return 'sport';
   if (/HISTOR|GEOGRAPH|NEWS|KINGS|LAKES|POPULATION|ELECTION|PRESIDENT|HAPPENED FIRST|UK LIFE|ENGLAND|NATIONALIT|\bWAR\b|CAPITAL|COUNTR|YEAR/.test(c)) return 'timeplace';
   if (/SCIENCE|NATURE|\bART\b|LITERAT|BOOK|FOOD|DRINK|TECH|CATS|ANIMAL|SPACE/.test(c)) return 'brainbox';
@@ -267,6 +267,9 @@ function build() {
   const overridesFile = path.join(ROOT, 'data', 'option-overrides.json');
   const overrides = fs.existsSync(overridesFile) ? JSON.parse(fs.readFileSync(overridesFile, 'utf8')) : {};
   const excluded = new Set(Array.isArray(overrides._exclude) ? overrides._exclude : []);
+  // Hand-tidied wording for individual questions: {"PHNEW-0442": "Who played ...?"}
+  const editsFile = path.join(ROOT, 'data', 'question-edits.json');
+  const edits = fs.existsSync(editsFile) ? JSON.parse(fs.readFileSync(editsFile, 'utf8')) : {};
   const levelsFile = path.join(ROOT, 'data', 'difficulty-overrides.json');
   const levelOverrides = fs.existsSync(levelsFile) ? JSON.parse(fs.readFileSync(levelsFile, 'utf8')) : {};
   const seen = new Set();
@@ -283,7 +286,7 @@ function build() {
       if (c.opts.length < 2 || c.opts.length > 4 || new Set(c.opts.map(normAns)).size !== c.opts.length) { skipped++; continue; }
       seen.add(q.id);
       out.push({
-        id: q.id, category: categoryFor(q.cat), q: c.text, a: String(q.a).trim(), answer: c.answer,
+        id: q.id, category: categoryFor(q.cat), q: typeof edits[q.id] === 'string' ? edits[q.id] : c.text, a: String(q.a).trim(), answer: c.answer,
         opts: c.opts, correct: c.correct, accepted: Array.isArray(q.acceptedAnswers) ? q.acceptedAnswers : [],
         source: r.file.replace('.json', ''), ...(r.preview ? {preview: true} : {}),
         level: ['easy', 'medium', 'hard'].includes(levelOverrides[q.id]) ? levelOverrides[q.id] : difficultyFor(q, r.file, r.preview)
