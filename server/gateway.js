@@ -233,6 +233,18 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
       return {};
     }));
 
+    // A TV or phone reports a browser error. Logged (trimmed, and at most 10 per
+    // connection) so problems on real devices show up in the Render logs.
+    let reported = 0;
+    socket.on('client:error', report => {
+      if (reported >= 10 || !report || typeof report !== 'object') return;
+      reported += 1;
+      const clip = (v, n) => String(v ?? '').replace(/[\r\n]+/g, ' ').slice(0, n);
+      const bound = bindings.get(socket.id);
+      const who = bound ? `${bound.code} ${bound.role}` : 'no room';
+      console.error(`[client error] ${who} | ${clip(report.where, 20)} | ${clip(report.message, 300)} | ${clip(report.source, 120)} | ${clip(report.agent, 120)}`);
+    });
+
     socket.on('disconnect', () => leaveBinding(socket));
   });
 
