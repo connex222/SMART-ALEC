@@ -29,6 +29,10 @@ TV controls appear when you move the mouse: Pause (or Space bar), Skip waiting, 
 
 The free plan sleeps after 15 minutes idle; the first visit takes about a minute to wake it.
 
+## Checks
+
+`npm run verify` runs everything GitHub runs: code syntax, `tools/validate-questions.js`, `tools/check-assets.js`, the rule tests and `tools/smoke.js`. On GitHub, the **Actions** tab shows a green tick or a red cross for every upload.
+
 ## Saving games
 
 Set `REDIS_URL` on Render to a Key Value instance's internal URL and games survive deploys and restarts. Without it, games are saved to `runtime/rooms.json`, which only survives a restart on the same machine.
@@ -84,4 +88,8 @@ v0.11.0: Question clean-up. Cut 162 weak formula questions from the 2020-26 prev
 
 v0.12.0: Checked the 280-question import (smart-alec-quiz-import-stage4.json). Kept 131 good, unique questions; cut 149 (duplicates of existing questions, duplicates inside the pack, obscure US or video-game trivia, clumsy wording, one ambiguous answer). Wrote wrong options for the 52 kept questions that had none, and rated their difficulty. Added CREDITS.md and a Credits page (title screen) for the CC BY and CC BY-SA sources. The ~2,000 candidates in docs/editorial are not in the game. 2,703 questions.
 
-Next: re-record tut-15 as tut-15b, playtest, your review of the new packs.
+v0.13.0: 316 open-licence questions added (source-banks/smart-alec-open-import-2026-11.json): 234 from the Open Trivia Database and 82 from OpenTriviaQA, chosen from about 15,000 candidates, fact-checked, reworded for a UK family audience, with new wrong options and difficulty levels. The question builder now respects a level set inside a pack. 3,019 questions.
+
+v0.14.0: Automatic checks on GitHub (.github/workflows/check.yml run `npm run verify` on every upload: code syntax, question bank, every voice/art/sound file, the 19 rule tests, a server smoke test, and that data/questions.json matches the question packs). TVs and phones now report browser errors to the server log, tagged with the room code.
+
+Next: question review tool, no repeats between games, difficulty learning, then playtest, your review of the new packs.
