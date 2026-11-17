@@ -66,4 +66,6 @@ v0.7.0: How to Play, an 18-step narrated tutorial on the TV (title screen and lo
 
 v0.7.1: all twelve "lose" avatar poses in place.
 
-Next: record tut-01 to tut-18, your review of the new packs.
+v0.8.0: How to Play is fully narrated by Alec (tut-01 to tut-18 in public/voice/).
+
+Next: playtest, your review of the new packs.
