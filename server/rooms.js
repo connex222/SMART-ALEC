@@ -67,7 +67,7 @@ class GameRooms {
       code, phase: 'lobby', createdAt: this.now(), updatedAt: this.now(),
       hostToken: crypto.randomBytes(24).toString('base64url'), hostSocketId,
       players: [], vipId: null, vipOfflineSince: null, board: null,
-      settings: {quickGame: false, timeLimit: 0, timerSpeed: 'normal', familyFriendly: true, previewQuestions: true, reduceMotion: false, level: 'mixed'},
+      settings: {quickGame: false, timeLimit: 0, timerSpeed: 'relaxed', familyFriendly: true, previewQuestions: true, reduceMotion: false, level: 'mixed'},
     };
     this.rooms.set(code, room);
     return {code, token: room.hostToken, state: this.state(code, true)};
