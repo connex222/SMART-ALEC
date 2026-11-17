@@ -80,4 +80,6 @@ v0.10.1: phone mini-game and Showdown screens now show normal sentence case inst
 
 v0.10.2: merged the outside screen changes (Alec's Academy tutorial, Web Audio effects, one-handed phone layout, tap feedback) with v0.10.1. Music is now streamed rather than decoded into memory, and phones no longer download the music at all.
 
+v0.11.0: Question clean-up. Cut 162 weak formula questions from the 2020-26 preview (Olympic medal counts, science Nobels, obscure BAFTA and director questions, most "which service premiered" questions); tidied the wording of the ones kept (data/question-edits.json). Fact-checked all Smart Alec packs line by line: no wrong answers; five reworded so they stay true. Difficulty re-rated by the question itself. New packs: Sport 4 and Screen Time 3 (95 family questions). 2,572 questions.
+
 Next: re-record tut-15 as tut-15b, playtest, your review of the new packs.

@@ -1,6 +1,6 @@
 {
   "name": "smart-alec",
-  "version": "0.10.2",
+  "version": "0.11.0",
   "private": true,
   "description": "Smart Alec: a TV quiz-show board game for 2-8 players. TV shows the board, phones are the controllers.",
   "engines": {
