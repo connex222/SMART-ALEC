@@ -92,9 +92,9 @@ function start(room,category,now,rng=crypto.randomInt,forcedId=null){
  const id=forcedId||chooseGame(room.board,category,rng,room.players.length),spec=SPECS[id];if(!spec||spec.category!==category)fail('GAME','Invalid game for category.');
  const b=room.board,participants=room.players.map(p=>p.id),host=b.activeId;
  const m={id,category,title:spec.name,rule:spec.rule,round:1,roundKey:1,totalRounds:id==='majority-rules'||id==='mind-meld'?(room.settings.rules==='showtime'?5:3):1,
-  phase:'intro',resumePhase:id==='mind-meld'?'partner':'play',introUntil:now+timer(room,4.5),deadline:now+timer(room,4.5),host,players:participants,
+  phase:'intro',resumePhase:id==='mind-meld'?'partner':'play',introUntil:now+timer(room,room.settings.timerSpeed==='relaxed'?8.5:7.5),deadline:now+timer(room,room.settings.timerSpeed==='relaxed'?8.5:7.5),host,players:participants,
   secret:{},privateById:{},display:{},answers:{},scores:Object.fromEntries(participants.map(id=>[id,0])),
-  usedIds:[],strokes:[],strokeCounts:{},lastResult:null,stageStarted:now+timer(room,4.5),seconds:0,choices:[],voters:{},optionOwners:[],voteStageAnswers:{}, roundWords:[]};
+  usedIds:[],strokes:[],strokeCounts:{},lastResult:null,stageStarted:now+timer(room,room.settings.timerSpeed==='relaxed'?8.5:7.5),seconds:0,choices:[],voters:{},optionOwners:[],voteStageAnswers:{}, roundWords:[]};
  b.minigame=m;b.challenge=null;b.result=null;b.step='minigame';b.deadline=m.deadline;
  switch(id){
   case 'sketch-sabotage':{
@@ -181,11 +181,25 @@ function finishVoting(room,now,finishTurn){
  }
 }
 function finishMajorityRound(room,now,finishTurn,rng=crypto.randomInt){
- const m=room.board.minigame;const votes=Object.values(m.answers).map(a=>a.value),counts=[0,0,0,0];for(const n of votes)counts[n]++;
- const biggest=Math.max(...counts);if(biggest)for(const [id,a] of Object.entries(m.answers))if(counts[a.value]===biggest)m.scores[id]++;
- m.lastResult={question:m.question,winningOptions:counts.map((n,i)=>n===biggest&&biggest?i:-1).filter(i=>i>=0),totals:counts};
- if(m.round>=m.totalRounds){const top=Math.max(...Object.values(m.scores));const winners=top>0?m.players.filter(id=>m.scores[id]===top):[];finish(room,now,finishTurn,winners,`Majority Rules: ${winners.length?winners.map(id=>room.players.find(p=>p.id===id).name).join(' & ')+' know the crowd!':'No majority vote this time.'}`);return;}
- m.round++;prepareMajority(room,rng);setPhase(room,'play',now,15);
+  const m=room.board.minigame;
+  const votes=Object.values(m.answers).map(a=>a.value),counts=[0,0,0,0];
+  for(const n of votes)counts[n]++;
+  const biggest=Math.max(...counts);
+  if(biggest)for(const [id,a] of Object.entries(m.answers))if(counts[a.value]===biggest)m.scores[id]++;
+  m.lastResult={question:m.question,winningOptions:counts.map((n,i)=>n===biggest&&biggest?i:-1).filter(i=>i>=0),totals:counts};
+  // A real results beat: players can see the votes and discuss them before continuing.
+  m.revealFinal=m.round>=m.totalRounds;
+  setPhase(room,'reveal',now,6);
+}
+function advanceMajority(room,now,finishTurn,rng=crypto.randomInt){
+  const m=room.board.minigame;
+  if(m.revealFinal){
+    const top=Math.max(...Object.values(m.scores));
+    const winners=top>0?m.players.filter(id=>m.scores[id]===top):[];
+    finish(room,now,finishTurn,winners,`Majority Rules: ${winners.length?winners.map(id=>room.players.find(p=>p.id===id).name).join(' & ')+' know the crowd!':'No majority vote this time.'}`);
+  }else{
+    m.round++;m.lastResult=null;prepareMajority(room,rng);setPhase(room,'play',now,15);
+  }
 }
 // G4: the first team to finish every sum wins outright. If time runs out,
 // the team with the larger share of its sums completed wins; equal shares draw.
@@ -208,7 +222,7 @@ function finishBomb(room,now,finishTurn,success){finish(room,now,finishTurn,succ
 function validActor(m,id){if(!m.players.includes(id))fail('AUTH','You are not a participant.');}
 function submit(room,id,value,roundKey,now,finishTurn,rng=crypto.randomInt){
  const b=room.board,m=b.minigame;if(b.step!=='minigame'||!m||!SPECS[m.id])fail('STEP','No Create or Together game is active.');
- validActor(m,id);if(m.phase==='intro')fail('WAIT','The five-second TV introduction is still playing.');
+ validActor(m,id);if(m.phase==='intro')fail('WAIT','Read the rules on the TV before the game starts.');
  if(roundKey!==m.roundKey)fail('STALE','This phase has changed; use the current controls.');
  if(now>m.deadline)fail('LATE','Time is up.');
  const received=(kind='answer')=>{if(Object.hasOwn(m.answers,id))fail('ANSWERED',`You already submitted this ${kind}.`);};
@@ -324,7 +338,7 @@ function finishMeldRound(room,now,finishTurn){
   const text=m.matched.length?`Mind Meld: ${m.matched.map(i=>`${m.groups[i].map(name).join(' & ')} matched “${m.matchedWords[i]}”`).join('; ')}!`:`Mind Meld: ${m.totalRounds} tries and no group matched.`;
   finish(room,now,finishTurn,winners,text,{team:true});return;
  }
- m.phase='reveal';m.deadline=now+3000;room.board.deadline=m.deadline;
+ setPhase(room,'reveal',now,6);
 }
 function draw(room,id,points,roundKey,now){
  const b=room.board,m=b.minigame;if(b.step!=='minigame'||!m||m.id!=='sketch-sabotage'||m.phase!=='play')fail('STEP','Drawing is not active.');
@@ -351,7 +365,11 @@ function tick(room,now,finishTurn,rng=crypto.randomInt){
   else {m.round++;m.roundKey++;m.display.attempt=m.round;m.answers={};m.lastResult=null;setPhase(room,'play',now,13);}
   return true;
  }
- if(m.id==='majority-rules'){finishMajorityRound(room,now,finishTurn,rng);return true;}
+ if(m.id==='majority-rules'){
+    if(m.phase==='reveal')advanceMajority(room,now,finishTurn,rng);
+    else finishMajorityRound(room,now,finishTurn,rng);
+    return true;
+  }
  if(m.id==='relay-sums'){finishRelay(room,now,finishTurn);return true;}
  if(m.id==='bomb-squad'){finishBomb(room,now,finishTurn,false);return true;}
  return false;
