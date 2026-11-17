@@ -93,6 +93,11 @@
   $('set-quick').addEventListener('click', () => setting({quickGame: !state.settings.quickGame}));
   $('set-relaxed').addEventListener('click', () => setting({timerSpeed: state.settings.timerSpeed === 'relaxed' ? 'normal' : 'relaxed'}));
   $('set-preview').addEventListener('click', () => setting({previewQuestions: !state.settings.previewQuestions}));
+  const LEVEL_TEXT = {family: 'Family: easy and medium', mixed: 'Mixed: everything', buffs: 'Quiz buffs: medium and hard'};
+  $('set-level').addEventListener('click', () => {
+    const order = ['mixed', 'family', 'buffs'];
+    setting({level: order[(order.indexOf(state.settings.level || 'mixed') + 1) % order.length]});
+  });
   $('set-time').addEventListener('click', () => {
     const order = [0, 30, 45, 60];
     setting({timeLimit: order[(order.indexOf(state.settings.timeLimit) + 1) % order.length]});
@@ -118,6 +123,7 @@
     $('set-preview').setAttribute('aria-pressed', String(s.previewQuestions));
     $('set-time').classList.toggle('on', s.timeLimit > 0);
     $('set-time-label').textContent = s.timeLimit ? `${s.timeLimit} minutes` : 'None';
+    $('set-level-label').textContent = LEVEL_TEXT[s.level || 'mixed'];
     $('lobby-code').textContent = state.code;
     $('lobby-count').textContent = `${state.players.length} of 8`;
     const list = $('lobby-players');
@@ -614,7 +620,7 @@
     renderCard();
     renderHost();
     $('paused').hidden = !b.paused;
-    $('paused-text').textContent = state.hostOnline ? 'Press resume when everyone is ready.' : 'Waiting for the TV to reconnect.';
+    $('paused-text').textContent = !state.hostOnline ? 'Waiting for the TV to reconnect.' : b.pauseKind === 'restored' ? 'Your saved game is back! Press Resume (or Space) when everyone has rejoined.' : 'Press resume when everyone is ready.';
     $('btn-pause').textContent = b.paused ? 'Resume' : 'Pause';
     sounds(b, prev?.board);
     narrate(b, prev?.phase === 'board' ? prev.board : null, prev);

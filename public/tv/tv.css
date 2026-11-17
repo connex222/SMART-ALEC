@@ -45,7 +45,7 @@ body.tv { overflow: hidden; background: #0B0F22; }
 .lobby-player.ready .status { color: var(--gold); opacity: 1; }
 .lobby-player.offline { opacity: .5; }
 .lobby-empty { border: 4px dashed var(--navy-3); border-radius: 22px; display: grid; place-items: center; color: var(--navy-3); font-size: 26px; min-height: 196px; }
-.lobby-settings { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin: 32px 0; }
+.lobby-settings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
 .toggle { background: var(--navy-2); border: var(--outline); border-radius: 18px; padding: 16px 18px; text-align: left; display: flex; flex-direction: column; gap: 6px; }
 .toggle b { font-family: var(--display); font-size: 26px; font-weight: 700; }
 .toggle span { font-size: 20px; opacity: .8; }
@@ -336,3 +336,10 @@ body.tv { overflow: hidden; background: #0B0F22; }
 .tut-toggle { font-family: var(--display); font-size: 32px; background: var(--navy-2); color: var(--cream); border: var(--outline); border-radius: 18px; padding: 22px 26px; }
 .title-extras { flex-wrap: wrap; justify-content: center; }
 .tut-stage { zoom: 1.25; }
+/* lobby: room for six setting buttons */
+.lobby-players { min-height: 0; }
+.lobby-empty { min-height: 150px; }
+.lobby-player { padding: 14px 10px; }
+.lobby-settings { margin: 22px 0; gap: 12px; }
+.lobby-start .btn { white-space: nowrap; }
+.lobby-start { gap: 20px; }
