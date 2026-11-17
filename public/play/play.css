@@ -121,3 +121,23 @@ input { font: inherit; font-size: 24px; padding: 14px 16px; border-radius: 14px;
 .story-phone p { font-size: 17px; line-height: 1.4; margin: 0 0 8px; }
 .story-phone .story-lead { font-weight: 700; margin-top: 10px; }
 .story-phone .story-foot { font-style: italic; opacity: .8; }
+
+/* One-handed gameplay: keep actions near the bottom without covering inputs. */
+.view-game { min-height: calc(100dvh - max(40px, env(safe-area-inset-bottom))); }
+.view-game .panel { justify-content: flex-end; min-height: 0; padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+.view-game .panel > .answer, .view-game .panel > .choice,
+.view-game .panel > .btn, .view-game .panel > .typed-form,
+.view-game .panel > .risk, .view-game .panel > .numbers { flex-shrink: 0; }
+.view-game .panel > .noggin-phone { margin-top: auto; }
+.view-game .noggin-controls { margin-top: auto; }
+.view-game button, .view-game input, .view-lobby button { min-width: 48px; min-height: 48px; touch-action: manipulation; }
+.view-game button:focus-visible, .view-lobby button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.view-game .answer.chosen { outline: 4px solid #fff; outline-offset: 2px; }
+.view-game .panel .sub { opacity: 1; }
+@media (max-height: 650px) {
+  .view-game .panel { justify-content: flex-start; }
+  .view-game .btn-huge, .view-game .quick-draw-button { min-height: 84px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .view-game button { transition: none; }
+}
