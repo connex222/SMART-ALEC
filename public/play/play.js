@@ -332,18 +332,32 @@
   $('btn-again').addEventListener('click', () => send('game:start'));
   function ordinal(n) { return n + (['th', 'st', 'nd', 'rd'][(n % 100 - 20) % 10] || ['th', 'st', 'nd', 'rd'][n % 100] || 'th'); }
 
+  let paintQueued = false;
   function onState(next) {
     if (!next) return;
     state = next;
     SA.syncClock(next.serverNow);
-    if (!layout || !me()) return;
-    if (state.phase === 'lobby') { panelKey = ''; renderLobby(); }
-    else if (state.phase === 'board') renderGame();
-    else if (state.phase === 'over') { panelKey = ''; renderOver(); }
-    tickTimer();
+    if (paintQueued) return;
+    paintQueued = true;
+    requestAnimationFrame(() => {
+      paintQueued = false;
+      if (!layout || !me()) return;
+      if (state.phase === 'lobby') { panelKey = ''; renderLobby(); }
+      else if (state.phase === 'board') renderGame();
+      else if (state.phase === 'over') { panelKey = ''; renderOver(); }
+      tickTimer();
+    });
   }
 
   const ready = Promise.all([SA.layout(), SA.avatars()]).then(([l, a]) => { layout = l; avatars = a; if (state) onState(state); });
+
+  /* ---------- tactile feedback ---------- */
+  $('panel').addEventListener('pointerdown', event => {
+    const button = event.target.closest('button');
+    if (!button || button.disabled || !event.isPrimary) return;
+    SA.vibrate(18);
+    SA.sfx('sfx-tick', 0.18);
+  }, {passive: true});
 
   /* ---------- connection ---------- */
   socket.on('room:state', onState);
