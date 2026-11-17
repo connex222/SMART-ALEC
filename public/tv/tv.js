@@ -121,6 +121,7 @@
     const s = state.settings;
     $('set-quick').setAttribute('aria-pressed', String(s.quickGame));
     $('set-relaxed').setAttribute('aria-pressed', String(s.timerSpeed === 'relaxed'));
+    $('set-relaxed').classList.toggle('on', s.timerSpeed === 'relaxed');
     $('set-preview').setAttribute('aria-pressed', String(s.previewQuestions));
     $('set-time').classList.toggle('on', s.timeLimit > 0);
     $('set-time-label').textContent = s.timeLimit ? `${s.timeLimit} minutes` : 'None';
