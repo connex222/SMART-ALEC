@@ -202,7 +202,8 @@ window.NogginTV = (() => {
     if (m.kind === 'buzzer') {
       const pts = m.participants.map(id => m.display.points[id]);
       label(`${names[0]}  ${pts[0]} : ${pts[1]}  ${names[1]}`, 'p4-big');
-      label(`Question ${m.round} of ${m.totalRounds || 5} · first to 3 · ${m.phase === 'buzz' ? 'buzz to answer' : m.phase === 'answer' ? 'first buzzer is answering' : 'second chance'}`, 'mini-help');
+      label(`Question ${m.round} of ${m.totalRounds || 5} · first to 3 · ${m.phase === 'buzz' ? 'buzz to answer' : m.phase === 'answer' ? 'first buzzer is answering' : m.phase === 'reveal' ? 'answer reveal · discuss it!' : 'second chance'}`, 'mini-help');
+      if (m.phase === 'reveal') label(`Correct answer: ${m.display.correctText || 'No answer'}`, 'p4-big');
       for (const c of m.display.choices || []) label(c, 'p4-ballot');
     } else if (m.kind === 'tug') {
       const rope = el('div', 'duel-rope'); const knot = el('span', 'duel-knot'); knot.style.left = `${50 + m.display.rope * 8}%`; rope.append(knot); options.append(rope);
