@@ -444,3 +444,5 @@ body.tv { overflow: hidden; background: #0B0F22; }
 .tut-stage .avatar img { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; }
 .tut-stage .tut-avatar-placeholder { font:700 48px var(--display); color:#fff6e3; background:#414e8b; }
 .tut-loading { font:700 36px var(--display); color:#fff6e3; }
+
+.title-extras a.btn { text-decoration: none; display: inline-flex; align-items: center; }
