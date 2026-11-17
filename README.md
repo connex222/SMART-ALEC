@@ -68,4 +68,6 @@ v0.7.1: all twelve "lose" avatar poses in place.
 
 v0.8.0: How to Play is fully narrated by Alec (tut-01 to tut-18 in public/voice/).
 
-Next: playtest, your review of the new packs.
+v0.9.0: Final Round now needs 5 of 6 (Quick Game 3 of 4) and a failed attempt costs nothing but the turn; a typical family game drops from about 100 minutes to about 40-60. Everyone else plays along on every question on their phones; if the active player is wrong, those answers count first in the Bonus Steal.
+
+Next: re-record tut-15 as tut-15b, playtest, your review of the new packs.
