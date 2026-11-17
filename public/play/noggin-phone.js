@@ -216,7 +216,8 @@ window.NogginPhone = function NogginPhone(opts) {
     if(m.phase==='intro'){const list=howToList(m.kind);if(list)$('gameButtons').append(list);info('THE SHOWDOWN STARTS AFTER THE COUNTDOWN.');return;}
     if(m.kind==='buzzer'){
       info(`QUESTION ${m.round}/${m.totalRounds||5} · FIRST TO 3 · ${Object.entries(m.display.points).map(([id,v])=>`${roomState.players.find(p=>p.id===id)?.name}: ${v}`).join(' vs ')}`);
-      if(m.phase==='buzz'){
+      if(m.phase==='reveal')info(`CORRECT ANSWER: ${m.display.correctText || 'Not answered'} · TIME TO DISCUSS`);
+      else if(m.phase==='buzz'){
         // D7: time the buzz from when the question appeared on THIS phone.
         if(buzzSeen.key!==m.roundKey)buzzSeen={key:m.roundKey,at:performance.now()};
         if(m.display.buzzed?.includes(player.id))info('BUZZED! CHECKING WHO WAS QUICKEST…');
