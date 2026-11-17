@@ -82,4 +82,6 @@ v0.10.2: merged the outside screen changes (Alec's Academy tutorial, Web Audio e
 
 v0.11.0: Question clean-up. Cut 162 weak formula questions from the 2020-26 preview (Olympic medal counts, science Nobels, obscure BAFTA and director questions, most "which service premiered" questions); tidied the wording of the ones kept (data/question-edits.json). Fact-checked all Smart Alec packs line by line: no wrong answers; five reworded so they stay true. Difficulty re-rated by the question itself. New packs: Sport 4 and Screen Time 3 (95 family questions). 2,572 questions.
 
+v0.12.0: Checked the 280-question import (smart-alec-quiz-import-stage4.json). Kept 131 good, unique questions; cut 149 (duplicates of existing questions, duplicates inside the pack, obscure US or video-game trivia, clumsy wording, one ambiguous answer). Wrote wrong options for the 52 kept questions that had none, and rated their difficulty. Added CREDITS.md and a Credits page (title screen) for the CC BY and CC BY-SA sources. The ~2,000 candidates in docs/editorial are not in the game. 2,703 questions.
+
 Next: re-record tut-15 as tut-15b, playtest, your review of the new packs.

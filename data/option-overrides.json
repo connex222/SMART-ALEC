@@ -1,5 +1,154 @@
 {
  "_exclude": [
+  "IMPORTED-LC-002",
+  "IMPORTED-LC-003",
+  "IMPORTED-LC-004",
+  "IMPORTED-LC-005",
+  "IMPORTED-LC-006",
+  "IMPORTED-LC-008",
+  "IMPORTED-LC-010",
+  "IMPORTED-LC-011",
+  "IMPORTED-LC-012",
+  "IMPORTED-LC-016",
+  "IMPORTED-LC-021",
+  "IMPORTED-LC-025",
+  "IMPORTED-LC-026",
+  "IMPORTED-LC-027",
+  "IMPORTED-LC-029",
+  "IMPORTED-LC-030",
+  "IMPORTED-LC-031",
+  "IMPORTED-LC-033",
+  "IMPORTED-LC-034",
+  "IMPORTED-LC-037",
+  "IMPORTED-LC-038",
+  "IMPORTED-LC-039",
+  "IMPORTED-LC-041",
+  "IMPORTED-LC-044",
+  "IMPORTED-LC-047",
+  "IMPORTED-LC-049",
+  "IMPORTED-LC-050",
+  "IMPORTED-LC-051",
+  "IMPORTED-LC-053",
+  "IMPORTED-LC-054",
+  "IMPORTED-LC-056",
+  "IMPORTED-LC-057",
+  "IMPORTED-LC-058",
+  "IMPORTED-LC-060",
+  "IMPORTED-LC-061",
+  "IMPORTED-LC-063",
+  "IMPORTED-LC-064",
+  "IMPORTED-LC-065",
+  "IMPORTED-LC-070",
+  "IMPORTED-LC-073",
+  "IMPORTED-LC-074",
+  "IMPORTED-LC-090",
+  "IMPORTED-LC-093",
+  "IMPORTED-LC-095",
+  "IMPORTED-LC-096",
+  "IMPORTED-OTDB-20261117-003",
+  "IMPORTED-OTDB-20261117-004",
+  "IMPORTED-OTDB-20261117-006",
+  "IMPORTED-OTDB-20261117-008",
+  "IMPORTED-OTDB-20261117-009",
+  "IMPORTED-OTDB-20261117-010",
+  "IMPORTED-OTDB-20261117-011",
+  "IMPORTED-OTDB-20261117-012",
+  "IMPORTED-OTDB-20261117-013",
+  "IMPORTED-OTDB-20261117-015",
+  "IMPORTED-OTDB-20261117-017",
+  "IMPORTED-OTDB-20261117-019",
+  "IMPORTED-OTDB-20261117-020",
+  "IMPORTED-OTDB-20261117-021",
+  "IMPORTED-OTDB-20261117-022",
+  "IMPORTED-OTDB-20261117-026",
+  "IMPORTED-OTDB-20261117-027",
+  "IMPORTED-OTDB-20261117-029",
+  "IMPORTED-OTDB-20261117-031",
+  "IMPORTED-OTDB-20261117-032",
+  "IMPORTED-OTDB-20261117-034",
+  "IMPORTED-OTDB-20261117-035",
+  "IMPORTED-OTQA-GH-0003",
+  "IMPORTED-OTQA-GH-0006",
+  "IMPORTED-OTQA-GH-0007",
+  "IMPORTED-OTQA-GH-0012",
+  "IMPORTED-OTQA-GH-0016",
+  "IMPORTED-OTQA-GH-0017",
+  "IMPORTED-OTQA-GH-0019",
+  "IMPORTED-OTQA-GH-0020",
+  "IMPORTED-OTQA-GH-0021",
+  "IMPORTED-OTQA-GH-0022",
+  "IMPORTED-OTQA-GH-0023",
+  "IMPORTED-OTQA-GH-0028",
+  "IMPORTED-OTQA-GH-0029",
+  "IMPORTED-OTQA-GH-0031",
+  "IMPORTED-OTQA-GH-0032",
+  "IMPORTED-OTQA-GH-0035",
+  "IMPORTED-OTQA-GH-0038",
+  "IMPORTED-OTQA-GH-0039",
+  "IMPORTED-OTQA-GH-0040",
+  "IMPORTED-OTQA-GH-0044",
+  "IMPORTED-OTQA-GH-0046",
+  "IMPORTED-OTQA-GH-0052",
+  "IMPORTED-OTQA-GH-0057",
+  "IMPORTED-OTQA-GH-0058",
+  "IMPORTED-OTQA-GH-0059",
+  "IMPORTED-OTQA-GH-0060",
+  "IMPORTED-OTQA-GH-0061",
+  "IMPORTED-OTQA-GH-0062",
+  "IMPORTED-OTQA-GH-0063",
+  "IMPORTED-OTQA-GH-0064",
+  "IMPORTED-OTQA-GH-0066",
+  "IMPORTED-QZ-00001",
+  "IMPORTED-QZ-00002",
+  "IMPORTED-QZ-00008",
+  "IMPORTED-QZ-00009",
+  "IMPORTED-QZ-00010",
+  "IMPORTED-QZ-00011",
+  "IMPORTED-QZ-00012",
+  "IMPORTED-QZ-00014",
+  "IMPORTED-QZ-00017",
+  "IMPORTED-QZ-00018",
+  "IMPORTED-QZ-00019",
+  "IMPORTED-QZ-00020",
+  "IMPORTED-QZ-00021",
+  "IMPORTED-QZ-00025",
+  "IMPORTED-QZ-00027",
+  "IMPORTED-QZ-00028",
+  "IMPORTED-QZ-00030",
+  "IMPORTED-QZ-00031",
+  "IMPORTED-QZ-00033",
+  "IMPORTED-QZ-00034",
+  "IMPORTED-QZ-00037",
+  "IMPORTED-QZ-00038",
+  "IMPORTED-QZ-00039",
+  "IMPORTED-QZ-00040",
+  "IMPORTED-QZ-00041",
+  "IMPORTED-QZ-00042",
+  "IMPORTED-QZ-00043",
+  "IMPORTED-QZ-00044",
+  "IMPORTED-QZ-00045",
+  "IMPORTED-QZ-00046",
+  "IMPORTED-QZ-00047",
+  "IMPORTED-QZ-00048",
+  "IMPORTED-QZ-00050",
+  "IMPORTED-QZ-00052",
+  "IMPORTED-QZ-00053",
+  "IMPORTED-QZ-00056",
+  "IMPORTED-QZ-00065",
+  "IMPORTED-QZ-00066",
+  "IMPORTED-QZ-00067",
+  "IMPORTED-QZ-00068",
+  "IMPORTED-QZ-00069",
+  "IMPORTED-QZ-00070",
+  "IMPORTED-QZ-00071",
+  "IMPORTED-QZ-00072",
+  "IMPORTED-QZ-00073",
+  "IMPORTED-QZ-00074",
+  "IMPORTED-QZ-00075",
+  "IMPORTED-QZ-00076",
+  "IMPORTED-QZ-00079",
+  "IMPORTED-QZ-00080",
+  "IMPORTED-QZ-00081",
   "PHNEW-0001",
   "PHNEW-0002",
   "PHNEW-0003",
@@ -7733,5 +7882,270 @@
   "8th",
   "10th",
   "11th"
+ ],
+ "IMPORTED-LC-014": [
+  "The Sahara",
+  "The Gobi",
+  "The Arabian Desert"
+ ],
+ "IMPORTED-LC-015": [
+  "Russia",
+  "The United States",
+  "China"
+ ],
+ "IMPORTED-LC-017": [
+  "The Mariana Basin",
+  "The Puerto Rico Trench",
+  "The Tonga Deep"
+ ],
+ "IMPORTED-LC-018": [
+  "Europe",
+  "Asia",
+  "South America"
+ ],
+ "IMPORTED-LC-019": [
+  "Lake Superior",
+  "Lake Tanganyika",
+  "Lake Victoria"
+ ],
+ "IMPORTED-LC-020": [
+  "The Himalayas",
+  "The Rocky Mountains",
+  "The Urals"
+ ],
+ "IMPORTED-LC-022": [
+  "The Strait of Hormuz",
+  "The Bosphorus",
+  "The Strait of Messina"
+ ],
+ "IMPORTED-LC-023": [
+  "The Amazon",
+  "The Yangtze",
+  "The Mississippi"
+ ],
+ "IMPORTED-LC-024": [
+  "Africa",
+  "South America",
+  "Europe"
+ ],
+ "IMPORTED-LC-028": [
+  "The Thirty Years' War",
+  "The Wars of the Roses",
+  "The Seven Years' War"
+ ],
+ "IMPORTED-LC-032": [
+  "The Football War",
+  "The Six-Day War",
+  "The Falklands War"
+ ],
+ "IMPORTED-LC-035": [
+  "Malcolm X",
+  "Barack Obama",
+  "John F. Kennedy"
+ ],
+ "IMPORTED-LC-036": [
+  "The Colossus of Rhodes",
+  "The Hanging Gardens",
+  "The Temple of Artemis"
+ ],
+ "IMPORTED-LC-007": [
+  "23",
+  "44",
+  "48"
+ ],
+ "IMPORTED-LC-009": [
+  "KCl",
+  "NaOH",
+  "H2O"
+ ],
+ "IMPORTED-LC-013": [
+  "30%",
+  "45%",
+  "80%"
+ ],
+ "IMPORTED-LC-088": [
+  "Adamantium",
+  "Kryptonite",
+  "Uru"
+ ],
+ "IMPORTED-LC-089": [
+  "Keeper",
+  "Chaser",
+  "Beater"
+ ],
+ "IMPORTED-LC-091": [
+  "Blue",
+  "Green",
+  "Red"
+ ],
+ "IMPORTED-LC-092": [
+  "Brego",
+  "Bill",
+  "Asfaloth"
+ ],
+ "IMPORTED-LC-097": [
+  "Beauxbatons",
+  "Durmstrang",
+  "Ilvermorny"
+ ],
+ "IMPORTED-LC-098": [
+  "Buzz",
+  "Fudd",
+  "Moe's Ale"
+ ],
+ "IMPORTED-LC-052": [
+  "40.2",
+  "26.2",
+  "45"
+ ],
+ "IMPORTED-LC-055": [
+  "Kabaddi",
+  "Capoeira",
+  "Muay Thai"
+ ],
+ "IMPORTED-LC-059": [
+  "50",
+  "150",
+  "200"
+ ],
+ "IMPORTED-LC-062": [
+  "Mark Spitz",
+  "Ian Thorpe",
+  "Ryan Lochte"
+ ],
+ "IMPORTED-LC-066": [
+  "Farfalle",
+  "Linguine",
+  "Conchiglie"
+ ],
+ "IMPORTED-LC-067": [
+  "Oxygen",
+  "Nitrogen",
+  "Hydrogen"
+ ],
+ "IMPORTED-LC-068": [
+  "Coffee",
+  "Beer",
+  "Milk"
+ ],
+ "IMPORTED-LC-069": [
+  "Wild boar",
+  "Rabbit",
+  "Goat"
+ ],
+ "IMPORTED-LC-071": [
+  "Hungary",
+  "Germany",
+  "Switzerland"
+ ],
+ "IMPORTED-LC-072": [
+  "Chickpea",
+  "Lentil",
+  "Peanut"
+ ],
+ "IMPORTED-LC-040": [
+  "Electron",
+  "Einstein",
+  "Element"
+ ],
+ "IMPORTED-LC-042": [
+  "English",
+  "Spanish",
+  "Hindi"
+ ],
+ "IMPORTED-LC-043": [
+  "1",
+  "3",
+  "0"
+ ],
+ "IMPORTED-LC-045": [
+  "4",
+  "5",
+  "8"
+ ],
+ "IMPORTED-LC-046": [
+  "Z",
+  "X",
+  "J"
+ ],
+ "IMPORTED-LC-048": [
+  "Shanghai Tower",
+  "Merdeka 118",
+  "One World Trade Center"
+ ],
+ "IMPORTED-LC-075": [
+  "Gungnir",
+  "Draupnir",
+  "Gram"
+ ],
+ "IMPORTED-LC-076": [
+  "Circe",
+  "The Minotaur",
+  "Echidna"
+ ],
+ "IMPORTED-LC-077": [
+  "Odin",
+  "Baldur",
+  "Heimdall"
+ ],
+ "IMPORTED-LC-078": [
+  "Knee",
+  "Wrist",
+  "Shoulder"
+ ],
+ "IMPORTED-LC-079": [
+  "Styx",
+  "Acheron",
+  "Phlegethon"
+ ],
+ "IMPORTED-LC-080": [
+  "Jupiter",
+  "Neptune",
+  "Vulcan"
+ ],
+ "IMPORTED-LC-081": [
+  "Daedalus",
+  "Perseus",
+  "Theseus"
+ ],
+ "IMPORTED-LC-082": [
+  "Griffin",
+  "Roc",
+  "Thunderbird"
+ ],
+ "IMPORTED-LC-083": [
+  "Bifröst",
+  "Asgard",
+  "Valhalla"
+ ],
+ "IMPORTED-LC-084": [
+  "Aphrodite",
+  "Hera",
+  "Artemis"
+ ],
+ "IMPORTED-LC-085": [
+  "Poseidon",
+  "Hades",
+  "Apollo"
+ ],
+ "IMPORTED-LC-086": [
+  "Griffin",
+  "Chimera",
+  "Centaur"
+ ],
+ "IMPORTED-LC-087": [
+  "The hall of slain warriors",
+  "The rainbow bridge to Asgard",
+  "The great serpent of the sea"
+ ],
+ "IMPORTED-LC-094": [
+  "Wario",
+  "Toad",
+  "Yoshi"
+ ],
+ "IMPORTED-LC-099": [
+  "1981",
+  "1990",
+  "1983"
  ]
 }
