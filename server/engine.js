@@ -549,7 +549,7 @@ function goFinal(room, id, now, rng) {
   if (p.tokens.length < required(room)) fail('FINAL', 'Collect every token first.');
   const cats = room.settings.quickGame ? shuffle(p.tokens.slice(), rng).slice(0, 4) : shuffle(L.CATEGORY_IDS.slice(), rng);
   // Win with all but one right: 5 of 6 (Quick Game: 3 of 4). Missing two ends it early.
-  g.final = {playerId: id, categories: cats, ids: cats.map(c => Q.pick(room, c, rng)), index: 0, results: [], predictions: {}, outcome: null, need: cats.length - 1};
+  g.final = {playerId: id, categories: cats, ids: cats.map(c => Q.pick(room, c, rng, {finalRound: true})), index: 0, results: [], predictions: {}, outcome: null, need: cats.length - 1};
   banner(room, `${p.name} goes for SMART ALEC! Everyone else: how many will they get right?`, 'big');
   setStep(room, 'predict', now, T.PREDICT);
 }
@@ -760,7 +760,7 @@ function publicBoard(room, forTv = false, viewerId = null) {
   const active = player(room, g.activeId);
   return {
     step: g.step, version: g.version, turnNo: g.turnNo, activeId: g.activeId,
-    deadline: g.deadline, stepStartedAt: g.stepStartedAt, paused: Number.isFinite(g.pausedAt), remaining: g.remaining ?? null,
+    deadline: g.deadline, stepStartedAt: g.stepStartedAt, paused: Number.isFinite(g.pausedAt), pauseKind: g.pauseKind || null, remaining: g.remaining ?? null,
     timeLimitAt: g.timeLimitAt, required: required(room),
     canFinal: g.step === 'turn' && active && active.tokens.length >= required(room),
     dice: g.dice, moveOptions: g.moveOptions, move: g.move, landed: g.landed || null,

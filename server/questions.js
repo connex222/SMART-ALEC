@@ -11,23 +11,29 @@ const {CATEGORY_IDS} = require('./board-layout');
 const ALL = bank.questions;
 const BY_ID = new Map(ALL.map(q => [q.id, q]));
 
-function pool(category, includePreview) {
-  return ALL.filter(q => q.category === category && (includePreview || !q.preview));
+// Which difficulty levels each lobby setting allows.
+const LEVELS = {family: ['easy', 'medium'], mixed: ['easy', 'medium', 'hard'], buffs: ['medium', 'hard']};
+function pool(category, includePreview, levels = LEVELS.mixed) {
+  return ALL.filter(q => q.category === category && (includePreview || !q.preview) && levels.includes(q.level || 'medium'));
 }
 
 /**
  * Pick a question this room has not used yet. When a category runs dry, its
  * used list is cleared so the game never stalls.
  */
-function pick(room, category, randomInt = crypto.randomInt) {
+function pick(room, category, randomInt = crypto.randomInt, {finalRound = false} = {}) {
   const used = room.board.usedQuestions || (room.board.usedQuestions = []);
   const usedSet = new Set(used);
   const includePreview = room.settings.previewQuestions !== false;
-  let options = pool(category, includePreview).filter(q => !usedSet.has(q.id));
+  let levels = LEVELS[room.settings.level] || LEVELS.mixed;
+  // The Final Round never uses hard questions, except for quiz buffs.
+  if (finalRound && room.settings.level !== 'buffs') levels = levels.filter(l => l !== 'hard');
+  if (!pool(category, includePreview, levels).length) levels = LEVELS.mixed;
+  let options = pool(category, includePreview, levels).filter(q => !usedSet.has(q.id));
   if (!options.length) {
-    const inCategory = new Set(pool(category, includePreview).map(q => q.id));
+    const inCategory = new Set(pool(category, includePreview, levels).map(q => q.id));
     room.board.usedQuestions = used.filter(id => !inCategory.has(id));
-    options = pool(category, includePreview);
+    options = pool(category, includePreview, levels);
   }
   if (!options.length) options = ALL.filter(q => q.category === category);
   const q = options[randomInt(options.length)];
@@ -91,8 +97,8 @@ function markTyped(id, typed) {
   return false;
 }
 
-function counts(includePreview = true) {
-  return Object.fromEntries(CATEGORY_IDS.map(c => [c, pool(c, includePreview).length]));
+function counts(includePreview = true, level = 'mixed') {
+  return Object.fromEntries(CATEGORY_IDS.map(c => [c, pool(c, includePreview, LEVELS[level] || LEVELS.mixed).length]));
 }
 
-module.exports = {pick, get, publicView, markTyped, normalise, counts, ALL};
+module.exports = {pick, get, publicView, markTyped, normalise, counts, ALL, LEVELS};

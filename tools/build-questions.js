@@ -220,6 +220,20 @@ function choicesFor(q, roundAnswers, allAnswers, typedPool, override) {
   return {text: q.q, opts: order.map(x => x.o), correct: order.findIndex(x => x.i === 0), answer: right};
 }
 
+/* ---------- difficulty ----------
+ * First pass, by where a question came from; data/difficulty-overrides.json
+ * ({"QD101-Q04": "easy", ...}) corrects any single question.
+ *   Smart Alec packs (written for families)      -> easy
+ *   Pub Quiz Powerhouse quizzes                  -> medium
+ *   2020-26 editorial preview (awards, news)     -> hard, unless it's a headline everyone knew
+ */
+const HEADLINE = /\b(world cup|euros?\b|wimbledon|best picture|prime minister|olympics?|king|queen|coronation|jubilee|eurovision song contest\b|premier league)\b/i;
+function difficultyFor(q, file, preview) {
+  if (/^smart-alec-/.test(file)) return 'easy';
+  if (preview) return HEADLINE.test(q.q) ? 'medium' : 'hard';
+  return 'medium';
+}
+
 /* ---------- read the banks ---------- */
 function readRounds() {
   const rounds = [];
@@ -253,6 +267,8 @@ function build() {
   const overridesFile = path.join(ROOT, 'data', 'option-overrides.json');
   const overrides = fs.existsSync(overridesFile) ? JSON.parse(fs.readFileSync(overridesFile, 'utf8')) : {};
   const excluded = new Set(Array.isArray(overrides._exclude) ? overrides._exclude : []);
+  const levelsFile = path.join(ROOT, 'data', 'difficulty-overrides.json');
+  const levelOverrides = fs.existsSync(levelsFile) ? JSON.parse(fs.readFileSync(levelsFile, 'utf8')) : {};
   const seen = new Set();
   const out = [];
   let skipped = 0;
@@ -269,18 +285,21 @@ function build() {
       out.push({
         id: q.id, category: categoryFor(q.cat), q: c.text, a: String(q.a).trim(), answer: c.answer,
         opts: c.opts, correct: c.correct, accepted: Array.isArray(q.acceptedAnswers) ? q.acceptedAnswers : [],
-        source: r.file.replace('.json', ''), ...(r.preview ? {preview: true} : {})
+        source: r.file.replace('.json', ''), ...(r.preview ? {preview: true} : {}),
+        level: ['easy', 'medium', 'hard'].includes(levelOverrides[q.id]) ? levelOverrides[q.id] : difficultyFor(q, r.file, r.preview)
       });
     }
   }
   fs.mkdirSync(path.dirname(OUT), {recursive: true});
   fs.writeFileSync(OUT, JSON.stringify({builtAt: new Date().toISOString().slice(0, 10), count: out.length, questions: out}));
   const counts = out.reduce((m, q) => (m[q.category] = (m[q.category] || 0) + 1, m), {});
+  const levels = out.reduce((m, q) => (m[q.level] = (m[q.level] || 0) + 1, m), {});
+  console.log('Difficulty:', levels);
   console.log(`Wrote ${out.length} questions to data/questions.json (${skipped} skipped).`);
   console.log(counts);
   // A review sheet: open it in Excel, fix weak wrong options, save them in data/option-overrides.json.
-  const csv = [['id', 'category', 'question', 'answer', 'option A', 'option B', 'option C', 'option D', 'correct']]
-    .concat(out.map(q => [q.id, q.category, q.q, q.answer, ...[0, 1, 2, 3].map(i => q.opts[i] || ''), 'ABCD'[q.correct]]))
+  const csv = [['id', 'category', 'level', 'question', 'answer', 'option A', 'option B', 'option C', 'option D', 'correct']]
+    .concat(out.map(q => [q.id, q.category, q.level, q.q, q.answer, ...[0, 1, 2, 3].map(i => q.opts[i] || ''), 'ABCD'[q.correct]]))
     .map(row => row.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(',')).join('\r\n');
   fs.writeFileSync(path.join(ROOT, 'data', 'options-review.csv'), '\ufeff' + csv);
 }

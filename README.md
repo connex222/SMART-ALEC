@@ -29,6 +29,10 @@ TV controls appear when you move the mouse: Pause (or Space bar), Skip waiting, 
 
 The free plan sleeps after 15 minutes idle; the first visit takes about a minute to wake it.
 
+## Saving games
+
+Set `REDIS_URL` on Render to a Key Value instance's internal URL and games survive deploys and restarts. Without it, games are saved to `runtime/rooms.json`, which only survives a restart on the same machine.
+
 ## Questions
 
 - `data/questions.json` is built from the three banks in `source-banks/`. Rebuild with `npm run questions`.
@@ -69,5 +73,7 @@ v0.7.1: all twelve "lose" avatar poses in place.
 v0.8.0: How to Play is fully narrated by Alec (tut-01 to tut-18 in public/voice/).
 
 v0.9.0: Final Round now needs 5 of 6 (Quick Game 3 of 4) and a failed attempt costs nothing but the turn; a typical family game drops from about 100 minutes to about 40-60. Everyone else plays along on every question on their phones; if the active player is wrong, those answers count first in the Bonus Steal.
+
+v0.10.0: Save-and-restore. Live games are saved every few seconds and on shutdown, to Render Key Value when REDIS_URL is set, otherwise to runtime/rooms.json. After a restart or redeploy, games come back paused with no time lost; phones and the TV rejoin by themselves and the host presses Resume. Every question is tagged easy, medium or hard, with a lobby setting: Mixed (all), Family (easy and medium) or Quiz buffs (medium and hard). The Final Round never uses hard questions except for quiz buffs. Change any question's level in data/difficulty-overrides.json.
 
 Next: re-record tut-15 as tut-15b, playtest, your review of the new packs.

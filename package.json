@@ -1,9 +1,11 @@
 {
   "name": "smart-alec",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "private": true,
   "description": "Smart Alec: a TV quiz-show board game for 2-8 players. TV shows the board, phones are the controllers.",
-  "engines": {"node": ">=20"},
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
@@ -15,6 +17,7 @@
   "dependencies": {
     "express": "^4.21.2",
     "qrcode": "^1.5.4",
+    "redis": "^4.7.1",
     "socket.io": "^4.8.1"
   }
 }

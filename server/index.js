@@ -11,6 +11,7 @@ const {listenWithFallback} = require('./port-listener');
 const layout = require('./board-layout');
 const questions = require('./questions');
 const pkg = require('../package.json');
+const stateStore = require('./state-store');
 
 const app = express();
 app.disable('x-powered-by');
@@ -38,9 +39,20 @@ app.use((req, res) => res.status(404).send('Not found'));
 
 const server = http.createServer(app);
 const io = new Server(server, {serveClient: true, transports: ['websocket', 'polling'], maxHttpBufferSize: 64 * 1024, connectionStateRecovery: {maxDisconnectionDuration: 30_000}});
-attachGateway(io, {QRCode, rooms: new GameRooms()});
+const rooms = new GameRooms();
+attachGateway(io, {QRCode, rooms});
 
-listenWithFallback(server, {
+// Restore saved games before accepting players, then keep saving.
+const storeReady = stateStore.start(rooms);
+function shutdown(signal) {
+  console.log(`${signal}: saving games before shutting down.`);
+  storeReady.then(store => store.stop()).catch(() => {}).finally(() => process.exit(0));
+  setTimeout(() => process.exit(0), 8000).unref();
+}
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+process.on('SIGINT', () => shutdown('SIGINT'));
+
+storeReady.finally(() => listenWithFallback(server, {
   port: Number(process.env.PORT) || 3000,
   autoFallback: process.env.SMART_ALEC_AUTO_PORT === '1' && !process.env.RENDER && process.env.NODE_ENV !== 'production',
   onRetry: (busy, next) => console.warn(`Port ${busy} is busy. Trying ${next}...`),
@@ -58,4 +70,4 @@ listenWithFallback(server, {
     console.error(error.code === 'EADDRINUSE' ? `Port ${port} is already in use.` : `Could not start: ${error.message}`);
     process.exit(1);
   },
-});
+}));

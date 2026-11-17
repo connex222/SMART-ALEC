@@ -237,3 +237,37 @@ test('play-along answers win nothing when the active player is right', () => {
   assert.equal(r.board.step, 'turnEnd');
   assert.equal(r.players[1].brains, 0);
 });
+
+test('a saved game comes back paused with its clocks moved on', () => {
+  const {GameRooms} = require('../server/rooms');
+  const store = require('../server/state-store');
+  const a = new GameRooms();
+  const r = room(3);
+  r.code = 'ABCD'; r.hostSocketId = 'tv'; r.players.forEach(p => { p.token = 't'.repeat(32); p.avatarId = 1; p.ready = true; });
+  let now = toTurn(r);
+  a.rooms.set('ABCD', r);
+  const text = store.snapshot(a, now);
+  assert.equal(text.includes('"socketId":"s0"'), false);         // live connections are not saved
+  const b = new GameRooms();
+  const later = now + 60_000;
+  assert.equal(store.load(b, text, later), 1);
+  const back = b.rooms.get('ABCD');
+  assert.equal(back.board.paused === undefined, true);
+  assert.ok(Number.isFinite(back.board.pausedAt));
+  assert.equal(back.board.pauseKind, 'restored');
+  assert.equal(back.board.remaining, r.board.deadline - now);     // no time lost while the server was down
+  assert.equal(back.players[0].socketId, null);
+  assert.equal(back.players[0].tokens.length, r.players[0].tokens.length);
+});
+
+test('Family games never pick hard questions, and the Final Round avoids them too', () => {
+  const r = room(2, {level: 'family'});
+  toTurn(r);
+  for (let i = 0; i < 200; i++) {
+    const id = Q.pick(r, L.CATEGORY_IDS[i % 6]);
+    assert.notEqual(Q.get(id).level, 'hard');
+  }
+  const m = room(2, {level: 'mixed'});
+  toTurn(m);
+  for (let i = 0; i < 100; i++) assert.notEqual(Q.get(Q.pick(m, 'screen', undefined, {finalRound: true})).level, 'hard');
+});
