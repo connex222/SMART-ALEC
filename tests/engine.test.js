@@ -339,3 +339,92 @@ test('player feedback is totted up and survives a restart', () => {
   stats.load(saved);
   assert.equal(stats.feedbackSummary().responses, 2);
 });
+
+test('new rooms use the leisurely default rather than racing straight through the show', () => {
+  const {GameRooms} = require('../server/rooms');
+  const rooms = new GameRooms({now: () => 100, randomInt: () => 0});
+  assert.equal(rooms.create('tv-host').state.settings.timerSpeed, 'relaxed');
+});
+
+test('leisurely turns keep questions and answers visible, and only the host can safely advance between turns', () => {
+  const r = room(3, {timerSpeed: 'relaxed'});
+  const start = 100000;
+  engine.start(r, start, seq());
+  assert.equal(r.board.deadline - start, 6500);
+  engine.tick(r, r.board.deadline, seq());
+  assert.equal(r.board.deadline - r.board.stepStartedAt, 45000);
+  const rolledAt = r.board.stepStartedAt + 1000;
+  engine.roll(r, 'p0', rolledAt, seq(0));
+  engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 1)}, rolledAt);
+  engine.tick(r, rolledAt + 5000, seq());
+  engine.tick(r, rolledAt + 10000, seq());
+  assert.equal(r.board.step, 'risk');
+  engine.choose(r, 'p0', {option: 'safe'}, rolledAt + 10000, seq());
+  assert.equal(r.board.deadline - r.board.stepStartedAt, 36000);
+  assert.throws(() => engine.hostNextTurn(r, rolledAt + 10000), {code: 'STEP'});
+  const question = Q.get(r.board.question.id);
+  engine.answer(r, 'p0', {choice: question.correct}, rolledAt + 11000);
+  assert.equal(r.board.step, 'reveal');
+  assert.equal(r.board.deadline - r.board.stepStartedAt, 8500);
+  engine.tick(r, r.board.deadline, seq());
+  assert.equal(r.board.step, 'turnEnd');
+  assert.equal(r.board.deadline - r.board.stepStartedAt, 20000);
+  engine.hostPause(r, r.board.stepStartedAt + 100);
+  assert.throws(() => engine.hostNextTurn(r, r.board.stepStartedAt + 200), {code: 'PAUSED'});
+  engine.hostResume(r, r.board.stepStartedAt + 300);
+  engine.hostNextTurn(r, r.board.stepStartedAt + 400);
+  assert.equal(r.board.step, 'turn');
+  assert.equal(r.board.activeId, 'p1');
+});
+
+test('mini-game instructions and Majority Rules results remain available for discussion', () => {
+  const r = room(3, {timerSpeed: 'relaxed'});
+  engine.start(r, 100000, seq());
+  engine.debugStart(r, 'majority-rules', 101000, seq());
+  const m = r.board.minigame;
+  assert.equal(m.phase, 'intro');
+  assert.ok(m.introUntil - 101000 >= 12000);
+  engine.tick(r, m.deadline, seq());
+  assert.equal(m.phase, 'play');
+  const first = m.question;
+  const at = m.deadline - 1000;
+  const key = m.roundKey;
+  for (const p of r.players) engine.minigameInput(r, p.id, 0, key, at);
+  assert.equal(m.phase, 'reveal');
+  assert.equal(m.lastResult.question, first);
+  assert.ok(m.deadline - at >= 8000);
+  engine.tick(r, m.deadline, seq());
+  assert.equal(m.phase, 'play');
+  assert.equal(m.round, 2);
+});
+
+test('Buzzer Battle holds the correct answer on screen before the next question', () => {
+  const r = room(3, {timerSpeed: 'relaxed'});
+  engine.start(r, 100000, seq());
+  engine.debugStart(r, 'buzzer', 101000, seq());
+  const m = r.board.showdown;
+  engine.tick(r, m.deadline, seq());
+  assert.equal(m.phase, 'buzz');
+  assert.equal(engine.publicBoard(r, true).showdown.display.correctText, null);
+  const key = m.roundKey, now = m.questionAt;
+  engine.minigameInput(r, 'p0', {action: 'buzz', reactionMs: 200}, key, now + 250);
+  engine.minigameInput(r, 'p1', {action: 'buzz', reactionMs: 300}, key, now + 350);
+  assert.equal(m.phase, 'answer');
+  const answer = m.question.choices[m.question.correct];
+  engine.minigameInput(r, 'p0', m.question.correct, key, now + 500);
+  assert.equal(m.phase, 'reveal');
+  assert.equal(engine.publicBoard(r, true).showdown.display.correctText, answer);
+  assert.equal(m.questionIndex, 1);
+  engine.tick(r, m.deadline, seq());
+  assert.equal(m.phase, 'buzz');
+  assert.equal(m.questionIndex, 2);
+});
+
+test('reading-heavy Close Call gets a full reading and answering window', () => {
+  const r = room(3, {timerSpeed: 'relaxed'});
+  engine.start(r, 100000, seq());
+  engine.debugStart(r, 'close-call', 101000, seq());
+  const m = r.board.minigame;
+  assert.equal(m.introUntil - 101000, 12000);
+  assert.ok(m.deadline - m.openAt >= 25000);
+});
