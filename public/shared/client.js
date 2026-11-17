@@ -166,5 +166,24 @@ window.SA = (() => {
   if ('requestIdleCallback' in window) requestIdleCallback(() => preloadAudio());
   else setTimeout(() => preloadAudio(), 1500);
 
-  return {store, request, layout, avatars, avatarEl, el, syncClock, now, secondsLeft, sfx, playMusic, setMuted, isMuted, vibrate, duck, preloadAudio, unlockAudio};
+  /**
+   * Catch browser errors and send them to the server's log, so problems on real
+   * TVs and phones can be found. Errors before the connection is ready are kept.
+   */
+  function reportErrors(socket, where) {
+    const queue = [];
+    let sent = 0;
+    const send = report => {
+      if (sent >= 10) return;
+      if (!socket.connected) { if (queue.length < 10) queue.push(report); return; }
+      sent += 1;
+      socket.emit('client:error', report);
+    };
+    const report = (message, source) => send({where, message: String(message).slice(0, 300), source: String(source || '').slice(0, 120), agent: navigator.userAgent.slice(0, 120)});
+    window.addEventListener('error', e => report(e.message || 'Unknown error', e.filename ? `${e.filename.split('/').slice(-2).join('/')}:${e.lineno}` : ''));
+    window.addEventListener('unhandledrejection', e => report(`Unhandled: ${e.reason?.message || e.reason}`, ''));
+    socket.on('connect', () => { while (queue.length && sent < 10) { sent += 1; socket.emit('client:error', queue.shift()); } });
+  }
+
+  return {reportErrors, store, request, layout, avatars, avatarEl, el, syncClock, now, secondsLeft, sfx, playMusic, setMuted, isMuted, vibrate, duck, preloadAudio, unlockAudio};
 })();
