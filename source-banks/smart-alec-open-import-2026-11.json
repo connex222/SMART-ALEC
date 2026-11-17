@@ -1,0 +1,4167 @@
+{
+ "source": "Smart Alec — open-licence import, November 2026 (Open Trivia Database and OpenTriviaQA; curated by Claude)",
+ "rights": "Questions adapted from the Open Trivia Database (opentdb.com) and OpenTriviaQA (github.com/uberspot/OpenTriviaQA), both CC BY-SA 4.0. This adapted collection is shared under CC BY-SA 4.0. Credit both sources wherever the questions are used.",
+ "quizzes": [
+  {
+   "title": "Open-licence import, November 2026",
+   "rounds": [
+    {
+     "id": "OPEN2-POTLUCK",
+     "name": "POT LUCK",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "IMPORTED-OTDB2-001",
+       "cat": "POT LUCK",
+       "q": "Which sign of the zodiac is represented by the Crab?",
+       "a": "Cancer",
+       "wrong": [
+        "Scorpio",
+        "Capricorn",
+        "Pisces"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-002",
+       "cat": "POT LUCK",
+       "q": "What Latin phrase roughly translates to \"seize the day\"?",
+       "a": "Carpe diem",
+       "wrong": [
+        "Tempus fugit",
+        "Carpe noctem",
+        "Veni, vidi, vici"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-003",
+       "cat": "POT LUCK",
+       "q": "Who is the youngest person ever to receive a Nobel Prize?",
+       "a": "Malala Yousafzai",
+       "wrong": [
+        "Greta Thunberg",
+        "Nadia Murad",
+        "Mother Teresa"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-004",
+       "cat": "POT LUCK",
+       "q": "Which of these countries drives on the left?",
+       "a": "Japan",
+       "wrong": [
+        "France",
+        "The United States",
+        "Germany"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-005",
+       "cat": "POT LUCK",
+       "q": "How many letters are in the English alphabet?",
+       "a": "26",
+       "wrong": [
+        "24",
+        "25",
+        "28"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-006",
+       "cat": "POT LUCK",
+       "q": "What is the last letter of the Greek alphabet?",
+       "a": "Omega",
+       "wrong": [
+        "Alpha",
+        "Zeta",
+        "Sigma"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-007",
+       "cat": "POT LUCK",
+       "q": "All Souls and Merton are constituent colleges of what university?",
+       "a": "Oxford",
+       "wrong": [
+        "Cambridge",
+        "Durham",
+        "St Andrews"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-008",
+       "cat": "POT LUCK",
+       "q": "Animator Terry Gilliam was a member of which comedy team?",
+       "a": "Monty Python",
+       "wrong": [
+        "The Goodies",
+        "The Young Ones",
+        "Not the Nine O'Clock News"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-009",
+       "cat": "POT LUCK",
+       "q": "Xanthophobia is the fear of which colour?",
+       "a": "Yellow",
+       "wrong": [
+        "Red",
+        "Green",
+        "Blue"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-010",
+       "cat": "POT LUCK",
+       "q": "Who is the author of Jurassic Park?",
+       "a": "Michael Crichton",
+       "wrong": [
+        "Stephen King",
+        "Dan Brown",
+        "John Grisham"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-011",
+       "cat": "POT LUCK",
+       "q": "Which subject is sometimes called \"the dismal science\"?",
+       "a": "Economics",
+       "wrong": [
+        "Politics",
+        "Statistics",
+        "Accountancy"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-012",
+       "cat": "POT LUCK",
+       "q": "What element has the chemical symbol Kr?",
+       "a": "Krypton",
+       "wrong": [
+        "Potassium",
+        "Chromium",
+        "Calcium"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-013",
+       "cat": "POT LUCK",
+       "q": "What is the most commonly used letter in English?",
+       "a": "E",
+       "wrong": [
+        "A",
+        "T",
+        "S"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-014",
+       "cat": "POT LUCK",
+       "q": "What is the official language of Cuba?",
+       "a": "Spanish",
+       "wrong": [
+        "Portuguese",
+        "English",
+        "French"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-015",
+       "cat": "POT LUCK",
+       "q": "What do sailors call the left side of a boat?",
+       "a": "Port",
+       "wrong": [
+        "Starboard",
+        "Bow",
+        "Stern"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-016",
+       "cat": "POT LUCK",
+       "q": "Where did the pineapple originally come from?",
+       "a": "South America",
+       "wrong": [
+        "Hawaii",
+        "Africa",
+        "Asia"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-017",
+       "cat": "POT LUCK",
+       "q": "Which of these countries has the Union Jack in its flag?",
+       "a": "New Zealand",
+       "wrong": [
+        "Canada",
+        "South Africa",
+        "Ireland"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-018",
+       "cat": "POT LUCK",
+       "q": "A3, A4 and A5 are sizes of what?",
+       "a": "Paper",
+       "wrong": [
+        "Batteries",
+        "Tyres",
+        "Light bulbs"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-019",
+       "cat": "POT LUCK",
+       "q": "Besides Spanish, which language is official in Barcelona?",
+       "a": "Catalan",
+       "wrong": [
+        "Basque",
+        "Galician",
+        "Portuguese"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-020",
+       "cat": "POT LUCK",
+       "q": "Which car maker gave away its patent for the three-point seat belt to save lives?",
+       "a": "Volvo",
+       "wrong": [
+        "Saab",
+        "Mercedes-Benz",
+        "Ford"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-021",
+       "cat": "POT LUCK",
+       "q": "Which animal appears on the Porsche logo?",
+       "a": "Horse",
+       "wrong": [
+        "A bull",
+        "A lion",
+        "A jaguar"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-022",
+       "cat": "POT LUCK",
+       "q": "Which animal is on the Lamborghini logo?",
+       "a": "A bull",
+       "wrong": [
+        "A horse",
+        "A lion",
+        "A jaguar"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-023",
+       "cat": "POT LUCK",
+       "q": "Which Greek god kept the same name in Roman mythology?",
+       "a": "Apollo",
+       "wrong": [
+        "Ares",
+        "Hermes",
+        "Zeus"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-024",
+       "cat": "POT LUCK",
+       "q": "In Greek mythology, which daughter of King Minos helped Theseus escape the labyrinth?",
+       "a": "Ariadne",
+       "wrong": [
+        "Medea",
+        "Helen",
+        "Pandora"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-025",
+       "cat": "POT LUCK",
+       "q": "Which mythological creature is half man and half horse?",
+       "a": "Centaur",
+       "wrong": [
+        "Satyr",
+        "Minotaur",
+        "Harpy"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-026",
+       "cat": "POT LUCK",
+       "q": "What was the Greek name of the Roman sea god Neptune?",
+       "a": "Poseidon",
+       "wrong": [
+        "Zeus",
+        "Hades",
+        "Ares"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-027",
+       "cat": "POT LUCK",
+       "q": "The Nike brand is named after the Greek goddess of what?",
+       "a": "Victory",
+       "wrong": [
+        "Speed",
+        "Wisdom",
+        "Beauty"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-028",
+       "cat": "POT LUCK",
+       "q": "In Greek mythology, which fruit's seeds tie Persephone to the underworld?",
+       "a": "Pomegranate",
+       "wrong": [
+        "Apple",
+        "Fig",
+        "Olive"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-029",
+       "cat": "POT LUCK",
+       "q": "In Egyptian mythology, who murdered Osiris?",
+       "a": "Set",
+       "wrong": [
+        "Horus",
+        "Anubis",
+        "Ra"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-030",
+       "cat": "POT LUCK",
+       "q": "In Greek mythology, who led the Argonauts in search of the Golden Fleece?",
+       "a": "Jason",
+       "wrong": [
+        "Hercules",
+        "Perseus",
+        "Odysseus"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-031",
+       "cat": "POT LUCK",
+       "q": "Which Norse god rides an eight-legged horse called Sleipnir?",
+       "a": "Odin",
+       "wrong": [
+        "Thor",
+        "Loki",
+        "Freyr"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-032",
+       "cat": "POT LUCK",
+       "q": "Who was the father of Icarus?",
+       "a": "Daedalus",
+       "wrong": [
+        "Theseus",
+        "Minos",
+        "Hephaestus"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-033",
+       "cat": "POT LUCK",
+       "q": "Who was the Roman god of fire?",
+       "a": "Vulcan",
+       "wrong": [
+        "Mars",
+        "Mercury",
+        "Pluto"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-001",
+       "cat": "POT LUCK",
+       "q": "In the Harry Potter books, what is the language of snakes called?",
+       "a": "Parseltongue",
+       "wrong": [
+        "Gobbledegook",
+        "Serpentine",
+        "Hissish"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-002",
+       "cat": "POT LUCK",
+       "q": "What kind of creature is Buckbeak in Harry Potter and the Prisoner of Azkaban?",
+       "a": "Hippogriff",
+       "wrong": [
+        "Manticore",
+        "Unicorn",
+        "Thestral"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-003",
+       "cat": "POT LUCK",
+       "q": "In The Lion, the Witch and the Wardrobe, which sweet does the White Witch use to tempt Edmund?",
+       "a": "Turkish Delight",
+       "wrong": [
+        "Toffee",
+        "Liquorice",
+        "Fudge"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-004",
+       "cat": "POT LUCK",
+       "q": "What animal does Sirius Black turn into?",
+       "a": "A black dog",
+       "wrong": [
+        "A stag",
+        "A rat",
+        "A cat"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-005",
+       "cat": "POT LUCK",
+       "q": "Which Weasley brother loses an ear in the Harry Potter books?",
+       "a": "George",
+       "wrong": [
+        "Fred",
+        "Ron",
+        "Bill"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-006",
+       "cat": "POT LUCK",
+       "q": "Which animal is the symbol of Ravenclaw house in the Harry Potter books?",
+       "a": "Eagle",
+       "wrong": [
+        "Lion",
+        "Badger",
+        "Snake"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-007",
+       "cat": "POT LUCK",
+       "q": "What is the first name of Harry Potters mother?",
+       "a": "Lily",
+       "wrong": [
+        "Molly",
+        "Petunia",
+        "Rose"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-008",
+       "cat": "POT LUCK",
+       "q": "Who is the Gryffindor house ghost in the Harry Potter books?",
+       "a": "Nearly Headless Nick",
+       "wrong": [
+        "Moaning Myrtle",
+        "The Grey Lady",
+        "The Bloody Baron"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-009",
+       "cat": "POT LUCK",
+       "q": "What is someone with ailurophobia afraid of?",
+       "a": "Cats",
+       "wrong": [
+        "Dogs",
+        "Birds",
+        "Spiders"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-010",
+       "cat": "POT LUCK",
+       "q": "Which pair of Latin terms refers to plant and animal life?",
+       "a": "Flora and fauna",
+       "wrong": [
+        "Et cetera and et alia",
+        "Habeas and corpus",
+        "Ipso and facto"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-011",
+       "cat": "POT LUCK",
+       "q": "What is the fear of heights called?",
+       "a": "Acrophobia",
+       "wrong": [
+        "Agoraphobia",
+        "Claustrophobia",
+        "Arachnophobia"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-012",
+       "cat": "POT LUCK",
+       "q": "In Greek mythology, who was the faithful wife of Odysseus?",
+       "a": "Penelope",
+       "wrong": [
+        "Helen",
+        "Andromache",
+        "Circe"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-013",
+       "cat": "POT LUCK",
+       "q": "Which company bought YouTube in 2006?",
+       "a": "Google",
+       "wrong": [
+        "Yahoo",
+        "Microsoft",
+        "eBay"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-014",
+       "cat": "POT LUCK",
+       "q": "The witch Baba Yaga comes from which folklore?",
+       "a": "Slavic folklore",
+       "wrong": [
+        "Norse folklore",
+        "Greek folklore",
+        "Celtic folklore"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      }
+     ]
+    },
+    {
+     "id": "OPEN2-SCREEN",
+     "name": "TV AND FILM",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "IMPORTED-OTDB2-034",
+       "cat": "TV AND FILM",
+       "q": "In which year did Mickey Mouse make his screen debut?",
+       "a": "1928",
+       "wrong": [
+        "1923",
+        "1932",
+        "1937"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-035",
+       "cat": "TV AND FILM",
+       "q": "Which was Alfred Hitchcock's first film in colour?",
+       "a": "Rope",
+       "wrong": [
+        "Vertigo",
+        "Rear Window",
+        "Dial M for Murder"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-036",
+       "cat": "TV AND FILM",
+       "q": "Who composed the score for the original Blade Runner?",
+       "a": "Vangelis",
+       "wrong": [
+        "Hans Zimmer",
+        "John Williams",
+        "Jean-Michel Jarre"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-037",
+       "cat": "TV AND FILM",
+       "q": "In Back to the Future, what speed must the DeLorean reach to travel through time?",
+       "a": "88 mph",
+       "wrong": [
+        "66 mph",
+        "100 mph",
+        "77 mph"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-038",
+       "cat": "TV AND FILM",
+       "q": "Which film features the line \"What we've got here is failure to communicate\"?",
+       "a": "Cool Hand Luke",
+       "wrong": [
+        "The Great Escape",
+        "Easy Rider",
+        "Bullitt"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-039",
+       "cat": "TV AND FILM",
+       "q": "Who played the title role in the 1990 film Edward Scissorhands?",
+       "a": "Johnny Depp",
+       "wrong": [
+        "Keanu Reeves",
+        "Christian Slater",
+        "Tom Cruise"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-040",
+       "cat": "TV AND FILM",
+       "q": "In Cast Away, what is the name of the volleyball that becomes Tom Hanks' only friend?",
+       "a": "Wilson",
+       "wrong": [
+        "Spalding",
+        "Friday",
+        "Rawlings"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-041",
+       "cat": "TV AND FILM",
+       "q": "Who directed the 1991 film The Silence of the Lambs?",
+       "a": "Jonathan Demme",
+       "wrong": [
+        "David Fincher",
+        "Brian De Palma",
+        "Martin Scorsese"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-042",
+       "cat": "TV AND FILM",
+       "q": "Who directed the Kill Bill movies?",
+       "a": "Quentin Tarantino",
+       "wrong": [
+        "Robert Rodriguez",
+        "Guy Ritchie",
+        "Martin Scorsese"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-043",
+       "cat": "TV AND FILM",
+       "q": "In Gremlins, after what time must you never feed a Mogwai?",
+       "a": "Midnight",
+       "wrong": [
+        "Sunset",
+        "Noon",
+        "Dawn"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-044",
+       "cat": "TV AND FILM",
+       "q": "In which 1973 film does Yul Brynner play a robot cowboy who runs amok?",
+       "a": "Westworld",
+       "wrong": [
+        "Logan's Run",
+        "Silent Running",
+        "Soylent Green"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-045",
+       "cat": "TV AND FILM",
+       "q": "In which film did Johnny Depp make his big-screen debut?",
+       "a": "A Nightmare on Elm Street",
+       "wrong": [
+        "Platoon",
+        "Cry-Baby",
+        "Edward Scissorhands"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-046",
+       "cat": "TV AND FILM",
+       "q": "In Blade Runner, what are the human-like androids called?",
+       "a": "Replicants",
+       "wrong": [
+        "Synths",
+        "Cylons",
+        "Terminators"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-047",
+       "cat": "TV AND FILM",
+       "q": "Who played Batman in Tim Burton's 1989 film?",
+       "a": "Michael Keaton",
+       "wrong": [
+        "Val Kilmer",
+        "George Clooney",
+        "Adam West"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-048",
+       "cat": "TV AND FILM",
+       "q": "In the 1979 film Quadrophenia, which seaside town do the mods visit?",
+       "a": "Brighton",
+       "wrong": [
+        "Blackpool",
+        "Margate",
+        "Southend"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-049",
+       "cat": "TV AND FILM",
+       "q": "What was Disney's first full-length animated feature film?",
+       "a": "Snow White and the Seven Dwarfs",
+       "wrong": [
+        "Pinocchio",
+        "Fantasia",
+        "Bambi"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-050",
+       "cat": "TV AND FILM",
+       "q": "In which film do Eddie Murphy and Dan Aykroyd swap lives?",
+       "a": "Trading Places",
+       "wrong": [
+        "Coming to America",
+        "Beverly Hills Cop",
+        "48 Hrs."
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-051",
+       "cat": "TV AND FILM",
+       "q": "Velma Kelly and Roxie Hart are the leading ladies of which Oscar-winning film?",
+       "a": "Chicago",
+       "wrong": [
+        "Cabaret",
+        "Moulin Rouge!",
+        "Nine"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-052",
+       "cat": "TV AND FILM",
+       "q": "Who directed the 1979 film Alien?",
+       "a": "Ridley Scott",
+       "wrong": [
+        "James Cameron",
+        "John Carpenter",
+        "David Fincher"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-053",
+       "cat": "TV AND FILM",
+       "q": "What is the first name of Marilyn Monroe's character in Some Like It Hot?",
+       "a": "Sugar",
+       "wrong": [
+        "Candy",
+        "Honey",
+        "Cherry"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-054",
+       "cat": "TV AND FILM",
+       "q": "Which actress played Dr Grace Augustine in Avatar?",
+       "a": "Sigourney Weaver",
+       "wrong": [
+        "Zoe Saldaña",
+        "Michelle Rodriguez",
+        "Jamie Lee Curtis"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-055",
+       "cat": "TV AND FILM",
+       "q": "Which film features the line \"I love the smell of napalm in the morning\"?",
+       "a": "Apocalypse Now",
+       "wrong": [
+        "Platoon",
+        "Full Metal Jacket",
+        "The Deer Hunter"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-056",
+       "cat": "TV AND FILM",
+       "q": "What was the first James Bond film, released in 1962?",
+       "a": "Dr. No",
+       "wrong": [
+        "Goldfinger",
+        "From Russia with Love",
+        "Thunderball"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-057",
+       "cat": "TV AND FILM",
+       "q": "Who wrote and directed the 1986 film Platoon?",
+       "a": "Oliver Stone",
+       "wrong": [
+        "Stanley Kubrick",
+        "Francis Ford Coppola",
+        "Michael Cimino"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-058",
+       "cat": "TV AND FILM",
+       "q": "Who starred in the 1973 martial arts film Enter the Dragon?",
+       "a": "Bruce Lee",
+       "wrong": [
+        "Jackie Chan",
+        "Chuck Norris",
+        "Jet Li"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-059",
+       "cat": "TV AND FILM",
+       "q": "Who played the female lead in the 1933 film King Kong?",
+       "a": "Fay Wray",
+       "wrong": [
+        "Jessica Lange",
+        "Naomi Watts",
+        "Jean Harlow"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-060",
+       "cat": "TV AND FILM",
+       "q": "Which character in Disney's Winnie the Pooh films does not appear in A. A. Milne's books?",
+       "a": "Gopher",
+       "wrong": [
+        "Kanga",
+        "Roo",
+        "Owl"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-061",
+       "cat": "TV AND FILM",
+       "q": "Which Clint Eastwood character stars in The Enforcer, Sudden Impact and The Dead Pool?",
+       "a": "Dirty Harry",
+       "wrong": [
+        "Rambo",
+        "The Man with No Name",
+        "Mad Max"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-062",
+       "cat": "TV AND FILM",
+       "q": "Which Massive Attack track is the theme tune of the US series House?",
+       "a": "Teardrop",
+       "wrong": [
+        "Unfinished Sympathy",
+        "Angel",
+        "Protection"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-063",
+       "cat": "TV AND FILM",
+       "q": "In Star Trek, what colour is Vulcan blood?",
+       "a": "Green",
+       "wrong": [
+        "Blue",
+        "Purple",
+        "Silver"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-064",
+       "cat": "TV AND FILM",
+       "q": "In the original Star Trek, what is Captain James T. Kirk's middle name?",
+       "a": "Tiberius",
+       "wrong": [
+        "Theodore",
+        "Thomas",
+        "Tobias"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-065",
+       "cat": "TV AND FILM",
+       "q": "Which Allman Brothers Band instrumental is the theme tune of Top Gear?",
+       "a": "Jessica",
+       "wrong": [
+        "Ramblin' Man",
+        "Melissa",
+        "Whipping Post"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-066",
+       "cat": "TV AND FILM",
+       "q": "Which planet does Doctor Who's Doctor come from?",
+       "a": "Gallifrey",
+       "wrong": [
+        "Skaro",
+        "Mondas",
+        "Trenzalore"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-067",
+       "cat": "TV AND FILM",
+       "q": "What was the name of Ross's pet monkey in Friends?",
+       "a": "Marcel",
+       "wrong": [
+        "Marvin",
+        "Mojo",
+        "Bubbles"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-068",
+       "cat": "TV AND FILM",
+       "q": "Who played Fox Mulder in The X-Files?",
+       "a": "David Duchovny",
+       "wrong": [
+        "Mitch Pileggi",
+        "Kiefer Sutherland",
+        "Rob Lowe"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-069",
+       "cat": "TV AND FILM",
+       "q": "In M*A*S*H, what was Corporal Walter O'Reilly's nickname?",
+       "a": "Radar",
+       "wrong": [
+        "Hawkeye",
+        "Trapper",
+        "Klinger"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-070",
+       "cat": "TV AND FILM",
+       "q": "What is the name of the police officer in the cartoon Top Cat?",
+       "a": "Officer Dibble",
+       "wrong": [
+        "Officer Krupke",
+        "Chief Wiggum",
+        "Officer Barbrady"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-071",
+       "cat": "TV AND FILM",
+       "q": "In DuckTales, in which city do the main characters live?",
+       "a": "Duckburg",
+       "wrong": [
+        "Mouseton",
+        "Quackville",
+        "Springfield"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-072",
+       "cat": "TV AND FILM",
+       "q": "In Game of Thrones, what is Littlefinger's real name?",
+       "a": "Petyr Baelish",
+       "wrong": [
+        "Varys",
+        "Roose Bolton",
+        "Davos Seaworth"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-073",
+       "cat": "TV AND FILM",
+       "q": "In which town do The Flintstones live?",
+       "a": "Bedrock",
+       "wrong": [
+        "Stonehenge",
+        "Boulder City",
+        "Pebbletown"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-074",
+       "cat": "TV AND FILM",
+       "q": "Butters, Wendy and Pip are characters in which cartoon series?",
+       "a": "South Park",
+       "wrong": [
+        "Family Guy",
+        "The Simpsons",
+        "King of the Hill"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-075",
+       "cat": "TV AND FILM",
+       "q": "In Toy Story, what is the name of the boy who owns the toys?",
+       "a": "Andy",
+       "wrong": [
+        "Sid",
+        "Billy",
+        "Danny"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-076",
+       "cat": "TV AND FILM",
+       "q": "In South Park, what is Stan's surname?",
+       "a": "Marsh",
+       "wrong": [
+        "Broflovski",
+        "McCormick",
+        "Cartman"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-077",
+       "cat": "TV AND FILM",
+       "q": "What is Scooby-Doo's full first name?",
+       "a": "Scoobert",
+       "wrong": [
+        "Scooberto",
+        "Scoobius",
+        "Scoobington"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-078",
+       "cat": "TV AND FILM",
+       "q": "Which Family Guy character got his own spin-off show in 2009?",
+       "a": "Cleveland Brown",
+       "wrong": [
+        "Glenn Quagmire",
+        "Joe Swanson",
+        "Stewie Griffin"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-079",
+       "cat": "TV AND FILM",
+       "q": "Which Teenage Mutant Ninja Turtle traditionally wears an orange bandana?",
+       "a": "Michelangelo",
+       "wrong": [
+        "Leonardo",
+        "Raphael",
+        "Donatello"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-015",
+       "cat": "TV AND FILM",
+       "q": "Which Harry Potter character was played by Robbie Coltrane?",
+       "a": "Rubeus Hagrid",
+       "wrong": [
+        "Albus Dumbledore",
+        "Sirius Black",
+        "Severus Snape"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-016",
+       "cat": "TV AND FILM",
+       "q": "Who played Holly Golightly in the 1961 film Breakfast at Tiffany's?",
+       "a": "Audrey Hepburn",
+       "wrong": [
+        "Grace Kelly",
+        "Marilyn Monroe",
+        "Elizabeth Taylor"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-017",
+       "cat": "TV AND FILM",
+       "q": "Who played Batman in the 2008 film The Dark Knight?",
+       "a": "Christian Bale",
+       "wrong": [
+        "George Clooney",
+        "Val Kilmer",
+        "Michael Keaton"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-018",
+       "cat": "TV AND FILM",
+       "q": "Which film features the line \"You're gonna need a bigger boat\"?",
+       "a": "Jaws",
+       "wrong": [
+        "Jurassic Park",
+        "Titanic",
+        "The Abyss"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-019",
+       "cat": "TV AND FILM",
+       "q": "Which clumsy Star Wars character later became a senator?",
+       "a": "Jar Jar Binks",
+       "wrong": [
+        "Chewbacca",
+        "C-3PO",
+        "Watto"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-020",
+       "cat": "TV AND FILM",
+       "q": "Rowan Atkinson's film career began with a small part in which James Bond film?",
+       "a": "Never Say Never Again",
+       "wrong": [
+        "Octopussy",
+        "A View to a Kill",
+        "For Your Eyes Only"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-021",
+       "cat": "TV AND FILM",
+       "q": "Jack Klugman played a medical examiner in which TV series?",
+       "a": "Quincy, M.E.",
+       "wrong": [
+        "Columbo",
+        "Kojak",
+        "Ironside"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-022",
+       "cat": "TV AND FILM",
+       "q": "In The Simpsons, what is the name of Chief Wiggum's son?",
+       "a": "Ralph",
+       "wrong": [
+        "Milhouse",
+        "Nelson",
+        "Todd"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      }
+     ]
+    },
+    {
+     "id": "OPEN2-MUSIC",
+     "name": "MUSIC",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "IMPORTED-OTDB2-080",
+       "cat": "MUSIC",
+       "q": "What was the first music video to be broadcast on MTV?",
+       "a": "Video Killed the Radio Star",
+       "wrong": [
+        "Money for Nothing",
+        "Bohemian Rhapsody",
+        "Thriller"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-081",
+       "cat": "MUSIC",
+       "q": "Which event inspired The Cranberries' song Zombie?",
+       "a": "The Warrington bombing",
+       "wrong": [
+        "The Omagh bombing",
+        "Bloody Sunday",
+        "The Brighton hotel bombing"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-082",
+       "cat": "MUSIC",
+       "q": "A violin's four strings are G, D, A and which other?",
+       "a": "E",
+       "wrong": [
+        "B",
+        "C",
+        "F"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-083",
+       "cat": "MUSIC",
+       "q": "What was Finnish DJ Darude's 1999 dance hit?",
+       "a": "Sandstorm",
+       "wrong": [
+        "Better Off Alone",
+        "Children",
+        "Blue (Da Ba Dee)"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-084",
+       "cat": "MUSIC",
+       "q": "Which band recorded the album \"Parallel Lines\"?",
+       "a": "Blondie",
+       "wrong": [
+        "The Pretenders",
+        "Talking Heads",
+        "The Go-Go's"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-085",
+       "cat": "MUSIC",
+       "q": "Which Manchester nightclub was at the heart of the Madchester scene?",
+       "a": "The Haçienda",
+       "wrong": [
+        "The Ritz",
+        "Cream",
+        "The Cavern"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-086",
+       "cat": "MUSIC",
+       "q": "Who is the frontman of Muse?",
+       "a": "Matt Bellamy",
+       "wrong": [
+        "Chris Martin",
+        "Brandon Flowers",
+        "Thom Yorke"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-087",
+       "cat": "MUSIC",
+       "q": "The \"K\" in \"K-Pop\" stands for which word?",
+       "a": "Korean",
+       "wrong": [
+        "Kinetic",
+        "Kids",
+        "Kawaii"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-088",
+       "cat": "MUSIC",
+       "q": "According to a Beatles song, who kept her face in a jar by the door?",
+       "a": "Eleanor Rigby",
+       "wrong": [
+        "Michelle",
+        "Lovely Rita",
+        "Lucy"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-089",
+       "cat": "MUSIC",
+       "q": "Who composed Rhapsody in Blue?",
+       "a": "George Gershwin",
+       "wrong": [
+        "Irving Berlin",
+        "Cole Porter",
+        "Leonard Bernstein"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-090",
+       "cat": "MUSIC",
+       "q": "Who was the lead singer of R.E.M.?",
+       "a": "Michael Stipe",
+       "wrong": [
+        "Eddie Vedder",
+        "Kurt Cobain",
+        "Jim Morrison"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-091",
+       "cat": "MUSIC",
+       "q": "Which British singer was sampled on Eminem's hit Stan?",
+       "a": "Dido",
+       "wrong": [
+        "Adele",
+        "Natalie Imbruglia",
+        "Sophie Ellis-Bextor"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-092",
+       "cat": "MUSIC",
+       "q": "Which rock band is named after a gym teacher at its members' high school?",
+       "a": "Lynyrd Skynyrd",
+       "wrong": [
+        "ZZ Top",
+        "The Allman Brothers Band",
+        "Creedence Clearwater Revival"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-093",
+       "cat": "MUSIC",
+       "q": "Who is the lead singer of Guns N' Roses?",
+       "a": "Axl Rose",
+       "wrong": [
+        "Slash",
+        "Bret Michaels",
+        "Jon Bon Jovi"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-094",
+       "cat": "MUSIC",
+       "q": "Michael Jackson's song Will You Be There featured in which film?",
+       "a": "Free Willy",
+       "wrong": [
+        "The Lion King",
+        "Jumanji",
+        "Home Alone"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-095",
+       "cat": "MUSIC",
+       "q": "Which singer features on Avicii's 2013 hit Wake Me Up?",
+       "a": "Aloe Blacc",
+       "wrong": [
+        "Pharrell Williams",
+        "John Legend",
+        "Labrinth"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-096",
+       "cat": "MUSIC",
+       "q": "A piccolo is a smaller version of what instrument?",
+       "a": "Flute",
+       "wrong": [
+        "Clarinet",
+        "Oboe",
+        "Recorder"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-097",
+       "cat": "MUSIC",
+       "q": "Which Elton John song begins \"When are you gonna come down?\"",
+       "a": "Goodbye Yellow Brick Road",
+       "wrong": [
+        "Rocket Man",
+        "Tiny Dancer",
+        "Your Song"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-098",
+       "cat": "MUSIC",
+       "q": "Which band released Californication, Can't Stop and Under the Bridge?",
+       "a": "Red Hot Chili Peppers",
+       "wrong": [
+        "Foo Fighters",
+        "Pearl Jam",
+        "Incubus"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-099",
+       "cat": "MUSIC",
+       "q": "Which band had a 1986 hit with Walk Like an Egyptian?",
+       "a": "The Bangles",
+       "wrong": [
+        "The Go-Go's",
+        "Bananarama",
+        "The Pretenders"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-100",
+       "cat": "MUSIC",
+       "q": "On which Beatles album would you find the song 'Eleanor Rigby'?",
+       "a": "Revolver",
+       "wrong": [
+        "Rubber Soul",
+        "Abbey Road",
+        "Help!"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-101",
+       "cat": "MUSIC",
+       "q": "Which song on Daft Punk's Random Access Memories became a worldwide hit with Pharrell Williams?",
+       "a": "Get Lucky",
+       "wrong": [
+        "Instant Crush",
+        "Giorgio by Moroder",
+        "Doin' It Right"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-102",
+       "cat": "MUSIC",
+       "q": "Which rock band has a famous one-armed drummer, Rick Allen?",
+       "a": "Def Leppard",
+       "wrong": [
+        "Iron Maiden",
+        "Whitesnake",
+        "Motörhead"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-103",
+       "cat": "MUSIC",
+       "q": "In Les Misérables, who is prisoner 24601?",
+       "a": "Jean Valjean",
+       "wrong": [
+        "Javert",
+        "Marius",
+        "Thénardier"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-104",
+       "cat": "MUSIC",
+       "q": "Who wrote the musical Hamilton?",
+       "a": "Lin-Manuel Miranda",
+       "wrong": [
+        "Stephen Sondheim",
+        "Andrew Lloyd Webber",
+        "Tim Rice"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-023",
+       "cat": "MUSIC",
+       "q": "Which song from The Lion King won the Oscar for Best Original Song?",
+       "a": "Can You Feel the Love Tonight",
+       "wrong": [
+        "Circle of Life",
+        "Hakuna Matata",
+        "I Just Can't Wait to Be King"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-024",
+       "cat": "MUSIC",
+       "q": "What was Freddie Mercury's real name?",
+       "a": "Farrokh Bulsara",
+       "wrong": [
+        "Frederick Bulmer",
+        "Francis Mercer",
+        "Farid Bashir"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-025",
+       "cat": "MUSIC",
+       "q": "Beethoven's Fifth Symphony is sometimes nicknamed what?",
+       "a": "The Fate Symphony",
+       "wrong": [
+        "The Eroica",
+        "The Pastoral",
+        "The Choral"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-026",
+       "cat": "MUSIC",
+       "q": "Who wrote and recorded Don't Let the Sun Go Down on Me?",
+       "a": "Elton John",
+       "wrong": [
+        "Queen",
+        "George Michael",
+        "Rod Stewart"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-027",
+       "cat": "MUSIC",
+       "q": "Which guitarist was sacked by Metallica in 1983 and went on to form Megadeth?",
+       "a": "Dave Mustaine",
+       "wrong": [
+        "Kirk Hammett",
+        "Cliff Burton",
+        "James Hetfield"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-028",
+       "cat": "MUSIC",
+       "q": "Which band released Brown Sugar in 1971?",
+       "a": "The Rolling Stones",
+       "wrong": [
+        "The Who",
+        "The Kinks",
+        "Led Zeppelin"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      }
+     ]
+    },
+    {
+     "id": "OPEN2-SPORT",
+     "name": "SPORT",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "IMPORTED-OTDB2-105",
+       "cat": "SPORT",
+       "q": "British wrestler Shirley Crabtree was better known as who?",
+       "a": "Big Daddy",
+       "wrong": [
+        "Giant Haystacks",
+        "Kendo Nagasaki",
+        "Mick McManus"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-106",
+       "cat": "SPORT",
+       "q": "Which team did England beat in the semi-final of the 1966 World Cup?",
+       "a": "Portugal",
+       "wrong": [
+        "West Germany",
+        "Argentina",
+        "The Soviet Union"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-107",
+       "cat": "SPORT",
+       "q": "Three Lions was originally recorded for which tournament, held in England in 1996?",
+       "a": "The European Championship",
+       "wrong": [
+        "The World Cup",
+        "The Olympic Games",
+        "The Commonwealth Games"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-108",
+       "cat": "SPORT",
+       "q": "How many Wimbledon singles titles did Martina Navratilova win?",
+       "a": "9",
+       "wrong": [
+        "7",
+        "8",
+        "6"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-109",
+       "cat": "SPORT",
+       "q": "Edson Arantes do Nascimento is the full name of which legendary football player?",
+       "a": "Pelé",
+       "wrong": [
+        "Ronaldinho",
+        "Garrincha",
+        "Zico"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-110",
+       "cat": "SPORT",
+       "q": "Who has made the most appearances for Manchester United?",
+       "a": "Ryan Giggs",
+       "wrong": [
+        "Bobby Charlton",
+        "Gary Neville",
+        "Paul Scholes"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-111",
+       "cat": "SPORT",
+       "q": "In which year did Jenson Button win the Formula One world title?",
+       "a": "2009",
+       "wrong": [
+        "2008",
+        "2010",
+        "2007"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-112",
+       "cat": "SPORT",
+       "q": "Which city hosted the 1980 Summer Olympics?",
+       "a": "Moscow",
+       "wrong": [
+        "Los Angeles",
+        "Montreal",
+        "Munich"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-113",
+       "cat": "SPORT",
+       "q": "In which country is Sochi, host of the 2014 Winter Olympics?",
+       "a": "Russia",
+       "wrong": [
+        "Ukraine",
+        "Georgia",
+        "Bulgaria"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-114",
+       "cat": "SPORT",
+       "q": "How many French Open titles did Björn Borg win?",
+       "a": "6",
+       "wrong": [
+        "4",
+        "5",
+        "7"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-115",
+       "cat": "SPORT",
+       "q": "Which darts player has won the most World Championships?",
+       "a": "Phil Taylor",
+       "wrong": [
+        "Raymond van Barneveld",
+        "Eric Bristow",
+        "Michael van Gerwen"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-116",
+       "cat": "SPORT",
+       "q": "At which bridge does the Oxford and Cambridge Boat Race start?",
+       "a": "Putney",
+       "wrong": [
+        "Hammersmith",
+        "Chiswick",
+        "Mortlake"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-117",
+       "cat": "SPORT",
+       "q": "By what score did Germany beat Brazil in their 2014 World Cup semi-final?",
+       "a": "7–1",
+       "wrong": [
+        "5–0",
+        "4–1",
+        "6–2"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-118",
+       "cat": "SPORT",
+       "q": "Which German sportswear brand uses a logo called the Formstrip?",
+       "a": "Puma",
+       "wrong": [
+        "Adidas",
+        "Hummel",
+        "Kappa"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-119",
+       "cat": "SPORT",
+       "q": "Which player kung-fu kicked a Crystal Palace fan in January 1995?",
+       "a": "Eric Cantona",
+       "wrong": [
+        "Roy Keane",
+        "Vinnie Jones",
+        "Paul Gascoigne"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-120",
+       "cat": "SPORT",
+       "q": "Cristiano Ronaldo comes from which Portuguese island?",
+       "a": "Madeira",
+       "wrong": [
+        "The Azores",
+        "Porto Santo",
+        "Sardinia"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-121",
+       "cat": "SPORT",
+       "q": "In bowling, what is three strikes in a row called?",
+       "a": "Turkey",
+       "wrong": [
+        "An eagle",
+        "A hat-trick",
+        "A triple"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-122",
+       "cat": "SPORT",
+       "q": "What is the nickname of Northampton's rugby union club?",
+       "a": "Saints",
+       "wrong": [
+        "Tigers",
+        "Falcons",
+        "Sharks"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-123",
+       "cat": "SPORT",
+       "q": "What was Sir Donald Bradman's Test batting average?",
+       "a": "99.94",
+       "wrong": [
+        "89.78",
+        "101.20",
+        "74.50"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-029",
+       "cat": "SPORT",
+       "q": "In which year did Dennis Bergkamp join Arsenal?",
+       "a": "1995",
+       "wrong": [
+        "1993",
+        "1997",
+        "1991"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-030",
+       "cat": "SPORT",
+       "q": "What is the maximum length of a Test cricket match?",
+       "a": "5 days",
+       "wrong": [
+        "3 days",
+        "4 days",
+        "7 days"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      }
+     ]
+    },
+    {
+     "id": "OPEN2-TIMEPLACE",
+     "name": "HISTORY AND GEOGRAPHY",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "IMPORTED-OTDB2-124",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which Apollo 11 astronaut stayed in orbit while the other two walked on the Moon?",
+       "a": "Michael Collins",
+       "wrong": [
+        "Buzz Aldrin",
+        "Neil Armstrong",
+        "Jim Lovell"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-125",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which mountain is usually named as the highest in Europe?",
+       "a": "Mount Elbrus",
+       "wrong": [
+        "Mont Blanc",
+        "The Matterhorn",
+        "Mount Etna"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-126",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What were the clashes between the UK and Iceland over North Atlantic fishing rights called?",
+       "a": "The Cod Wars",
+       "wrong": [
+        "The Herring Wars",
+        "The Trawler Wars",
+        "The North Sea Dispute"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-127",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which of these countries stayed neutral in the Second World War?",
+       "a": "Switzerland",
+       "wrong": [
+        "Belgium",
+        "The Netherlands",
+        "Norway"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-128",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "In 1939, Britain and France declared war on Germany after it invaded which country?",
+       "a": "Poland",
+       "wrong": [
+        "Czechoslovakia",
+        "Austria",
+        "France"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-129",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which civilisation built the city of Chichén Itzá?",
+       "a": "The Maya",
+       "wrong": [
+        "The Aztecs",
+        "The Incas",
+        "The Olmecs"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-130",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What was Manfred von Richthofen's nickname?",
+       "a": "The Red Baron",
+       "wrong": [
+        "The Desert Fox",
+        "The Black Prince",
+        "The Iron Duke"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-131",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "How was the Greek philosopher Socrates executed?",
+       "a": "By poison",
+       "wrong": [
+        "By beheading",
+        "By hanging",
+        "By stoning"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-132",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Who became the first Chancellor of a united Germany in 1871?",
+       "a": "Otto von Bismarck",
+       "wrong": [
+        "Paul von Hindenburg",
+        "Friedrich Ebert",
+        "Wilhelm I"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-133",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which ancient Chinese general is credited with writing The Art of War?",
+       "a": "Sun Tzu",
+       "wrong": [
+        "Confucius",
+        "Lao Tzu",
+        "Genghis Khan"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-134",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which chemical was sprayed over Vietnam during the Vietnam War?",
+       "a": "Agent Orange",
+       "wrong": [
+        "Mustard gas",
+        "Sarin",
+        "Zyklon B"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-135",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "The assassination of which royal led to the start of the First World War?",
+       "a": "Archduke Franz Ferdinand",
+       "wrong": [
+        "Tsar Nicholas II",
+        "Kaiser Wilhelm II",
+        "King Edward VII"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-136",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "In 1547, who became the first Tsar of Russia?",
+       "a": "Ivan the Terrible",
+       "wrong": [
+        "Peter the Great",
+        "Catherine the Great",
+        "Boris Godunov"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-137",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which French king was known as the Sun King?",
+       "a": "Louis XIV",
+       "wrong": [
+        "Louis XVI",
+        "Louis XIII",
+        "Louis XV"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-138",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which mission was the last of NASA's Apollo programme?",
+       "a": "Apollo 17",
+       "wrong": [
+        "Apollo 13",
+        "Apollo 11",
+        "Apollo 15"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-139",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which British inventor invented the seed drill?",
+       "a": "Jethro Tull",
+       "wrong": [
+        "James Watt",
+        "Richard Arkwright",
+        "Isambard Kingdom Brunel"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-140",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What was the capital of South Vietnam?",
+       "a": "Saigon",
+       "wrong": [
+        "Hanoi",
+        "Huế",
+        "Da Nang"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-141",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What name is given to the ancient trade routes linking the East and West of Eurasia?",
+       "a": "The Silk Road",
+       "wrong": [
+        "The Salt Road",
+        "The Iron Road",
+        "The Golden Road"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-142",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What was the code name for the German invasion of the Soviet Union in 1941?",
+       "a": "Operation Barbarossa",
+       "wrong": [
+        "Operation Overlord",
+        "Operation Sea Lion",
+        "Operation Market Garden"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-143",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What was Sri Lanka's name before 1972?",
+       "a": "Ceylon",
+       "wrong": [
+        "Formosa",
+        "Siam",
+        "Abyssinia"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-144",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which colony did the UK hand back to China in 1997?",
+       "a": "Hong Kong",
+       "wrong": [
+        "Gibraltar",
+        "Malta",
+        "Singapore"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-145",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which disease left US President Franklin D. Roosevelt paralysed?",
+       "a": "Polio",
+       "wrong": [
+        "Tuberculosis",
+        "Measles",
+        "Smallpox"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-146",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What was Germany's democratic government between 1919 and 1933 known as?",
+       "a": "The Weimar Republic",
+       "wrong": [
+        "The Third Reich",
+        "The Second Reich",
+        "The Holy Roman Empire"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-147",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "In which year was Nelson Mandela released from prison?",
+       "a": "1990",
+       "wrong": [
+        "1985",
+        "1994",
+        "1980"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-148",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "The Dutch fought the Eighty Years' War against which country?",
+       "a": "Spain",
+       "wrong": [
+        "France",
+        "England",
+        "Portugal"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-149",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Spain was united by the marriage of Isabella of Castile and Ferdinand of which kingdom?",
+       "a": "Aragon",
+       "wrong": [
+        "Navarre",
+        "León",
+        "Portugal"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-150",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "The village with the famously long name, Llanfairpwllgwyngyll..., is on which Welsh island?",
+       "a": "Anglesey",
+       "wrong": [
+        "The Isle of Man",
+        "The Isle of Wight",
+        "Caldey Island"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-151",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the busiest port in Europe?",
+       "a": "Rotterdam",
+       "wrong": [
+        "Hamburg",
+        "Antwerp",
+        "Felixstowe"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-152",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "How many countries are larger than Australia?",
+       "a": "5",
+       "wrong": [
+        "3",
+        "4",
+        "7"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-153",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which country has the largest Muslim population?",
+       "a": "Indonesia",
+       "wrong": [
+        "Pakistan",
+        "Egypt",
+        "Saudi Arabia"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-154",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Vatican City, the smallest country in the world, is fully enclosed by which country?",
+       "a": "Italy",
+       "wrong": [
+        "Switzerland",
+        "France",
+        "San Marino"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-155",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "How many permanent rivers does Saudi Arabia have?",
+       "a": "None",
+       "wrong": [
+        "1",
+        "3",
+        "12"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-156",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the name of the Asian peninsula that makes up most of Turkey?",
+       "a": "Anatolia",
+       "wrong": [
+        "Mesopotamia",
+        "Byzantium",
+        "The Levant"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-157",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "In which city is the Space Needle?",
+       "a": "Seattle",
+       "wrong": [
+        "Toronto",
+        "Chicago",
+        "San Francisco"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-158",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which of these countries is NOT part of Scandinavia?",
+       "a": "Finland",
+       "wrong": [
+        "Norway",
+        "Sweden",
+        "Denmark"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-159",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which is the largest city in Canada?",
+       "a": "Toronto",
+       "wrong": [
+        "Vancouver",
+        "Montreal",
+        "Ottawa"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-160",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which continent is the largest and most populous?",
+       "a": "Asia",
+       "wrong": [
+        "Africa",
+        "Europe",
+        "North America"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-161",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the national language of Pakistan?",
+       "a": "Urdu",
+       "wrong": [
+        "Hindi",
+        "Punjabi",
+        "Bengali"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-162",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the official language in Liechtenstein?",
+       "a": "German",
+       "wrong": [
+        "French",
+        "Italian",
+        "Romansh"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-163",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Santorini is an island belonging to what European Country?",
+       "a": "Greece",
+       "wrong": [
+        "Italy",
+        "Cyprus",
+        "Croatia"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-164",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "A lion holding a sword appears on the flag of which country?",
+       "a": "Sri Lanka",
+       "wrong": [
+        "Bhutan",
+        "Kenya",
+        "Uganda"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-165",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "The former Prussian city of Königsberg is now which Russian city?",
+       "a": "Kaliningrad",
+       "wrong": [
+        "Volgograd",
+        "Novgorod",
+        "Murmansk"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-166",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What was the world's first national park?",
+       "a": "Yellowstone",
+       "wrong": [
+        "Yosemite",
+        "The Grand Canyon",
+        "The Lake District"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-167",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "How many states does Australia have?",
+       "a": "6",
+       "wrong": [
+        "5",
+        "7",
+        "8"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-168",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which country is the world's only remaining Grand Duchy?",
+       "a": "Luxembourg",
+       "wrong": [
+        "Liechtenstein",
+        "Monaco",
+        "Andorra"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-169",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "In which country is the city of Haarlem?",
+       "a": "The Netherlands",
+       "wrong": [
+        "Belgium",
+        "Denmark",
+        "Germany"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-170",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the capital of Estonia?",
+       "a": "Tallinn",
+       "wrong": [
+        "Riga",
+        "Vilnius",
+        "Helsinki"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-031",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the longest railway line in the world?",
+       "a": "The Trans-Siberian Railway",
+       "wrong": [
+        "The Orient Express",
+        "The Canadian Pacific Railway",
+        "The Indian Pacific"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-032",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which volcano, the largest active one in Europe, stands on Sicily?",
+       "a": "Mount Etna",
+       "wrong": [
+        "Vesuvius",
+        "Stromboli",
+        "Hekla"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-033",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the longest river in Asia?",
+       "a": "The Yangtze",
+       "wrong": [
+        "The Mekong",
+        "The Yellow River",
+        "The Ganges"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-034",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the longest river in France?",
+       "a": "Loire",
+       "wrong": [
+        "The Seine",
+        "The Rhône",
+        "The Garonne"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-035",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which is the smallest ocean?",
+       "a": "The Arctic Ocean",
+       "wrong": [
+        "The Southern Ocean",
+        "The Indian Ocean",
+        "The Atlantic Ocean"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-036",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which former empire included both Slovenia and Slovakia?",
+       "a": "Austria-Hungary",
+       "wrong": [
+        "The Byzantine Empire",
+        "The Ottoman Empire",
+        "The Roman Empire"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-037",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the capital of Zimbabwe?",
+       "a": "Harare",
+       "wrong": [
+        "Lusaka",
+        "Bulawayo",
+        "Nairobi"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-038",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Kingston is the capital of which island country?",
+       "a": "Jamaica",
+       "wrong": [
+        "Barbados",
+        "Trinidad and Tobago",
+        "The Bahamas"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-039",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the name of the capital city of Latvia?",
+       "a": "Riga",
+       "wrong": [
+        "Tallinn",
+        "Vilnius",
+        "Helsinki"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-040",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "In which city are St Mark's Square and the Grand Canal?",
+       "a": "Venice",
+       "wrong": [
+        "Florence",
+        "Rome",
+        "Milan"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-041",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which volcano on Tenerife is the highest mountain in Spain?",
+       "a": "Teide",
+       "wrong": [
+        "Mulhacén",
+        "Roque Nublo",
+        "Montaña Blanca"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-042",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which is the largest island that lies entirely within Indonesia?",
+       "a": "Sumatra",
+       "wrong": [
+        "Java",
+        "Borneo",
+        "Bali"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-043",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which ancient Greek became a great orator despite a speech impediment?",
+       "a": "Demosthenes",
+       "wrong": [
+        "Socrates",
+        "Plato",
+        "Cicero"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-044",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which war began on 25 June 1950?",
+       "a": "Korean War",
+       "wrong": [
+        "The Vietnam War",
+        "The Gulf War",
+        "The Suez Crisis"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-045",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which Roman orator's writing is still used to teach Latin style?",
+       "a": "Cicero",
+       "wrong": [
+        "Seneca",
+        "Julius Caesar",
+        "Ovid"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-046",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What does the Japanese word bushido literally mean?",
+       "a": "Way of the warrior",
+       "wrong": [
+        "Way of the sword",
+        "Way of honour",
+        "Way of the heart"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-047",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Where did Scotland try, and fail, to found a colony in the 1690s?",
+       "a": "Panama",
+       "wrong": [
+        "Jamaica",
+        "Bermuda",
+        "Ceylon"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-048",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which Japanese city was the country's capital for more than 1,000 years?",
+       "a": "Kyoto",
+       "wrong": [
+        "Yokohama",
+        "Hiroshima",
+        "Sapporo"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-049",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "In what year was Napoleon Bonaparte crowned emperor of France?",
+       "a": "1804",
+       "wrong": [
+        "1807",
+        "1810",
+        "1801"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-050",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which pandemic of 1918 killed tens of millions of people worldwide?",
+       "a": "Spanish flu",
+       "wrong": [
+        "The Black Death",
+        "Cholera",
+        "Smallpox"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-051",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What was the name of Apollo 11's command module?",
+       "a": "Columbia",
+       "wrong": [
+        "Eagle",
+        "Freedom",
+        "Endeavour"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-052",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "The People's Republic of Kampuchea is a former name of which country?",
+       "a": "Cambodia",
+       "wrong": [
+        "Vietnam",
+        "Laos",
+        "Thailand"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-053",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which empire was the great enemy of ancient Greece?",
+       "a": "Persia",
+       "wrong": [
+        "Rome",
+        "Egypt",
+        "Carthage"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-054",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which Babylonian king created one of the first written codes of law?",
+       "a": "Hammurabi",
+       "wrong": [
+        "Nebuchadnezzar",
+        "Xerxes",
+        "Darius"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-055",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What kind of Japanese hotel offers guests small modular pods to sleep in?",
+       "a": "A capsule hotel",
+       "wrong": [
+        "A ryokan",
+        "A minshuku",
+        "A love hotel"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-056",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "Which musical instrument appears on the coat of arms of Ireland?",
+       "a": "A harp",
+       "wrong": [
+        "A fiddle",
+        "Bagpipes",
+        "A bodhrán"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-057",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "At Koblenz, the Rhine meets which river?",
+       "a": "The Moselle",
+       "wrong": [
+        "The Main",
+        "The Neckar",
+        "The Ruhr"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-058",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "What is the official currency of Egypt?",
+       "a": "The Egyptian pound",
+       "wrong": [
+        "The dinar",
+        "The dirham",
+        "The lira"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-059",
+       "cat": "HISTORY AND GEOGRAPHY",
+       "q": "In which country is the Day of the Dead celebrated on 1 and 2 November?",
+       "a": "Mexico",
+       "wrong": [
+        "Spain",
+        "Brazil",
+        "Peru"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      }
+     ]
+    },
+    {
+     "id": "OPEN2-BRAINBOX",
+     "name": "SCIENCE AND ARTS",
+     "type": "standard",
+     "mode": "choice",
+     "questions": [
+      {
+       "id": "IMPORTED-OTDB2-171",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What were the first living creatures sent into space?",
+       "a": "Fruit flies",
+       "wrong": [
+        "A dog",
+        "A monkey",
+        "A mouse"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-172",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which moon is the only one in our Solar System with a thick atmosphere?",
+       "a": "Titan",
+       "wrong": [
+        "Europa",
+        "Ganymede",
+        "Io"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-173",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Dry ice is the solid form of what substance?",
+       "a": "Carbon dioxide",
+       "wrong": [
+        "Nitrogen",
+        "Oxygen",
+        "Water"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-174",
+       "cat": "SCIENCE AND ARTS",
+       "q": "How many protons does an oxygen atom have?",
+       "a": "8",
+       "wrong": [
+        "6",
+        "10",
+        "16"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-175",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which part of the body does glaucoma affect?",
+       "a": "The eyes",
+       "wrong": [
+        "The ears",
+        "The lungs",
+        "The kidneys"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-176",
+       "cat": "SCIENCE AND ARTS",
+       "q": "A heliotropic plant turns towards what?",
+       "a": "The Sun",
+       "wrong": [
+        "Water",
+        "Heat",
+        "The Moon"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-177",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the chemical symbol for helium?",
+       "a": "He",
+       "wrong": [
+        "H",
+        "Hl",
+        "Hm"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-178",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the SI unit of mass?",
+       "a": "Kilogram",
+       "wrong": [
+        "Gram",
+        "Pound",
+        "Newton"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-179",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the thin, outermost layer of the Earth called?",
+       "a": "The crust",
+       "wrong": [
+        "The mantle",
+        "The outer core",
+        "The inner core"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-180",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Miranda, Ariel, Umbriel, Titania and Oberon are moons of which planet?",
+       "a": "Uranus",
+       "wrong": [
+        "Neptune",
+        "Saturn",
+        "Jupiter"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-181",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the chemical symbol for lead?",
+       "a": "Pb",
+       "wrong": [
+        "Le",
+        "Ld",
+        "Pl"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-182",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Who discovered X-rays?",
+       "a": "Wilhelm Röntgen",
+       "wrong": [
+        "Marie Curie",
+        "Ernest Rutherford",
+        "Thomas Edison"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-183",
+       "cat": "SCIENCE AND ARTS",
+       "q": "About 71% of the Earth's surface is covered by what?",
+       "a": "Water",
+       "wrong": [
+        "Land",
+        "Ice",
+        "Desert"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-184",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What did Gregor Mendel grow to study how traits are inherited?",
+       "a": "Peas",
+       "wrong": [
+        "Beans",
+        "Roses",
+        "Wheat"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-185",
+       "cat": "SCIENCE AND ARTS",
+       "q": "At what temperature are Celsius and Fahrenheit the same?",
+       "a": "-40",
+       "wrong": [
+        "0",
+        "-273",
+        "100"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-186",
+       "cat": "SCIENCE AND ARTS",
+       "q": "The humerus, radius and ulna meet at which joint?",
+       "a": "Elbow",
+       "wrong": [
+        "Knee",
+        "Shoulder",
+        "Wrist"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-187",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which Space Shuttle broke apart on re-entry in February 2003?",
+       "a": "Columbia",
+       "wrong": [
+        "Challenger",
+        "Discovery",
+        "Atlantis"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-188",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What does the letter 'S' stand for in 'NASA'?",
+       "a": "Space",
+       "wrong": [
+        "Science",
+        "Systems",
+        "Survey"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-189",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the chemical formula for ammonia?",
+       "a": "NH3",
+       "wrong": [
+        "CH4",
+        "NO2",
+        "H2O2"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-190",
+       "cat": "SCIENCE AND ARTS",
+       "q": "In Oliver Twist, Jack Dawkins is better known by which nickname?",
+       "a": "The Artful Dodger",
+       "wrong": [
+        "Fagin",
+        "Bill Sikes",
+        "Noah Claypole"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-191",
+       "cat": "SCIENCE AND ARTS",
+       "q": "In Little Women, which March sister marries Laurie?",
+       "a": "Amy",
+       "wrong": [
+        "Jo",
+        "Beth",
+        "Meg"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-192",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the fourth book of the Old Testament?",
+       "a": "Numbers",
+       "wrong": [
+        "Leviticus",
+        "Deuteronomy",
+        "Exodus"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-193",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Where does Paddington Bear come from?",
+       "a": "Peru",
+       "wrong": [
+        "Bolivia",
+        "Brazil",
+        "Chile"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-194",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Who wrote the novel The Fault in Our Stars?",
+       "a": "John Green",
+       "wrong": [
+        "Rainbow Rowell",
+        "Stephenie Meyer",
+        "Suzanne Collins"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-195",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What was the first name of Harry Potter's father?",
+       "a": "James",
+       "wrong": [
+        "Sirius",
+        "Albus",
+        "Arthur"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-196",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which spy novelist wrote the children's story Chitty-Chitty-Bang-Bang?",
+       "a": "Ian Fleming",
+       "wrong": [
+        "Roald Dahl",
+        "John le Carré",
+        "Len Deighton"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-197",
+       "cat": "SCIENCE AND ARTS",
+       "q": "How many books are in The Chronicles of Narnia?",
+       "a": "7",
+       "wrong": [
+        "5",
+        "6",
+        "8"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-198",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Abel Magwitch is a character in which Charles Dickens novel?",
+       "a": "Great Expectations",
+       "wrong": [
+        "Bleak House",
+        "David Copperfield",
+        "Little Dorrit"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-199",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What was the pen name of the novelist Mary Ann Evans?",
+       "a": "George Eliot",
+       "wrong": [
+        "George Sand",
+        "Currer Bell",
+        "Acton Bell"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-200",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Who co-wrote The Communist Manifesto with Karl Marx?",
+       "a": "Friedrich Engels",
+       "wrong": [
+        "Vladimir Lenin",
+        "Leon Trotsky",
+        "Pierre-Joseph Proudhon"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-201",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Who wrote \"A Tale of Two Cities\"?",
+       "a": "Charles Dickens",
+       "wrong": [
+        "Thomas Hardy",
+        "Victor Hugo",
+        "Wilkie Collins"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-202",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the name of the three-headed dog in Harry Potter and the Philosopher's Stone?",
+       "a": "Fluffy",
+       "wrong": [
+        "Fang",
+        "Cerberus",
+        "Norbert"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-203",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is Captain Nemo's submarine called in Twenty Thousand Leagues Under the Sea?",
+       "a": "The Nautilus",
+       "wrong": [
+        "The Neptune",
+        "The Leviathan",
+        "The Kraken"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-204",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the name of the fictional English county where Thomas Hardy set his novels?",
+       "a": "Wessex",
+       "wrong": [
+        "Mercia",
+        "Northumbria",
+        "Barsetshire"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-205",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Who is the narrator of J. D. Salinger's The Catcher in the Rye?",
+       "a": "Holden Caulfield",
+       "wrong": [
+        "Atticus Finch",
+        "Jay Gatsby",
+        "Huckleberry Finn"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-206",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Newts belong to which class of animals?",
+       "a": "Amphibians",
+       "wrong": [
+        "Reptiles",
+        "Fish",
+        "Mammals"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-207",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the collective noun for a group of rats?",
+       "a": "A mischief",
+       "wrong": [
+        "A parliament",
+        "A murder",
+        "A pride"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-208",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is a baby bat called?",
+       "a": "Pup",
+       "wrong": [
+        "Kit",
+        "Cub",
+        "Calf"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-209",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the fastest animal on Earth?",
+       "a": "The peregrine falcon",
+       "wrong": [
+        "The cheetah",
+        "The golden eagle",
+        "The swift"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-210",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What colour is a polar bear's skin?",
+       "a": "Black",
+       "wrong": [
+        "White",
+        "Pink",
+        "Grey"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-211",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What colour is a female blackbird?",
+       "a": "Brown",
+       "wrong": [
+        "Black",
+        "Grey",
+        "Yellow"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-212",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which dog breed is named after a region of Croatia?",
+       "a": "Dalmatian",
+       "wrong": [
+        "Weimaraner",
+        "Rottweiler",
+        "Pomeranian"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-213",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the world's longest venomous snake?",
+       "a": "King Cobra",
+       "wrong": [
+        "Black mamba",
+        "Inland taipan",
+        "Gaboon viper"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-214",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the scientific name for modern humans?",
+       "a": "Homo sapiens",
+       "wrong": [
+        "Homo erectus",
+        "Homo habilis",
+        "Homo neanderthalensis"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-215",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What kind of animal is a \"mountain chicken\"?",
+       "a": "A frog",
+       "wrong": [
+        "A bird",
+        "A lizard",
+        "A rodent"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-216",
+       "cat": "SCIENCE AND ARTS",
+       "q": "The Japanese delicacy fugu is made from which fish?",
+       "a": "Pufferfish",
+       "wrong": [
+        "Swordfish",
+        "Eel",
+        "Tuna"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-217",
+       "cat": "SCIENCE AND ARTS",
+       "q": "A carnivore eats meat. What does a nucivore eat?",
+       "a": "Nuts",
+       "wrong": [
+        "Fruit",
+        "Insects",
+        "Leaves"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-218",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the approximate value of the mathematical constant e?",
+       "a": "2.72",
+       "wrong": [
+        "3.14",
+        "1.62",
+        "1.41"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-219",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is a polygon with eight sides called?",
+       "a": "Octagon",
+       "wrong": [
+        "Hexagon",
+        "Heptagon",
+        "Decagon"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-220",
+       "cat": "SCIENCE AND ARTS",
+       "q": "In Roman numerals, what is XL?",
+       "a": "40",
+       "wrong": [
+        "60",
+        "90",
+        "110"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-221",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which two men are credited with independently inventing calculus?",
+       "a": "Newton and Leibniz",
+       "wrong": [
+        "Euler and Gauss",
+        "Descartes and Fermat",
+        "Pascal and Bernoulli"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-222",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Who painted the epic mural Guernica?",
+       "a": "Pablo Picasso",
+       "wrong": [
+        "Salvador Dalí",
+        "Joan Miró",
+        "Diego Rivera"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-223",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What nationality was the painter Vincent van Gogh?",
+       "a": "Dutch",
+       "wrong": [
+        "Belgian",
+        "French",
+        "German"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-224",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Who painted Nighthawks?",
+       "a": "Edward Hopper",
+       "wrong": [
+        "Andrew Wyeth",
+        "Jackson Pollock",
+        "Norman Rockwell"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-225",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Who painted The Persistence of Memory, with its melting clocks?",
+       "a": "Salvador Dalí",
+       "wrong": [
+        "René Magritte",
+        "Max Ernst",
+        "Joan Miró"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-226",
+       "cat": "SCIENCE AND ARTS",
+       "q": "La Gioconda is another name for which painting?",
+       "a": "The Mona Lisa",
+       "wrong": [
+        "The Birth of Venus",
+        "The Last Supper",
+        "Girl with a Pearl Earring"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-227",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which artist painted a pipe above the words \"Ceci n'est pas une pipe\"?",
+       "a": "René Magritte",
+       "wrong": [
+        "Salvador Dalí",
+        "Joan Miró",
+        "Marcel Duchamp"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-228",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which artist is famous for pointillism, painting with tiny dots of colour?",
+       "a": "Georges Seurat",
+       "wrong": [
+        "Claude Monet",
+        "Paul Cézanne",
+        "Henri Matisse"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-229",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the Japanese art of folding paper called?",
+       "a": "Origami",
+       "wrong": [
+        "Ikebana",
+        "Bonsai",
+        "Kirigami"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-230",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which French sculptor designed the Statue of Liberty?",
+       "a": "Frédéric Auguste Bartholdi",
+       "wrong": [
+        "Gustave Eiffel",
+        "Auguste Rodin",
+        "Edgar Degas"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-231",
+       "cat": "SCIENCE AND ARTS",
+       "q": "How many plays is Shakespeare generally thought to have written?",
+       "a": "37",
+       "wrong": [
+        "25",
+        "45",
+        "52"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-232",
+       "cat": "SCIENCE AND ARTS",
+       "q": "In Shakespeare's Julius Caesar, what are Caesar's famous last words?",
+       "a": "Et tu, Brute?",
+       "wrong": [
+        "Veni, vidi, vici",
+        "Alea iacta est",
+        "Carpe diem"
+       ],
+       "level": "easy",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-233",
+       "cat": "SCIENCE AND ARTS",
+       "q": "After England, in which present-day country are the most Shakespeare plays set?",
+       "a": "Italy",
+       "wrong": [
+        "France",
+        "Scotland",
+        "Greece"
+       ],
+       "level": "hard",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTDB2-234",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Doctor Who star David Tennant played which Shakespeare role for the RSC in 2008?",
+       "a": "Hamlet",
+       "wrong": [
+        "Macbeth",
+        "Othello",
+        "King Lear"
+       ],
+       "level": "medium",
+       "note": "SOURCE Open Trivia Database. URL https://opentdb.com. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-060",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which super-strong, red-haired heroine lives at Villa Villekulla with a monkey called Mr Nilsson?",
+       "a": "Pippi Longstocking",
+       "wrong": [
+        "Matilda",
+        "Heidi",
+        "Anne of Green Gables"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-061",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which children's author named a central character after his son?",
+       "a": "A. A. Milne",
+       "wrong": [
+        "C. S. Lewis",
+        "Roald Dahl",
+        "Lewis Carroll"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-062",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Organic compounds, by definition, contain which element?",
+       "a": "Carbon",
+       "wrong": [
+        "Nitrogen",
+        "Hydrogen",
+        "Oxygen"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-063",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the main ingredient of the Swiss dish rösti?",
+       "a": "Potatoes",
+       "wrong": [
+        "Cheese",
+        "Cabbage",
+        "Rice"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-064",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Ralph, Piggy and Jack are characters in which novel?",
+       "a": "Lord of the Flies",
+       "wrong": [
+        "Treasure Island",
+        "Animal Farm",
+        "Watership Down"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-065",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Who wrote the novel The Grapes of Wrath?",
+       "a": "John Steinbeck",
+       "wrong": [
+        "Ernest Hemingway",
+        "William Faulkner",
+        "F. Scott Fitzgerald"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-066",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What kind of animal is Cujo in the Stephen King story?",
+       "a": "A dog",
+       "wrong": [
+        "A cat",
+        "A snake",
+        "A wolf"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-067",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Who is the best-selling novelist of all time?",
+       "a": "Agatha Christie",
+       "wrong": [
+        "Barbara Cartland",
+        "Danielle Steel",
+        "Enid Blyton"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-068",
+       "cat": "SCIENCE AND ARTS",
+       "q": "How many fingers did Tyrannosaurus rex have on each arm?",
+       "a": "2",
+       "wrong": [
+        "3",
+        "4",
+        "5"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-069",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which kind of cat is almost always female?",
+       "a": "A calico (tortoiseshell and white)",
+       "wrong": [
+        "A ginger tom",
+        "A Siamese",
+        "A Persian"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-070",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which black-and-white mammal is known for its terrible smell?",
+       "a": "Skunk",
+       "wrong": [
+        "Badger",
+        "Ferret",
+        "Polecat"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-071",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which birds were the extinct dodo's closest relatives?",
+       "a": "Pigeons",
+       "wrong": [
+        "Chickens",
+        "Parrots",
+        "Ducks"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-072",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the world's smallest species of fox?",
+       "a": "The fennec fox",
+       "wrong": [
+        "The Arctic fox",
+        "The red fox",
+        "The swift fox"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-073",
+       "cat": "SCIENCE AND ARTS",
+       "q": "In which country do giant pandas live in the wild?",
+       "a": "China",
+       "wrong": [
+        "Mongolia",
+        "Thailand",
+        "Korea"
+       ],
+       "level": "easy",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-074",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Chinchillas are native to which region?",
+       "a": "South America",
+       "wrong": [
+        "Asia",
+        "Africa",
+        "North America"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-075",
+       "cat": "SCIENCE AND ARTS",
+       "q": "In the UK, the brightest stars of Ursa Major are known as what?",
+       "a": "The Plough",
+       "wrong": [
+        "Orion's Belt",
+        "The Seven Sisters",
+        "The Southern Cross"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-076",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the point in the Earth's orbit closest to the Sun called?",
+       "a": "Perihelion",
+       "wrong": [
+        "Aphelion",
+        "Solstice",
+        "Equinox"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-077",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What does \"lith\" mean, as in Neolithic?",
+       "a": "Stone",
+       "wrong": [
+        "Iron",
+        "Bronze",
+        "Bone"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-078",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Alchemists famously tried to turn which metal into gold?",
+       "a": "Lead",
+       "wrong": [
+        "Copper",
+        "Tin",
+        "Iron"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-079",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the study of whales called?",
+       "a": "Cetology",
+       "wrong": [
+        "Ornithology",
+        "Mycology",
+        "Ichthyology"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-080",
+       "cat": "SCIENCE AND ARTS",
+       "q": "In which German city was Albert Einstein born?",
+       "a": "Ulm",
+       "wrong": [
+        "Berlin",
+        "Munich",
+        "Vienna"
+       ],
+       "level": "hard",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-081",
+       "cat": "SCIENCE AND ARTS",
+       "q": "Which planet is Earth's closest neighbour and only slightly smaller?",
+       "a": "Venus",
+       "wrong": [
+        "Mars",
+        "Mercury",
+        "Uranus"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      },
+      {
+       "id": "IMPORTED-OTQA2-082",
+       "cat": "SCIENCE AND ARTS",
+       "q": "What is the number of cycles per second of an alternating current called?",
+       "a": "Frequency",
+       "wrong": [
+        "Wavelength",
+        "Voltage",
+        "Resistance"
+       ],
+       "level": "medium",
+       "note": "SOURCE OpenTriviaQA by uberspot. URL https://github.com/uberspot/OpenTriviaQA. LICENSE CC BY-SA 4.0. Edited for Smart Alec: wording, wrong options and difficulty."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
