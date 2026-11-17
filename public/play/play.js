@@ -258,7 +258,7 @@
       }
       case 'finalResult': return watch(b.banner?.text || '');
       case 'miniResult': { const n = b.miniResult?.awards?.[p.id]; return watch(b.miniResult?.text || '', n ? `You ${n > 0 ? 'win' : 'lose'} ${Math.abs(n)} Brains` : ''); }
-      case 'turnEnd': return watch(b.banner?.text || 'Next turn…');
+      case 'turnEnd': return watch(b.banner?.text || 'Your turn is over.', 'Have a laugh and chat. The next turn begins shortly, or the TV host can continue when everyone is ready.');
       default: return watch('Watch the TV.');
     }
   }
