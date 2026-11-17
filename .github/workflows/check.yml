@@ -1,0 +1,34 @@
+# Runs on every upload to GitHub. A red cross means something is broken:
+# open the run on the Actions tab to see which check failed and why.
+name: Check Smart Alec
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Code, questions, files, rules and server
+        run: npm run verify
+
+      - name: Question file is up to date with the question packs
+        run: |
+          node tools/build-questions.js > /dev/null
+          if ! git diff --quiet -- data/questions.json; then
+            echo "::error::data/questions.json is out of date. A question pack in source-banks changed but the question file was not rebuilt. Run 'npm run questions' (or ask Claude) and upload data/questions.json."
+            exit 1
+          fi
+          echo "Question file matches the question packs."
