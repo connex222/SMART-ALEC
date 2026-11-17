@@ -27,6 +27,8 @@ const publicDir = path.join(__dirname, '..', 'public');
 app.get('/', (req, res) => res.redirect('/tv/'));
 app.get(/^\/tv$/, (req, res) => res.redirect('/tv/'));
 app.get(/^\/play$/, (req, res) => res.redirect('/play/'));
+// What the game has learned from play: no player data, just question numbers.
+app.get('/api/stats', (req, res) => res.json(require('./stats').summary(require('./questions').ALL)));
 app.get('/health', (req, res) => res.json({ok: true, game: 'Smart Alec', version: pkg.version, questions: questions.counts()}));
 // The board layout is static; screens fetch it once.
 app.get('/api/layout', (req, res) => res.json({size: layout.SIZE, spaces: layout.SPACES, categories: layout.CATEGORIES, minigame: layout.MINIGAME, specials: layout.SPECIALS}));

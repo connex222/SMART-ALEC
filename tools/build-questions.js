@@ -271,6 +271,12 @@ function build() {
   // Hand-tidied wording for individual questions: {"PHNEW-0442": "Who played ...?"}
   const editsFile = path.join(ROOT, 'data', 'question-edits.json');
   const edits = fs.existsSync(editsFile) ? JSON.parse(fs.readFileSync(editsFile, 'utf8')) : {};
+  // Owner's review decisions from the review page: {pack: {id: {d: keep|fix|cut, l?: level, n?: note}}}
+  const reviewFile = path.join(ROOT, 'data', 'review-decisions.json');
+  const reviewRaw = fs.existsSync(reviewFile) ? JSON.parse(fs.readFileSync(reviewFile, 'utf8')) : {};
+  const review = {};
+  for (const pack of Object.values(reviewRaw)) if (pack && typeof pack === 'object') Object.assign(review, pack);
+  for (const [id, r] of Object.entries(review)) if (r && r.d === 'cut') excluded.add(id);
   const levelsFile = path.join(ROOT, 'data', 'difficulty-overrides.json');
   const levelOverrides = fs.existsSync(levelsFile) ? JSON.parse(fs.readFileSync(levelsFile, 'utf8')) : {};
   const seen = new Set();
@@ -289,8 +295,13 @@ function build() {
       out.push({
         id: q.id, category: categoryFor(q.cat), q: typeof edits[q.id] === 'string' ? edits[q.id] : c.text, a: String(q.a).trim(), answer: c.answer,
         opts: c.opts, correct: c.correct, accepted: Array.isArray(q.acceptedAnswers) ? q.acceptedAnswers : [],
-        source: r.file.replace('.json', ''), ...(r.preview ? {preview: true} : {}),
-        level: ['easy', 'medium', 'hard'].includes(levelOverrides[q.id]) ? levelOverrides[q.id] : difficultyFor(q, r.file, r.preview)
+        source: r.file.replace('.json', ''),
+        // Reviewed and kept by the owner: no longer behind the "Unreviewed questions" switch.
+        ...(r.preview && !(review[q.id] && review[q.id].d === 'keep') ? {preview: true} : {}),
+        // Marked "Fix" on the review page: stays out of Family games until it is fixed.
+        ...(review[q.id] && review[q.id].d === 'fix' ? {needsFix: true} : {}),
+        level: ['easy', 'medium', 'hard'].includes(review[q.id] && review[q.id].l) ? review[q.id].l
+          : ['easy', 'medium', 'hard'].includes(levelOverrides[q.id]) ? levelOverrides[q.id] : difficultyFor(q, r.file, r.preview)
       });
     }
   }

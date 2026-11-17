@@ -8,6 +8,7 @@
 const crypto = require('node:crypto');
 const L = require('./board-layout');
 const Q = require('./questions');
+const stats = require('./stats');
 const phase3 = require('./games/phase3');
 const phase4 = require('./games/phase4');
 const phase5 = require('./games/phase5');
@@ -229,6 +230,10 @@ function revealQuestion(room, now) {
   const a = q.answers[p.id];
   const correct = Boolean(a && a.correct);
   q.result = correct ? 'right' : (a ? 'wrong' : 'timeout');
+  // Learn the question's real difficulty: the active player's answer (a timeout
+  // counts as wrong) and everyone's play-along answers.
+  stats.record(q.id, correct);
+  for (const al of Object.values(q.along || {})) stats.record(q.id, al.correct);
   let text;
   if (q.kind === 'turn') {
     if (correct) {
@@ -263,7 +268,7 @@ function afterReveal(room, now, rng) {
     // Answers locked in while playing along count first, so they beat anyone who answers now.
     const answers = {};
     for (const [pid, a] of Object.entries(q.along || {})) if (others.some(p => p.id === pid)) answers[pid] = {...a};
-    g.question = {kind: 'steal', category: q.category, id: q.id, mode: 'choice', forId: null, participants: others.map(p => p.id), answers, revealed: false, fromId: q.forId};
+    g.question = {kind: 'steal', category: q.category, id: q.id, mode: 'choice', forId: null, participants: others.map(p => p.id), answers, revealed: false, fromId: q.forId, fromAlong: Object.keys(answers)};
     banner(room, 'Up for grabs! Fastest correct answer steals 2 Brains.', 'big');
     setStep(room, 'steal', now, Math.round(T.STEAL * slow(room)));
     const waiting = others.filter(p => !answers[p.id] && p.socketId);
@@ -306,6 +311,8 @@ function settleGroup(room, now) {
   const g = b(room), q = g.question;
   q.revealed = true;
   const ranked = rankCorrect(q);
+  // Record group answers. In a steal, play-along answers were already counted.
+  for (const [pid, a] of Object.entries(q.answers)) if (!(q.kind === 'steal' && q.fromAlong && q.fromAlong.includes(pid))) stats.record(q.id, a.correct);
   const awards = {};
   const give = (id, n) => { if (n) { addBrains(room, id, n); awards[id] = (awards[id] || 0) + n; } };
   let text;
@@ -581,6 +588,7 @@ function answerFinal(room, id, payload, now) {
   if (!Number.isInteger(choice) || choice < 0 || choice >= q.opts.length) fail('INPUT', 'Pick A, B, C or D.');
   const correct = choice === q.correct;
   f.results.push({choice, correct});
+  stats.record(f.ids[f.index], correct);
   f.index += 1;
   const misses = f.results.filter(r => !r.correct).length;
   if (misses > f.ids.length - f.need) return finishFinal(room, now);   // can no longer reach the target

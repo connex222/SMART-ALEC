@@ -5,6 +5,7 @@
  * right answer; phones and the TV get it only at the reveal.
  */
 const crypto = require('node:crypto');
+const stats = require('./stats');
 const bank = require('../data/questions.json');
 const {CATEGORY_IDS} = require('./board-layout');
 
@@ -14,7 +15,10 @@ const BY_ID = new Map(ALL.map(q => [q.id, q]));
 // Which difficulty levels each lobby setting allows.
 const LEVELS = {family: ['easy', 'medium'], mixed: ['easy', 'medium', 'hard'], buffs: ['medium', 'hard']};
 function pool(category, includePreview, levels = LEVELS.mixed) {
-  return ALL.filter(q => q.category === category && (includePreview || !q.preview) && levels.includes(q.level || 'medium'));
+  // Questions the owner marked "Fix" are left out of Family games until fixed.
+  const family = !levels.includes('hard');
+  // stats.levelOf uses the difficulty learned from play once a question has enough answers.
+  return ALL.filter(q => q.category === category && (includePreview || !q.preview) && levels.includes(stats.levelOf(q)) && !(family && q.needsFix));
 }
 
 /**
@@ -36,8 +40,17 @@ function pick(room, category, randomInt = crypto.randomInt, {finalRound = false}
     options = pool(category, includePreview, levels);
   }
   if (!options.length) options = ALL.filter(q => q.category === category);
+  // Avoid questions asked in recent games. If everything left is recent, use the
+  // ones asked longest ago.
+  const fresh = options.filter(q => !stats.isRecent(q.id));
+  if (fresh.length) options = fresh;
+  else {
+    const sorted = options.slice().sort((a, b) => stats.askedAt(a.id) - stats.askedAt(b.id));
+    options = sorted.slice(0, Math.max(1, Math.ceil(sorted.length / 5)));
+  }
   const q = options[randomInt(options.length)];
   room.board.usedQuestions.push(q.id);
+  stats.markAsked(q.id);
   return q.id;
 }
 
@@ -97,6 +110,7 @@ function markTyped(id, typed) {
   return false;
 }
 
+/** How many questions each category offers at a lobby setting (learned levels included). */
 function counts(includePreview = true, level = 'mixed') {
   return Object.fromEntries(CATEGORY_IDS.map(c => [c, pool(c, includePreview, LEVELS[level] || LEVELS.mixed).length]));
 }

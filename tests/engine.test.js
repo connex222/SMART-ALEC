@@ -5,6 +5,9 @@ const engine = require('../server/engine');
 const L = require('../server/board-layout');
 const Q = require('../server/questions');
 const {playOne} = require('../tools/simulate');
+const stats = require('../server/stats');
+// Every test starts with no memory of earlier games.
+test.beforeEach(() => stats.reset());
 
 function room(n = 3, settings = {}) {
   return {
@@ -270,4 +273,55 @@ test('Family games never pick hard questions, and the Final Round avoids them to
   const m = room(2, {level: 'mixed'});
   toTurn(m);
   for (let i = 0; i < 100; i++) assert.notEqual(Q.get(Q.pick(m, 'screen', undefined, {finalRound: true})).level, 'hard');
+});
+
+test('questions asked in one game are avoided in the next', () => {
+  const first = room(2, {level: 'mixed'});
+  toTurn(first);
+  const asked = new Set();
+  for (let i = 0; i < 60; i++) asked.add(Q.pick(first, 'potluck'));
+  const second = room(2, {level: 'mixed'});
+  toTurn(second);
+  for (let i = 0; i < 60; i++) assert.equal(asked.has(Q.pick(second, 'potluck')), false);
+});
+
+test('when every question is recent, the ones asked longest ago come back first', () => {
+  const r = room(2, {level: 'mixed'});
+  toTurn(r);
+  const pool = Q.ALL.filter(q => q.category === 'sport').map(q => q.id);
+  pool.forEach(id => stats.markAsked(id));           // all asked, in this order
+  // Each pick is also removed from this game, so allow the window to move on by the picks made.
+  const oldest = new Set(pool.slice(0, Math.ceil(pool.length / 5) + 20));
+  for (let i = 0; i < 20; i++) assert.ok(oldest.has(Q.pick(r, 'sport')));
+  const newest = new Set(pool.slice(-Math.ceil(pool.length / 2)));
+  assert.equal([...newest].some(id => r.board.usedQuestions.includes(id)), false);   // the newest half never comes back
+});
+
+test('difficulty is learned once a question has enough answers', () => {
+  const q = Q.ALL.find(x => x.level === 'medium');
+  for (let i = 0; i < stats.MIN_ATTEMPTS - 1; i++) stats.record(q.id, true);
+  assert.equal(stats.levelOf(q), 'medium');          // not enough answers yet
+  stats.record(q.id, true);
+  assert.equal(stats.levelOf(q), 'easy');            // everyone gets it right
+  for (let i = 0; i < 30; i++) stats.record(q.id, false);
+  assert.equal(stats.levelOf(q), 'hard');            // now most get it wrong
+});
+
+test('the engine records the active player and play-along answers, and stats survive a restart', () => {
+  const r = room(3);
+  let now = toTurn(r);
+  engine.roll(r, 'p0', now, seq(0));
+  engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 1)}, now);
+  now += 5000; engine.tick(r, now, seq()); now += 5000; engine.tick(r, now, seq());
+  engine.choose(r, 'p0', {option: 'safe'}, now, seq());
+  const id = r.board.question.id, q = Q.get(id);
+  engine.answer(r, 'p1', {choice: q.correct}, now + 100);
+  engine.answer(r, 'p0', {choice: q.correct}, now + 900);
+  now += 5000; engine.tick(r, now, seq());
+  const saved = JSON.parse(stats.snapshot());
+  assert.deepEqual(saved.results[id], [2, 2]);        // active player + one play-along, both right
+  stats.reset();
+  assert.ok(stats.load(JSON.stringify(saved)));
+  assert.equal(stats.isRecent(id), true);
+  assert.deepEqual(JSON.parse(stats.snapshot()).results[id], [2, 2]);
 });

@@ -13,8 +13,10 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const engine = require('./engine');
+const stats = require('./stats');
 
 const KEY = 'smart-alec:rooms:v1';
+const STATS_KEY = 'smart-alec:stats:v1';   // recent questions and learned difficulty
 const MAX_AGE_MS = 12 * 60 * 60 * 1000;       // older saves are ignored
 const DEFAULT_FILE = path.join(__dirname, '..', 'runtime', 'rooms.json');
 
@@ -65,14 +67,17 @@ function load(rooms, text, now) {
 
 /* ---------- where the snapshot lives ---------- */
 function fileBackend(filename) {
+  // The rooms go in the named file; anything else (the stats) in a file beside it.
+  const fileFor = key => (key === STATS_KEY ? filename.replace(/(\.json)?$/, '-stats.json') : filename);
   return {
     name: `file ${filename}`,
-    async read() { return fs.existsSync(filename) ? fs.readFileSync(filename, 'utf8') : null; },
-    async write(text) {
-      fs.mkdirSync(path.dirname(filename), {recursive: true});
-      const tmp = `${filename}.tmp`;
+    async read(key = KEY) { const f = fileFor(key); return fs.existsSync(f) ? fs.readFileSync(f, 'utf8') : null; },
+    async write(text, key = KEY) {
+      const f = fileFor(key);
+      fs.mkdirSync(path.dirname(f), {recursive: true});
+      const tmp = `${f}.tmp`;
       fs.writeFileSync(tmp, text, {encoding: 'utf8', mode: 0o600});
-      fs.renameSync(tmp, filename);
+      fs.renameSync(tmp, f);
     },
     async close() {},
   };
@@ -86,8 +91,9 @@ function redisBackend(url) {
   const ready = client.connect();
   return {
     name: 'Render Key Value',
-    async read() { await ready; return client.get(KEY); },
-    async write(text) { await ready; await client.set(KEY, text, {EX: Math.round(MAX_AGE_MS / 1000)}); },
+    async read(key = KEY) { await ready; return client.get(key); },
+    // Rooms expire after 12 hours; the stats are kept for good.
+    async write(text, key = KEY) { await ready; if (key === KEY) await client.set(key, text, {EX: Math.round(MAX_AGE_MS / 1000)}); else await client.set(key, text); },
     async close() { try { await ready; await client.quit(); } catch { /* already gone */ } },
   };
 }
@@ -102,7 +108,9 @@ async function start(rooms, {intervalMs = 4000, onRestored} = {}) {
     // Never let a slow or missing store stop the game from starting.
     const text = await Promise.race([backend.read(), new Promise(resolve => setTimeout(() => resolve(null), 5000))]);
     const count = load(rooms, text, Date.now());
-    console.log(`Save-and-restore: ${backend.name}. Restored ${count} game(s).`);
+    const statsText = await Promise.race([backend.read(STATS_KEY), new Promise(resolve => setTimeout(() => resolve(null), 5000))]);
+    const statsLoaded = statsText ? stats.load(statsText) : false;
+    console.log(`Save-and-restore: ${backend.name}. Restored ${count} game(s)${statsLoaded ? ' and question stats' : ''}.`);
     if (count && onRestored) onRestored(count);
   } catch (err) {
     console.error('Restore failed, starting fresh:', err.message);
@@ -117,6 +125,7 @@ async function start(rooms, {intervalMs = 4000, onRestored} = {}) {
       // Only write when something changed (the timestamp alone doesn't count).
       const body = text.slice(text.indexOf(',"rooms"'));
       if (body !== last) { await backend.write(text); last = body; }
+      if (stats.takeDirty()) await backend.write(stats.snapshot(), STATS_KEY);
     } catch (err) {
       console.error('Save failed:', err.message);
     } finally { busy = false; }
