@@ -26,6 +26,7 @@
 
   /* ---------- state ---------- */
   const socket = io({transports: ['websocket', 'polling']});
+  SA.reportErrors(socket, 'tv');
   if (new URLSearchParams(location.search).has('debug')) window.__saSocket = socket;
   let state = null, prev = null, layout = null, avatars = [];
   let boardBuilt = false;
