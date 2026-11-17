@@ -229,6 +229,7 @@ function choicesFor(q, roundAnswers, allAnswers, typedPool, override) {
  */
 const HEADLINE = /\b(world cup|euros?\b|wimbledon|best picture|prime minister|olympics?|king|queen|coronation|jubilee|eurovision song contest\b|premier league)\b/i;
 function difficultyFor(q, file, preview) {
+  if (['easy', 'medium', 'hard'].includes(q.level)) return q.level;   // a pack can set its own levels
   if (/^smart-alec-/.test(file)) return 'easy';
   if (preview) return HEADLINE.test(q.q) ? 'medium' : 'hard';
   return 'medium';
