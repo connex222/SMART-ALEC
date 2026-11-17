@@ -206,6 +206,23 @@ function answerQuestion(room, id, payload, now) {
   revealQuestion(room, now);
 }
 
+/**
+ * Everyone else can lock in an A-D answer while the active player is thinking.
+ * Nothing is won for it unless the active player gets it wrong; then those answers
+ * count straight away for the Bonus Steal, fastest first.
+ */
+function answerAlong(room, id, payload, now) {
+  const q = b(room).question;
+  if (!['turn', 'jackpot'].includes(q.kind)) fail('TURN', 'This question is for the player whose turn it is.');
+  if (!player(room, id)) fail('TURN', 'You are not in this game.');
+  q.along = q.along || {};
+  if (q.along[id]) fail('DONE', 'You have already locked in.');
+  const view = Q.get(q.id), choice = payload.choice;
+  if (!Number.isInteger(choice) || choice < 0 || choice >= view.opts.length) fail('INPUT', 'Pick A, B, C or D.');
+  q.along[id] = {choice, correct: choice === view.correct, at: now};
+  b(room).version += 1;
+}
+
 function revealQuestion(room, now) {
   const g = b(room), q = g.question, p = player(room, q.forId);
   q.revealed = true;
@@ -243,9 +260,15 @@ function afterReveal(room, now, rng) {
   const stealable = (q.kind === 'turn' || q.kind === 'jackpot') && q.result !== 'right';
   const others = room.players.filter(p => p.id !== q.forId);
   if (stealable && others.length) {
-    g.question = {kind: 'steal', category: q.category, id: q.id, mode: 'choice', forId: null, participants: others.map(p => p.id), answers: {}, revealed: false, fromId: q.forId};
+    // Answers locked in while playing along count first, so they beat anyone who answers now.
+    const answers = {};
+    for (const [pid, a] of Object.entries(q.along || {})) if (others.some(p => p.id === pid)) answers[pid] = {...a};
+    g.question = {kind: 'steal', category: q.category, id: q.id, mode: 'choice', forId: null, participants: others.map(p => p.id), answers, revealed: false, fromId: q.forId};
     banner(room, 'Up for grabs! Fastest correct answer steals 2 Brains.', 'big');
-    return setStep(room, 'steal', now, Math.round(T.STEAL * slow(room)));
+    setStep(room, 'steal', now, Math.round(T.STEAL * slow(room)));
+    const waiting = others.filter(p => !answers[p.id] && p.socketId);
+    if (!waiting.length) settleGroup(room, now);
+    return;
   }
   endTurn(room, now, q.resultText);
 }
@@ -525,7 +548,8 @@ function goFinal(room, id, now, rng) {
   const g = b(room), p = player(room, id);
   if (p.tokens.length < required(room)) fail('FINAL', 'Collect every token first.');
   const cats = room.settings.quickGame ? shuffle(p.tokens.slice(), rng).slice(0, 4) : shuffle(L.CATEGORY_IDS.slice(), rng);
-  g.final = {playerId: id, categories: cats, ids: cats.map(c => Q.pick(room, c, rng)), index: 0, results: [], predictions: {}, outcome: null};
+  // Win with all but one right: 5 of 6 (Quick Game: 3 of 4). Missing two ends it early.
+  g.final = {playerId: id, categories: cats, ids: cats.map(c => Q.pick(room, c, rng)), index: 0, results: [], predictions: {}, outcome: null, need: cats.length - 1};
   banner(room, `${p.name} goes for SMART ALEC! Everyone else: how many will they get right?`, 'big');
   setStep(room, 'predict', now, T.PREDICT);
 }
@@ -545,7 +569,7 @@ function startFinal(room, now) {
   const f = b(room).final;
   const total = room.settings.quickGame ? T.FINAL_QUICK : T.FINAL_FULL;
   f.startedAt = now;
-  banner(room, `${nameOf(room, f.playerId)}: ${f.ids.length} questions, ${total / 1000} seconds. GO!`, 'big');
+  banner(room, `${nameOf(room, f.playerId)}: ${f.ids.length} questions, ${total / 1000} seconds. Get ${f.need} right. GO!`, 'big');
   setStep(room, 'final', now, Math.round(total * slow(room)));
 }
 
@@ -557,24 +581,25 @@ function answerFinal(room, id, payload, now) {
   if (!Number.isInteger(choice) || choice < 0 || choice >= q.opts.length) fail('INPUT', 'Pick A, B, C or D.');
   const correct = choice === q.correct;
   f.results.push({choice, correct});
-  if (!correct) return finishFinal(room, now, f.categories[f.index]);
   f.index += 1;
-  if (f.index >= f.ids.length) return finishFinal(room, now, null);
+  const misses = f.results.filter(r => !r.correct).length;
+  if (misses > f.ids.length - f.need) return finishFinal(room, now);   // can no longer reach the target
+  if (f.index >= f.ids.length) return finishFinal(room, now);
   b(room).version += 1;
 }
 
-function finishFinal(room, now, missed) {
+/** Ends the Final Round: a win needs f.need right. A failed attempt costs nothing but the turn. */
+function finishFinal(room, now) {
   const g = b(room), f = g.final, p = player(room, f.playerId);
   const score = f.results.filter(r => r.correct).length;
-  f.outcome = missed ? 'lose' : 'win';
-  f.missed = missed;
+  f.outcome = score >= f.need ? 'win' : 'lose';
   f.score = score;
+  f.missed = null;
   for (const [pid, n] of Object.entries(f.predictions)) if (n === score) addBrains(room, pid, BRAINS.PREDICT_EXACT);
-  if (missed) {
-    p.tokens = p.tokens.filter(c => c !== missed);
-    banner(room, `So close! ${p.name} got ${score} and loses the ${catName(missed)} token.`, 'bad');
+  if (f.outcome === 'lose') {
+    banner(room, `So close! ${p.name} got ${score} of ${f.ids.length} and needed ${f.need}. Try again next turn!`, 'bad');
   } else {
-    banner(room, `${p.name} is SMART ALEC!`, 'big');
+    banner(room, score === f.ids.length ? `${score} out of ${score}! ${p.name} is SMART ALEC!` : `${score} out of ${f.ids.length}! ${p.name} is SMART ALEC!`, 'big');
   }
   setStep(room, 'finalResult', now, T.FINAL_RESULT);
 }
@@ -608,7 +633,7 @@ function choose(room, id, payload = {}, now = Date.now(), rng = crypto.randomInt
 
 function answer(room, id, payload = {}, now = Date.now()) {
   const step = b(room).step;
-  if (step === 'question') return answerQuestion(room, id, payload, now);
+  if (step === 'question') return b(room).question.forId === id ? answerQuestion(room, id, payload, now) : answerAlong(room, id, payload, now);
   if (step === 'steal' || step === 'group') return answerGroup(room, id, payload, now);
   if (step === 'final') return answerFinal(room, id, payload, now);
   fail('STEP', 'There is no question to answer right now.');
@@ -631,7 +656,7 @@ function onDeadline(room, now, rng) {
     case 'miniResult': return endTurn(room, now, g.miniResult?.text);
     case 'special': return chooseSpecial(room, Math.max(0, defaultSpecial(room)), now, rng);
     case 'predict': return startFinal(room, now);
-    case 'final': return finishFinal(room, now, g.final.categories[g.final.index]);
+    case 'final': return finishFinal(room, now);
     case 'finalResult': return g.final.outcome === 'win' ? finishGame(room, now, g.final.playerId, 'final') : endTurn(room, now);
     case 'turnEnd': return afterTurnEnd(room, now);
     default: return undefined;
@@ -698,7 +723,8 @@ function skipDisconnected(room, now, rng = crypto.randomInt) {
 function publicQuestion(room, viewerId) {
   const g = b(room), q = g.question;
   if (!q || !q.id) return q ? {kind: q.kind, category: q.category, mode: q.mode, forId: q.forId} : null;
-  const showOptions = q.mode === 'choice' || q.revealed || g.step === 'steal';
+  const playingAlong = g.step === 'question' && viewerId && viewerId !== q.forId && ['turn', 'jackpot'].includes(q.kind);
+  const showOptions = q.mode === 'choice' || q.revealed || g.step === 'steal' || playingAlong;
   const view = Q.publicView(q.id, {options: showOptions, reveal: q.revealed});
   const answers = {};
   for (const [pid, a] of Object.entries(q.answers)) {
@@ -708,6 +734,7 @@ function publicQuestion(room, viewerId) {
   }
   return {
     kind: q.kind, category: q.category, mode: q.mode, forId: q.forId, participants: q.participants || null,
+    along: Object.keys(q.along || {}), myAlong: viewerId && q.along?.[viewerId] ? q.along[viewerId].choice : null,
     ...view, answers, revealed: q.revealed, result: q.result || null, resultText: q.resultText || null, awards: q.awards || null,
   };
 }
@@ -720,9 +747,10 @@ function publicFinal(room, viewerId) {
   const predictions = {};
   for (const [pid, n] of Object.entries(f.predictions)) predictions[pid] = done || pid === viewerId ? n : true;
   return {
-    playerId: f.playerId, categories: f.categories, index: f.index, total: f.ids.length, current,
+    playerId: f.playerId, categories: f.categories, index: f.index, total: f.ids.length, need: f.need, current,
     results: f.results.map(r => r.correct), predictions, outcome: f.outcome, missed: f.missed || null, score: f.score ?? null,
-    lastAnswer: done && f.results.length ? Q.publicView(f.ids[f.results.length - 1], {reveal: true}) : null,
+    // On a loss, show the last question they missed and its answer.
+    lastAnswer: done && f.results.some(r => !r.correct) ? Q.publicView(f.ids[f.results.map(r => r.correct).lastIndexOf(false)], {reveal: true}) : null,
   };
 }
 
