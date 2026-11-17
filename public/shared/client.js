@@ -151,6 +151,7 @@ window.SA = (() => {
       await track.play();
     } catch { /* blocked until the next tap or key press; warm() retries */ }
   }
+  function setMusicVolume(volume) { musicVolume = Math.max(0, Math.min(1, Number(volume) || 0)); applyDuck(); }
   function duck(on) { voiceDucked = Boolean(on); applyDuck(); }
   function setMuted(value) {
     muted = Boolean(value); store.set('sa-muted', muted); applyDuck();
@@ -185,5 +186,5 @@ window.SA = (() => {
     socket.on('connect', () => { while (queue.length && sent < 10) { sent += 1; socket.emit('client:error', queue.shift()); } });
   }
 
-  return {reportErrors, store, request, layout, avatars, avatarEl, el, syncClock, now, secondsLeft, sfx, playMusic, setMuted, isMuted, vibrate, duck, preloadAudio, unlockAudio};
+  return {reportErrors, store, request, layout, avatars, avatarEl, el, syncClock, now, secondsLeft, sfx, playMusic, setMusicVolume, setMuted, isMuted, vibrate, duck, preloadAudio, unlockAudio};
 })();
