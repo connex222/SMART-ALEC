@@ -22,7 +22,15 @@ window.Tutorial = (() => {
   const token = id => img(`/art/token-${id}.webp`, 'tut-token');
   const icon = id => img(`/art/icon-${id}.webp`, 'tut-icon');
   const emblem = id => img(`/art/special-${id}.webp`, 'tut-emblem');
-  const face = (n, pose = 'think', size = 120) => SA.avatarEl(avatars[n], pose, size);
+  // Share the phone avatar catalogue; never create an invisible portrait.
+  const face = (n, pose = 'think', size = 120) => {
+    const av = avatars[n];
+    if (av) return SA.avatarEl(av, pose, size);
+    const fallback = el('div', 'avatar tut-avatar-placeholder', '?');
+    fallback.style.width = fallback.style.height = size + 'px';
+    fallback.setAttribute('aria-label', 'Avatar loading');
+    return fallback;
+  };
   function phone(...lines) {
     const p = el('div', 'tut-phone');
     for (const [text, cls] of lines) p.appendChild(el('div', 'tut-phone-btn ' + (cls || ''), text));
@@ -40,7 +48,7 @@ window.Tutorial = (() => {
   /* ---------- the slides ---------- */
   const SLIDES = [
     {title: 'Welcome to Smart Alec!', pose: 'present', line: "Welcome to Smart Alec! I'm Alec, your host, and I'll show you how to play. It only takes a couple of minutes.",
-      show: () => row('', img('/art/logo.webp', 'tut-logo'))},
+      show: () => row('tut-intro-cast', img('/art/logo.webp', 'tut-logo'), row('tut-intro-faces', face(0, 'think', 108), face(1, 'think', 108), face(2, 'think', 108), face(3, 'think', 108)))},
     {title: 'Join on your phone', pose: 'present', line: 'First, everyone joins on their phone. Scan the code on the TV, type your name and pick a character. Your phone is your controller for the whole game.',
       show: () => row('', phone(['Room code: ABCD', 'code'], ['Your name', 'field'], ["I'm ready", 'gold']), (() => { const g = el('div', 'tut-faces'); for (let i = 0; i < 12; i++) g.appendChild(face(i, 'think', 92)); return g; })())},
     {title: 'How to win', pose: 'present', line: "To win, collect six tokens, one from each category. Then beat the Final Round, and you're crowned Smart Alec.",
@@ -176,15 +184,31 @@ window.Tutorial = (() => {
   }
   function markDone() { $('tut-next').textContent = 'Finish'; }
 
+  let openVersion = 0;
   function open(avatarList) {
-    avatars = avatarList || [];
+    const version = ++openVersion;
     playing = true;
     $('tutorial').hidden = false;
     SA.duck(true);
-    go(0);
+    $('tut-step').textContent = 'Loading characters';
+    $('tut-stage').replaceChildren(el('div', 'tut-loading', 'Getting the cast ready…'));
     $('tut-next').focus();
+    // A quick tutorial launch can race with the initial TV avatar request.
+    const ready = Array.isArray(avatarList) && avatarList.length >= 12
+      ? Promise.resolve(avatarList)
+      : SA.avatars();
+    ready.then(list => {
+      if (version !== openVersion || $('tutorial').hidden) return;
+      avatars = Array.isArray(list) ? list : [];
+      go(0);
+    }).catch(() => {
+      if (version !== openVersion || $('tutorial').hidden) return;
+      avatars = Array.isArray(avatarList) ? avatarList : [];
+      go(0);
+    });
   }
   function close() {
+    ++openVersion;
     stopVoice();
     $('tutorial').hidden = true;
     SA.duck(false);
