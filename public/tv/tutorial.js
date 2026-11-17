@@ -66,9 +66,9 @@ window.Tutorial = (() => {
     {title: 'More special spaces', pose: 'present', line: 'Shortcut jumps you to any other gold space. Swap trades places with any player. The Jackpot is a random question with a big reward. And Showdown: pick an opponent for a head-to-head battle. The winner takes Brains from the loser, and anyone who backed the winner gets one too.',
       show: () => row('', labelled(emblem('shortcut'), 'Shortcut'), labelled(emblem('swap'), 'Swap'), labelled(emblem('jackpot'), 'Jackpot'), labelled(emblem('showdown'), 'Showdown'))},
     {title: 'The Final Round', pose: 'think', line: 'Got all six tokens? On your next turn, go for Smart Alec! You get six questions and just sixty seconds. Before you start, everyone else guesses your score. Guess it exactly, and win two Brains.',
-      show: () => row('final', ...CATS.map(([id]) => token(id)), el('span', 'tut-badge big', '6 questions · 60 seconds'))},
-    {title: 'Winning and losing', pose: 'laugh', line: "Get all six right, and you're crowned Smart Alec! Miss just one, and you lose that category's token. Win it back, and try again.",
-      show: () => row('', labelled(face(4, 'win', 170), 'All six right: you win!'), labelled(face(4, 'lose', 170), 'Miss one: lose that token'))},
+      show: () => row('final', ...CATS.map(([id]) => token(id)), el('span', 'tut-badge big', '6 questions · 60 seconds · 5 to win'))},
+    {title: 'Winning and losing', pose: 'laugh', line: "Get five or more right, and you're crowned Smart Alec! Miss two, and it's back to the board, but you keep your tokens and can try again on your next turn.", file: 'tut-15b',
+      show: () => row('', labelled(face(4, 'win', 170), '5 or 6 right: you win!'), labelled(face(4, 'lose', 170), 'Miss two: try again next turn'))},
     {title: 'Catching up', pose: 'present', line: "Falling behind? Don't worry. If the leader is nearly there and you're not, you'll get two dice and choose the one you like.",
       show: () => row('', el('span', 'tut-die', '2'), el('span', 'tut-die', '5'), el('span', 'tut-badge', 'Pick either one'))},
     {title: 'Game options', pose: 'present', line: 'In the lobby you can choose a Quick Game, with four tokens instead of six, set a time limit, or give everyone more time to answer.',
@@ -115,7 +115,8 @@ window.Tutorial = (() => {
   }
   function narrate(i) {
     stopVoice();
-    const n = String(i + 1).padStart(2, '0');
+    // A slide whose rules changed names a new recording (e.g. tut-15b) so the old one is never played.
+    const n = SLIDES[i].file ? SLIDES[i].file.replace('tut-', '') : String(i + 1).padStart(2, '0');
     const line = SLIDES[i].line;
     if (SA.isMuted() || !AlecVoice.isEnabled()) { timer = setTimeout(afterLine, readingTime(line)); return; }
     const a = new Audio(`/voice/tut-${n}.mp3`);

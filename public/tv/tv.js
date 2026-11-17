@@ -418,6 +418,12 @@
       }
       if (q.revealed && q.answer && !q.options) body.appendChild(el('p', 'reveal-answer', 'Answer: ' + q.answer));
       if (q.participants && !q.revealed) body.appendChild(answeredRow(q, q.participants));
+      if (b.step === 'question' && q.along?.length) {
+        const row = el('div', 'answered');
+        row.appendChild(document.createTextNode('Playing along: '));
+        for (const id of q.along) row.appendChild(SA.avatarEl(av(playerById(id)?.avatarId), 'think', 52));
+        body.appendChild(row);
+      }
       if (q.revealed && q.resultText && (b.step === 'groupReveal' || b.step === 'reveal')) body.appendChild(el('p', 'reveal-answer', q.resultText));
     } else if (b.step === 'special' && b.special) {
       card.appendChild(cardHead(null, b.activeId, layout.specials.find(s => s.id === b.special.type)?.name, true));
@@ -442,13 +448,13 @@
       });
       body.appendChild(slots);
       if (b.step === 'predict') {
-        body.append(el('p', 'special-text', `${f.total} questions. One clock. Everyone else: how many will ${playerById(f.playerId)?.name} get right?`));
+        body.append(el('p', 'special-text', `${f.total} questions. One clock. ${f.need} right wins. Everyone else: how many will ${playerById(f.playerId)?.name} get right?`));
       } else if (b.step === 'final' && f.current) {
         body.appendChild(el('p', 'q-text', f.current.text));
         body.appendChild(optionsEl({options: f.current.options, revealed: false}));
       } else if (b.step === 'finalResult') {
         body.appendChild(el('p', 'special-text', b.banner?.text || ''));
-        if (f.lastAnswer && f.outcome === 'lose') body.appendChild(el('p', 'special-sub', `“${f.lastAnswer.text}” Answer: ${f.lastAnswer.answer}`));
+        if (f.lastAnswer) body.appendChild(el('p', 'special-sub', `Missed: “${f.lastAnswer.text}” Answer: ${f.lastAnswer.answer}`));
       }
       const preds = el('div', 'predictions');
       for (const [pid, n] of Object.entries(f.predictions || {})) {
@@ -540,7 +546,7 @@
     if (!old) { if (oldState?.phase !== 'board') say(oldState?.phase === 'over' ? 'play-again' : 'start'); return; }
     if (b.paused !== old.paused) { say(b.paused ? 'paused' : 'resumed', {interrupt: true}); return; }
     const f = b.final, of = old.final;
-    if (b.step === 'final' && f && of && f.results.length > of.results.length && f.results.at(-1)) say('final-right', {interrupt: true});
+    if (b.step === 'final' && f && of && f.results.length > of.results.length) say(f.results.at(-1) ? 'final-right' : 'final-wrong', {interrupt: true});
     if (b.step === old.step && b.turnNo === old.turnNo) return;
     const q = b.question, active = state.players.find(p => p.id === b.activeId);
     switch (b.step) {
@@ -587,7 +593,7 @@
       case 'final': hurrySaid = null; say(b.required === 6 && AlecVoice.chance(0.5) ? 'final-start-1' : 'final-start-2', {interrupt: true}); break;
       case 'finalResult':
         if (f?.outcome === 'win') say('final-win', {interrupt: true});
-        else { say('final-wrong', {interrupt: true}); say('final-lose'); }
+        else say('final-lose-2', {interrupt: true});   // final-lose-1 mentions losing a token, which no longer happens
         break;
       default: break;
     }

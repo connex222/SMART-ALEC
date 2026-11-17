@@ -149,7 +149,7 @@
         if (b.canFinal) {
           const fin = el('button', 'btn btn-ghost btn-big', 'Go for Smart Alec!');
           fin.addEventListener('click', () => act('game:choose', {action: 'final'}));
-          out.push(fin, el('p', 'sub', `${b.required} questions, one clock. Get them all right to win.`));
+          out.push(fin, el('p', 'sub', `${b.required} questions, one clock. Get ${b.required - 1} right to win. Missing out costs nothing but this turn.`));
         }
         return out;
       }
@@ -185,7 +185,11 @@
         return [el('h2', null, catMeta(q.category)?.name || ''), box];
       }
       case 'question': {
-        if (q.forId !== p.id) return watch(`${active} is answering`, 'Play along on the TV!');
+        if (q.forId !== p.id) {
+          if (!['turn', 'jackpot'].includes(q.kind) || !q.options) return watch(`${active} is answering`, 'Watch the TV.');
+          if (q.myAlong !== null && q.myAlong !== undefined) return [el('p', 'locked', `Locked in: ${LETTERS[q.myAlong]}`), el('p', 'sub', `If ${active} gets it wrong, the fastest right answer steals 2 Brains.`)];
+          return [el('h2', null, 'Play along!'), el('p', 'sub', `Lock in now. If ${active} gets it wrong, the fastest right answer steals 2 Brains.`), el('p', 'qtext', q.text), ...answerButtons(q.options, i => act('game:answer', {choice: i}))];
+        }
         if (q.answers?.[p.id]) return [el('p', 'locked', 'Locked in!')];
         const out = [el('p', 'qtext', q.text)];
         if (q.mode === 'typed') {
@@ -243,7 +247,7 @@
           btn.addEventListener('click', () => act('game:choose', {option: n}));
           grid.appendChild(btn);
         }
-        return [el('h2', null, `How many will ${nameOf(f.playerId)} get right?`), el('p', 'sub', 'Spot on wins 2 Brains.'), grid];
+        return [el('h2', null, `How many will ${nameOf(f.playerId)} get right?`), el('p', 'sub', `${f.need} right wins. Spot on wins you 2 Brains.`), grid];
       }
       case 'final': {
         const f = b.final;
@@ -261,7 +265,7 @@
   function panelSignature() {
     const b = state.board, p = me();
     const q = b.question;
-    return [b.step, b.version, b.activeId, q?.id, q?.answers?.[p.id] ? 'A' : '', b.final?.index, b.final?.predictions?.[p.id], b.canFinal, p.tokens.length].join('|');
+    return [b.step, b.version, b.activeId, q?.id, q?.answers?.[p.id] ? 'A' : '', q?.myAlong ?? '', b.final?.index, b.final?.predictions?.[p.id], b.canFinal, p.tokens.length].join('|');
   }
 
   let nogginPhone = null;
