@@ -13,6 +13,12 @@ Built from NOGGIN (rooms, join by QR, reconnect, pause, sounds, the 16 mini-game
 
 TV controls appear when you move the mouse: Pause (or Space bar), Skip waiting, Sound, End game.
 
+### A more sociable pace
+
+New rooms start with **Leisurely pace** enabled. Questions have longer answer windows; mini-games and Showdowns begin with a rules card that stays on screen; and answers and results are held long enough for a laugh or a discussion. Fast-reaction mechanics remain fast **after** their instructions have been read.
+
+Between turns, Smart Alec shows a **Time for a chat** card for up to 20 seconds. The TV host can select **Next turn · we’re ready** to continue immediately, or use **Pause** to talk for longer. Only the TV host can advance this card; it never skips a question or a mini-game in progress. The lobby toggle can restore the original normal timing if the group prefers a brisk game. Music is quieter during the conversational result and between-turn screens.
+
 ## Run it on your own computer (Windows)
 
 1. Install Node.js 22 LTS from https://nodejs.org (tick every default).
