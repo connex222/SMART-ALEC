@@ -116,14 +116,17 @@
     </div>
   </section>
   <!-- How to Play -->
-  <section id="tutorial" class="tutorial" hidden aria-label="How to play">
+  <section id="tutorial" class="tutorial" hidden aria-label="How to play" role="dialog" aria-modal="true" aria-labelledby="tut-title">
+    <div class="tut-studio" aria-hidden="true"><div class="tut-halo"></div><div class="tut-light tut-light-a"></div><div class="tut-light tut-light-b"></div><div class="tut-floor"></div></div>
     <div class="tut-head">
-      <span class="tut-kicker">How to play</span>
+      <span class="tut-kicker"><span class="tut-live"></span> ALEC’S ACADEMY</span>
       <h2 id="tut-title" class="tut-title"></h2>
       <span id="tut-step" class="tut-step"></span>
     </div>
     <div id="tut-card" class="tut-card">
+      <div class="tut-scene-top"><span id="tut-chapter" class="tut-chapter"></span><span class="tut-onair">THE SMART ALEC SHOW</span></div>
       <div id="tut-stage" class="tut-stage"></div>
+      <div class="tut-scene-bottom"><span id="tut-callout" class="tut-callout"></span><span class="tut-scene-mark">SMART ALEC • HOW TO PLAY</span></div>
     </div>
     <img id="tut-alec" class="tut-alec" alt="">
     <p id="tut-caption" class="tut-caption" aria-live="polite"></p>
@@ -133,7 +136,8 @@
       <button class="btn btn-gold" id="tut-next">Next</button>
       <button class="btn btn-ghost" id="tut-close">Close</button>
     </div>
-    <div id="tut-dots" class="tut-dots"></div>
+    <div class="tut-progress" aria-hidden="true"><div id="tut-progress-fill" class="tut-progress-fill"></div></div>
+    <div id="tut-dots" class="tut-dots" aria-label="Tutorial chapters"></div>
   </section>
 </div>
 
