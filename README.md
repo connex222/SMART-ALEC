@@ -64,4 +64,6 @@ v0.6.1: Full screen buttons (TV title screen, TV host bar, phone join screen whe
 
 v0.7.0: How to Play, an 18-step narrated tutorial on the TV (title screen and lobby). It plays public/voice/tut-01.mp3 to tut-18.mp3 when they exist; until then the browser's British voice reads the captions, or the captions wait long enough to read. Back, Pause, Next, Close, clickable steps, and the arrow keys or TV remote work.
 
-Next: record tut-01 to tut-18, the last nine "lose" avatar poses, your review of the new packs.
+v0.7.1: all twelve "lose" avatar poses in place.
+
+Next: record tut-01 to tut-18, your review of the new packs.
