@@ -325,3 +325,17 @@ test('the engine records the active player and play-along answers, and stats sur
   assert.equal(stats.isRecent(id), true);
   assert.deepEqual(JSON.parse(stats.snapshot()).results[id], [2, 2]);
 });
+
+test('player feedback is totted up and survives a restart', () => {
+  stats.addFeedback({fun: 5, best: ['Final Round'], drag: [], note: 'Great'});
+  stats.addFeedback({fun: 3, best: ['Final Round', 'Alec'], drag: ['Too long'], note: ''});
+  const s = stats.feedbackSummary();
+  assert.equal(s.responses, 2);
+  assert.equal(s.averageFun, 4);
+  assert.equal(s.bestBits['Final Round'], 2);
+  assert.deepEqual(s.latestNotes, ['Great']);
+  const saved = stats.snapshot();
+  stats.reset();
+  stats.load(saved);
+  assert.equal(stats.feedbackSummary().responses, 2);
+});

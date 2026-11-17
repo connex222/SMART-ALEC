@@ -19,6 +19,7 @@ let seq = 0;                    // counts every question asked
 const lastAsked = new Map();    // question id -> seq when last asked
 const results = new Map();      // question id -> [attempts, correct]
 let dirty = false;
+const feedback = [];            // end-of-game feedback from players (newest last, at most 300)
 
 /** A question was chosen for play. */
 function markAsked(id) {
@@ -58,6 +59,13 @@ function levelOf(q) {
   return rate >= EASY_AT ? 'easy' : rate >= MEDIUM_AT ? 'medium' : 'hard';
 }
 
+/** A player's end-of-game feedback (already checked and trimmed by the gateway). */
+function addFeedback(entry) {
+  feedback.push(entry);
+  if (feedback.length > 300) feedback.shift();
+  dirty = true;
+}
+
 /** A short public summary (no player data): for /api/stats. */
 function summary(all = []) {
   let answers = 0, learned = 0, moved = 0;
@@ -76,25 +84,39 @@ function summary(all = []) {
   return {
     questionsAsked: seq, answersRecorded: answers, questionsWithEnoughAnswers: learned, levelChangedByPlay: moved,
     minimumAnswersBeforeLearning: MIN_ATTEMPTS, hardest: show(rated.slice(0, 10)), easiest: show(rated.slice(-10).reverse()),
+    feedback: feedbackSummary(),
+  };
+}
+
+/** Totals from players' feedback (individual notes are in the server log). */
+function feedbackSummary() {
+  const count = (key) => feedback.flatMap(f => f[key] || []).reduce((m, k) => (m[k] = (m[k] || 0) + 1, m), {});
+  const rated = feedback.filter(f => f.fun);
+  return {
+    responses: feedback.length,
+    averageFun: rated.length ? Math.round(10 * rated.reduce((a, f) => a + f.fun, 0) / rated.length) / 10 : null,
+    bestBits: count('best'), dragged: count('drag'),
+    latestNotes: feedback.filter(f => f.note).slice(-10).map(f => f.note),
   };
 }
 
 /* ---------- saving and restoring ---------- */
 function snapshot() {
-  return JSON.stringify({format: 1, seq, lastAsked: Object.fromEntries(lastAsked), results: Object.fromEntries(results)});
+  return JSON.stringify({format: 1, seq, lastAsked: Object.fromEntries(lastAsked), results: Object.fromEntries(results), feedback});
 }
 function load(text) {
   if (!text) return false;
   const d = JSON.parse(text);
   if (d.format !== 1) return false;
   seq = Number.isFinite(d.seq) ? d.seq : 0;
-  lastAsked.clear(); results.clear();
+  lastAsked.clear(); results.clear(); feedback.length = 0;
+  if (Array.isArray(d.feedback)) feedback.push(...d.feedback.slice(-300));
   for (const [k, v] of Object.entries(d.lastAsked || {})) if (Number.isFinite(v)) lastAsked.set(k, v);
   for (const [k, v] of Object.entries(d.results || {})) if (Array.isArray(v) && v.length === 2) results.set(k, [v[0] | 0, v[1] | 0]);
   dirty = false;
   return true;
 }
 function takeDirty() { const was = dirty; dirty = false; return was; }
-function reset() { seq = 0; lastAsked.clear(); results.clear(); dirty = false; }
+function reset() { seq = 0; lastAsked.clear(); results.clear(); feedback.length = 0; dirty = false; }
 
-module.exports = {markAsked, isRecent, askedAt, record, levelOf, summary, snapshot, load, takeDirty, reset, RECENT_WINDOW, MIN_ATTEMPTS};
+module.exports = {addFeedback, feedbackSummary, markAsked, isRecent, askedAt, record, levelOf, summary, snapshot, load, takeDirty, reset, RECENT_WINDOW, MIN_ATTEMPTS};

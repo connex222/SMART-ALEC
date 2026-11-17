@@ -94,4 +94,6 @@ v0.14.0: Automatic checks on GitHub (.github/workflows/check.yml run `npm run ve
 
 v0.15.0: Question review page (https://claude.ai/artifact/MKMT289a4jmaGWgAUUtK7k) with Keep / Fix / Cut decisions applied through data/review-decisions.json. No repeats between games: the last 1,500 questions asked are avoided while fresher ones exist. Difficulty is learned from play: after 8 answers a question is re-rated by how often it is answered correctly (75%+ easy, 40-75% medium, under 40% hard). Both are saved with the games (server/stats.js). See /api/stats.
 
+v0.16.0: A 30-second feedback card on every phone after each game (fun rating, best bits, what dragged, optional note). Each response is written to the server log as a `[feedback]` line with the game's length, player count and settings, and totted up at /api/stats.
+
 Next: playtest, your review of the new packs.

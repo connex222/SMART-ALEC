@@ -1,6 +1,7 @@
 'use strict';
 const {GameRooms, LobbyError, normalizeCode, safeTokenEquals} = require('./rooms');
 const {AttemptLimiter} = require('./limiter');
+const stats = require('./stats');
 const {joinUrl} = require('./network');
 const {isIP} = require('node:net');
 
@@ -232,6 +233,35 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
       io.in(code).socketsLeave(code);
       return {};
     }));
+
+    // End-of-game feedback from a phone: checked, trimmed, logged and kept.
+    socket.on('game:feedback', (payload, ack) => {
+      try {
+        const bound = bindings.get(socket.id);
+        if (!bound || bound.role !== 'player') throw new Error('not a player');
+        const {room, player} = rooms.requirePlayer(bound.code, socket.id);
+        if (room.phase !== 'over' || !payload || typeof payload !== 'object') throw new Error('not now');
+        const g = room.board || {};
+        g.feedbackFrom = g.feedbackFrom || [];
+        if (g.feedbackFrom.includes(player.id)) throw new Error('already sent');
+        const BEST = ['Bonus Steal', 'Play along', 'Mini-games', 'Showdowns', 'Special spaces', 'Final Round', 'Alec', 'The questions'];
+        const DRAG = ['Too long', 'Waiting for my turn', 'Rules confusing', 'Questions too hard', 'Questions too easy', 'Mini-games', 'Phone fiddly', 'Sound or music'];
+        const pickFrom = (list, allowed) => (Array.isArray(list) ? [...new Set(list.filter(x => allowed.includes(x)))].slice(0, 6) : []);
+        const fun = Number.isInteger(payload.fun) && payload.fun >= 1 && payload.fun <= 5 ? payload.fun : null;
+        const note = String(payload.note || '').replace(/[\r\n]+/g, ' ').trim().slice(0, 240);
+        const entry = {
+          at: new Date().toISOString().slice(0, 16), fun, best: pickFrom(payload.best, BEST), drag: pickFrom(payload.drag, DRAG), note,
+          players: room.players.length, minutes: g.startedAt && g.endedAt ? Math.round((g.endedAt - g.startedAt) / 60000) : null,
+          turns: g.turnNo || null, ended: g.endReason || 'final', quick: Boolean(room.settings.quickGame), level: room.settings.level || 'mixed',
+        };
+        g.feedbackFrom.push(player.id);
+        stats.addFeedback(entry);
+        console.log(`[feedback] ${JSON.stringify(entry)}`);
+        if (typeof ack === 'function') ack({ok: true});
+      } catch (err) {
+        if (typeof ack === 'function') ack({ok: false, message: err.message});
+      }
+    });
 
     // A TV or phone reports a browser error. Logged (trimmed, and at most 10 per
     // connection) so problems on real devices show up in the Render logs.

@@ -622,6 +622,7 @@ function finishGame(room, now, winnerId, reason) {
   g.standings = standings(room);
   g.winnerId = winnerId || g.standings[0].id;
   g.endReason = reason;
+  g.endedAt = now;
   room.phase = 'over';
   banner(room, reason === 'time' ? `Time's up! ${nameOf(room, g.winnerId)} wins on tokens.` : `${nameOf(room, g.winnerId)} is crowned SMART ALEC!`, 'big');
   setStep(room, 'over', now, null);
@@ -767,7 +768,7 @@ function publicBoard(room, forTv = false, viewerId = null) {
   if (!g) return null;
   const active = player(room, g.activeId);
   return {
-    step: g.step, version: g.version, turnNo: g.turnNo, activeId: g.activeId,
+    step: g.step, version: g.version, turnNo: g.turnNo, startedAt: g.startedAt, activeId: g.activeId,
     deadline: g.deadline, stepStartedAt: g.stepStartedAt, paused: Number.isFinite(g.pausedAt), pauseKind: g.pauseKind || null, remaining: g.remaining ?? null,
     timeLimitAt: g.timeLimitAt, required: required(room),
     canFinal: g.step === 'turn' && active && active.tokens.length >= required(room),

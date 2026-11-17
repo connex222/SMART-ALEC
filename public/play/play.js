@@ -355,8 +355,54 @@
     const won = b.winnerId === p.id;
     $('over-box').replaceChildren(SA.avatarEl(av(p.avatarId), won ? 'win' : 'lose', 170), el('h2', null, won ? 'You are Smart Alec!' : `${nameOf(b.winnerId)} wins`), el('p', null, place ? `You finished ${ordinal(place)} with ${p.tokens.length} tokens and ${p.brains} Brains.` : ''));
     $('btn-again').hidden = state.vipId !== p.id;
+    renderFeedback();
   }
   $('btn-again').addEventListener('click', () => send('game:start'));
+
+  /* ---------- 30-second feedback card after each game (for playtesting) ---------- */
+  const FUN = [['1', '😐'], ['2', '🙂'], ['3', '😀'], ['4', '😄'], ['5', '🤩']];
+  const BEST = ['Bonus Steal', 'Play along', 'Mini-games', 'Showdowns', 'Special spaces', 'Final Round', 'Alec', 'The questions'];
+  const DRAG = ['Too long', 'Waiting for my turn', 'Rules confusing', 'Questions too hard', 'Questions too easy', 'Mini-games', 'Phone fiddly', 'Sound or music'];
+  let feedbackFor = null;   // the game (by start time) the card was built for
+  function renderFeedback() {
+    const box = $('feedback-box');
+    const gameKey = state.board && state.board.startedAt;
+    if (!gameKey || feedbackFor === gameKey) return;   // built once per game, so typing isn't lost on updates
+    feedbackFor = gameKey;
+    const answers = {fun: null, best: new Set(), drag: new Set()};
+    const chips = (list, set) => {
+      const wrap = el('div', 'fb-chips');
+      for (const label of list) {
+        const b = el('button', 'fb-chip', label); b.type = 'button'; b.setAttribute('aria-pressed', 'false');
+        b.addEventListener('click', () => { const on = !set.has(label); on ? set.add(label) : set.delete(label); b.setAttribute('aria-pressed', String(on)); });
+        wrap.append(b);
+      }
+      return wrap;
+    };
+    const fun = el('div', 'fb-fun');
+    for (const [n, face] of FUN) {
+      const b = el('button', 'fb-face', face); b.type = 'button'; b.setAttribute('aria-label', `${n} out of 5`); b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', () => { answers.fun = Number(n); for (const x of fun.children) x.setAttribute('aria-pressed', String(x === b)); });
+      fun.append(b);
+    }
+    const note = el('textarea', 'fb-note'); note.maxLength = 240; note.placeholder = 'Anything else? (optional)';
+    const sendBtn = el('button', 'btn btn-gold', 'Send feedback');
+    const skip = el('button', 'link', 'Skip');
+    sendBtn.addEventListener('click', async () => {
+      sendBtn.disabled = true;
+      const res = await send('game:feedback', {fun: answers.fun, best: [...answers.best], drag: [...answers.drag], note: note.value});
+      box.replaceChildren(el('p', 'fb-thanks', res ? 'Thanks! Your feedback helps make Smart Alec better.' : 'That didn\'t send, but thanks anyway.'));
+    });
+    skip.addEventListener('click', () => { box.hidden = true; });
+    box.replaceChildren(
+      el('h3', null, 'Help make Smart Alec better'),
+      el('p', 'fb-q', 'How much fun was that?'), fun,
+      el('p', 'fb-q', 'Best bits?'), chips(BEST, answers.best),
+      el('p', 'fb-q', 'Anything drag or confuse?'), chips(DRAG, answers.drag),
+      note, sendBtn, skip,
+    );
+    box.hidden = false;
+  }
   function ordinal(n) { return n + (['th', 'st', 'nd', 'rd'][(n % 100 - 20) % 10] || ['th', 'st', 'nd', 'rd'][n % 100] || 'th'); }
 
   let paintQueued = false;

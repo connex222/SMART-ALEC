@@ -141,3 +141,17 @@ input { font: inherit; font-size: 24px; padding: 14px 16px; border-radius: 14px;
 @media (prefers-reduced-motion: reduce) {
   .view-game button { transition: none; }
 }
+
+/* end-of-game feedback card */
+.feedback-box { margin-top: 18px; background: var(--cream); color: var(--ink); border: var(--outline); border-radius: 20px; padding: 16px; display: flex; flex-direction: column; gap: 8px; text-align: left; }
+.feedback-box h3 { font-family: var(--display); font-size: 21px; margin: 0; }
+.fb-q { margin: 6px 0 0; font-weight: 700; }
+.fb-fun { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.fb-face { font-size: 28px; min-height: 52px; border: 2px solid rgba(20, 26, 51, .2); border-radius: 14px; background: #fff; }
+.fb-face[aria-pressed="true"] { border-color: var(--ink); background: var(--gold); transform: scale(1.06); }
+.fb-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.fb-chip { border: 2px solid rgba(20, 26, 51, .25); background: #fff; color: var(--ink); border-radius: 999px; padding: 8px 12px; min-height: 44px; font-weight: 700; font-size: 15px; }
+.fb-chip[aria-pressed="true"] { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.fb-note { width: 100%; min-height: 64px; border: 2px solid rgba(20, 26, 51, .25); border-radius: 12px; padding: 8px 10px; font: inherit; }
+.fb-thanks { margin: 0; font-weight: 700; text-align: center; }
+.feedback-box .link { align-self: center; color: var(--ink); }
