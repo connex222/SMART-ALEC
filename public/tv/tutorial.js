@@ -77,6 +77,22 @@ window.Tutorial = (() => {
       show: () => row('', img('/art/logo.webp', 'tut-logo'))},
   ];
 
+  const CHAPTERS = [
+    'THE BIG INTRO', 'GETTING STARTED', 'THE OBJECTIVE', 'SIX CATEGORIES',
+    'ON YOUR TURN', 'QUESTION TIME', 'MAKE YOUR MOVE', 'WIN A TOKEN',
+    'THE BONUS STEAL', 'EARN BRAINS', 'EVERYBODY PLAYS', 'GOLDEN SPACES',
+    'MORE TWISTS', 'THE FINAL ROUND', 'THE BIG FINISH', 'SECOND CHANCES',
+    'SET YOUR GAME', 'YOU’RE READY'
+  ];
+  const CALLOUTS = [
+    'LET THE GAMES BEGIN', 'YOUR PHONE IS THE CONTROLLER', 'SIX TOKENS. ONE CHAMPION.',
+    'COLLECT THEM ALL', 'ROLL • CHOOSE • MOVE', 'ONE PLAYER. ONE QUESTION.',
+    'SAFE OR SMART?', 'NAIL IT. CLAIM IT.', 'FASTEST FINGER FIRST',
+    'BRAINS MAKE THE DIFFERENCE', 'EVERYONE GETS INVOLVED',
+    'A LITTLE BIT OF MAYHEM', 'EXPECT THE UNEXPECTED', 'SIXTY SECONDS OF GLORY',
+    'THE CROWN IS WAITING', 'STILL IN THE GAME', 'MAKE IT YOUR GAME', 'OVER TO YOU'
+  ];
+
   /* ---------- narration ---------- */
   function stopVoice() {
     clearTimeout(timer);
@@ -129,10 +145,15 @@ window.Tutorial = (() => {
   /* ---------- drawing ---------- */
   function render() {
     const s = SLIDES[index];
+    $('tutorial').dataset.scene = String(index);
     $('tut-title').textContent = s.title;
+    $('tut-chapter').textContent = CHAPTERS[index];
+    $('tut-callout').textContent = CALLOUTS[index];
+    $('tut-progress-fill').style.width = `${(index + 1) / SLIDES.length * 100}%`;
     $('tut-step').textContent = `${index + 1} of ${SLIDES.length}`;
     $('tut-caption').textContent = s.line;
     $('tut-stage').replaceChildren(s.show());
+    $('tut-stage').setAttribute('aria-label', `Illustration: ${s.title}`);
     const alec = $('tut-alec');
     alec.src = `/art/alec-${s.pose}.webp`;
     $('tut-dots').replaceChildren(...SLIDES.map((_, i) => {
@@ -144,7 +165,9 @@ window.Tutorial = (() => {
     $('tut-back').disabled = index === 0;
     $('tut-next').textContent = index === SLIDES.length - 1 ? 'Finish' : 'Next';
     $('tut-play').textContent = playing ? 'Pause' : 'Play';
-    $('tut-card').classList.remove('enter'); void $('tut-card').offsetWidth; $('tut-card').classList.add('enter');
+    $('tut-card').classList.remove('enter');
+    // Two-frame transition; no forced synchronous layout read.
+    requestAnimationFrame(() => requestAnimationFrame(() => $('tut-card').classList.add('enter')));
   }
   function go(i) {
     index = Math.max(0, Math.min(SLIDES.length - 1, i));
