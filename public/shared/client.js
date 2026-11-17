@@ -64,38 +64,108 @@ window.SA = (() => {
   function now() { return Date.now() + offset; }
   function secondsLeft(deadline) { return deadline ? Math.max(0, Math.ceil((deadline - now()) / 1000)) : null; }
 
-  /* ---------- sound ---------- */
-  const sounds = {};
-  let muted = store.get('sa-muted') === true;
-  let music = null;
-  function sfx(name, volume = 0.8) {
-    if (muted) return;
+  /* ---------- sound: shared, bounded Web Audio buffer cache ---------- */
+  const AUDIO = {
+    'mus-lobby': 'ogg', 'mus-board': 'ogg', 'mus-tension': 'ogg',
+    'mus-victory': 'mp3', 'sfx-tick': 'mp3', 'sfx-correct': 'mp3',
+    'sfx-wrong': 'mp3', 'sfx-dice-roll': 'mp3', 'sfx-go': 'mp3',
+    'sfx-crowd-cheer': 'mp3', 'sfx-crowd-aww': 'mp3',
+    'sfx-hop': 'mp3', 'sfx-spark-gain': 'mp3', 'sfx-spark-lose': 'mp3',
+    'sfx-swap': 'mp3', 'sfx-reel': 'mp3', 'sfx-reel-stop': 'mp3',
+    'sfx-countdown': 'mp3', 'sfx-join': 'mp3', 'sfx-showdown': 'mp3',
+    'sfx-buzz': 'mp3'
+  };
+  const PRIORITY = new Set(['sfx-correct', 'sfx-crowd-cheer', 'sfx-wrong']);
+  const cache = new Map();
+  let ctx = null, music = null, musicName = null, musicVolume = 0.28;
+  let voiceDucked = false, effectsDucked = 0, muted = store.get('sa-muted') === true;
+  let musicGain = null, resumePromise = null, fallbackMusic = null;
+  const audioUrl = name => `/sounds/${name}.${AUDIO[name]}`;
+  function context() {
+    if (ctx || !window.AudioContext && !window.webkitAudioContext) return ctx;
     try {
-      const a = sounds[name] || (sounds[name] = new Audio(`/sounds/${name}.mp3`));
-      const copy = a.cloneNode();
-      copy.volume = volume;
-      copy.play().catch(() => {});
-    } catch { /* sound is optional */ }
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      musicGain = ctx.createGain(); musicGain.connect(ctx.destination);
+    } catch { ctx = null; }
+    return ctx;
   }
-  function playMusic(name, volume = 0.28) {
-    if (music && music.dataset.name === name) return;
-    if (music) { music.pause(); music = null; }
-    if (muted || !name) return;
-    try {
-      music = new Audio(`/sounds/${name}.ogg`);
-      music.dataset.name = name;
-      music.loop = true; music.volume = volume;
-      music.play().catch(() => {});
-    } catch { music = null; }
+  function loadSound(name) {
+    if (!Object.hasOwn(AUDIO, name)) return Promise.resolve(null);
+    if (cache.has(name)) return cache.get(name);
+    const promise = (async () => {
+      const ac = context();
+      if (!ac) return null;
+      const response = await fetch(audioUrl(name));
+      if (!response.ok) throw new Error(`Audio ${name}: ${response.status}`);
+      return await ac.decodeAudioData(await response.arrayBuffer());
+    })().catch(() => null);
+    cache.set(name, promise);
+    return promise;
   }
-  /** Quieten the music while Alec is talking. */
-  function duck(on) { if (music) music.volume = on ? 0.08 : 0.28; }
+  // Run downloads in small batches; browsers only permit actual playback after a gesture.
+  async function preloadAudio(names = ['mus-lobby', 'mus-board', 'mus-tension', 'sfx-tick', 'sfx-correct', 'sfx-wrong', 'sfx-dice-roll', 'sfx-go', 'sfx-crowd-cheer']) {
+    for (let i = 0; i < names.length; i += 3) await Promise.all(names.slice(i, i + 3).map(loadSound));
+  }
+  function unlockAudio() {
+    const ac = context();
+    if (!ac) return Promise.resolve(false);
+    if (ac.state === 'running') return Promise.resolve(true);
+    if (!resumePromise) resumePromise = ac.resume().then(() => ac.state === 'running').catch(() => false).finally(() => { resumePromise = null; });
+    return resumePromise;
+  }
+  function applyDuck() {
+    const target = muted ? 0 : musicVolume * (voiceDucked ? 0.25 : 1) * (effectsDucked ? 0.35 : 1);
+    if (musicGain && ctx) musicGain.gain.setTargetAtTime(target, ctx.currentTime, 0.055);
+    if (fallbackMusic) fallbackMusic.volume = Math.min(1, target);
+  }
+  async function sfx(name, volume = 0.8) {
+    if (muted || !Object.hasOwn(AUDIO, name)) return;
+    const ac = context();
+    if (!ac) return;
+    const buffer = await loadSound(name);
+    if (muted || !buffer || ac.state !== 'running') return;
+    const source = ac.createBufferSource(), gain = ac.createGain();
+    source.buffer = buffer; gain.gain.value = Math.max(0, Math.min(1, volume));
+    source.connect(gain); gain.connect(ac.destination);
+    const priority = PRIORITY.has(name);
+    if (priority) { effectsDucked++; applyDuck(); }
+    source.onended = () => {
+      source.disconnect(); gain.disconnect();
+      if (priority) { effectsDucked = Math.max(0, effectsDucked - 1); applyDuck(); }
+    };
+    source.start();
+  }
+  async function playMusic(name, volume = 0.28) {
+    if (name === musicName && music && !muted) return;
+    if (music) { try { music.stop(); } catch {} music.disconnect(); music = null; }
+    if (fallbackMusic) { fallbackMusic.pause(); fallbackMusic = null; }
+    musicName = name; musicVolume = volume;
+    if (!name || muted || !Object.hasOwn(AUDIO, name)) return;
+    const ac = context(), buffer = await loadSound(name);
+    if (musicName !== name || muted) return;
+    if (!ac || !buffer) {
+      // Unsupported codecs / browsers: stream music, never construct SFX per click.
+      try { fallbackMusic = new Audio(audioUrl(name)); fallbackMusic.loop = true; applyDuck(); await fallbackMusic.play(); } catch {}
+      return;
+    }
+    if (ac.state !== 'running') return; // The next user gesture unlocks sound.
+    const source = ac.createBufferSource(); source.buffer = buffer; source.loop = true;
+    source.connect(musicGain); music = source; applyDuck(); source.start();
+  }
+  function duck(on) { voiceDucked = Boolean(on); applyDuck(); }
   function setMuted(value) {
-    muted = value; store.set('sa-muted', value);
-    if (muted && music) { music.pause(); music = null; }
+    muted = Boolean(value); store.set('sa-muted', muted); applyDuck();
+    if (muted) { if (music) { try { music.stop(); } catch {} music.disconnect(); music = null; } if (fallbackMusic) { fallbackMusic.pause(); fallbackMusic = null; } }
+    else if (musicName) playMusic(musicName, musicVolume);
   }
   function isMuted() { return muted; }
-  function vibrate(ms = 30) { try { navigator.vibrate?.(ms); } catch { /* not supported */ } }
+  function vibrate(ms = 30) { try { navigator.vibrate?.(ms); } catch { /* optional */ } }
+  // Initialize on idle, not in a critical render. Playback remains gesture-gated.
+  const warm = () => { unlockAudio().then(ok => { if (ok && musicName && !music) playMusic(musicName, musicVolume); }); };
+  window.addEventListener('pointerdown', warm, {passive: true});
+  window.addEventListener('keydown', warm);
+  if ('requestIdleCallback' in window) requestIdleCallback(() => preloadAudio());
+  else setTimeout(() => preloadAudio(), 1500);
 
-  return {store, request, layout, avatars, avatarEl, el, syncClock, now, secondsLeft, sfx, playMusic, setMuted, isMuted, vibrate, duck};
+  return {store, request, layout, avatars, avatarEl, el, syncClock, now, secondsLeft, sfx, playMusic, setMuted, isMuted, vibrate, duck, preloadAudio, unlockAudio};
 })();
