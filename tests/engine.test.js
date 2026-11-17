@@ -91,7 +91,7 @@ test('typed answers forgive small spelling slips', () => {
   assert.equal(Q.markTyped(q.id, 'completely different'), false);
 });
 
-test('the Final Round needs every token, wins on all correct and costs a token on a miss', () => {
+test('the Final Round needs every token and wins with 5 of 6', () => {
   const r = room(2);
   let now = toTurn(r);
   assert.throws(() => engine.choose(r, 'p0', {action: 'final'}, now, seq()), {code: 'FINAL'});
@@ -100,25 +100,27 @@ test('the Final Round needs every token, wins on all correct and costs a token o
   assert.equal(r.board.step, 'predict');
   engine.choose(r, 'p1', {option: 6}, now);
   assert.equal(r.board.step, 'final');
-  for (let i = 0; i < 6; i++) engine.answer(r, 'p0', {choice: Q.get(r.board.final.ids[i]).correct}, now + i * 100);
+  const q0 = Q.get(r.board.final.ids[0]);
+  engine.answer(r, 'p0', {choice: (q0.correct + 1) % q0.opts.length}, now);   // one miss is allowed
+  for (let i = 1; i < 6; i++) engine.answer(r, 'p0', {choice: Q.get(r.board.final.ids[i]).correct}, now + i * 100);
   assert.equal(r.board.step, 'finalResult');
-  assert.equal(r.players[1].brains, 2); // exact prediction
+  assert.equal(r.board.final.outcome, 'win');
+  assert.equal(r.players[1].brains, 0); // predicted 6, got 5
   now += 10000; engine.tick(r, now, seq());
   assert.equal(r.phase, 'over');
   assert.equal(r.board.winnerId, 'p0');
 });
 
-test('missing in the Final Round loses that category token', () => {
+test('two misses end the Final Round, and no token is lost', () => {
   const r = room(2);
   const now = toTurn(r);
   r.players[0].tokens = L.CATEGORY_IDS.slice();
   engine.choose(r, 'p0', {action: 'final'}, now, seq());
   engine.choose(r, 'p1', {option: 0}, now);
-  const first = r.board.final.categories[0];
-  const q = Q.get(r.board.final.ids[0]);
-  engine.answer(r, 'p0', {choice: (q.correct + 1) % q.opts.length}, now);
+  for (let i = 0; i < 2; i++) { const q = Q.get(r.board.final.ids[i]); engine.answer(r, 'p0', {choice: (q.correct + 1) % q.opts.length}, now); }
   assert.equal(r.board.final.outcome, 'lose');
-  assert.ok(!r.players[0].tokens.includes(first));
+  assert.equal(r.board.step, 'finalResult');
+  assert.equal(r.players[0].tokens.length, 6);
   assert.equal(r.players[1].brains, 2); // predicted 0, got 0
 });
 
@@ -129,10 +131,16 @@ test('the answer is never sent before the reveal', () => {
   engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 1)}, now);
   now += 5000; engine.tick(r, now, seq()); now += 5000; engine.tick(r, now, seq());
   engine.choose(r, 'p0', {option: 'smart'}, now, seq());
-  const pub = engine.publicBoard(r, true, 'p1');
-  assert.equal(pub.question.correct, undefined);
-  assert.equal(pub.question.answer, undefined);
-  assert.equal(pub.question.options, null); // typed question: no options either
+  const tv = engine.publicBoard(r, true);
+  assert.equal(tv.question.correct, undefined);
+  assert.equal(tv.question.answer, undefined);
+  assert.equal(tv.question.options, null);    // typed question: the TV shows no options
+  const along = engine.publicBoard(r, false, 'p1');
+  assert.equal(along.question.correct, undefined);
+  assert.equal(along.question.answer, undefined);
+  assert.equal(along.question.options.length >= 2, true);   // others get options privately to play along
+  const active = engine.publicBoard(r, false, 'p0');
+  assert.equal(active.question.options, null); // the player going Smart never sees options
 });
 
 test('pause freezes the clock', () => {
@@ -195,4 +203,37 @@ test('pausing during a mini-game moves its clocks on', () => {
   engine.hostPause(r, now);
   engine.hostResume(r, now + 60000);
   assert.equal(r.board.minigame.deadline, before + 60000);
+});
+
+test('play-along answers count first in the Bonus Steal', () => {
+  const r = room(3);
+  let now = toTurn(r);
+  engine.roll(r, 'p0', now, seq(0));
+  engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 1)}, now);
+  now += 5000; engine.tick(r, now, seq()); now += 5000; engine.tick(r, now, seq());
+  engine.choose(r, 'p0', {option: 'safe'}, now, seq());
+  const q = Q.get(r.board.question.id);
+  engine.answer(r, 'p2', {choice: q.correct}, now + 100);      // plays along, right
+  engine.answer(r, 'p1', {choice: q.correct}, now + 300);      // plays along, right but slower
+  assert.equal(r.board.step, 'question');                      // still the active player's question
+  engine.answer(r, 'p0', {choice: (q.correct + 1) % q.opts.length}, now + 900);
+  now += 5000; engine.tick(r, now, seq());                     // reveal -> steal, settled at once
+  assert.equal(r.board.step, 'groupReveal');
+  assert.equal(r.players[2].brains, 2);
+  assert.equal(r.players[1].brains, 1);
+});
+
+test('play-along answers win nothing when the active player is right', () => {
+  const r = room(3);
+  let now = toTurn(r);
+  engine.roll(r, 'p0', now, seq(0));
+  engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 1)}, now);
+  now += 5000; engine.tick(r, now, seq()); now += 5000; engine.tick(r, now, seq());
+  engine.choose(r, 'p0', {option: 'safe'}, now, seq());
+  const q = Q.get(r.board.question.id);
+  engine.answer(r, 'p1', {choice: q.correct}, now + 100);
+  engine.answer(r, 'p0', {choice: q.correct}, now + 900);
+  now += 5000; engine.tick(r, now, seq());
+  assert.equal(r.board.step, 'turnEnd');
+  assert.equal(r.players[1].brains, 0);
 });
