@@ -4,6 +4,7 @@
   const {el} = SA;
   const LETTERS = ['A', 'B', 'C', 'D'];
   const socket = io({transports: ['websocket', 'polling']});
+  SA.reportErrors(socket, 'phone');
   let state = null, layout = null, avatars = [];
   let pickedAvatar = null;
   let panelKey = '';
