@@ -35,7 +35,8 @@ const nameOf = (room, id) => player(room, id)?.name || 'Someone';
 const catName = id => L.CATEGORIES.find(c => c.id === id)?.name || id;
 const seats = room => [...room.players].sort((x, y) => x.seat - y.seat);
 const required = room => (room.settings.quickGame ? 4 : 6);
-const slow = room => (room.settings.timerSpeed === 'relaxed' ? 1.5 : 1);
+const slow = room => (room.settings.timerSpeed === 'relaxed' ? 1.8 : 1);
+const leisurely = room => room.settings.timerSpeed === 'relaxed';
 function setStep(room, step, now, ms) {
   const g = b(room);
   g.step = step; g.stepStartedAt = now;
@@ -64,7 +65,7 @@ function start(room, now = Date.now(), rng = crypto.randomInt) {
     winnerId: null, standings: null, pausedAt: null,
   };
   banner(room, `Welcome to Smart Alec! ${order[0].name} goes first.`, 'big');
-  setStep(room, 'intro', now, T.INTRO);
+  setStep(room, 'intro', now, leisurely(room) ? 6500 : T.INTRO);
 }
 
 function beginTurn(room, now) {
@@ -74,7 +75,7 @@ function beginTurn(room, now) {
   const p = player(room, g.activeId);
   const canFinal = p.tokens.length >= required(room);
   banner(room, canFinal ? `${p.name} has every token they need. Roll, or go for Smart Alec?` : `${p.name}'s turn. Roll the die!`);
-  setStep(room, 'turn', now, T.ROLL);
+  setStep(room, 'turn', now, Math.round(T.ROLL * slow(room)));
 }
 
 function nextPlayer(room) {
@@ -85,7 +86,8 @@ function nextPlayer(room) {
 
 function endTurn(room, now, text) {
   if (text) { banner(room, text); log(room, text); }
-  setStep(room, 'turnEnd', now, T.TURN_END);
+  // A social interval: the TV host can continue early, otherwise it advances safely.
+  setStep(room, 'turnEnd', now, leisurely(room) ? 20000 : T.TURN_END);
 }
 
 function afterTurnEnd(room, now) {
@@ -121,7 +123,7 @@ function doRoll(room, now, rng) {
     }
   }
   banner(room, dice.length > 1 ? `${p.name} rolls ${dice[0]} and ${dice[1]} (catch-up dice). Pick one!` : `${p.name} rolls a ${dice[0]}. Which way?`);
-  setStep(room, 'direction', now, T.DIRECTION);
+  setStep(room, 'direction', now, Math.round(T.DIRECTION * slow(room)));
 }
 
 function pickMove(room, index, now) {
@@ -150,7 +152,7 @@ function land(room, now, rng) {
   } else {
     banner(room, `${p.name} lands on ${space.name}!${goNote}`, 'big');
   }
-  setStep(room, 'landed', now, T.LANDED);
+  setStep(room, 'landed', now, leisurely(room) ? 2400 : T.LANDED);
 }
 
 function resolveLanding(room, now, rng) {
@@ -169,7 +171,7 @@ function askRisk(room, category, now) {
   banner(room, owned
     ? `${p.name} already has ${catName(category)}. Play Safe for 1 Brain, or Go Smart for 3?`
     : `${catName(category)} token up for grabs. Play Safe (A–D) or Go Smart (type it, +2 Brains)?`);
-  setStep(room, 'risk', now, T.RISK);
+  setStep(room, 'risk', now, Math.round(T.RISK * slow(room)));
 }
 
 function chooseRisk(room, option, now, rng) {
@@ -257,7 +259,7 @@ function revealQuestion(room, now) {
   }
   q.resultText = text || (q.result === 'timeout' ? `Time's up, ${p.name}!` : `Wrong, ${p.name}!`);
   banner(room, q.resultText, correct ? 'good' : 'bad');
-  setStep(room, 'reveal', now, T.REVEAL);
+  setStep(room, 'reveal', now, leisurely(room) ? 8500 : T.REVEAL);
 }
 
 function afterReveal(room, now, rng) {
@@ -339,7 +341,7 @@ function settleGroup(room, now) {
   q.awards = awards;
   q.resultText = text;
   banner(room, text, ranked.length ? 'good' : 'bad');
-  setStep(room, 'groupReveal', now, T.GROUP_REVEAL);
+  setStep(room, 'groupReveal', now, leisurely(room) ? 9000 : T.GROUP_REVEAL);
 }
 
 /* ---------- special spaces ---------- */
@@ -353,7 +355,7 @@ function startSpecial(room, type, now, rng) {
       if (p.brains >= BRAINS.TOKEN_PRICE && missing.length && p.tokens.length < required(room)) {
         g.special.options = missing.map(c => ({category: c, label: `Buy ${catName(c)}`})).concat([{skip: true, label: 'Keep my Brains'}]);
         banner(room, `${p.name} can buy a token for 10 Brains.`);
-        return setStep(room, 'special', now, T.CHOOSE);
+        return setStep(room, 'special', now, Math.round(T.CHOOSE * slow(room)));
       }
       return endTurn(room, now, `${p.name} lands on GO. +1 Brain.`);
     }
@@ -363,26 +365,26 @@ function startSpecial(room, type, now, rng) {
       if (!options.length) { addBrains(room, p.id, BRAINS.NO_STEAL_TARGET); return endTurn(room, now, `Nothing to steal! ${p.name} gets 2 Brains instead.`); }
       g.special.options = options;
       banner(room, `Smart Alec! ${p.name} steals a token.`, 'big');
-      return setStep(room, 'special', now, T.CHOOSE);
+      return setStep(room, 'special', now, Math.round(T.CHOOSE * slow(room)));
     }
     case 'double': {
       if (!p.brains) return endTurn(room, now, `${p.name} has no Brains to bet. Next!`);
       const max = Math.min(BRAINS.BET_MAX, p.brains);
       g.special.options = [{bet: 0, label: 'No bet'}].concat(Array.from({length: max}, (_, i) => ({bet: i + 1, label: `Bet ${i + 1}`})));
       banner(room, `Double or Nothing! How many Brains will ${p.name} bet?`, 'big');
-      return setStep(room, 'special', now, T.CHOOSE);
+      return setStep(room, 'special', now, Math.round(T.CHOOSE * slow(room)));
     }
     case 'freeforall':
       return startGroup(room, 'freeforall', randomCategory(rng), room.players.map(x => x.id), now, rng);
     case 'shortcut': {
       g.special.options = L.SPECIALS.filter(s => s.id !== 'shortcut').map(s => ({index: s.index, label: s.name}));
       banner(room, `Shortcut! ${p.name} jumps to any special space.`, 'big');
-      return setStep(room, 'special', now, T.CHOOSE);
+      return setStep(room, 'special', now, Math.round(T.CHOOSE * slow(room)));
     }
     case 'swap': {
       g.special.options = others.map(o => ({targetId: o.id, label: `Swap with ${o.name}`})).concat([{skip: true, label: 'Stay put'}]);
       banner(room, `Swap! ${p.name} can swap places with anyone.`, 'big');
-      return setStep(room, 'special', now, T.CHOOSE);
+      return setStep(room, 'special', now, Math.round(T.CHOOSE * slow(room)));
     }
     case 'jackpot': {
       const category = randomCategory(rng);
@@ -392,7 +394,7 @@ function startSpecial(room, type, now, rng) {
     case 'showdown': {
       g.special.options = others.map(o => ({targetId: o.id, label: `Challenge ${o.name}`}));
       banner(room, `Showdown! ${p.name} picks an opponent.`, 'big');
-      return setStep(room, 'special', now, T.CHOOSE);
+      return setStep(room, 'special', now, Math.round(T.CHOOSE * slow(room)));
     }
     default:
       return endTurn(room, now);
@@ -495,7 +497,7 @@ function finishNoggin(room, now, winners, game, kind) {
   }
   g.miniResult = {kind, title: game.title, text, awards};
   banner(room, text, won.length ? 'good' : 'bad');
-  setStep(room, 'miniResult', now, T.GROUP_REVEAL);
+  setStep(room, 'miniResult', now, leisurely(room) ? 10000 : T.GROUP_REVEAL);
 }
 const finishMinigameFor = game => (room, now, text, winners) => finishNoggin(room, now, winners, game, 'minigame');
 const finishShowdownFor = game => (room, now, text, winners) => finishNoggin(room, now, winners, game, 'showdown');
@@ -678,7 +680,7 @@ function startSpecialAfterJump(room, now, rng) {
   g.special = null;
   banner(room, `${p.name} takes the Shortcut to ${space.name}!`, 'big');
   if (space.type === 'go') return startSpecial(room, 'go', now, rng);
-  setStep(room, 'landed', now, T.LANDED);
+  setStep(room, 'landed', now, leisurely(room) ? 2400 : T.LANDED);
 }
 
 function tick(room, now = Date.now(), rng = crypto.randomInt) {
@@ -693,6 +695,14 @@ function tick(room, now = Date.now(), rng = crypto.randomInt) {
     if (room.phase !== 'board' || g.step === 'minigame' || g.step === 'showdown') break;
   }
   return changed;
+}
+
+/** Advance only from the safe between-turn conversation screen. */
+function hostNextTurn(room, now) {
+  if (!room.board || room.phase !== 'board') fail('PHASE', 'There is no running game.');
+  if (Number.isFinite(room.board.pausedAt)) fail('PAUSED', 'Resume before starting the next turn.');
+  requireStep(room, 'turnEnd');
+  afterTurnEnd(room, now);
 }
 
 function hostPause(room, now) {
@@ -785,6 +795,6 @@ function publicBoard(room, forTv = false, viewerId = null) {
 }
 
 module.exports = {
-  T, BRAINS, start, roll, choose, answer, tick, hostPause, hostResume, skipDisconnected, publicBoard, standings, required,
+  T, BRAINS, start, roll, choose, answer, tick, hostPause, hostResume, hostNextTurn, skipDisconnected, publicBoard, standings, required,
   minigameInput, minigameDraw, cheer, decideBid, debugStart,
 };

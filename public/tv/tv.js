@@ -121,6 +121,7 @@
     const s = state.settings;
     $('set-quick').setAttribute('aria-pressed', String(s.quickGame));
     $('set-relaxed').setAttribute('aria-pressed', String(s.timerSpeed === 'relaxed'));
+    $('set-relaxed').classList.toggle('on', s.timerSpeed === 'relaxed');
     $('set-preview').setAttribute('aria-pressed', String(s.previewQuestions));
     $('set-time').classList.toggle('on', s.timeLimit > 0);
     $('set-time-label').textContent = s.timeLimit ? `${s.timeLimit} minutes` : 'None';
@@ -398,7 +399,7 @@
       card.append(head, body);
       return;
     }
-    const steps = ['risk', 'question', 'reveal', 'steal', 'group', 'groupReveal', 'special', 'predict', 'final', 'finalResult'];
+    const steps = ['risk', 'question', 'reveal', 'steal', 'group', 'groupReveal', 'special', 'predict', 'final', 'finalResult', 'turnEnd'];
     const showIt = steps.includes(b.step) && !(b.step === 'special' && !b.special);
     $('overlay').hidden = !showIt;
     $('overlay').classList.toggle('final-backdrop', ['predict', 'final', 'finalResult'].includes(b.step));
@@ -406,7 +407,17 @@
     card.replaceChildren();
     const body = el('div', 'card-body');
 
-    if (b.step === 'risk') {
+    if (b.step === 'turnEnd') {
+      card.appendChild(cardHead(null, b.activeId, 'Time for a chat', true));
+      body.append(
+        el('p', 'special-text', b.banner?.text || 'That was a good one!'),
+        el('p', 'special-sub', 'Have a laugh, discuss the answer, or grab a drink. The next turn starts automatically in a little while.')
+      );
+      const next = el('button', 'btn btn-gold btn-xl', 'Next turn · we’re ready');
+      next.type = 'button';
+      next.addEventListener('click', () => send('game:next-turn'));
+      body.appendChild(next);
+    } else if (b.step === 'risk') {
       card.appendChild(cardHead(q.category, q.forId));
       body.append(el('p', 'special-text', b.banner?.text || ''), el('p', 'special-sub', 'Choosing on their phone…'));
     } else if (['question', 'reveal', 'steal', 'group', 'groupReveal'].includes(b.step) && q) {
@@ -611,6 +622,8 @@
     if (Tutorial.isOpen()) Tutorial.close();
     const b = state.board;
     SA.playMusic(['predict', 'final', 'finalResult', 'minigame', 'showdown'].includes(b.step) ? 'mus-tension' : 'mus-board');
+    // Let conversation and Alec's result voice remain audible without musical pressure.
+    SA.setMusicVolume(['turnEnd', 'miniResult', 'groupReveal', 'reveal'].includes(b.step) ? 0.10 : 0.24);
     if (!boardBuilt) buildBoard();
     if (b.step === 'moving' && b.move && (!prev?.board || prev.board.version !== b.version)) animateMove(b.move);
     placePieces();

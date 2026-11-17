@@ -18,7 +18,7 @@ const BID_REVIEW_MS = 12000;
 const BUZZ_WINDOW_MS = 150, MIN_BUZZ_MS = 100;
 // G2: Buzzer Battle is first to 3 points, at most 5 questions (shorter, so the room isn't idle).
 const BUZZER_TARGET = 3, BUZZER_QUESTIONS = 5;
-const DURATION = {buzzer:84000,tug:50000,bid:75000,nerve:25000,tiebreak:25000};
+const DURATION = {buzzer:120000,tug:50000,bid:75000,nerve:25000,tiebreak:25000};
 function error(code,msg){const e=new Error(msg);e.code=code;throw e;}
 function pick(items,rand=crypto.randomInt){return items[rand(items.length)];}
 function normalize(s){return String(s).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]/g,'').trim();}
@@ -27,7 +27,7 @@ function ms(room,normal,relaxed){return room.settings.timerSpeed==='relaxed'?rel
 function nextSum(m,id){const a=2+crypto.randomInt(24),b=2+crypto.randomInt(25),multiply=crypto.randomInt(3)===0;const n=m.sumSequence=(m.sumSequence||0)+1;m.sums[id]=multiply?{prompt:`${a} × ${2+(b%9)} = ?`,correct:a*(2+(b%9)),n}:{prompt:`${a+b+18} − ${b} = ?`,correct:a+18,n};}
 function base(room,kind,title,participants,now){
  const b=room.board;migrate(b);
- const m={kind,title,participants,phase:'intro',startedAt:now,openAt:now+ms(room,4500,7500),deadline:now+ms(room,4500,7500),hardStop:now+DURATION[kind]+(room.settings.timerSpeed==='relaxed'?25000:0),roundKey:1,answered:[],history:[],result:null,cheers:{}};
+ const m={kind,title,participants,phase:'intro',startedAt:now,openAt:now+ms(room,7500,12000),deadline:now+ms(room,7500,12000),hardStop:now+DURATION[kind]+(room.settings.timerSpeed==='relaxed'?(kind==='buzzer'?75000:25000):0),roundKey:1,answered:[],history:[],result:null,cheers:{}};
  b.showdown=m;b.step='showdown';b.deadline=m.deadline;b.challenge=null;b.event={type:kind==='tiebreak'?'noggin-off':'showdown',text:kind==='tiebreak'?'NOGGIN-OFF! Nearest number wins.':`${title}: a head-to-head showdown!`};return m;
 }
 function migrate(b){if(!Array.isArray(b.tieQuestions))b.tieQuestions=[];}
@@ -84,7 +84,7 @@ function nextBuzzer(room,now){const m=room.board.showdown,seen=room.board.seenBu
  }
  if(!q)q=pick(BUZZER.filter(x=>!m.used.includes(x.id)));
  seen.push(q.id);if(seen.length>=BUZZER_GENERAL.length)room.board.seenBuzzer=[];
- m.used.push(q.id);m.question=shuffled(q);m.questionAt=now;m.buzzes={};m.buzzWindowUntil=null;m.buzzReactions=null;m.phase='buzz';m.buzzId=null;m.passId=null;m.questionIndex++;m.answered=[];m.roundKey++;m.deadline=Math.min(m.hardStop,now+ms(room,6000,8000));room.board.deadline=m.deadline;
+ m.used.push(q.id);m.question=shuffled(q);m.questionAt=now;m.buzzes={};m.buzzWindowUntil=null;m.buzzReactions=null;m.phase='buzz';m.buzzId=null;m.passId=null;m.questionIndex++;m.answered=[];m.roundKey++;m.deadline=Math.min(m.hardStop,now+ms(room,10000,16000));room.board.deadline=m.deadline;
 }
 function allIds(m,arr){return m.participants.every(id=>Object.hasOwn(arr,id));}
 function resolve(room,now,winners,message,finishTurn){const b=room.board,m=b.showdown;const unique=[...new Set(winners)].filter(id=>m.participants.includes(id));
@@ -117,9 +117,17 @@ function settleBuzz(room,now){const b=room.board,m=b.showdown;if(!m||m.phase!=='
  const order=Object.entries(m.buzzes).sort((x,y)=>x[1].reactionMs-y[1].reactionMs||x[1].at-y[1].at);
  if(!order.length)return;
  m.buzzId=order[0][0];m.buzzReactions=order.map(([id,v])=>({id,reactionMs:v.reactionMs}));m.buzzWindowUntil=null;
- m.phase='answer';m.deadline=Math.min(m.hardStop,now+ms(room,5500,7500));b.deadline=m.deadline;
+ m.phase='answer';m.deadline=Math.min(m.hardStop,now+ms(room,7500,11000));b.deadline=m.deadline;
 }
-function endBuzzerQuestion(room,now,finishTurn){const m=room.board.showdown;if(Object.values(m.points).some(x=>x>=BUZZER_TARGET)||m.questionIndex>=BUZZER_QUESTIONS||now>=m.hardStop){finishBuzzer(room,now,finishTurn);}else nextBuzzer(room,now);}
+function endBuzzerQuestion(room,now,finishTurn){
+  const m=room.board.showdown;
+  m.finishAfterReveal=Object.values(m.points).some(x=>x>=BUZZER_TARGET)||m.questionIndex>=BUZZER_QUESTIONS||now>=m.hardStop;
+  // No immediate jump to another question: the whole room sees the correct answer.
+  m.phase='reveal';m.buzzWindowUntil=null;m.roundKey++;
+  m.deadline=now+ms(room,5500,9000);
+  m.hardStop=Math.max(m.hardStop,m.deadline+250);
+  room.board.deadline=m.deadline;
+}
 function cheer(room,id,targetId){
  const m=room.board.showdown;
  if(!m||room.board.step!=='showdown'||m.kind==='tiebreak')error('STEP','There is no corner Showdown to predict.');
@@ -153,7 +161,7 @@ function submit(room,id,value,roundKey,now,finishTurn){const b=room.board,m=b.sh
      if(!Number.isInteger(value)||value<0||value>=m.question.choices.length)error('INPUT','Choose an answer.');
      if(value===m.question.correct){m.points[id]++;m.history.push({round:m.questionIndex,winner:id});endBuzzerQuestion(room,now,finishTurn);}
      else if(m.phase==='answer'){
-       m.phase='pass';m.passId=m.participants.find(x=>x!==id);m.deadline=Math.min(m.hardStop,now+ms(room,5000,7000));b.deadline=m.deadline;
+       m.phase='pass';m.passId=m.participants.find(x=>x!==id);m.deadline=Math.min(m.hardStop,now+ms(room,7000,10000));b.deadline=m.deadline;
      }else endBuzzerQuestion(room,now,finishTurn);
      return;
    }
@@ -233,9 +241,14 @@ function tick(room,now,finishTurn){const m=room.board.showdown;if(!m||room.board
    }
  }
  if(m.kind==='buzzer'&&m.phase==='buzz'&&m.buzzWindowUntil&&now>=m.buzzWindowUntil){settleBuzz(room,now);return true;}
- if(now<m.deadline&&now<m.hardStop)return false;
+ if(m.kind==='buzzer'&&m.phase==='reveal'){
+    if(now<m.deadline)return false;
+    if(m.finishAfterReveal)finishBuzzer(room,now,finishTurn);else nextBuzzer(room,now);
+    return true;
+  }
+  if(now<m.deadline&&now<m.hardStop)return false;
  if(m.kind==='buzzer'){
-   if(m.phase==='answer'){m.phase='pass';m.passId=m.participants.find(x=>x!==m.buzzId);m.deadline=Math.min(m.hardStop,now+ms(room,5000,7000));room.board.deadline=m.deadline;return true;}
+   if(m.phase==='answer'){m.phase='pass';m.passId=m.participants.find(x=>x!==m.buzzId);m.deadline=Math.min(m.hardStop,now+ms(room,7000,10000));room.board.deadline=m.deadline;return true;}
    endBuzzerQuestion(room,now,finishTurn);return true;
  }
  if(m.kind==='tug'){finishTug(room,now,finishTurn);return true;}
@@ -258,7 +271,7 @@ function publicState(room,forTv=false,viewerId=null){const m=room.board.showdown
  }
  const reveal= m.phase!=='intro';
  if(m.kind==='buzzer'){pub.round=m.questionIndex;pub.totalRounds=BUZZER_QUESTIONS;pub.question=reveal?m.question?.question||'':'Buzz first, then choose the correct answer.';
-   pub.display={choices:reveal?m.question?.choices:[],points:m.points,buzzId:m.buzzId,passId:m.passId,canBuzz:m.phase==='buzz',answerId:m.phase==='answer'?m.buzzId:m.phase==='pass'?m.passId:null,buzzed:Object.keys(m.buzzes||{}),buzzReactions:m.phase==='buzz'?null:m.buzzReactions||null};
+   pub.display={choices:reveal?m.question?.choices:[],points:m.points,buzzId:m.buzzId,passId:m.passId,canBuzz:m.phase==='buzz',answerId:m.phase==='answer'?m.buzzId:m.phase==='pass'?m.passId:null,buzzed:Object.keys(m.buzzes||{}),buzzReactions:m.phase==='buzz'?null:m.buzzReactions||null,correctText:m.phase==='reveal'?m.question.choices[m.question.correct]:null,roundWinnerId:m.phase==='reveal'?(m.history.find(h=>h.round===m.questionIndex)?.winner||null):null};
  }
  if(m.kind==='tug'){pub.question='Answer the maths problems on your phone to pull the rope five notches.';pub.display={rope:m.rope,correctCount:m.correctCount};if(viewerId&&m.participants.includes(viewerId))pub.private={prompt:m.sums[viewerId].prompt,qid:m.sums[viewerId].n};}
  if(m.kind==='bid'){pub.question=reveal?m.category.prompt:'Bid how many category items you can name.';pub.display={bid:m.bid,bidderId:m.bidderId,turnId:m.turnId,correct:m.guesses.length,max:m.category.answers.length,invalid:m.invalid};

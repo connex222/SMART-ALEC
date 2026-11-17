@@ -44,7 +44,7 @@ const SPECS=Object.freeze({
  'close-call':{name:'Close Call',category:'brain',rounds:3,rule:'Make a numerical guess. Closest scores the best placing across three questions. Same guess? The quicker answer ranks higher.'},
  'unscramble':{name:'Unscramble',category:'brain',rounds:3,rule:'Solve the anagram from its category clue. First correct answer scores.'}
 });
-const REVEAL_MS=2800,REVEAL_RELAXED_MS=4000;
+const REVEAL_MS=3500,REVEAL_RELAXED_MS=8500;
 // D7: below 100 ms is anticipation, not reaction. Phone clocks may be a little out, so
 // a tap up to 1 s before the server's DRAW time is allowed if the phone says it showed DRAW.
 const MIN_REACTION_MS=100,CLOCK_SLACK_MS=1000;
@@ -91,10 +91,10 @@ function start(room,category,now,rng=crypto.randomInt,forcedId=null){
  b.minigame={id,category,round:0,roundKey:0,phase:'',deadline:0,openAt:0,roundAnswers:{},progress:{},blocked:{},attempts:{},usedIds:[],memorySequence:[],scores:Object.fromEntries(players.map(id=>[id,0])),players,eliminated:[],bestLengths:Object.fromEntries(players.map(id=>[id,0])),strikes:Object.fromEntries(players.map(id=>[id,0])),lastFeedback:'',privateTv:null,secret:null,question:'',hint:'',display:{},lastRoundResult:null};
  b.step='minigame';b.challenge=null;b.result=null;
  nextRound(room,now,rng);
- // Studio rule card and five-second visual preview before the first timed round.
+ // Give players time to read the game rules before the first timed round.
  const m=b.minigame;
- // Long enough to read the three how-to-play steps on the TV and phone.
- const intro=room.settings.timerSpeed==='relaxed'?6000:4500;
+ // Keep the three how-to-play steps on screen long enough to discuss them.
+ const intro=room.settings.timerSpeed==='relaxed'?12000:7500;
  m.introUntil=now+intro;m.resumePhase=m.phase;m.phase='intro';
  m.openAt+=intro;m.deadline+=intro;
  for(const key of ['readyAt','flashEndsAt','revealAt'])if(Number.isFinite(m.display[key]))m.display[key]+=intro;
@@ -153,7 +153,7 @@ function nextRound(room,now,rng=crypto.randomInt){
    m.usedIds.push(a.id,b.id);
    m.secret={answer:b.value>a.value?0:1,actual:b.value};
    m.question=`${a.label}: ${a.value}${a.unit?' '+a.unit:''}. ${b.label}: higher or lower?`;
-   m.display={options:['HIGHER','LOWER'],difficulty:m.round};set(room.settings.rules==='showtime'?Math.max(3600,6800-(m.round-1)*400):6000);break;
+   m.display={options:['HIGHER','LOWER'],difficulty:m.round};set(room.settings.rules==='showtime'?Math.max(5500,9000-(m.round-1)*600):8500);break;
  }
  case 'memory-lane':{
    m.memorySequence.push(rng(6));if(m.round===1)m.memorySequence.push(rng(6));
@@ -163,7 +163,7 @@ function nextRound(room,now,rng=crypto.randomInt){
    m.privateTv={sequence};m.display={padCount:6,sequenceLength:sequence.length,flashEndsAt:m.openAt,reverse:room.settings.rules==='showtime'&&m.round===roundsFor(room,m.id)};break;
  }
  case 'close-call':{
-   const item=pickEstimate(m,rng);m.usedIds.push(item.id);m.secret={answer:item.answer};m.question=item.question;m.display={unit:item.unit,difficulty:m.round};set(room.settings.rules==='showtime'?Math.max(7000,12000-(m.round-1)*1100):11500);break;
+   const item=pickEstimate(m,rng);m.usedIds.push(item.id);m.secret={answer:item.answer};m.question=item.question;m.display={unit:item.unit,difficulty:m.round};set(room.settings.rules==='showtime'?Math.max(13000,18000-(m.round-1)*1100):18000);break;
  }
  case 'unscramble':{
    const freshWords=words.filter(q=>!m.usedIds.includes(q.id));
@@ -309,7 +309,7 @@ function winners(m){
 }
 function advance(room,now,finishTurn,rng=crypto.randomInt){
  const b=room.board,m=b.minigame;if(!m)return;
- // Server-owned 2.8s reveal (4.0s relaxed): correct answers stay hidden until reveal.
+ // Server-owned reveal: show the answer long enough to celebrate or laugh together.
  // The round key remains stable during reveal; late inputs are rejected.
  if(m.phase==='reveal'){if(!m.finalReveal){nextRound(room,now,rng);return;}}
  else{
