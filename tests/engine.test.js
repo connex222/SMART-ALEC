@@ -478,3 +478,22 @@ test('when most players tap "We\'re ready", the next turn starts', () => {
   assert.equal(r.board.activeId, 'p1');
   assert.throws(() => engine.playerReady(r, 'p0', at + 200), {code: 'STEP'});
 });
+
+test('authorised TV host can return an unfinished game to the same lobby', () => {
+  const {GameRooms} = require('../server/rooms');
+  const rooms = new GameRooms({now: () => 1234, randomInt: () => 0});
+  const created = rooms.create('tv-host');
+  const room = rooms.find(created.code);
+  room.phase = 'board';
+  room.board = {step:'minigame',deadline:999999};
+  room.players = [{id:'p1',name:'Guest',ready:true,position:4,brains:8,tokens:['sport'],socketId:'guest'}];
+  assert.throws(() => rooms.backToLobby(created.code,'unapproved'), {code:'AUTH'});
+  assert.equal(room.phase,'board','Guest cannot cancel a game');
+  const state = rooms.backToLobby(created.code,'tv-host');
+  assert.equal(state.phase,'lobby');
+  assert.equal(room.board,null,'Old game engine state cleared');
+  assert.equal(state.players.length,1,'Connected player seat retained');
+  assert.equal(room.players[0].ready,false,'Lobby readiness reset');
+  assert.equal(room.players[0].position,undefined,'Board position cleared');
+  assert.equal(room.players[0].brains,undefined,'Scoring cleared');
+});
