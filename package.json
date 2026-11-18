@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
-    "test": "node --test tests/*.test.js",
+    "test": "node --test tests/*.test.js tests/offline-audio.test.mjs",
     "simulate": "node tools/simulate.js 300",
     "questions": "node tools/build-questions.js && node tools/score-options.js",
     "check": "node --check server/index.js && node --check server/engine.js && node --check server/rooms.js && node --check server/gateway.js && node --check server/questions.js && node --check server/state-store.js && node --check server/stats.js && node --check server/board-layout.js && node --check public/tv/tv.js && node --check public/tv/tutorial.js && node --check public/tv/voice.js && node --check public/tv/noggin-view.js && node --check public/play/play.js && node --check public/play/noggin-phone.js && node --check public/play/keyboard.js && node --check public/shared/client.js && node --check tools/build-questions.js && node --check tools/validate-questions.js && node --check tools/check-assets.js && node --check tools/smoke.js && node --check tools/check-pacing.js",

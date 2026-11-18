@@ -8,7 +8,7 @@ test('Smart Alec plays its original lobby theme with legacy bundled fallback',()
  const shared=read('public/shared/client.js');
  const tv=read('public/tv/tv.js');
  assert.match(shared,/ORIGINAL_MUSIC_URLS/);
- assert.match(shared,/4c43ebab-fd3c-455e-b690-2dbd60d7a337\.mp3/);
+ assert.match(shared,/mus-lobby-original\.mp3/);
  assert.match(shared,/bundledAudioUrl\(name\)/);
  assert.match(shared,/track\.addEventListener\('error'/);
  assert.match(shared,/track\.loop = true/);
