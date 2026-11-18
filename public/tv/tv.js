@@ -92,7 +92,10 @@
   }
   const setting = patch => send('room:settings', {patch});
   $('set-quick').addEventListener('click', () => setting({quickGame: !state.settings.quickGame}));
-  $('set-relaxed').addEventListener('click', () => setting({timerSpeed: state.settings.timerSpeed === 'relaxed' ? 'normal' : 'relaxed'}));
+  const PACE_ORDER = ['sociable', 'relaxed', 'normal'];
+  const PACE_TEXT = {sociable: 'Sociable: time to react after big moments (recommended)', relaxed: 'Leisurely: lots of time, a chat after every turn (longer games)', normal: 'Brisk: quick-fire, no chat pauses'};
+  $('set-relaxed').addEventListener('click', () => setting({timerSpeed: PACE_ORDER[(PACE_ORDER.indexOf(state.settings.timerSpeed || 'sociable') + 1) % PACE_ORDER.length]}));
+  $('chat-next').addEventListener('click', () => send('game:next-turn'));
   $('set-preview').addEventListener('click', () => setting({previewQuestions: !state.settings.previewQuestions}));
   const LEVEL_TEXT = {family: 'Family: easy and medium', mixed: 'Mixed: everything', buffs: 'Quiz buffs: medium and hard'};
   $('set-level').addEventListener('click', () => {
@@ -120,8 +123,8 @@
     else if (state.players.length > prev.players.length) AlecVoice.say('join');
     const s = state.settings;
     $('set-quick').setAttribute('aria-pressed', String(s.quickGame));
-    $('set-relaxed').setAttribute('aria-pressed', String(s.timerSpeed === 'relaxed'));
-    $('set-relaxed').classList.toggle('on', s.timerSpeed === 'relaxed');
+    $('set-pace-label').textContent = PACE_TEXT[s.timerSpeed] || PACE_TEXT.sociable;
+    $('set-relaxed').classList.toggle('on', s.timerSpeed !== 'normal');
     $('set-preview').setAttribute('aria-pressed', String(s.previewQuestions));
     $('set-time').classList.toggle('on', s.timeLimit > 0);
     $('set-time-label').textContent = s.timeLimit ? `${s.timeLimit} minutes` : 'None';
@@ -399,7 +402,14 @@
       card.append(head, body);
       return;
     }
-    const steps = ['risk', 'question', 'reveal', 'steal', 'group', 'groupReveal', 'special', 'predict', 'final', 'finalResult', 'turnEnd'];
+    const steps = ['risk', 'question', 'reveal', 'steal', 'group', 'groupReveal', 'special', 'predict', 'final', 'finalResult'];
+    // Chat pause: a bar along the bottom, with how many phones are ready.
+    const chatting = b.step === 'turnEnd' && Boolean(b.chat);
+    $('chatbar').hidden = !chatting;
+    if (chatting) {
+      $('chat-text').textContent = b.banner?.text || 'What a moment!';
+      $('chat-ready').textContent = b.chat.ready ? `${b.chat.ready} of ${b.chat.needed} needed tapped "We're ready" on their phones` : 'Tap "We\'re ready" on your phones when you want to carry on';
+    }
     const showIt = steps.includes(b.step) && !(b.step === 'special' && !b.special);
     $('overlay').hidden = !showIt;
     $('overlay').classList.toggle('final-backdrop', ['predict', 'final', 'finalResult'].includes(b.step));
@@ -407,17 +417,7 @@
     card.replaceChildren();
     const body = el('div', 'card-body');
 
-    if (b.step === 'turnEnd') {
-      card.appendChild(cardHead(null, b.activeId, 'Time for a chat', true));
-      body.append(
-        el('p', 'special-text', b.banner?.text || 'That was a good one!'),
-        el('p', 'special-sub', 'Have a laugh, discuss the answer, or grab a drink. The next turn starts automatically in a little while.')
-      );
-      const next = el('button', 'btn btn-gold btn-xl', 'Next turn · we’re ready');
-      next.type = 'button';
-      next.addEventListener('click', () => send('game:next-turn'));
-      body.appendChild(next);
-    } else if (b.step === 'risk') {
+    if (b.step === 'risk') {
       card.appendChild(cardHead(q.category, q.forId));
       body.append(el('p', 'special-text', b.banner?.text || ''), el('p', 'special-sub', 'Choosing on their phone…'));
     } else if (['question', 'reveal', 'steal', 'group', 'groupReveal'].includes(b.step) && q) {

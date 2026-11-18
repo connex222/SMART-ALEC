@@ -13,11 +13,11 @@ Built from NOGGIN (rooms, join by QR, reconnect, pause, sounds, the 16 mini-game
 
 TV controls appear when you move the mouse: Pause (or Space bar), Skip waiting, Sound, End game.
 
-### A more sociable pace
+### Pace
 
-New rooms start with **Leisurely pace** enabled. Questions have longer answer windows; mini-games and Showdowns begin with a rules card that stays on screen; and answers and results are held long enough for a laugh or a discussion. Fast-reaction mechanics remain fast **after** their instructions have been read.
+Choose the pace in the lobby. **Sociable** is the default: about 25% more answer time, results held long enough to react, and a short **Time for a chat** bar after big moments (a token won or stolen, a steal, a mini-game or Showdown result, a missed Final Round). Phones show **We're ready**: when more than half the players tap it, the next turn starts; the TV's **Next turn** button does the same. **Leisurely** gives lots of time and a chat after every turn (games run much longer). **Brisk** is the original quick-fire timing with no chat pauses.
 
-Between turns, Smart Alec shows a **Time for a chat** card for up to 20 seconds. The TV host can select **Next turn · we’re ready** to continue immediately, or use **Pause** to talk for longer. Only the TV host can advance this card; it never skips a question or a mini-game in progress. The lobby toggle can restore the original normal timing if the group prefers a brisk game. Music is quieter during the conversational result and between-turn screens.
+Simulated game lengths (6 players): Brisk about 37 min, Sociable about 52 min, Leisurely about 74 min. `tools/check-pacing.js` fails the automatic checks if a 6-player Sociable game averages over 60 minutes.
 
 ## Run it on your own computer (Windows)
 
@@ -101,5 +101,7 @@ v0.14.0: Automatic checks on GitHub (.github/workflows/check.yml run `npm run ve
 v0.15.0: Question review page (https://claude.ai/artifact/MKMT289a4jmaGWgAUUtK7k) with Keep / Fix / Cut decisions applied through data/review-decisions.json. No repeats between games: the last 1,500 questions asked are avoided while fresher ones exist. Difficulty is learned from play: after 8 answers a question is re-rated by how often it is answered correctly (75%+ easy, 40-75% medium, under 40% hard). Both are saved with the games (server/stats.js). See /api/stats.
 
 v0.16.0: A 30-second feedback card on every phone after each game (fun rating, best bits, what dragged, optional note). Each response is written to the server log as a `[feedback]` line with the game's length, player count and settings, and totted up at /api/stats.
+
+v0.17.0: Three paces (Sociable default, Leisurely, Brisk). Chat pauses only after big moments at Sociable pace, shown as a bar so the board stays visible; any phone can vote "We're ready". Buzzer Battle capped at 2 minutes. Automatic game-length check.
 
 Next: playtest, your review of the new packs.

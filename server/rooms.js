@@ -18,7 +18,7 @@ const MAX_ROOMS = 500;
 const SETTINGS = Object.freeze({
   quickGame: v => typeof v === 'boolean',
   timeLimit: v => [0, 30, 45, 60].includes(v),
-  timerSpeed: v => ['normal', 'relaxed'].includes(v),
+  timerSpeed: v => ['normal', 'sociable', 'relaxed'].includes(v),
   familyFriendly: v => typeof v === 'boolean',
   previewQuestions: v => typeof v === 'boolean',
   reduceMotion: v => typeof v === 'boolean',
@@ -67,7 +67,7 @@ class GameRooms {
       code, phase: 'lobby', createdAt: this.now(), updatedAt: this.now(),
       hostToken: crypto.randomBytes(24).toString('base64url'), hostSocketId,
       players: [], vipId: null, vipOfflineSince: null, board: null,
-      settings: {quickGame: false, timeLimit: 0, timerSpeed: 'relaxed', familyFriendly: true, previewQuestions: true, reduceMotion: false, level: 'mixed'},
+      settings: {quickGame: false, timeLimit: 0, timerSpeed: 'sociable', familyFriendly: true, previewQuestions: true, reduceMotion: false, level: 'mixed'},
     };
     this.rooms.set(code, room);
     return {code, token: room.hostToken, state: this.state(code, true)};
@@ -266,6 +266,7 @@ class GameRooms {
     room.updatedAt = this.now();
     return this.callerState(code, socketId);
   }
+  readyGame(code, socketId) { const {room, player} = this.requirePlayer(code, socketId); this.assertGameRunning(room); engine.playerReady(room, player.id, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
   nextTurnGame(code, socketId) { const room = this.requireHost(code, socketId); this.assertGameRunning(room); engine.hostNextTurn(room, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
   pauseGame(code, socketId) { const room = this.requireHost(code, socketId); engine.hostPause(room, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }
   resumeGame(code, socketId) { const room = this.requireHost(code, socketId); assert(room.hostSocketId, 'TV', 'Reconnect the TV first.'); engine.hostResume(room, this.now()); room.updatedAt = this.now(); return this.callerState(code, socketId); }

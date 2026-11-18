@@ -162,6 +162,7 @@ function attachGateway(io, {rooms = new GameRooms(), limiter = new AttemptLimite
 
     socket.on('game:start', wrap(async () => {const code=getBound(socket);const state=rooms.startGame(code,socket.id);broadcast(code);return {state};}));
     socket.on('game:lobby', wrap(async () => {const code=getBound(socket);const state=rooms.backToLobby(code,socket.id);broadcast(code);return {state};}));
+    socket.on('game:ready', wrap(async () => {const code=getBound(socket);const state=rooms.readyGame(code,socket.id);broadcast(code);return {state};}));
     socket.on('game:next-turn', wrap(async () => {const code=getBound(socket);const state=rooms.nextTurnGame(code,socket.id);broadcast(code);return {state};}));
     socket.on('game:pause', wrap(async () => {const code=getBound(socket);const state=rooms.pauseGame(code,socket.id);broadcast(code);return {state};}));
     socket.on('game:resume', wrap(async () => {const code=getBound(socket);const state=rooms.resumeGame(code,socket.id);broadcast(code);return {state};}));

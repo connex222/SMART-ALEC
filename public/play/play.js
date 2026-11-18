@@ -263,7 +263,12 @@
       }
       case 'finalResult': return watch(b.banner?.text || '');
       case 'miniResult': { const n = b.miniResult?.awards?.[p.id]; return watch(b.miniResult?.text || '', n ? `You ${n > 0 ? 'win' : 'lose'} ${Math.abs(n)} Brains` : ''); }
-      case 'turnEnd': return watch(b.banner?.text || 'Your turn is over.', 'Have a laugh and chat. The next turn begins shortly, or the TV host can continue when everyone is ready.');
+      case 'turnEnd': {
+        if (!b.chat) return watch(b.banner?.text || 'Next turn…');
+        if (b.chat.mine) return watch(b.banner?.text || 'Chat time', `You're ready. Waiting for the others (${b.chat.ready} of ${b.chat.needed}).`);
+        return [el('h2', null, b.banner?.text || 'Chat time'), el('p', 'sub', 'Have a laugh about that one. Tap when you want to carry on.'),
+          (() => { const r = el('button', 'btn btn-gold btn-big', "We're ready"); r.addEventListener('click', () => { r.disabled = true; act('game:ready'); }); return r; })()];
+      }
       default: return watch('Watch the TV.');
     }
   }

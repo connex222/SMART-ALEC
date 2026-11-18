@@ -27,7 +27,7 @@ function ms(room,normal,relaxed){return room.settings.timerSpeed==='relaxed'?rel
 function nextSum(m,id){const a=2+crypto.randomInt(24),b=2+crypto.randomInt(25),multiply=crypto.randomInt(3)===0;const n=m.sumSequence=(m.sumSequence||0)+1;m.sums[id]=multiply?{prompt:`${a} × ${2+(b%9)} = ?`,correct:a*(2+(b%9)),n}:{prompt:`${a+b+18} − ${b} = ?`,correct:a+18,n};}
 function base(room,kind,title,participants,now){
  const b=room.board;migrate(b);
- const m={kind,title,participants,phase:'intro',startedAt:now,openAt:now+ms(room,7500,12000),deadline:now+ms(room,7500,12000),hardStop:now+DURATION[kind]+(room.settings.timerSpeed==='relaxed'?(kind==='buzzer'?75000:25000):0),roundKey:1,answered:[],history:[],result:null,cheers:{}};
+ const m={kind,title,participants,phase:'intro',startedAt:now,openAt:now+ms(room,7500,12000),deadline:now+ms(room,7500,12000),hardStop:now+DURATION[kind]+(room.settings.timerSpeed==='relaxed'&&kind!=='buzzer'?25000:0),roundKey:1,answered:[],history:[],result:null,cheers:{}};
  b.showdown=m;b.step='showdown';b.deadline=m.deadline;b.challenge=null;b.event={type:kind==='tiebreak'?'noggin-off':'showdown',text:kind==='tiebreak'?'NOGGIN-OFF! Nearest number wins.':`${title}: a head-to-head showdown!`};return m;
 }
 function migrate(b){if(!Array.isArray(b.tieQuestions))b.tieQuestions=[];}

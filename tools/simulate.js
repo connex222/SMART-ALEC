@@ -9,7 +9,7 @@ const Q = require('../server/questions');
 
 function makeRoom(n, settings = {}) {
   return {
-    code: 'TEST', phase: 'lobby', settings: {quickGame: false, timeLimit: 0, timerSpeed: 'normal', previewQuestions: true, ...settings},
+    code: 'TEST', phase: 'lobby', settings: {quickGame: false, timeLimit: 0, timerSpeed: 'sociable', previewQuestions: true, ...settings},  // same default as new rooms
     players: Array.from({length: n}, (_, i) => ({id: 'p' + i, name: 'Bot' + i, seat: i + 1, socketId: 's' + i, skill: 0.45 + Math.random() * 0.35})),
   };
 }

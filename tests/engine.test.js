@@ -18,7 +18,8 @@ function room(n = 3, settings = {}) {
 }
 // A fixed "random" source: returns the values given, then 0.
 function seq(...values) { let i = 0; return n => Math.min(n - 1, values[i++] ?? 0); }
-function toTurn(r, now = 0) { engine.start(r, now, seq()); engine.tick(r, now + engine.T.INTRO, seq()); return now + engine.T.INTRO; }
+// Start a game and skip the welcome screen (its length depends on the pace).
+function toTurn(r, now = 0) { engine.start(r, now, seq()); const t = r.board.deadline; engine.tick(r, t, seq()); return t; }
 
 test('board has 64 spaces: 8 specials and 8 of each of 7 types', () => {
   assert.equal(L.SPACES.length, 64);
@@ -340,10 +341,10 @@ test('player feedback is totted up and survives a restart', () => {
   assert.equal(stats.feedbackSummary().responses, 2);
 });
 
-test('new rooms use the leisurely default rather than racing straight through the show', () => {
+test('new rooms start at the Sociable pace', () => {
   const {GameRooms} = require('../server/rooms');
   const rooms = new GameRooms({now: () => 100, randomInt: () => 0});
-  assert.equal(rooms.create('tv-host').state.settings.timerSpeed, 'relaxed');
+  assert.equal(rooms.create('tv-host').state.settings.timerSpeed, 'sociable');
 });
 
 test('leisurely turns keep questions and answers visible, and only the host can safely advance between turns', () => {
@@ -368,7 +369,7 @@ test('leisurely turns keep questions and answers visible, and only the host can 
   assert.equal(r.board.deadline - r.board.stepStartedAt, 8500);
   engine.tick(r, r.board.deadline, seq());
   assert.equal(r.board.step, 'turnEnd');
-  assert.equal(r.board.deadline - r.board.stepStartedAt, 20000);
+  assert.equal(r.board.deadline - r.board.stepStartedAt, engine.PACE.relaxed.chat);   // Leisurely: a chat after every turn
   engine.hostPause(r, r.board.stepStartedAt + 100);
   assert.throws(() => engine.hostNextTurn(r, r.board.stepStartedAt + 200), {code: 'PAUSED'});
   engine.hostResume(r, r.board.stepStartedAt + 300);
@@ -427,4 +428,53 @@ test('reading-heavy Close Call gets a full reading and answering window', () => 
   const m = r.board.minigame;
   assert.equal(m.introUntil - 101000, 12000);
   assert.ok(m.deadline - m.openAt >= 25000);
+});
+
+/** Play one Play Safe question for p0 on space 1, answering right or wrong. */
+function oneQuestion(r, right) {
+  let now = toTurn(r);
+  engine.roll(r, 'p0', now, seq(0));
+  engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 1)}, now);
+  now += 5000; engine.tick(r, now, seq()); now += 5000; engine.tick(r, now, seq());
+  engine.choose(r, 'p0', {option: 'safe'}, now, seq());
+  const q = Q.get(r.board.question.id);
+  engine.answer(r, 'p0', {choice: right ? q.correct : (q.correct + 1) % q.opts.length}, now + 500);
+  engine.tick(r, r.board.deadline, seq());               // reveal ends
+  if (r.board.step === 'steal') engine.tick(r, r.board.deadline, seq());
+  if (r.board.step === 'groupReveal') engine.tick(r, r.board.deadline, seq());
+  return r.board;
+}
+
+test('Sociable pace: a chat pause after a big moment, none after an ordinary turn', () => {
+  const won = oneQuestion(room(3, {timerSpeed: 'sociable'}), true);    // wins a new token
+  assert.equal(won.step, 'turnEnd');
+  assert.ok(won.chat);
+  assert.equal(won.deadline - won.stepStartedAt, engine.PACE.sociable.chat);
+  const quiet = room(3, {timerSpeed: 'sociable'});
+  quiet.players.forEach(p => { p.socketId = null; });                 // nobody to steal it
+  quiet.players[0].socketId = 's0';
+  const b = oneQuestion(quiet, false);
+  assert.equal(b.step, 'turnEnd');
+  assert.equal(b.chat, null);
+  assert.equal(b.deadline - b.stepStartedAt, engine.T.TURN_END);
+});
+
+test('Brisk pace never pauses for a chat', () => {
+  const b = oneQuestion(room(3, {timerSpeed: 'normal'}), true);
+  assert.equal(b.step, 'turnEnd');
+  assert.equal(b.chat, null);
+});
+
+test('when most players tap "We\'re ready", the next turn starts', () => {
+  const r = room(3, {timerSpeed: 'sociable'});
+  const b = oneQuestion(r, true);
+  assert.equal(b.step, 'turnEnd');
+  const at = b.stepStartedAt + 1000;
+  engine.playerReady(r, 'p1', at);
+  assert.equal(r.board.step, 'turnEnd');                               // 1 of 2 needed
+  assert.equal(engine.publicBoard(r, false, 'p1').chat.mine, true);
+  engine.playerReady(r, 'p2', at + 100);
+  assert.equal(r.board.step, 'turn');                                  // 2 of 3: carry on
+  assert.equal(r.board.activeId, 'p1');
+  assert.throws(() => engine.playerReady(r, 'p0', at + 200), {code: 'STEP'});
 });

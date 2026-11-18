@@ -35,8 +35,23 @@ const nameOf = (room, id) => player(room, id)?.name || 'Someone';
 const catName = id => L.CATEGORIES.find(c => c.id === id)?.name || id;
 const seats = room => [...room.players].sort((x, y) => x.seat - y.seat);
 const required = room => (room.settings.quickGame ? 4 : 6);
-const slow = room => (room.settings.timerSpeed === 'relaxed' ? 1.8 : 1);
-const leisurely = room => room.settings.timerSpeed === 'relaxed';
+/*
+ * Three paces, chosen in the lobby:
+ *   normal   (Brisk)     the original timings, no chat pauses
+ *   sociable (default)   a little more thinking time, results held long enough to react,
+ *                        and a short chat pause only after big moments
+ *   relaxed  (Leisurely) lots of time, and a chat pause after every turn
+ * Measured with tools/check-pacing.js: a 6-player Sociable game must average under an hour.
+ */
+const PACE = {
+  normal:   {slow: 1,    intro: T.INTRO, landed: T.LANDED, reveal: T.REVEAL, group: T.GROUP_REVEAL, mini: T.GROUP_REVEAL, chat: 0,     chatEveryTurn: false},
+  sociable: {slow: 1.25, intro: 5500,    landed: 2000,     reveal: 6000,     group: 6000,           mini: 6500,           chat: 8000,  chatEveryTurn: false},
+  relaxed:  {slow: 1.8,  intro: 6500,    landed: 2400,     reveal: 8500,     group: 9000,           mini: 10000,          chat: 15000, chatEveryTurn: true},
+};
+const pace = room => PACE[room.settings.timerSpeed] || PACE.sociable;
+const slow = room => pace(room).slow;
+/** Something worth talking about happened this turn (earns a chat pause at Sociable pace). */
+const bigMoment = room => { if (room.board) room.board.bigMoment = true; };
 function setStep(room, step, now, ms) {
   const g = b(room);
   g.step = step; g.stepStartedAt = now;
@@ -48,7 +63,7 @@ function log(room, text) { const g = b(room); g.log = [text, ...(g.log || [])].s
 function requireStep(room, ...steps) { if (!steps.includes(b(room).step)) fail('STEP', 'That is not available right now.'); }
 function requireActive(room, id) { if (b(room).activeId !== id) fail('TURN', 'It is not your turn.'); }
 function addBrains(room, id, n) { const p = player(room, id); if (p) p.brains = Math.max(0, (p.brains || 0) + n); }
-function giveToken(room, id, cat) { const p = player(room, id); if (p && !p.tokens.includes(cat)) { p.tokens.push(cat); return true; } return false; }
+function giveToken(room, id, cat) { const p = player(room, id); if (p && !p.tokens.includes(cat)) { p.tokens.push(cat); bigMoment(room); return true; } return false; }
 function randomCategory(rng) { return L.CATEGORY_IDS[rng(L.CATEGORY_IDS.length)]; }
 
 /* ---------- start ---------- */
@@ -65,7 +80,7 @@ function start(room, now = Date.now(), rng = crypto.randomInt) {
     winnerId: null, standings: null, pausedAt: null,
   };
   banner(room, `Welcome to Smart Alec! ${order[0].name} goes first.`, 'big');
-  setStep(room, 'intro', now, leisurely(room) ? 6500 : T.INTRO);
+  setStep(room, 'intro', now, pace(room).intro);
 }
 
 function beginTurn(room, now) {
@@ -86,12 +101,18 @@ function nextPlayer(room) {
 
 function endTurn(room, now, text) {
   if (text) { banner(room, text); log(room, text); }
-  // A social interval: the TV host can continue early, otherwise it advances safely.
-  setStep(room, 'turnEnd', now, leisurely(room) ? 20000 : T.TURN_END);
+  // A chat pause after big moments (every turn at Leisurely pace). Phones can vote
+  // "We're ready" and the TV host can continue early; otherwise it moves on by itself.
+  const g = b(room), pc = pace(room);
+  const chat = pc.chat > 0 && (pc.chatEveryTurn || g.bigMoment);
+  g.bigMoment = false;
+  g.chat = chat ? {ready: []} : null;
+  setStep(room, 'turnEnd', now, chat ? pc.chat : T.TURN_END);
 }
 
 function afterTurnEnd(room, now) {
   const g = b(room);
+  g.chat = null;
   if (g.timeLimitAt && now >= g.timeLimitAt) return finishGame(room, now, null, 'time');
   g.activeId = nextPlayer(room);
   beginTurn(room, now);
@@ -152,7 +173,7 @@ function land(room, now, rng) {
   } else {
     banner(room, `${p.name} lands on ${space.name}!${goNote}`, 'big');
   }
-  setStep(room, 'landed', now, leisurely(room) ? 2400 : T.LANDED);
+  setStep(room, 'landed', now, pace(room).landed);
 }
 
 function resolveLanding(room, now, rng) {
@@ -255,11 +276,12 @@ function revealQuestion(room, now) {
   } else if (q.kind === 'double') {
     const bet = g.special?.bet || 0;
     addBrains(room, p.id, correct ? bet : -bet);
+    if (bet) bigMoment(room);
     text = correct ? `Doubled! ${p.name} wins ${bet} Brains.` : `Nothing! ${p.name} loses ${bet} Brains.`;
   }
   q.resultText = text || (q.result === 'timeout' ? `Time's up, ${p.name}!` : `Wrong, ${p.name}!`);
   banner(room, q.resultText, correct ? 'good' : 'bad');
-  setStep(room, 'reveal', now, leisurely(room) ? 8500 : T.REVEAL);
+  setStep(room, 'reveal', now, pace(room).reveal);
 }
 
 function afterReveal(room, now, rng) {
@@ -341,7 +363,8 @@ function settleGroup(room, now) {
   q.awards = awards;
   q.resultText = text;
   banner(room, text, ranked.length ? 'good' : 'bad');
-  setStep(room, 'groupReveal', now, leisurely(room) ? 9000 : T.GROUP_REVEAL);
+  if (ranked.length) bigMoment(room);
+  setStep(room, 'groupReveal', now, pace(room).group);
 }
 
 /* ---------- special spaces ---------- */
@@ -416,6 +439,7 @@ function chooseSpecial(room, index, now, rng) {
       const victim = player(room, opt.targetId);
       victim.tokens = victim.tokens.filter(c => c !== opt.category);
       giveToken(room, p.id, opt.category);
+      bigMoment(room);
       return endTurn(room, now, `${p.name} steals ${catName(opt.category)} from ${victim.name}!`);
     }
     case 'double':
@@ -497,7 +521,8 @@ function finishNoggin(room, now, winners, game, kind) {
   }
   g.miniResult = {kind, title: game.title, text, awards};
   banner(room, text, won.length ? 'good' : 'bad');
-  setStep(room, 'miniResult', now, leisurely(room) ? 10000 : T.GROUP_REVEAL);
+  bigMoment(room);
+  setStep(room, 'miniResult', now, pace(room).mini);
 }
 const finishMinigameFor = game => (room, now, text, winners) => finishNoggin(room, now, winners, game, 'minigame');
 const finishShowdownFor = game => (room, now, text, winners) => finishNoggin(room, now, winners, game, 'showdown');
@@ -607,6 +632,7 @@ function finishFinal(room, now) {
   f.missed = null;
   for (const [pid, n] of Object.entries(f.predictions)) if (n === score) addBrains(room, pid, BRAINS.PREDICT_EXACT);
   if (f.outcome === 'lose') {
+    bigMoment(room);
     banner(room, `So close! ${p.name} got ${score} of ${f.ids.length} and needed ${f.need}. Try again next turn!`, 'bad');
   } else {
     banner(room, score === f.ids.length ? `${score} out of ${score}! ${p.name} is SMART ALEC!` : `${score} out of ${f.ids.length}! ${p.name} is SMART ALEC!`, 'big');
@@ -680,7 +706,7 @@ function startSpecialAfterJump(room, now, rng) {
   g.special = null;
   banner(room, `${p.name} takes the Shortcut to ${space.name}!`, 'big');
   if (space.type === 'go') return startSpecial(room, 'go', now, rng);
-  setStep(room, 'landed', now, leisurely(room) ? 2400 : T.LANDED);
+  setStep(room, 'landed', now, pace(room).landed);
 }
 
 function tick(room, now = Date.now(), rng = crypto.randomInt) {
@@ -696,6 +722,23 @@ function tick(room, now = Date.now(), rng = crypto.randomInt) {
   }
   return changed;
 }
+
+/**
+ * A phone votes "We're ready" during a chat pause. When more than half of the
+ * connected players are ready, the next turn starts.
+ */
+function playerReady(room, id, now) {
+  const g = b(room);
+  if (!g || room.phase !== 'board') fail('PHASE', 'There is no running game.');
+  if (Number.isFinite(g.pausedAt)) fail('PAUSED', 'The game is paused.');
+  requireStep(room, 'turnEnd');
+  if (!g.chat) fail('STEP', 'The next turn is already starting.');
+  if (!player(room, id)) fail('TURN', 'You are not in this game.');
+  if (!g.chat.ready.includes(id)) g.chat.ready.push(id);
+  g.version += 1;
+  if (g.chat.ready.length >= readyNeeded(room)) afterTurnEnd(room, now);
+}
+const readyNeeded = room => Math.floor(Math.max(1, room.players.filter(p => p.socketId).length) / 2) + 1;
 
 /** Advance only from the safe between-turn conversation screen. */
 function hostNextTurn(room, now) {
@@ -779,6 +822,7 @@ function publicBoard(room, forTv = false, viewerId = null) {
   const active = player(room, g.activeId);
   return {
     step: g.step, version: g.version, turnNo: g.turnNo, startedAt: g.startedAt, activeId: g.activeId,
+    chat: g.step === 'turnEnd' && g.chat ? {ready: g.chat.ready.length, needed: readyNeeded(room), mine: Boolean(viewerId && g.chat.ready.includes(viewerId))} : null,
     deadline: g.deadline, stepStartedAt: g.stepStartedAt, paused: Number.isFinite(g.pausedAt), pauseKind: g.pauseKind || null, remaining: g.remaining ?? null,
     timeLimitAt: g.timeLimitAt, required: required(room),
     canFinal: g.step === 'turn' && active && active.tokens.length >= required(room),
@@ -795,6 +839,6 @@ function publicBoard(room, forTv = false, viewerId = null) {
 }
 
 module.exports = {
-  T, BRAINS, start, roll, choose, answer, tick, hostPause, hostResume, hostNextTurn, skipDisconnected, publicBoard, standings, required,
+  T, BRAINS, PACE, start, roll, choose, answer, tick, hostPause, hostResume, hostNextTurn, playerReady, skipDisconnected, publicBoard, standings, required,
   minigameInput, minigameDraw, cheer, decideBid, debugStart,
 };
