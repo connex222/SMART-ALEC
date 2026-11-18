@@ -15,7 +15,13 @@
   const av = id => avatars.find(a => a.id === id);
   const nameOf = id => state?.players.find(p => p.id === id)?.name || 'Someone';
   const catMeta = id => layout?.categories.find(c => c.id === id) || (id === 'minigame' ? layout?.minigame : null);
-  function show(view) { for (const v of ['join', 'lobby', 'game', 'over']) $('view-' + v).hidden = v !== view; }
+  function show(view) {
+    // A join-name or typed-answer field must not keep the soft keyboard open
+    // after the phone has switched to a button-only screen.
+    const oldView = document.activeElement?.closest?.('.view');
+    if (oldView && oldView.id !== 'view-' + view) SAKeyboard.dismiss(oldView);
+    for (const v of ['join', 'lobby', 'game', 'over']) $('view-' + v).hidden = v !== view;
+  }
   async function send(event, data) {
     try { return await SA.request(socket, event, data); }
     catch (e) { flash(e.message); if (e.code === 'AUTH') { SA.store.remove('sa-player'); state = null; renderJoin(); } return null; }
@@ -129,7 +135,7 @@
       const b = el('button', 'answer' + (chosen === i ? ' chosen' : ''));
       b.type = 'button';
       b.append(el('span', 'letter', LETTERS[i]), el('span', null, o));
-      b.addEventListener('click', () => onPick(i));
+      b.addEventListener('click', () => { SAKeyboard.dismiss($('panel')); onPick(i); });
       return b;
     });
   }
@@ -202,7 +208,6 @@
           form.append(input, go);
           form.addEventListener('submit', e => { e.preventDefault(); if (!input.value.trim()) { input.focus(); return; } act('game:answer', {text: input.value}); });
           out.push(form);
-          setTimeout(() => input.focus(), 50);
         } else {
           out.push(...answerButtons(q.options || [], i => act('game:answer', {choice: i})));
         }
@@ -300,6 +305,7 @@
       onError: msg => { const n = $('game-banner'); n.textContent = msg; n.className = 'game-banner result-bad'; },
     });
     if (panelKey !== 'noggin') {
+      SAKeyboard.dismiss($('panel'));
       panelKey = 'noggin';
       nogginPhone.reset();
       const box = el('div', 'noggin-phone');
@@ -325,6 +331,7 @@
     const typing = document.activeElement?.id === 'typed-answer' && state.board.step === 'question';
     if (sig !== panelKey && !(typing && sig.split('|')[0] === panelKey.split('|')[0] && sig.split('|')[3] === panelKey.split('|')[3] && !state.board.question?.answers?.[state.you])) {
       const wasMine = panelKey.split('|')[2] === state.you && panelKey.split('|')[0] === 'turn';
+      SAKeyboard.dismiss($('panel'));
       panelKey = sig;
       $('panel').replaceChildren(...buildPanel());
       if (state.board.step === 'turn' && state.board.activeId === state.you && !wasMine) SA.vibrate([60, 40, 60]);
