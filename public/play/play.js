@@ -35,14 +35,26 @@
     img.addEventListener('error', () => img.remove());
   });
 
-  /* ---------- full screen (Android and most browsers; iPhones don't allow it) ---------- */
-  if (document.fullscreenEnabled) {
+  /* Fullscreen must have a discoverable control even where the browser
+     forbids the API (notably some iPhones). Never show a dead button. */
+  {
     const fs = $('btn-fs-phone');
+    const supported = typeof document.documentElement.requestFullscreen === 'function' &&
+      typeof document.exitFullscreen === 'function';
     fs.hidden = false;
-    fs.addEventListener('click', () => {
-      if (document.fullscreenElement) document.exitFullscreen?.(); else document.documentElement.requestFullscreen?.().catch(() => {});
+    fs.disabled = !supported;
+    fs.title = supported ? 'Toggle fullscreen' : 'This browser does not support webpage fullscreen';
+    fs.setAttribute('aria-label', supported ? 'Toggle fullscreen' : 'Fullscreen unavailable in this browser');
+    fs.addEventListener('click', async () => {
+      if (!supported) return;
+      try {
+        if (document.fullscreenElement) await document.exitFullscreen();
+        else await document.documentElement.requestFullscreen();
+      } catch (_) { fs.title = 'Fullscreen was blocked; try your browser controls'; }
     });
-    document.addEventListener('fullscreenchange', () => { fs.textContent = document.fullscreenElement ? '⤢ Exit fullscreen' : '⛶ Fullscreen'; });
+    document.addEventListener('fullscreenchange', () => {
+      fs.textContent = document.fullscreenElement ? '⤢ Exit fullscreen' : '⛶ Fullscreen';
+    });
   }
 
   $('phone-back-lobby').addEventListener('click', event => {
