@@ -1,0 +1,16 @@
+{
+  "original_total_bytes": 1800620,
+  "added_total_bytes": 1800620,
+  "transcoded_to_128kbps": false,
+  "assets": [
+    {
+      "key": "mus-lobby",
+      "path": "public/sounds/mus-lobby-original.mp3",
+      "source": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/4c43ebab-fd3c-455e-b690-2dbd60d7a337.mp3",
+      "licence": "Creative Claw owner-generated music; commercial redistribution terms not independently verified.",
+      "original_bytes": 1800620,
+      "bytes": 1800620,
+      "sha256": "824f364023964ca891df7885875ecec29c88fa6da6fad03d6bfd7e2f02f12925"
+    }
+  ]
+}
