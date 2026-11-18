@@ -78,11 +78,18 @@
     const on = Boolean(document.fullscreenElement);
     fsButtons().forEach(b => { b.textContent = on ? 'Exit full screen' : 'Full screen'; });
   }
-  function toggleFullscreen() {
-    if (document.fullscreenElement) document.exitFullscreen?.();
-    else document.documentElement.requestFullscreen?.().catch(() => toast('This browser would not go full screen. Try the F11 key.'));
+  async function toggleFullscreen() {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else if (typeof document.documentElement.requestFullscreen === 'function') await document.documentElement.requestFullscreen();
+      else toast('Webpage fullscreen is unavailable here. Try F11 on a PC.');
+    } catch (_) { toast('Fullscreen was blocked. Try your browser fullscreen controls.'); }
   }
-  if (!document.fullscreenEnabled) fsButtons().forEach(b => { b.hidden = true; });
+  if (!document.fullscreenEnabled) fsButtons().forEach(b => {
+    b.disabled = true;
+    b.title = 'Fullscreen is unavailable in this browser';
+    b.setAttribute('aria-label', 'Fullscreen unavailable in this browser');
+  });
   fsButtons().forEach(b => b.addEventListener('click', toggleFullscreen));
   document.addEventListener('fullscreenchange', showFullscreen);
   Tutorial.wire();
