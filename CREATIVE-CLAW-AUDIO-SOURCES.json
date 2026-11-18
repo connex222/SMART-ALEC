@@ -1,0 +1,11 @@
+{
+  "note": "Provenance and build-time downloading only. Never loaded by game runtime.",
+  "assets": [
+    {
+      "key": "mus-lobby",
+      "path": "public/sounds/mus-lobby-original.mp3",
+      "source": "https://cdn.creativeclaw.co/u/f3e7a3b1/audio/4c43ebab-fd3c-455e-b690-2dbd60d7a337.mp3",
+      "licence": "Creative Claw owner-generated music; commercial redistribution terms not independently verified."
+    }
+  ]
+}

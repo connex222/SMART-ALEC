@@ -81,9 +81,9 @@ window.SA = (() => {
   let voiceDucked = false, effectsDucked = 0, muted = store.get('sa-muted') === true;
   let musicGain = null, resumePromise = null, fallbackMusic = null;
   const ORIGINAL_MUSIC_URLS = Object.freeze({
-    'mus-lobby': 'https://cdn.creativeclaw.co/u/f3e7a3b1/audio/4c43ebab-fd3c-455e-b690-2dbd60d7a337.mp3'
+    'mus-lobby': '/sounds/mus-lobby-original.mp3'
   });
-  // Retain the bundled OGG for offline/blocked-CDN fallback.
+  // Retain the bundled OGG for missing-premium-file fallback.
   const bundledAudioUrl = name => `/sounds/${name}.${AUDIO[name]}`;
   const audioUrl = name => ORIGINAL_MUSIC_URLS[name] || bundledAudioUrl(name);
   function context() {
