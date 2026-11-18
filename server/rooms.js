@@ -241,7 +241,9 @@ class GameRooms {
   }
   backToLobby(code, socketId) {
     const room = this.requireHost(code, socketId);
-    assert(room.phase === 'over', 'PHASE', 'Finish the game first.');
+    // The TV host or VIP may end a game early to return everyone to the
+    // same room. This is deliberately not available to ordinary phones.
+    assert(['board','over','lobby'].includes(room.phase), 'PHASE', 'Cannot return to lobby from here.');
     room.phase = 'lobby'; room.board = null;
     for (const p of room.players) { p.ready = false; delete p.position; delete p.brains; delete p.tokens; }
     room.updatedAt = this.now();

@@ -155,3 +155,15 @@ input { font: inherit; font-size: 24px; padding: 14px 16px; border-radius: 14px;
 .fb-note { width: 100%; min-height: 64px; border: 2px solid rgba(20, 26, 51, .25); border-radius: 12px; padding: 8px 10px; font: inherit; }
 .fb-thanks { margin: 0; font-weight: 700; text-align: center; }
 .feedback-box .link { align-self: center; color: var(--ink); }
+
+/* Phone utility controls live in normal document flow, not over answer buttons. */
+.sa-phone-utility{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;
+  margin:0 0 12px;padding:0 0 10px;border-bottom:1px solid #6473a6}
+.sa-phone-control{display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+  background:#26305b;color:#fff6e3;border:2px solid #7189bc;border-radius:10px;
+  padding:8px 12px;font:700 clamp(12px,3.5vw,15px)/1.25 var(--body);
+  text-decoration:none;text-align:center;cursor:pointer}
+.sa-phone-control:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.app{min-width:0;max-width:520px}
+.view,.panel,.view-game{min-width:0}
+@media(max-width:360px){.sa-phone-utility{gap:5px}.sa-phone-control{padding:7px 8px}}

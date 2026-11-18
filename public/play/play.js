@@ -42,8 +42,13 @@
     fs.addEventListener('click', () => {
       if (document.fullscreenElement) document.exitFullscreen?.(); else document.documentElement.requestFullscreen?.().catch(() => {});
     });
-    document.addEventListener('fullscreenchange', () => { fs.textContent = document.fullscreenElement ? 'Exit full screen' : 'Full screen'; });
+    document.addEventListener('fullscreenchange', () => { fs.textContent = document.fullscreenElement ? '⤢ Exit fullscreen' : '⛶ Fullscreen'; });
   }
+
+  $('phone-back-lobby').addEventListener('click', event => {
+    if (state && state.phase !== 'lobby' &&
+        !confirm('Return to Games Night? The game will continue on the TV. You can rejoin this room later.')) event.preventDefault();
+  });
 
   /* ---------- join ---------- */
   function avatarGrid(container, taken, current, onPick) {

@@ -457,3 +457,22 @@ body.tv { overflow: hidden; background: #0B0F22; }
 .chatbar-text small { font-size: 19px; opacity: .75; }
 .chatbar .btn { font-size: 26px; padding: 14px 26px; white-space: nowrap; }
 @keyframes chatIn { from { transform: translate(-50%, 30px); opacity: 0; } }
+
+/* 2026-11-18: Always-accessible host controls occupy their own TV-safe footer.
+   Scale the entire 1920 × 1080 stage above it: no hidden board cells, questions
+   or leaderboard beneath fixed buttons, even on 720p televisions. */
+body:not([data-sa-screen="title"]) .hostbar{
+  display:flex;opacity:1;pointer-events:auto;position:fixed;left:0;right:0;
+  bottom:0;z-index:500;min-height:58px;box-sizing:border-box;
+  align-items:center;justify-content:flex-end;gap:7px;
+  background:#0b0f22f4;padding:6px max(12px,env(safe-area-inset-right));
+  flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin
+}
+body[data-sa-screen="title"] .hostbar{display:none}
+.hostbar button{white-space:nowrap;min-height:44px;font-size:clamp(12px,1.4vw,16px);padding:6px 10px;flex:0 0 auto}
+body[data-sa-screen="lobby"] .hostbar #btn-back-lobby,
+body[data-sa-screen="lobby"] .hostbar #btn-pause,
+body[data-sa-screen="lobby"] .hostbar #btn-skip,
+body[data-sa-screen="over"] .hostbar #btn-pause,
+body[data-sa-screen="over"] .hostbar #btn-skip{display:none}
+.hostbar:focus-within{opacity:1}

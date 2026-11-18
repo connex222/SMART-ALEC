@@ -19,7 +19,10 @@
 
   /* ---------- fit the 1920x1080 stage to the window ---------- */
   function fit() {
-    const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    const reserve = document.body.dataset.saScreen === 'title' ? 0 : 58;
+    const height = Math.max(160, window.innerHeight - reserve);
+    const s = Math.min(window.innerWidth / 1920, height / 1080);
+    $('stage').style.top = reserve ? 'calc(50% - 29px)' : '50%';
     $('stage').style.transform = `translate(-50%, -50%) scale(${s})`;
   }
   window.addEventListener('resize', fit); fit();
@@ -44,6 +47,8 @@
   }
   function show(screen) {
     for (const s of ['title', 'lobby', 'game', 'over']) $('screen-' + s).hidden = s !== screen;
+    document.body.dataset.saScreen = screen;
+    fit();
   }
   const av = id => avatars.find(a => a.id === id);
   const playerById = id => state?.players.find(p => p.id === id);
@@ -659,6 +664,12 @@
   }
   $('btn-again').addEventListener('click', () => send('game:start'));
   $('btn-lobby').addEventListener('click', () => send('game:lobby'));
+  $('btn-back-lobby').addEventListener('click', async () => {
+    if (!state || state.phase === 'lobby') return;
+    if (state.phase === 'board' && !confirm('End the current game and return everyone to this room’s lobby? Scores and progress will reset.')) return;
+    const result = await send('game:lobby');
+    if (result?.state) onState(result.state);
+  });
 
   function onState(next) {
     if (!next) return;
