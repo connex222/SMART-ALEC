@@ -65,7 +65,7 @@ window.NogginPhone = function NogginPhone(opts) {
       e.preventDefault();const value=integer?Number(input.value):input.value.trim();
       if(integer&&(!Number.isSafeInteger(value)||input.value.trim()==='')){error('Enter a valid whole number.');return;}
       submit.disabled=true;
-      try{const r=await U.request(socket,'game:input',{value,roundKey:m.roundKey});submit.disabled=false;if(!integer)input.select();error('');opts.onState(r.state);}
+      try{const r=await U.request(socket,'game:input',{value,roundKey:m.roundKey});submit.disabled=false;SAKeyboard.dismiss($('gameButtons'));error('');opts.onState(r.state);}
       catch(err){error(err.message);submit.disabled=false;}
     };
     $('gameButtons').append(form);
@@ -86,7 +86,7 @@ window.NogginPhone = function NogginPhone(opts) {
       e.preventDefault();const v=numeric?Number(input.value):input.value.trim();
       if(numeric&&(!Number.isSafeInteger(v)||input.value.trim()==='')){error('Enter a whole number.');return;}
       button.disabled=true;
-      try{const r=await U.request(socket,'game:input',{value:v,roundKey:m.roundKey});entryDraft={key:null,text:''};input.value='';button.disabled=false;opts.onState(r.state);error('');}
+      try{const r=await U.request(socket,'game:input',{value:v,roundKey:m.roundKey});entryDraft={key:null,text:''};input.value='';button.disabled=false;SAKeyboard.dismiss($('gameButtons'));opts.onState(r.state);error('');}
       catch(ex){error(ex.message);button.disabled=false;}
     };
     $('gameButtons').append(wrap);
@@ -182,7 +182,7 @@ window.NogginPhone = function NogginPhone(opts) {
       const button=document.createElement('button');button.className='button-primary';button.type='submit';button.textContent=label;
       form.append(input,button);form.onsubmit=async e=>{e.preventDefault();const v=numeric?Number(input.value):input.value.trim();if(numeric&&(!Number.isSafeInteger(v)||v<0||!input.value.trim())){error('Enter a valid whole number.');return;}
         const value=m.kind==='tug'?{answer:v,qid:m.private?.qid}:v;button.disabled=true;
-        try{const r=await U.request(socket,'game:input',{value,roundKey:m.roundKey});input.value='';button.disabled=false;opts.onState(r.state);error('');if(navigator.vibrate)navigator.vibrate(35);}
+        try{const r=await U.request(socket,'game:input',{value,roundKey:m.roundKey});input.value='';button.disabled=false;SAKeyboard.dismiss($('gameButtons'));opts.onState(r.state);error('');if(navigator.vibrate)navigator.vibrate(35);}
         catch(e){error(e.message);button.disabled=false;}
       };$('gameButtons').append(form);
     };
@@ -422,13 +422,15 @@ window.NogginPhone = function NogginPhone(opts) {
     }
     if (!sameControls) interactionKey = freshKey;
     if (priorInput) entryDraft = {key: entryDraft.key, text: priorInput.value};
+    // Release the virtual keyboard before changing the input into answer buttons.
+    // Preserve the live input and focus during ordinary updates to the same round.
+    if (!sameControls && priorFocused) SAKeyboard.dismiss($('gameButtons'));
     const draw = () => {
       if (b.paused) { $('gameHeadline').textContent = 'Paused'; $('gameDescription').textContent = 'The game is paused on the TV.'; return; }
       if (b.step === 'showdown' && b.showdown) { renderShowdown(player, b.showdown); return; }
       if (b.step === 'minigame' && b.minigame) {
         if (phase4Ids.has(b.minigame.id)) {
           renderPhase4(player, b.minigame);
-          if (priorFocused) { const el = $('gameButtons').querySelector('.p4-form input'); if (el) { el.focus(); if (el.type === 'text') el.setSelectionRange(el.value.length, el.value.length); } }
         } else renderMiniGame(player, b.minigame);
       }
     };

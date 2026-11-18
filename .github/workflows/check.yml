@@ -24,11 +24,21 @@ jobs:
       - name: Code, questions, files, rules and server
         run: npm run verify
 
-      - name: Question file is up to date with the question packs
+      - name: Question file matches the source question packs
         run: |
           node tools/build-questions.js > /dev/null
-          if ! git diff --quiet -- data/questions.json; then
-            echo "::error::data/questions.json is out of date. A question pack in source-banks changed but the question file was not rebuilt. Run 'npm run questions' (or ask Claude) and upload data/questions.json."
-            exit 1
-          fi
-          echo "Question file matches the question packs."
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const {execFileSync} = require('node:child_process');
+          const committed = JSON.parse(execFileSync('git', ['show', 'HEAD:data/questions.json'], {encoding:'utf8', maxBuffer: 32 * 1024 * 1024}));
+          const rebuilt = JSON.parse(fs.readFileSync('data/questions.json', 'utf8'));
+          // builtAt is a generation date, not a question/content change.
+          // Compare the actual question bank so CI remains stable across midnight.
+          delete committed.builtAt;
+          delete rebuilt.builtAt;
+          if (JSON.stringify(committed) !== JSON.stringify(rebuilt)) {
+            console.error('::error::data/questions.json differs from the source question packs. Run npm run questions and commit the refreshed file.');
+            process.exit(1);
+          }
+          console.log('Question bank matches its sources (ignoring generation date).');
+          NODE
