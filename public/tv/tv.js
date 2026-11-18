@@ -49,6 +49,9 @@
     for (const s of ['title', 'lobby', 'game', 'over']) $('screen-' + s).hidden = s !== screen;
     document.body.dataset.saScreen = screen;
     fit();
+    // Make the signature theme available on the title screen. Browsers may
+    // require the first key/click to unlock audio; shared/client.js retries.
+    if (screen === 'title') SA.playMusic('mus-lobby', 0.18);
   }
   const av = id => avatars.find(a => a.id === id);
   const playerById = id => state?.players.find(p => p.id === id);

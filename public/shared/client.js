@@ -80,7 +80,12 @@ window.SA = (() => {
   let ctx = null, music = null, musicName = null, musicVolume = 0.28;
   let voiceDucked = false, effectsDucked = 0, muted = store.get('sa-muted') === true;
   let musicGain = null, resumePromise = null, fallbackMusic = null;
-  const audioUrl = name => `/sounds/${name}.${AUDIO[name]}`;
+  const ORIGINAL_MUSIC_URLS = Object.freeze({
+    'mus-lobby': 'https://cdn.creativeclaw.co/u/f3e7a3b1/audio/4c43ebab-fd3c-455e-b690-2dbd60d7a337.mp3'
+  });
+  // Retain the bundled OGG for offline/blocked-CDN fallback.
+  const bundledAudioUrl = name => `/sounds/${name}.${AUDIO[name]}`;
+  const audioUrl = name => ORIGINAL_MUSIC_URLS[name] || bundledAudioUrl(name);
   function context() {
     if (ctx || !window.AudioContext && !window.webkitAudioContext) return ctx;
     try {
@@ -148,6 +153,16 @@ window.SA = (() => {
       const track = new Audio(audioUrl(name));
       track.loop = true; track.preload = 'auto';
       fallbackMusic = track; applyDuck();
+      if (ORIGINAL_MUSIC_URLS[name]) {
+        let fallbackUsed = false;
+        track.addEventListener('error', () => {
+          if (fallbackUsed || fallbackMusic !== track || muted || musicName !== name) return;
+          fallbackUsed = true;
+          track.src = bundledAudioUrl(name);
+          track.load();
+          track.play().catch(() => {});
+        });
+      }
       await track.play();
     } catch { /* blocked until the next tap or key press; warm() retries */ }
   }
