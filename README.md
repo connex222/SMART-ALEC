@@ -1,6 +1,6 @@
 # Smart Alec
 
-A TV quiz-show board game for 2–8 players. The TV shows the 64-space board; every phone is a private controller.
+A TV quiz-show board game for 2–8 players. The TV shows the 40-space board; every phone is a private controller.
 Win one token in each of 6 categories, then get 6 questions right in 60 seconds in the Final Round.
 
 Built from NOGGIN (rooms, join by QR, reconnect, pause, sounds, the 16 mini-games and 4 Showdowns in `server/games/`) and Pub Quiz Powerhouse (the question banks, A–D option builder and typed-answer marking).
