@@ -1,10 +1,10 @@
 'use strict';
 /**
- * The Smart Alec board: 64 spaces round a trapezium, numbered clockwise from GO
- * (bottom-left corner). Specials sit every 8 spaces: the 4 corners and the middle
- * of each side. The other 56 spaces are 8 each of 7 types, in a fixed shuffled order.
+ * The Smart Alec board: 40 spaces around a trapezium, ten on each side.
+ * The eight specials alternate with four ordinary spaces, preserving all
+ * existing special actions while giving every on-screen tile more room.
  */
-const SIZE = 64;
+const SIZE = 40;
 
 const CATEGORIES = Object.freeze([
   {id: 'potluck', name: 'Pot Luck', colour: '#7B4DFF', icon: '?'},
@@ -19,26 +19,26 @@ const MINIGAME = Object.freeze({id: 'minigame', name: 'Mini-game', colour: '#2F7
 
 const SPECIALS = Object.freeze([
   {index: 0, id: 'go', name: 'GO', short: 'GO'},
-  {index: 8, id: 'smartalec', name: 'Smart Alec', short: 'Steal'},
-  {index: 16, id: 'double', name: 'Double or Nothing', short: 'Double'},
-  {index: 24, id: 'freeforall', name: 'Free-for-All', short: 'Free 4 All'},
-  {index: 32, id: 'shortcut', name: 'Shortcut', short: 'Shortcut'},
-  {index: 40, id: 'swap', name: 'Swap', short: 'Swap'},
-  {index: 48, id: 'jackpot', name: 'Pot Luck Jackpot', short: 'Jackpot'},
-  {index: 56, id: 'showdown', name: 'Showdown', short: 'Showdown'},
+  {index: 5, id: 'smartalec', name: 'Smart Alec', short: 'Steal'},
+  {index: 10, id: 'double', name: 'Double or Nothing', short: 'Double'},
+  {index: 15, id: 'freeforall', name: 'Free-for-All', short: 'Free 4 All'},
+  {index: 20, id: 'shortcut', name: 'Shortcut', short: 'Shortcut'},
+  {index: 25, id: 'swap', name: 'Swap', short: 'Swap'},
+  {index: 30, id: 'jackpot', name: 'Pot Luck Jackpot', short: 'Jackpot'},
+  {index: 35, id: 'showdown', name: 'Showdown', short: 'Showdown'},
 ]);
 
-// Each run of 7 coloured spaces between two specials uses every type once,
-// rotated so that no colour sits next to itself across a special.
+// Each run of four ordinary spaces rotates through the seven activity types.
+// The 32 ordinary positions give each type four or five opportunities per lap.
 const ORDER = ['potluck', 'screen', 'music', 'sport', 'timeplace', 'brainbox', 'minigame'];
 function buildSpaces() {
   const spaces = [];
   for (let i = 0; i < SIZE; i++) {
     const special = SPECIALS.find(s => s.index === i);
     if (special) { spaces.push({index: i, kind: 'special', type: special.id, name: special.name}); continue; }
-    const block = Math.floor(i / 8);          // 0..7
-    const pos = (i % 8) - 1;                  // 0..6
-    const type = ORDER[(pos + block * 3) % 7];
+    const block = Math.floor(i / 5);          // 0..7
+    const pos = (i % 5) - 1;                  // 0..3
+    const type = ORDER[(pos + block * 5) % 7];
     const meta = type === 'minigame' ? MINIGAME : CATEGORIES.find(c => c.id === type);
     spaces.push({index: i, kind: type === 'minigame' ? 'minigame' : 'category', type, name: meta.name});
   }

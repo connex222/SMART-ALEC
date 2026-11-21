@@ -21,18 +21,20 @@ function seq(...values) { let i = 0; return n => Math.min(n - 1, values[i++] ?? 
 // Start a game and skip the welcome screen (its length depends on the pace).
 function toTurn(r, now = 0) { engine.start(r, now, seq()); const t = r.board.deadline; engine.tick(r, t, seq()); return t; }
 
-test('board has 64 spaces: 8 specials and 8 of each of 7 types', () => {
-  assert.equal(L.SPACES.length, 64);
+test('board has 40 spaces: eight specials, ten per side, all seven ordinary types', () => {
+  assert.equal(L.SIZE, 40);
+  assert.equal(L.SPACES.length, 40);
   const count = {};
   for (const s of L.SPACES) count[s.type] = (count[s.type] || 0) + 1;
-  for (const t of ['potluck', 'screen', 'music', 'sport', 'timeplace', 'brainbox', 'minigame']) assert.equal(count[t], 8, t);
-  assert.deepEqual(L.SPECIALS.map(s => s.index), [0, 8, 16, 24, 32, 40, 48, 56]);
+  for (const t of ['potluck', 'screen', 'music', 'sport', 'timeplace', 'brainbox', 'minigame']) assert.ok(count[t] >= 3 && count[t] <= 6, t);
+  assert.deepEqual(L.SPECIALS.map(s => s.index), [0, 5, 10, 15, 20, 25, 30, 35]);
+  assert.equal(L.SPACES.filter(s => s.kind === 'special').length, 8);
 });
 
 test('leaving GO anticlockwise does not pay the GO bonus; passing it does', () => {
   assert.equal(L.passesGo(0, 3, -1), false);
   assert.equal(L.passesGo(2, 3, -1), true);
-  assert.equal(L.passesGo(62, 3, 1), true);
+  assert.equal(L.passesGo(38, 3, 1), true);
   assert.equal(L.passesGo(10, 3, 1), false);
 });
 
@@ -41,7 +43,7 @@ test('a roll offers clockwise and anticlockwise landings', () => {
   const now = toTurn(r);
   engine.roll(r, 'p0', now, seq(2)); // die shows 3
   assert.equal(r.board.step, 'direction');
-  assert.deepEqual(r.board.moveOptions.map(o => o.target).sort((a, b) => a - b), [3, 61]);
+  assert.deepEqual(r.board.moveOptions.map(o => o.target).sort((a, b) => a - b), [3, 37]);
 });
 
 test('only the active player can roll', () => {
@@ -183,9 +185,9 @@ test('a Mini-game space starts a NOGGIN mini-game and pays winners in Brains', (
 test('the Showdown space runs a NOGGIN Showdown between two players', () => {
   const r = room(3);
   let now = toTurn(r);
-  r.players[0].position = 55;
+  r.players[0].position = 34;
   engine.roll(r, 'p0', now, seq(0));
-  engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 56)}, now);
+  engine.choose(r, 'p0', {option: r.board.moveOptions.findIndex(o => o.target === 35)}, now);
   now += 5000; engine.tick(r, now, seq()); now += 5000; engine.tick(r, now, seq());
   assert.equal(r.board.step, 'special');
   engine.choose(r, 'p0', {option: 0}, now, seq(0));

@@ -169,7 +169,7 @@
     positions.length = 0;
     for (let side = 0; side < 4; side++) {
       const [ax, ay] = CORNERS[side], [bx, by] = CORNERS[(side + 1) % 4];
-      for (let i = 0; i < 16; i++) positions.push([ax + (bx - ax) * i / 16, ay + (by - ay) * i / 16]);
+      for (let i = 0; i < layout.size / 4; i++) positions.push([ax + (bx - ax) * i / (layout.size / 4), ay + (by - ay) * i / (layout.size / 4)]);
     }
     const pts = CORNERS.map(p => p.join(',')).join(' ');
     svg.appendChild(svgEl('polygon', {points: pts, class: 'track'}));
@@ -190,13 +190,13 @@
     for (const sp of layout.spaces) {
       const [x, y] = positions[sp.index];
       const special = sp.kind === 'special';
-      const r = special ? 36 : 25;
+      const r = special ? 46 : 36;
       const g = svgEl('g', {class: `space ${special ? 'special' : 'cat-' + sp.type}`, id: 'space-' + sp.index});
       g.appendChild(svgEl('circle', {cx: x, cy: y, r: r + 10, class: 'ring'}));
       const base = svgEl('circle', {cx: x, cy: y, r, class: 'base'});
       if (!special) base.setAttribute('fill', catMeta(sp.type).colour);
       g.appendChild(base);
-      const label = svgEl('text', {x, y, 'font-size': special ? 14 : 22});
+      const label = svgEl('text', {x, y, 'font-size': special ? 16 : 29});
       label.textContent = special ? (layout.specials.find(s => s.index === sp.index)?.short || '') : glyph(sp.type);
       g.appendChild(label);
       const art = svgEl('image', {x: x - r, y: y - r, width: r * 2, height: r * 2, href: special ? `/art/special-${sp.type}.webp` : `/art/icon-${artName(sp.type)}.webp`});
@@ -209,10 +209,8 @@
     svg.appendChild(spaces);
     svg.appendChild(svgEl('g', {id: 'pieces'}));
     boardBuilt = true;
-    // When the board art is there, its own rim and lights replace the drawn track.
-    const art = new Image();
-    art.onload = () => $('screen-game').classList.add('has-art');
-    art.src = '/art/board-bg.webp';
+    // The original background contains a 64-space painted track. Do not load
+    // it behind the new 40-space interactive board.
   }
   function glyph(type) { return {potluck: '?', screen: '▶', music: '♪', sport: '★', timeplace: '◷', brainbox: '✦', minigame: '◆'}[type] || ''; }
   function artName(type) { return type; }
@@ -225,19 +223,19 @@
     const clipId = 'clip-' + p.id;
     const defs = svgEl('defs');
     const clip = svgEl('clipPath', {id: clipId});
-    clip.appendChild(svgEl('circle', {cx: 0, cy: 0, r: 24}));
+    clip.appendChild(svgEl('circle', {cx: 0, cy: 0, r: 32}));
     defs.appendChild(clip);
     g.appendChild(defs);
-    g.appendChild(svgEl('circle', {cx: 0, cy: 0, r: 24, fill: a?.colour || '#888'}));
-    const t = svgEl('text', {x: 0, y: 1, 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': 26, fill: '#FFF6E3', 'font-family': 'Cabin, sans-serif'});
+    g.appendChild(svgEl('circle', {cx: 0, cy: 0, r: 32, fill: a?.colour || '#888'}));
+    const t = svgEl('text', {x: 0, y: 1, 'text-anchor': 'middle', 'dominant-baseline': 'central', 'font-size': 32, fill: '#FFF6E3', 'font-family': 'Cabin, sans-serif'});
     t.textContent = (a?.name || p.name).replace(/^The /, '').charAt(0);
     g.appendChild(t);
     if (a) {
-      const img = svgEl('image', {x: -24, y: -24, width: 48, height: 48, href: a.images.think, 'clip-path': `url(#${clipId})`, preserveAspectRatio: 'xMidYMid slice'});
+      const img = svgEl('image', {x: -32, y: -32, width: 64, height: 64, href: a.images.think, 'clip-path': `url(#${clipId})`, preserveAspectRatio: 'xMidYMid slice'});
       img.addEventListener('error', () => img.remove());
       g.appendChild(img);
     }
-    g.appendChild(svgEl('circle', {cx: 0, cy: 0, r: 24, class: 'edge'}));
+    g.appendChild(svgEl('circle', {cx: 0, cy: 0, r: 32, class: 'edge'}));
     $('pieces').appendChild(g);
     return g;
   }
@@ -253,11 +251,11 @@
       let [x, y] = positions[index];
       // Sit pieces just inside the track so they never fall off the screen edge or hide the space.
       const dx = 960 - x, dy = 600 - y, d = Math.hypot(dx, dy) || 1;
-      x += dx / d * 58; y += dy / d * 58;
+      x += dx / d * 78; y += dy / d * 78;
       list.forEach((p, i) => {
         const n = list.length;
         const ang = (i / n) * Math.PI * 2 - Math.PI / 2;
-        const rad = n > 1 ? 30 : 0;
+        const rad = n > 1 ? (n > 4 ? 63 : 46) : 0;
         const g = pieceFor(p);
         g.setAttribute('transform', `translate(${x + Math.cos(ang) * rad}, ${y + Math.sin(ang) * rad})`);
         g.classList.toggle('active', p.id === state.board.activeId);
@@ -280,9 +278,46 @@
       SA.sfx('sfx-hop', 0.5);
       i += 1;
       if (i < move.path.length) animating = {playerId: id, timer: setTimeout(stepOn, HOP_MS)};
-      else animating = {playerId: id, timer: setTimeout(() => { shown.delete(id); animating = null; placePieces(); }, 300)};
+      else animating = {playerId: id, timer: setTimeout(() => { shown.delete(id); animating = null; placePieces(); showTurnFocus(id, move.to); }, 300)};
     };
     animating = {playerId: id, timer: setTimeout(stepOn, 250)};
+  }
+
+
+  // A short broadcast-style close-up for the current contestant. The board
+  // remains interactive and the overlay disappears without requiring a tap.
+  let focusKey = '', focusTimer = null;
+  function showTurnFocus(playerId, index) {
+    const p = playerById(playerId), space = layout?.spaces?.[index];
+    if (!p || !space || state?.board?.paused) return;
+    let panel = $('turn-focus');
+    if (!panel) {
+      panel = el('div', 'turn-focus');
+      panel.id = 'turn-focus';
+      panel.setAttribute('aria-live', 'polite');
+      $('screen-game').appendChild(panel);
+    }
+    panel.replaceChildren();
+    const who = el('div', 'turn-focus-person');
+    const img = SA.avatarEl(av(p.avatarId), 'think', 170);
+    who.append(img, el('strong', null, p.name));
+    const tile = el('div', 'turn-focus-tile');
+    const kind = space.kind === 'special' ? layout.specials.find(s => s.index === index) : null;
+    const meta = kind ? null : catMeta(space.type);
+    tile.style.setProperty('--focus-tile', kind ? '#f5b700' : meta?.colour || '#3d80da');
+    tile.append(el('span', null, 'SPACE ' + (index + 1)), el('b', null, kind?.short || space.name));
+    panel.append(who, tile);
+    panel.classList.add('visible');
+    clearTimeout(focusTimer);
+    focusTimer = setTimeout(() => panel.classList.remove('visible'), 2400);
+  }
+  function focusOnNewTurn(b) {
+    if (b.step !== 'turn') return;
+    const key = b.turnNo + ':' + b.activeId;
+    if (focusKey === key) return;
+    focusKey = key;
+    const p = playerById(b.activeId);
+    if (p) showTurnFocus(p.id, p.position);
   }
 
   function markTargets() {
@@ -309,7 +344,7 @@
       info.appendChild(pips(p.tokens));
       const brains = el('div', 'score-brains', String(p.brains));
       brains.appendChild(el('small', null, 'Brains'));
-      row.append(SA.avatarEl(av(p.avatarId), 'think', state.players.length > 6 ? 56 : 70), info, brains);
+      row.append(SA.avatarEl(av(p.avatarId), 'think', state.players.length > 6 ? 72 : 88), info, brains);
       box.appendChild(row);
     }
   }
@@ -640,6 +675,7 @@
     // Let conversation and Alec's result voice remain audible without musical pressure.
     SA.setMusicVolume(['turnEnd', 'miniResult', 'groupReveal', 'reveal'].includes(b.step) ? 0.10 : 0.24);
     if (!boardBuilt) buildBoard();
+    focusOnNewTurn(b);
     if (b.step === 'moving' && b.move && (!prev?.board || prev.board.version !== b.version)) animateMove(b.move);
     placePieces();
     markTargets();

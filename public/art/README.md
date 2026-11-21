@@ -8,7 +8,7 @@ Until a file exists the game draws a plain placeholder, so nothing breaks.
 | logo.webp | Title screen logo |
 | title-stage.webp | Title screen background |
 | lobby-stage.webp | Lobby background |
-| board-bg.webp | Behind the 64-space board |
+| board-bg.webp | Legacy 64-space board art (not used by the new 40-space track) |
 | winner-stage.webp | Winner screen background |
 | phone-bg.webp | Phone background |
 | icon-potluck.webp, icon-screen.webp, icon-music.webp, icon-sport.webp, icon-timeplace.webp, icon-brainbox.webp, icon-minigame.webp | Board space icons |
