@@ -209,10 +209,8 @@
     svg.appendChild(spaces);
     svg.appendChild(svgEl('g', {id: 'pieces'}));
     boardBuilt = true;
-    // When the board art is there, its own rim and lights replace the drawn track.
-    const art = new Image();
-    art.onload = () => $('screen-game').classList.add('has-art');
-    art.src = '/art/board-bg.webp';
+    // The original background contains a 64-space painted track. Do not load
+    // it behind the new 40-space interactive board.
   }
   function glyph(type) { return {potluck: '?', screen: '▶', music: '♪', sport: '★', timeplace: '◷', brainbox: '✦', minigame: '◆'}[type] || ''; }
   function artName(type) { return type; }
