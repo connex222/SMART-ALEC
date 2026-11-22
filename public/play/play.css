@@ -167,3 +167,15 @@ input { font: inherit; font-size: 24px; padding: 14px 16px; border-radius: 14px;
 .app{min-width:0;max-width:520px}
 .view,.panel,.view-game{min-width:0}
 @media(max-width:360px){.sa-phone-utility{gap:5px}.sa-phone-control{padding:7px 8px}}
+
+/* Keep typed mini-game answers reachable above Android/iOS soft keyboards. */
+body.phone.sa-answer-keyboard .view-game .panel {justify-content:flex-start;min-height:0;}
+body.phone.sa-answer-keyboard .view-game {min-height:0;}
+body.phone.sa-answer-keyboard .noggin-phone {gap:6px;}
+body.phone.sa-answer-keyboard .noggin-controls {gap:8px;}
+body.phone.sa-answer-keyboard .mini-answer {scroll-margin-block:24px;}
+body.phone.sa-answer-keyboard .mini-answer input,
+body.phone.sa-answer-keyboard .typed-form input {font-size:20px;min-height:48px;padding:9px 12px;}
+body.phone.sa-answer-keyboard .mini-answer button,
+body.phone.sa-answer-keyboard .typed-form button {min-height:52px;padding:8px 12px;}
+@supports (height:100dvh){body.phone .app{min-height:100dvh}body.phone .view-game{min-height:calc(100dvh - 40px)}}
