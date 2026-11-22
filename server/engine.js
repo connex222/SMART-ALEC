@@ -45,7 +45,7 @@ const required = room => (room.settings.quickGame ? 4 : 6);
  */
 const PACE = {
   normal:   {slow: 1,    intro: T.INTRO, landed: T.LANDED, reveal: T.REVEAL, group: T.GROUP_REVEAL, mini: T.GROUP_REVEAL, chat: 0,     chatEveryTurn: false},
-  sociable: {slow: 1.25, intro: 5500,    landed: 2000,     reveal: 6000,     group: 6000,           mini: 6500,           chat: 8000,  chatEveryTurn: false},
+  sociable: {slow: 1.25, intro: 5500,    landed: 2000,     reveal: 6000,     group: 6000,           mini: 6500,           chat: 5000,  bigChat: 9000, chatEveryTurn: true},
   relaxed:  {slow: 1.8,  intro: 6500,    landed: 2400,     reveal: 8500,     group: 9000,           mini: 10000,          chat: 15000, chatEveryTurn: true},
 };
 const pace = room => PACE[room.settings.timerSpeed] || PACE.sociable;
@@ -104,10 +104,11 @@ function endTurn(room, now, text) {
   // A chat pause after big moments (every turn at Leisurely pace). Phones can vote
   // "We're ready" and the TV host can continue early; otherwise it moves on by itself.
   const g = b(room), pc = pace(room);
-  const chat = pc.chat > 0 && (pc.chatEveryTurn || g.bigMoment);
+  const moment = Boolean(g.bigMoment);
+  const chat = pc.chat > 0 && (pc.chatEveryTurn || moment);
   g.bigMoment = false;
   g.chat = chat ? {ready: []} : null;
-  setStep(room, 'turnEnd', now, chat ? pc.chat : T.TURN_END);
+  setStep(room, 'turnEnd', now, chat ? (moment ? (pc.bigChat || pc.chat) : pc.chat) : T.TURN_END);
 }
 
 function afterTurnEnd(room, now) {
