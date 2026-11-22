@@ -241,6 +241,14 @@
   }
 
   function placePieces() {
+    // Keep the active square illuminated even when several players share it.
+    // While the avatar moves, follow its visible animation position.
+    document.querySelectorAll('#spaces .active-square').forEach(n => n.classList.remove('active-square'));
+    const active = playerById(state.board.activeId);
+    if (active) {
+      const at = shown.has(active.id) ? shown.get(active.id) : active.position;
+      document.getElementById('space-' + at)?.classList.add('active-square');
+    }
     const groups = new Map();
     for (const p of state.players) {
       const at = shown.has(p.id) ? shown.get(p.id) : p.position;
@@ -473,13 +481,21 @@
     } else if (['question', 'reveal', 'steal', 'group', 'groupReveal'].includes(b.step) && q) {
       const titles = {steal: 'Up for grabs!', lightning: 'Lightning Round', freeforall: 'Free-for-All', showdown: 'Showdown', jackpot: 'Pot Luck Jackpot', double: 'Double or Nothing'};
       card.appendChild(cardHead(q.category, q.forId, titles[q.kind] ? `${titles[q.kind]} · ${catMeta(q.category).name}` : null));
-      body.appendChild(el('p', 'q-text', q.text || ''));
+      // Present the question as a broadcast moment, and clearly signal the reveal.
+      body.appendChild(el('p', 'question-status' + (q.revealed ? ' is-reveal' : ''), q.revealed ? 'ANSWER REVEAL' : 'QUESTION LIVE'));
+      const questionText = el('p', 'q-text', q.text || '');
+      if ((q.text || '').length > 135) questionText.classList.add('q-text-long');
+      body.appendChild(questionText);
       const byChoice = {};
       if (q.revealed) for (const [pid, a] of Object.entries(q.answers || {})) if (a.choice != null) (byChoice[a.choice] = byChoice[a.choice] || []).push(pid);
       if (q.mode === 'typed' && !q.revealed) {
         body.appendChild(el('p', 'q-mode', 'Going Smart: no options, the answer is typed on the phone.'));
       }
-      if (q.options) body.appendChild(optionsEl(q, {answersByChoice: byChoice}));
+      if (q.options) {
+        const choices = optionsEl(q, {answersByChoice: byChoice});
+        if (q.options.some(text => String(text).length > 65)) choices.classList.add('opts-long');
+        body.appendChild(choices);
+      }
       if (q.mode === 'typed' && q.revealed && q.forId) {
         const a = q.answers[q.forId];
         body.appendChild(el('p', 'typed ' + (a?.correct ? 'right' : 'wrong'), a?.text ? `“${a.text}”` : 'No answer'));
@@ -533,6 +549,7 @@
       if (preds.childElementCount) body.appendChild(preds);
     }
     card.appendChild(body);
+    card.classList.toggle('card-reveal', Boolean(q?.revealed && ['reveal', 'groupReveal'].includes(b.step)) || b.step === 'finalResult');
   }
 
   /* ---------- timer bar ---------- */
